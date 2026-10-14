@@ -2,7 +2,7 @@
  "review_id": "seed-eu-iaa-001",
  "candidate_id": "seed",
  "dossier_id": "eu-iaa",
- "created": "2026-10-14T10:24:10.781540Z",
+ "created": "2026-10-14T10:27:46.393211Z",
  "impact": "medium",
  "checks": [
   {
@@ -29,7 +29,7 @@
  ],
  "llm_review": {
   "verdict": "supported",
-  "confidence": 0.98,
+  "confidence": 0.95,
   "checks": {
    "quote_supports_summary": true,
    "dates_match": true,

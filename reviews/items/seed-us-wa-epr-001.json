@@ -1,0 +1,48 @@
+{
+ "review_id": "seed-us-wa-epr-001",
+ "candidate_id": "seed",
+ "dossier_id": "us-wa-epr",
+ "created": "2026-10-14T10:26:28.269884Z",
+ "impact": "medium",
+ "checks": [
+  {
+   "layer": 1,
+   "name": "event-date",
+   "passed": true,
+   "severity": "info",
+   "detail": "2025-05-17 <= today 2026-10-14"
+  },
+  {
+   "layer": 1,
+   "name": "trusted-domain",
+   "passed": true,
+   "severity": "info",
+   "detail": "domain trust: official"
+  },
+  {
+   "layer": 2,
+   "name": "quote-provenance",
+   "passed": true,
+   "severity": "info",
+   "detail": "verbatim quote found in snapshot"
+  }
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 1.0,
+  "checks": {
+   "quote_supports_summary": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "bodies_match": true,
+   "references_match": true,
+   "no_exaggeration": true,
+   "stage_supported": true,
+   "next_steps_supported": true,
+   "translation_faithful": true
+  },
+  "issues": []
+ },
+ "outcome": "passed",
+ "reasons": []
+}

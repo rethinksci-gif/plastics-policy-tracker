@@ -3,7 +3,7 @@
 - **Dossier:** `eu-iaa` (impact: medium)
 - **Outcome:** **passed**
 - **Source:** <https://publications.europa.eu/resource/celex/52026PC0100> (trust: official; snapshot `(seed)`)
-- **Reviewed:** 2026-10-14 10:24 UTC
+- **Reviewed:** 2026-10-14 10:27 UTC
 
 ## Claim
 
@@ -23,7 +23,7 @@ Proposed stage change: `proposal`
 
 ## Layer 3: independent reviewer
 
-Verdict **supported**, confidence 0.98.
+Verdict **supported**, confidence 0.95.
 
 - quote_supports_summary: yes
 - dates_match: yes

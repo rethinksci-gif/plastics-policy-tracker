@@ -3,7 +3,7 @@
 - **Dossier:** `cn-recycled-plastic-standards` (impact: medium)
 - **Outcome:** **passed**
 - **Source:** <https://std.samr.gov.cn/gb/search/gbDetailed?id=55B3892F9697336AE06397BE0A0A4BF9> (trust: official; snapshot `(seed)`)
-- **Reviewed:** 2026-10-14 10:23 UTC
+- **Reviewed:** 2026-10-14 10:27 UTC
 
 ## Claim
 
