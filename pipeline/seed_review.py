@@ -10,11 +10,11 @@ from __future__ import annotations
 import json
 from datetime import date, datetime, timezone
 
-from .checks import excerpt_for_review, check_domain, check_event_date, check_quote, quote_in_text, snapshots_for_url
-from .config import REVIEWS, config, model_pro
-from .llm import LLM, parallel_map, prompt_parts
-from .models import Candidate, DraftUpdate, LLMReview, ReviewRecord, TriageResult
-from .review import record_markdown
+from .checks import check_domain, check_event_date, check_quote, quote_in_text, snapshots_for_url
+from .config import REVIEWS
+from .llm import LLM, parallel_map
+from .models import Candidate, DraftUpdate, ReviewRecord, TriageResult
+from .review import layer3, record_markdown
 from .store import load_dossiers
 
 
@@ -22,7 +22,7 @@ def _review_one(llm: LLM, d, u, out_dir) -> dict:
     url = str(u.source_url)
     checks = [check_event_date(u.date), check_domain(url), check_quote(u.source_quote, url)]
     reasons = [f"L{c.layer} {c.name}: {c.detail}" for c in checks if not c.passed]
-    review = None
+    l3 = {"review": None, "model": None, "confirm": None, "confirm_model": None}
     if not reasons:
         # Of the snapshots containing the quote, give the reviewer the fullest one (most context).
         snap = max((s for s in snapshots_for_url(url) if quote_in_text(u.source_quote, s.text)[0]),
@@ -30,15 +30,12 @@ def _review_one(llm: LLM, d, u, out_dir) -> dict:
         claim = json.dumps({"dossier": d.id, "date": u.date, "summary": u.summary,
                             "source_quote": u.source_quote, "source_quote_en": u.source_quote_en,
                             "stage_change": u.stage_change}, indent=1, ensure_ascii=False)
-        system, user = prompt_parts("reviewer", claim=claim, url=url,
-                                    text=excerpt_for_review(snap.text, u.source_quote,
-                                                            config()["llm"]["max_snapshot_chars"]))
-        review = llm.json_call(model_pro(), system, user, LLMReview, max_tokens=1500)
-        if review.verdict != "supported" or review.confidence < config()["review"]["min_confidence"]:
-            reasons.append(f"L3 reviewer: {review.verdict} ({review.confidence:.2f}); " + "; ".join(review.issues[:5]))
+        l3 = layer3(llm, claim, url, snap.text, u.source_quote, d.impact)
+        reasons += l3["reasons"]
     rec = ReviewRecord(review_id=u.review_id, candidate_id="seed", dossier_id=d.id,
                        created=datetime.now(timezone.utc), impact=d.impact, checks=checks,
-                       llm_review=review, model=model_pro() if review else None, outcome="passed" if not reasons else "quarantined", reasons=reasons)
+                       llm_review=l3["review"], model=l3["model"] if l3["review"] else None,
+                       confirm_review=l3["confirm"], confirm_model=l3["confirm_model"], outcome="passed" if not reasons else "quarantined", reasons=reasons)
     fake = Candidate(id=u.review_id, created=date.today(), snapshot_id="(seed)", source_id="seed",
                      source_url=url, source_trust="official",
                      triage=TriageResult(relevance=1, dossier_id=d.id, category="seed", reason="seed"),

@@ -39,5 +39,13 @@ def model_pro() -> str:
     return os.environ.get("DEEPSEEK_MODEL_PRO") or config()["llm"]["default_model_pro"]
 
 
+def model_for(stage: str) -> str:
+    """Model for a pipeline stage, via config llm.stage_models (tier "fast" or "pro")."""
+    tier = config()["llm"]["stage_models"][stage]
+    if tier not in ("fast", "pro"):
+        raise ValueError(f"stage_models.{stage} must be 'fast' or 'pro', not {tier!r}")
+    return model_pro() if tier == "pro" else model_fast()
+
+
 def max_llm_calls() -> int:
     return int(os.environ.get("MAX_LLM_CALLS_PER_RUN") or config()["llm"]["max_calls_per_run"])

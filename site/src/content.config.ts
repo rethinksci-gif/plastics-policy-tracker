@@ -65,6 +65,13 @@ const drafts = defineCollection({
   schema: issueSchema,
 });
 
+const llmReview = z.object({
+  verdict: z.string(),
+  confidence: z.number(),
+  checks: z.record(z.string(), z.boolean()),
+  issues: z.array(z.string()),
+});
+
 const reviews = defineCollection({
   loader: glob({ base: '../reviews/items', pattern: '*.json' }),
   schema: z.object({
@@ -76,9 +83,10 @@ const reviews = defineCollection({
     outcome: z.string(),
     reasons: z.array(z.string()).default([]),
     checks: z.array(z.object({ layer: z.number(), name: z.string(), passed: z.boolean(), severity: z.string(), detail: z.string() })),
-    llm_review: z
-      .object({ verdict: z.string(), confidence: z.number(), checks: z.record(z.string(), z.boolean()), issues: z.array(z.string()) })
-      .nullish(),
+    llm_review: llmReview.nullish(),
+    model: z.string().nullish(),
+    confirm_review: llmReview.nullish(),
+    confirm_model: z.string().nullish(),
   }),
 });
 

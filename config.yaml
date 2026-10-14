@@ -15,9 +15,18 @@ github:
 
 llm:
   base_url: https://api.deepseek.com
-  # Model names come from env vars DEEPSEEK_MODEL_FAST / DEEPSEEK_MODEL_PRO; these are fallbacks.
+  # Two tiers. Model names come from env vars DEEPSEEK_MODEL_FAST / DEEPSEEK_MODEL_PRO; these are fallbacks.
   default_model_fast: deepseek-flash
-  default_model_pro: deepseek-flash      # all LLM calls use deepseek-flash (owner requirement)
+  default_model_pro: deepseek-v4-pro
+  # Which tier each stage uses. High-volume work runs on "fast"; "pro" is reserved for the few
+  # judgements code cannot make: confirming high-impact items and the issue-level editorial review.
+  stage_models:
+    triage: fast              # ~100+ calls/day; misses are cheap
+    draft: fast               # fabricated quotes are caught by layer 2 (code)
+    review: fast              # layer 3, every drafted item
+    review_high_confirm: pro  # layer 3 second opinion, only for impact: high items that passed the fast review
+    editor: pro               # layer 4, once per issue
+    highlights: fast          # rewrites already verified items
   max_calls_per_run: 300       # overridden by env MAX_LLM_CALLS_PER_RUN
   max_retries: 3
   concurrency: 6             # parallel LLM requests
