@@ -281,6 +281,7 @@ class ReviewRecord(BaseModel):
     impact: Impact
     checks: list[CheckResult]
     llm_review: LLMReview | None = None
+    model: str | None = None  # model that ran the layer-3 review
     outcome: Literal["passed", "quarantined", "human-review"]
     reasons: list[str] = Field(default_factory=list)
 

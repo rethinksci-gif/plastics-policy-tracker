@@ -38,7 +38,7 @@ def _review_one(llm: LLM, d, u, out_dir) -> dict:
             reasons.append(f"L3 reviewer: {review.verdict} ({review.confidence:.2f}); " + "; ".join(review.issues[:5]))
     rec = ReviewRecord(review_id=u.review_id, candidate_id="seed", dossier_id=d.id,
                        created=datetime.now(timezone.utc), impact=d.impact, checks=checks,
-                       llm_review=review, outcome="passed" if not reasons else "quarantined", reasons=reasons)
+                       llm_review=review, model=model_pro() if review else None, outcome="passed" if not reasons else "quarantined", reasons=reasons)
     fake = Candidate(id=u.review_id, created=date.today(), snapshot_id="(seed)", source_id="seed",
                      source_url=url, source_trust="official",
                      triage=TriageResult(relevance=1, dossier_id=d.id, category="seed", reason="seed"),

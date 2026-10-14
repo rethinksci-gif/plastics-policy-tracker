@@ -17,7 +17,7 @@ llm:
   base_url: https://api.deepseek.com
   # Model names come from env vars DEEPSEEK_MODEL_FAST / DEEPSEEK_MODEL_PRO; these are fallbacks.
   default_model_fast: deepseek-flash
-  default_model_pro: deepseek-v4-pro
+  default_model_pro: deepseek-flash      # all LLM calls use deepseek-flash (owner requirement)
   max_calls_per_run: 300       # overridden by env MAX_LLM_CALLS_PER_RUN
   max_retries: 3
   concurrency: 6             # parallel LLM requests

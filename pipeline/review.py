@@ -71,7 +71,8 @@ def review_candidate(llm: LLM | None, c: Candidate, dossier: Dossier, status_fn=
         outcome = "passed"
     return ReviewRecord(
         review_id=c.id, candidate_id=c.id, dossier_id=dossier.id, created=datetime.now(timezone.utc),
-        impact=dossier.impact, checks=checks, llm_review=review, outcome=outcome, reasons=reasons,
+        impact=dossier.impact, checks=checks, llm_review=review, model=model_pro() if review else None,
+        outcome=outcome, reasons=reasons,
     )
 
 

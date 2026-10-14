@@ -37,7 +37,7 @@ jobs:
     env:
       DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
       DEEPSEEK_MODEL_FAST: ${{ vars.DEEPSEEK_MODEL_FAST || 'deepseek-flash' }}
-      DEEPSEEK_MODEL_PRO: ${{ vars.DEEPSEEK_MODEL_PRO || 'deepseek-v4-pro' }}
+      DEEPSEEK_MODEL_PRO: ${{ vars.DEEPSEEK_MODEL_PRO || 'deepseek-flash' }}
       MAX_LLM_CALLS_PER_RUN: ${{ vars.MAX_LLM_CALLS_PER_RUN || '300' }}
       GH_TOKEN: ${{ github.token }}
     steps:
