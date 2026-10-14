@@ -3,38 +3,85 @@ title: Waste Shipment Regulation (WSR) — Regulation (EU) 2024/1157
 short_title: Waste Shipment Regulation
 jurisdiction: EU
 instrument: regulation
-topics: [waste-shipments, plastic-waste-exports, recycling]
+topics:
+- waste-shipments
+- plastic-waste-exports
+- recycling
 stage: in-application
-affected: [recyclers, waste-traders, exporters]
+affected:
+- recyclers
+- waste-traders
+- exporters
 impact: high
 official_links:
-  - https://eur-lex.europa.eu/eli/reg/2024/1157/oj/eng
-  - https://publications.europa.eu/resource/celex/32024R1157
-  - https://environment.ec.europa.eu/topics/waste-and-recycling/waste-shipments_en
-summary: >-
-  Regulation (EU) 2024/1157 replaces Regulation (EC) No 1013/2006. It applies from 21 May 2026; the
-  prohibition on exporting plastic waste (entry B3011) to non-OECD countries applies from 21 November 2026.
+- https://eur-lex.europa.eu/eli/reg/2024/1157/oj/eng
+- https://publications.europa.eu/resource/celex/32024R1157
+- https://environment.ec.europa.eu/topics/waste-and-recycling/waste-shipments_en
+summary: Regulation (EU) 2024/1157 replaces Regulation (EC) No 1013/2006. It applies from 21 May 2026;
+  the prohibition on exporting plastic waste (entry B3011) to non-OECD countries applies from 21 November
+  2026.
 updates:
-  - date: 2026-05-21
-    summary: The Regulation became generally applicable on 21 May 2026, with staggered dates for specific provisions.
-    source_url: https://publications.europa.eu/resource/celex/32024R1157
-    source_quote: "It shall apply from 21 May 2026."
-    stage_change: in-application
-    review_id: seed-eu-wsr-002
-  - date: 2024-04-30
-    summary: Regulation (EU) 2024/1157 of 11 April 2024 on shipments of waste was published in the Official Journal on 30 April 2024.
-    source_url: https://publications.europa.eu/resource/celex/32024R1157
-    source_quote: "Official Journal of the European Union EN L series 2024/1157 30.4.2024 REGULATION (EU) 2024/1157 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 11 April 2024 on shipments of waste"
-    stage_change: published
-    review_id: seed-eu-wsr-001
+- date: '2026-09-18'
+  summary: The European Commission opened a feedback period from 18 September 2026 to 16 October 2026
+    on a delegated regulation establishing a list of non-OECD countries authorised to import certain non-hazardous
+    waste from the EU. The new Waste Shipment Regulation bans the export of non-hazardous waste to non-OECD
+    countries from 21 May 2027.
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14861_en
+  source_quote: |-
+    shortTitle: List of non-OECD countries that are authorized to import certain non-hazardous waste from the EU
+    reference: Ares(2025)7729795
+    foreseenActType: REG_DEL
+    initiativeStatus: ACTIVE
+    frontEndStage: ISC_WORKFLOW; receivingFeedbackStatus: OPEN; feedbackStartDate: 2026/09/18 11:38:36; feedbackEndDate: 2026/10/16 23:59:59
+  source_lang: en
+  review_id: 2026-10-14-004
+- date: '2026-09-15'
+  summary: The feedback period for the initiative 'Green-listing certain waste for the purposes of shipments
+    to recovery between Member States' closed on 15 September 2026.
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14712_en
+  source_quote: 'frontEndStage: ISC_WORKFLOW; receivingFeedbackStatus: CLOSED; feedbackStartDate: 2026/08/18
+    15:16:00; feedbackEndDate: 2026/09/15 23:59:59'
+  source_lang: en
+  review_id: 2026-10-14-008
+- date: '2026-05-21'
+  summary: The Regulation became generally applicable on 21 May 2026, with staggered dates for specific
+    provisions.
+  source_url: https://publications.europa.eu/resource/celex/32024R1157
+  source_quote: It shall apply from 21 May 2026.
+  source_lang: en
+  stage_change: in-application
+  review_id: seed-eu-wsr-002
+- date: '2024-04-30'
+  summary: Regulation (EU) 2024/1157 of 11 April 2024 on shipments of waste was published in the Official
+    Journal on 30 April 2024.
+  source_url: https://publications.europa.eu/resource/celex/32024R1157
+  source_quote: Official Journal of the European Union EN L series 2024/1157 30.4.2024 REGULATION (EU)
+    2024/1157 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 11 April 2024 on shipments of waste
+  source_lang: en
+  stage_change: published
+  review_id: seed-eu-wsr-001
 next_steps: []
 key_dates:
-  - date: 2026-11-21
-    text: Export ban on plastic waste (entry B3011) to countries outside the OECD Decision applies (Art. 39(1)(d)).
-    source_url: https://publications.europa.eu/resource/celex/32024R1157
-  - date: 2027-05-21
-    text: Articles 38(2)(b), 40, 44(2)(a), 46 and 47 apply.
-    source_url: https://publications.europa.eu/resource/celex/32024R1157
-  - date: 2029-05-21
-    text: Earliest date non-OECD countries may request to receive EU plastic waste for recycling.
-    source_url: https://publications.europa.eu/resource/celex/32024R1157
+- date: '2026-08-18'
+  text: Feedback period on the green-listing initiative opens.
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14712_en
+- date: '2026-09-15'
+  text: Feedback period on the green-listing initiative closes.
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14712_en
+- date: '2026-10-16'
+  text: Feedback period on the delegated regulation ends.
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14861_en
+- date: '2026-11-21'
+  text: Export ban on plastic waste (entry B3011) to countries outside the OECD Decision applies (Art.
+    39(1)(d)).
+  source_url: https://publications.europa.eu/resource/celex/32024R1157
+- date: '2027-05-21'
+  text: Articles 38(2)(b), 40, 44(2)(a), 46 and 47 apply.
+  source_url: https://publications.europa.eu/resource/celex/32024R1157
+- date: '2027-05-21'
+  text: The new Waste Shipment Regulation bans the export of non-hazardous waste to non-OECD countries
+    from 21 May 2027.
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14861_en
+- date: '2029-05-21'
+  text: Earliest date non-OECD countries may request to receive EU plastic waste for recycling.
+  source_url: https://publications.europa.eu/resource/celex/32024R1157

@@ -3,27 +3,57 @@ title: UK — Plastic Packaging Tax (PPT)
 short_title: UK Plastic Packaging Tax
 jurisdiction: UK
 instrument: tax
-topics: [tax, packaging, recycled-content, chemical-recycling, mass-balance]
+topics:
+- tax
+- packaging
+- recycled-content
+- chemical-recycling
+- mass-balance
 stage: in-application
-affected: [converters, importers, brand-owners, recyclers]
+affected:
+- converters
+- importers
+- brand-owners
+- recyclers
 impact: high
 official_links:
-  - https://www.gov.uk/guidance/check-if-you-need-to-register-for-plastic-packaging-tax
-  - https://www.gov.uk/government/collections/plastic-packaging-tax
-summary: >-
-  A tax on plastic packaging components manufactured in or imported into the UK that contain less than 30%
-  recycled plastic, in force since 1 April 2022.
+- https://www.gov.uk/guidance/check-if-you-need-to-register-for-plastic-packaging-tax
+- https://www.gov.uk/government/collections/plastic-packaging-tax
+summary: A tax on plastic packaging components manufactured in or imported into the UK that contain less
+  than 30% recycled plastic, in force since 1 April 2022.
 updates:
-  - date: 2026-04-01
-    summary: The Plastic Packaging Tax rate rose to £228.82 per tonne from 1 April 2026.
-    source_url: https://www.gov.uk/guidance/check-if-you-need-to-register-for-plastic-packaging-tax
-    source_quote: "£228.82 per tonne from 1 April 2026"
-    review_id: seed-uk-plastic-packaging-tax-002
-  - date: 2022-04-01
-    summary: Plastic Packaging Tax came into force on 1 April 2022 at £200 per tonne for plastic packaging components containing less than 30% recycled plastic.
-    source_url: https://www.gov.uk/guidance/check-if-you-need-to-register-for-plastic-packaging-tax
-    source_quote: "The tax came into force on 1 April 2022 and is charged at a rate of: - £200 per tonne from 1 April 2022"
-    stage_change: in-force
-    review_id: seed-uk-plastic-packaging-tax-001
+- date: '2026-10-06'
+  summary: On 6 October 2026, draft Regulations and a draft reference document on chemical recycling and
+    adoption of a mass balance approach for Plastic Packaging Tax were published for technical consultation.
+    The draft Regulations set out the conditions that businesses must meet to use a mass balance approach
+    to account for chemically recycled plastic from 1 April 2027, including certification, auditing, monitoring
+    and record-keeping requirements.
+  source_url: https://www.gov.uk/government/consultations/draft-legislation-plastic-packaging-tax-chemical-recycling-and-adoption-of-a-mass-balance-approach
+  source_quote: The draft Regulations set out the conditions that businesses must meet if they wish to
+    use a mass balance approach to account for chemically recycled plastic for Plastic Packaging Tax (PPT)
+    purposes from 1 April 2027. The draft reference document sets out the methodology for applying dual-use
+    factors where required. Both should be read alongside the relevant provisions of the Finance Act 2021,
+    as amended by the Finance Act 2026, in particular sections 49, 49A and 49B.
+  source_lang: en
+  review_id: 2026-10-14-013
+- date: '2026-04-01'
+  summary: The Plastic Packaging Tax rate rose to £228.82 per tonne from 1 April 2026.
+  source_url: https://www.gov.uk/guidance/check-if-you-need-to-register-for-plastic-packaging-tax
+  source_quote: £228.82 per tonne from 1 April 2026
+  source_lang: en
+  review_id: seed-uk-plastic-packaging-tax-002
+- date: '2022-04-01'
+  summary: Plastic Packaging Tax came into force on 1 April 2022 at £200 per tonne for plastic packaging
+    components containing less than 30% recycled plastic.
+  source_url: https://www.gov.uk/guidance/check-if-you-need-to-register-for-plastic-packaging-tax
+  source_quote: 'The tax came into force on 1 April 2022 and is charged at a rate of: - £200 per tonne
+    from 1 April 2022'
+  source_lang: en
+  stage_change: in-force
+  review_id: seed-uk-plastic-packaging-tax-001
 next_steps: []
-key_dates: []
+key_dates:
+- date: '2027-04-01'
+  text: The draft Regulations set out conditions for businesses to use a mass balance approach to account
+    for chemically recycled plastic for Plastic Packaging Tax purposes from 1 April 2027.
+  source_url: https://www.gov.uk/government/consultations/draft-legislation-plastic-packaging-tax-chemical-recycling-and-adoption-of-a-mass-balance-approach

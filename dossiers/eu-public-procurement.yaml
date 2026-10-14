@@ -3,33 +3,56 @@ title: Public Procurement Regulation (Public Procurement Act)
 short_title: Public Procurement Regulation
 jurisdiction: EU
 instrument: regulation
-topics: [public-procurement, circular-procurement, recycled-content, european-preference]
+topics:
+- public-procurement
+- circular-procurement
+- recycled-content
+- european-preference
 stage: proposal
-affected: [recyclers, converters, brand-owners, public-buyers]
+affected:
+- recyclers
+- converters
+- brand-owners
+- public-buyers
 impact: medium
 official_links:
-  - https://publications.europa.eu/resource/celex/52026PC0590
-  - https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)
-summary: >-
-  Proposal COM(2026) 590 would replace the three 2014 procurement directives with one directly applicable
-  regulation, including green public procurement obligations (circularity, recycled content) and a
-  horizontal framework for European preference requirements.
+- https://publications.europa.eu/resource/celex/52026PC0590
+- https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)
+summary: Proposal COM(2026) 590 would replace the three 2014 procurement directives with one directly
+  applicable regulation, including green public procurement obligations (circularity, recycled content)
+  and a horizontal framework for European preference requirements.
 updates:
-  - date: 2026-10
-    summary: >-
-      The Legislative Observatory lists the procedure 2026/0265(COD) at the preparatory phase in Parliament,
-      with the decision on the responsible committee still pending.
-    source_url: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)
-    source_quote: "European ParliamentCommittee responsible Rapporteur Appointed Pending final decision on the referral"
-    review_id: seed-eu-public-procurement-002
-  - date: 2026-09-09
-    summary: >-
-      The Commission published its proposal for a regulation on public contracts and concessions (COM(2026) 590),
-      which strengthens the contribution of procurement to circularity, recycled and refurbished content and
-      waste recovery, and creates a framework for mandatory green procurement requirements for certain products.
-    source_url: https://publications.europa.eu/resource/celex/52026PC0590
-    source_quote: "It strengthens the contribution of procurement to circularity, recycled and refurbished content, waste recovery and energy efficiency, and creates a framework for mandatory green procurement requirements for certain product categories where divergent application of requirement risks creating market fragmentation."
-    stage_change: proposal
-    review_id: seed-eu-public-procurement-001
+- date: 2026-10
+  summary: The Legislative Observatory lists the procedure 2026/0265(COD) at the preparatory phase in
+    Parliament, with the decision on the responsible committee still pending.
+  source_url: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)
+  source_quote: European ParliamentCommittee responsible Rapporteur Appointed Pending final decision on
+    the referral
+  source_lang: en
+  review_id: seed-eu-public-procurement-002
+- date: '2026-09-15'
+  summary: A public feedback period on the revision of EU rules on public procurement is open from 15
+    September 2026 to 9 December 2026.
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15492_en
+  source_quote: 'receivingFeedbackStatus: OPEN; feedbackStartDate: 2026/09/15 00:40:14; feedbackEndDate:
+    2026/12/09 23:59:59'
+  source_lang: en
+  review_id: 2026-10-14-012
+- date: '2026-09-09'
+  summary: The Commission published its proposal for a regulation on public contracts and concessions
+    (COM(2026) 590), which strengthens the contribution of procurement to circularity, recycled and refurbished
+    content and waste recovery, and creates a framework for mandatory green procurement requirements for
+    certain products.
+  source_url: https://publications.europa.eu/resource/celex/52026PC0590
+  source_quote: It strengthens the contribution of procurement to circularity, recycled and refurbished
+    content, waste recovery and energy efficiency, and creates a framework for mandatory green procurement
+    requirements for certain product categories where divergent application of requirement risks creating
+    market fragmentation.
+  source_lang: en
+  stage_change: proposal
+  review_id: seed-eu-public-procurement-001
 next_steps: []
-key_dates: []
+key_dates:
+- date: '2026-12-09'
+  text: Feedback period end date.
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15492_en

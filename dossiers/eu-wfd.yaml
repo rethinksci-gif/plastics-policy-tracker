@@ -3,36 +3,60 @@ title: Waste Framework Directive — Directive 2008/98/EC
 short_title: Waste Framework Directive
 jurisdiction: EU
 instrument: directive
-topics: [waste, EPR, textiles, end-of-waste, waste-hierarchy]
+topics:
+- waste
+- EPR
+- textiles
+- end-of-waste
+- waste-hierarchy
 stage: in-application
-affected: [recyclers, brand-owners, municipalities]
+affected:
+- recyclers
+- brand-owners
+- municipalities
 impact: medium
 official_links:
-  - https://eur-lex.europa.eu/eli/dir/2008/98/oj/eng
-  - https://publications.europa.eu/resource/celex/32008L0098
-  - https://publications.europa.eu/resource/celex/32025L1892
-  - https://publications.europa.eu/resource/celex/52025PC0986
-summary: >-
-  Directive 2008/98/EC sets the EU waste framework (waste hierarchy, EPR minimum requirements, end-of-waste).
-  Directive (EU) 2025/1892 added textile EPR and food-waste targets; a December 2025 omnibus proposal would
-  simplify some requirements.
+- https://eur-lex.europa.eu/eli/dir/2008/98/oj/eng
+- https://publications.europa.eu/resource/celex/32008L0098
+- https://publications.europa.eu/resource/celex/32025L1892
+- https://publications.europa.eu/resource/celex/52025PC0986
+summary: Directive 2008/98/EC sets the EU waste framework (waste hierarchy, EPR minimum requirements,
+  end-of-waste). Directive (EU) 2025/1892 added textile EPR and food-waste targets; a December 2025 omnibus
+  proposal would simplify some requirements.
 updates:
-  - date: 2025-12-10
-    summary: >-
-      The Commission proposed a directive (COM(2025) 986) amending Directives 2008/98/EC, 2010/75/EU,
-      (EU) 2015/2193 and (EU) 2024/1785 to simplify some requirements and reduce administrative burden.
-    source_url: https://publications.europa.eu/resource/celex/52025PC0986
-    source_quote: "amending Directives 2008/98/EC, 2010/75/EU, (EU) 2015/2193 and (EU) 2024/1785 of the European Parliament and of the Council as regards simplification of some requirements and reduction of administrative burden"
-    review_id: seed-eu-wfd-002
-  - date: 2025-09-26
-    summary: >-
-      Directive (EU) 2025/1892 amending Directive 2008/98/EC was published on 26 September 2025; Member States
-      must transpose it by 17 June 2027.
-    source_url: https://publications.europa.eu/resource/celex/32025L1892
-    source_quote: "Member States shall bring into force the laws, regulations and administrative provisions necessary to comply with this Directive by 17 June 2027 at the latest."
-    review_id: seed-eu-wfd-001
+- date: '2026-09-28'
+  summary: A feedback period for the Early warning report on waste 2027 opened on 28 September 2026 and
+    is open until 26 October 2026.
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/17712_en
+  source_quote: 'frontEndStage: PLANNING_WORKFLOW; receivingFeedbackStatus: OPEN; feedbackStartDate: 2026/09/28
+    10:32:00; feedbackEndDate: 2026/10/26 23:59:59'
+  source_lang: en
+  review_id: 2026-10-14-007
+- date: '2025-12-10'
+  summary: The Commission proposed a directive (COM(2025) 986) amending Directives 2008/98/EC, 2010/75/EU,
+    (EU) 2015/2193 and (EU) 2024/1785 to simplify some requirements and reduce administrative burden.
+  source_url: https://publications.europa.eu/resource/celex/52025PC0986
+  source_quote: amending Directives 2008/98/EC, 2010/75/EU, (EU) 2015/2193 and (EU) 2024/1785 of the European
+    Parliament and of the Council as regards simplification of some requirements and reduction of administrative
+    burden
+  source_lang: en
+  review_id: seed-eu-wfd-002
+- date: '2025-09-26'
+  summary: Directive (EU) 2025/1892 amending Directive 2008/98/EC was published on 26 September 2025;
+    Member States must transpose it by 17 June 2027.
+  source_url: https://publications.europa.eu/resource/celex/32025L1892
+  source_quote: Member States shall bring into force the laws, regulations and administrative provisions
+    necessary to comply with this Directive by 17 June 2027 at the latest.
+  source_lang: en
+  review_id: seed-eu-wfd-001
 next_steps: []
 key_dates:
-  - date: 2027-06-17
-    text: Transposition deadline for Directive (EU) 2025/1892 (textiles EPR, food waste).
-    source_url: https://publications.europa.eu/resource/celex/32025L1892
+- date: '2026-09-28'
+  text: Feedback period for the Early warning report on waste 2027 opened.
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/17712_en
+- date: '2026-10-26'
+  text: Feedback period for the Early warning report on waste 2027 ends.
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/17712_en
+- date: '2027-06-17'
+  text: Transposition deadline for Directive (EU) 2025/1892 (textiles EPR, food waste).
+  source_url: https://publications.europa.eu/resource/celex/32025L1892

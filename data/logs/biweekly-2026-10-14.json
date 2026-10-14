@@ -1,15 +1,14 @@
 {
  "review_id": "issue-001",
  "issue": "2026-10-14-issue-001",
- "created": "2026-10-14T10:49:50.449118+00:00",
- "decision": "dry-run",
+ "created": "2026-10-14T11:31:48.180920+00:00",
+ "decision": "publish",
  "would_publish": false,
  "hold_reasons": [
-  "31% of items quarantined (limit 30%)",
   "high-impact item(s) quarantined: eu-ppwr"
  ],
- "gate_overridden_by_maintainer": false,
- "quarantine_ratio": 0.308,
+ "gate_overridden_by_maintainer": true,
+ "quarantine_ratio": 0.167,
  "published_items": [
   {
    "id": "2026-10-14-003",
@@ -40,6 +39,12 @@
    "dossier": "eu-wsr",
    "review_id": "2026-10-14-008",
    "summary": "The feedback period for the initiative 'Green-listing certain waste for the purposes of shipments to recovery between Member States' closed on 15 September 2026."
+  },
+  {
+   "id": "2026-10-14-009",
+   "dossier": "eu-ppwr",
+   "review_id": "2026-10-14-009",
+   "summary": "The feedback period for the planned implementing act on rules for the calculation and verification of recycled content in plastic packaging ran from 14 August 2026 to 16 September 2026."
   },
   {
    "id": "2026-10-14-010",
@@ -89,58 +94,30 @@
    "reasons": [
     "L1 url-200: HTTP 202"
    ]
-  },
-  {
-   "id": "2026-10-14-006",
-   "dossier": "eu-pellet-losses",
-   "title": "Pellet Losses Regulation",
-   "impact": "medium",
-   "summary": "The European Commission has planned an implementing act on the format for Member States reporting under the Plastic Pellet Regulation. The source records a feedback start date of 22 September 2025.",
-   "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14856_en",
-   "reasons": [
-    "L4 editor: Stage conflict: item date 2025-09-22 predates publication of Regulation (EU) 2025/2365 on 2025-11-26; stage_before/after cannot be 'in-force'."
-   ]
-  },
-  {
-   "id": "2026-10-14-009",
-   "dossier": "eu-ppwr",
-   "title": "PPWR",
-   "impact": "high",
-   "summary": "The feedback period for the planned implementing act on rules for the calculation and verification of recycled content in plastic packaging ran from 14 August 2026 to 16 September 2026.",
-   "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/18753_en",
-   "reasons": [
-    "L4 editor: Source quote does not include the feedback start/end dates stated in the summary; the summary may be unsupported by the quoted source."
-   ]
   }
  ],
  "editorial_review": {
-  "passed": false,
+  "passed": true,
   "contradictions": [],
-  "history_conflicts": [
-   "2026-10-14-006: stage_before/after 'in-force' conflicts with dossier history; Regulation (EU) 2025/2365 on plastic pellet losses was published on 2025-11-26, so on 2025-09-22 it was not in force."
-  ],
+  "history_conflicts": [],
   "missing_high_impact": [
    "eu-ppwr"
   ],
-  "terminology_issues": [
-   "Items 004 and 006 use 'the European Commission' rather than the house style 'the Commission'."
-  ],
+  "terminology_issues": [],
   "translation_issues": [],
   "fact_vs_interpretation_issues": [],
-  "item_flags": {
-   "2026-10-14-006": [
-    "Stage conflict: item date 2025-09-22 predates publication of Regulation (EU) 2025/2365 on 2025-11-26; stage_before/after cannot be 'in-force'."
-   ],
-   "2026-10-14-009": [
-    "Source quote does not include the feedback start/end dates stated in the summary; the summary may be unsupported by the quoted source."
+  "item_flags": {},
+  "style_notes": {
+   "2026-10-14-004": [
+    "write 'the Commission' instead of 'the European Commission'"
    ]
   },
-  "notes": "The issue is held because of a history conflict on the pellet losses item and a missing high-impact PPWR item in quarantine; a source quote in item 009 also lacks the cited feedback dates."
+  "notes": "No blocking findings were identified. There is one style note for item 2026-10-14-004 to use 'the Commission' instead of 'the European Commission'. The high-impact PPWR dossier has a quarantined item (2026-10-14-002) that is not published in this issue, so readers should be aware that the European Parliament committee report on suspending authorised representative rules for packaging is absent."
  },
  "llm_calls": 2,
  "llm_usage": {
-  "prompt_tokens": 6852,
-  "completion_tokens": 10826
+  "prompt_tokens": 6697,
+  "completion_tokens": 9087
  },
- "issue_file": "data/drafts/2026-10-14-issue-001.md"
+ "issue_file": "issues/2026-10-14-issue-001.md"
 }
