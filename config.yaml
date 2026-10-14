@@ -1,0 +1,52 @@
+# Plastics Policy Tracker — runtime configuration.
+# Secrets are NOT stored here. The only secret is DEEPSEEK_API_KEY (GitHub Actions secret).
+
+site:
+  name: Plastics Policy Tracker
+  url: https://rethinksci-gif.github.io
+  base: /plastics-policy-tracker
+  spelling: en-GB            # British spelling across the whole site
+
+github:
+  repo: rethinksci-gif/plastics-policy-tracker
+  maintainer: rethinksci-gif # @-mentioned when the publish gate holds an issue
+  staging_branch: staging
+  review_label: needs-human-review
+
+llm:
+  base_url: https://api.deepseek.com
+  # Model names come from env vars DEEPSEEK_MODEL_FAST / DEEPSEEK_MODEL_PRO; these are fallbacks.
+  default_model_fast: deepseek-flash
+  default_model_pro: deepseek-v4-pro
+  max_calls_per_run: 300       # overridden by env MAX_LLM_CALLS_PER_RUN
+  max_retries: 3
+  timeout_seconds: 180
+  temperature: 0
+  max_snapshot_chars: 60000    # text sent to the model per snapshot (beyond this it is truncated)
+
+fetch:
+  user_agent: "Mozilla/5.0 (compatible; PlasticsPolicyTracker/0.1; +https://rethinksci-gif.github.io/plastics-policy-tracker/)"
+  timeout_seconds: 40
+  max_items_per_feed: 30
+  max_feed_item_age_days: 21
+
+triage:
+  relevance_threshold: 0.6
+
+review:
+  min_confidence: 0.8
+  # Stage moves larger than this many steps forward are flagged for human review.
+  max_stage_jump: 2
+  check_source_urls: true
+
+schedule:
+  # Biweekly publishing: Monday cron fires weekly; we publish on ISO weeks with the
+  # same parity as this anchor week.
+  anchor_iso_year: 2026
+  anchor_iso_week: 42
+  lookahead_days: 60
+  issue_window_days: 14
+
+gate:
+  max_quarantine_ratio: 0.30
+  hold_on_high_impact_quarantine: true

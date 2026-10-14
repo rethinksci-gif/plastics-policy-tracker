@@ -1,0 +1,99 @@
+# Domain whitelist used by review layer 1. A domain matches itself and all its subdomains.
+# Facts published on the site must cite a domain in `official`. Trade-association and media
+# domains are recognised as leads only; an update citing them is rejected.
+
+official:
+  # EU institutions and agencies
+  - europa.eu                 # covers eur-lex, ec, environment.ec, publications, consilium, europarl, echa, efsa ...
+  - europarl.europa.eu
+  - consilium.europa.eu
+  # UN / multilateral
+  - unep.org
+  - basel.int
+  - brsmeas.org
+  - wto.org
+  - epingalert.org
+  - oecd.org
+  # United Kingdom
+  - gov.uk
+  - legislation.gov.uk
+  - parliament.uk
+  # United States — federal
+  - federalregister.gov
+  - regulations.gov
+  - epa.gov
+  - congress.gov
+  - govinfo.gov
+  # United States — states
+  - ca.gov                    # calrecycle.ca.gov, leginfo.legislature.ca.gov
+  - oregon.gov
+  - oregonlegislature.gov
+  - colorado.gov
+  - leg.colorado.gov
+  - maine.gov
+  - legislature.maine.gov
+  - mn.gov
+  - pca.state.mn.us
+  - revisor.mn.gov
+  - leg.state.mn.us
+  - maryland.gov
+  - mgaleg.maryland.gov
+  - wa.gov
+  - leg.wa.gov
+  # France
+  - legifrance.gouv.fr
+  - ecologie.gouv.fr
+  - gouv.fr
+  - ademe.fr
+  # Netherlands
+  - overheid.nl               # wetten.overheid.nl, zoek.officielebekendmakingen.nl
+  - rijksoverheid.nl
+  - government.nl
+  - verpact.nl                # state-recognised producer responsibility organisation (statutory fee schedule)
+  # Germany
+  - gesetze-im-internet.de
+  - bundesgesetzblatt.de
+  - bmuv.de
+  - bmukn.de
+  - umweltbundesamt.de
+  - verpackungsregister.org   # Zentrale Stelle Verpackungsregister, a public-law foundation under VerpackG
+  # Italy
+  - gazzettaufficiale.it
+  - normattiva.it
+  - mase.gov.it
+  - conai.org                 # national packaging consortium established by law (Legislative Decree 152/2006)
+  # Spain
+  - boe.es
+  - miteco.gob.es
+  # Sweden
+  - riksdagen.se
+  - regeringen.se
+  - government.se
+  - naturvardsverket.se
+  # China
+  - gov.cn                    # www.gov.cn, mee.gov.cn, ndrc.gov.cn, samr.gov.cn ...
+  - mee.gov.cn
+  - ndrc.gov.cn
+  - samr.gov.cn
+  - sac.gov.cn
+  - openstd.samr.gov.cn
+  - std.samr.gov.cn
+  # France PRO
+  - citeo.com                 # state-approved (agréé) packaging PRO; publishes the statutory eco-modulation scale
+
+trade-association:
+  - plasticseurope.org
+  - plasticsrecyclers.eu
+  - europen-packaging.eu
+  - zerowasteeurope.eu
+  - plasticsindustry.org
+
+media:
+  - packagingeurope.com
+  - endseurope.com
+  - euractiv.com
+  - politico.eu
+  - plasticstoday.com
+  - resource-recycling.com
+  - plasticsnews.com
+  - sustainableplastics.com
