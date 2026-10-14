@@ -34,6 +34,12 @@ def cmd_daily(a):
         report["triage"] = triage.run(llm, report["fetch"]["new"])
         report["draft"] = draft.run(llm)
         report["review"] = review.run(llm, dry_run=a.dry_run)
+        leads = report["triage"]["leads"]
+        if leads and not a.dry_run:
+            body = "Relevant items from trade-association or media sources. They are **not** published; find the " \
+                   "official source and add it to `sources/feeds.yaml` or capture it with `python -m pipeline capture`.\n\n" + \
+                   "\n".join(f"- [{l['url']}]({l['url']}) → `{l['dossier_id']}` ({l['relevance']:.2f}): {l['reason']}" for l in leads)
+            open_issue(f"[leads] {today()}: {len(leads)} lead(s) to verify", body, ["lead"])
     except BudgetExceeded as e:
         report["budget_exceeded"] = str(e)
         if not a.dry_run:

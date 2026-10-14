@@ -37,7 +37,7 @@ def run(llm: LLM, snapshot_ids: list[str]) -> dict:
     dossier_list = "\n".join(f"- {d.id} — {d.title} — {d.jurisdiction}" for d in dossiers.values())
     names = {s.id: s.name for s in load_sources()}
     threshold = config()["triage"]["relevance_threshold"]
-    report = {"candidates": [], "discarded": [], "new_dossier_suggestions": []}
+    report = {"candidates": [], "discarded": [], "new_dossier_suggestions": [], "leads": []}
     LOGS.mkdir(parents=True, exist_ok=True)
     discard_log = LOGS / f"triage-{today().isoformat()}.jsonl"
     for sid in snapshot_ids:
@@ -53,6 +53,10 @@ def run(llm: LLM, snapshot_ids: list[str]) -> dict:
             report["discarded"].append(entry)
             if result.relevance >= threshold and result.new_dossier_suggestion:
                 report["new_dossier_suggestions"].append(entry)
+            continue
+        if snap.trust != "official":
+            # Trade-association and media items are leads only: logged for a human to find the official source.
+            report["leads"].append(entry)
             continue
         cand = Candidate(
             id=next_candidate_id(today()), created=today(), snapshot_id=sid, source_id=snap.source_id,

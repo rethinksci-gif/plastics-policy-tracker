@@ -1,0 +1,365 @@
+# Information sources.
+#   type:      rss | page-watch | api | email-alert
+#   frequency: daily | weekly (weekly sources are fetched on Mondays)
+#   trust:     official | trade-association | media
+# Only `official` sources can support a published fact. Trade-association and media sources are leads:
+# the triage step can flag them, but an update citing them is rejected at review layer 1.
+# page-watch: the page text is hashed and compared with the last snapshot; only changes enter the pipeline.
+# Sites that block automated access are listed in sources/unreachable.md (not replaced with secondary sources).
+
+sources:
+  # ---------------------------------------------------------------- EU: legal texts and procedures
+  - id: eu-cellar
+    name: EU Publications Office (CELLAR) — new legal acts and Commission documents
+    url: https://publications.europa.eu/webapi/rdf/sparql
+    type: api
+    handler: cellar
+    frequency: daily
+    jurisdiction: EU
+    trust: official
+    keywords: [plastic, packaging, "waste shipment", "waste framework", "end-of-life vehicle", "electrical and electronic equipment", microplastic, "circular economy", "public procurement", "recycled content", "food contact", "pellet"]
+    notes: Machine access to the documents EUR-Lex displays (EUR-Lex itself returns an empty 202 bot challenge).
+
+  - id: eu-have-your-say
+    name: European Commission — Have Your Say initiatives
+    url: https://ec.europa.eu/info/law/better-regulation/brpapi/searchInitiatives
+    type: api
+    handler: have_your_say
+    frequency: daily
+    jurisdiction: EU
+    trust: official
+    keywords: [plastic, packaging, "circular economy", "waste", "end-of-life vehicles", "public procurement", microplastic]
+
+  - id: oeil-ppwr
+    name: Legislative Observatory — 2022/0396(COD) PPWR
+    url: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0396(COD)
+    type: page-watch
+    frequency: weekly
+    jurisdiction: EU
+    trust: official
+  - id: oeil-elv
+    name: Legislative Observatory — 2023/0284(COD) End-of-Life Vehicles Regulation
+    url: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0284(COD)
+    type: page-watch
+    frequency: daily
+    jurisdiction: EU
+    trust: official
+  - id: oeil-pellets
+    name: Legislative Observatory — 2023/0373(COD) plastic pellet losses
+    url: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0373(COD)
+    type: page-watch
+    frequency: weekly
+    jurisdiction: EU
+    trust: official
+  - id: oeil-wfd
+    name: Legislative Observatory — 2023/0234(COD) Waste Framework Directive targeted revision
+    url: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0234(COD)
+    type: page-watch
+    frequency: weekly
+    jurisdiction: EU
+    trust: official
+
+  - id: council-press
+    name: Council of the EU — press releases
+    url: https://www.consilium.europa.eu/en/rss/pressreleases.ashx
+    type: rss
+    frequency: daily
+    jurisdiction: EU
+    trust: official
+    keywords: [plastic, packaging, waste, circular, recycl, vehicle, microplastic, procurement, pellet]
+
+  - id: ep-press
+    name: European Parliament — press releases
+    url: https://www.europarl.europa.eu/rss/doc/press-releases/en.xml
+    type: rss
+    frequency: daily
+    jurisdiction: EU
+    trust: official
+    keywords: [plastic, packaging, waste, circular, recycl, vehicle, microplastic, procurement, pellet]
+
+  - id: ep-envi
+    name: European Parliament — ENVI committee news
+    url: https://www.europarl.europa.eu/rss/committee/envi/en.xml
+    type: rss
+    frequency: daily
+    jurisdiction: EU
+    trust: official
+    keywords: [plastic, packaging, waste, circular, recycl, vehicle, microplastic, procurement, pellet]
+
+  # ---------------------------------------------------------------- EU: Commission services and agencies
+  - id: dg-env-news
+    name: DG Environment — news
+    url: https://environment.ec.europa.eu/news_en
+    type: page-watch
+    frequency: daily
+    jurisdiction: EU
+    trust: official
+  - id: dg-env-plastics
+    name: DG Environment — plastics topic page
+    url: https://environment.ec.europa.eu/topics/plastics_en
+    type: page-watch
+    frequency: weekly
+    jurisdiction: EU
+    trust: official
+  - id: dg-env-ppwr-implementation
+    name: Commission Green Forum — PPWR implementation timeline
+    url: https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en
+    type: page-watch
+    frequency: daily
+    jurisdiction: EU
+    trust: official
+  - id: dg-env-circular
+    name: DG Environment — circular economy
+    url: https://environment.ec.europa.eu/strategy/circular-economy_en
+    type: page-watch
+    frequency: weekly
+    jurisdiction: EU
+    trust: official
+  - id: dg-env-waste-shipments
+    name: DG Environment — waste shipments
+    url: https://environment.ec.europa.eu/topics/waste-and-recycling/waste-shipments_en
+    type: page-watch
+    frequency: weekly
+    jurisdiction: EU
+    trust: official
+  - id: dg-env-elv
+    name: DG Environment — end-of-life vehicles
+    url: https://environment.ec.europa.eu/topics/waste-and-recycling/end-life-vehicles_en
+    type: page-watch
+    frequency: weekly
+    jurisdiction: EU
+    trust: official
+  - id: echa-microplastics
+    name: ECHA — microplastics restriction
+    url: https://echa.europa.eu/hot-topics/microplastics
+    type: page-watch
+    frequency: weekly
+    jurisdiction: EU
+    trust: official
+    enabled: false
+    notes: HTTP 403 to automated clients — see unreachable.md. REACH Annex XVII changes are caught via eu-cellar.
+  - id: efsa
+    name: EFSA — news and publications
+    url: https://www.efsa.europa.eu/en/all/rss
+    type: rss
+    frequency: daily
+    jurisdiction: EU
+    trust: official
+    keywords: [plastic, recycl, "food contact", PET, packaging, microplastic]
+
+  # ---------------------------------------------------------------- Global
+  - id: unep-inc
+    name: UNEP — Intergovernmental Negotiating Committee on plastic pollution
+    url: https://www.unep.org/inc-plastic-pollution
+    type: page-watch
+    frequency: daily
+    jurisdiction: GLOBAL
+    trust: official
+  - id: basel-plastic
+    name: Basel Convention — plastic waste amendments
+    url: https://www.basel.int/Implementation/Plasticwaste/PlasticWasteAmendments/Overview/tabid/8426/Default.aspx
+    type: page-watch
+    frequency: weekly
+    jurisdiction: GLOBAL
+    trust: official
+  - id: wto-eping
+    name: WTO ePing — TBT notifications
+    url: https://epingalert.org/en
+    type: email-alert
+    frequency: daily
+    jurisdiction: GLOBAL
+    trust: official
+    notes: >-
+      The ePing site is a JavaScript application with no public feed. Subscribe to e-mail alerts for
+      HS 3915/3923/3926 and keywords "plastic", "packaging"; forward relevant notifications as issues.
+
+  # ---------------------------------------------------------------- United Kingdom
+  - id: govuk-defra-packaging
+    name: GOV.UK — Defra news on packaging
+    url: https://www.gov.uk/search/news-and-communications.atom?keywords=packaging&organisations%5B%5D=department-for-environment-food-rural-affairs
+    type: rss
+    frequency: daily
+    jurisdiction: UK
+    trust: official
+  - id: govuk-defra-drs
+    name: GOV.UK — deposit return scheme
+    url: https://www.gov.uk/search/all.atom?keywords=deposit+return+scheme&organisations%5B%5D=department-for-environment-food-rural-affairs
+    type: rss
+    frequency: daily
+    jurisdiction: UK
+    trust: official
+  - id: govuk-hmrc-ppt
+    name: GOV.UK — HMRC Plastic Packaging Tax
+    url: https://www.gov.uk/search/all.atom?keywords=plastic+packaging+tax&organisations%5B%5D=hm-revenue-customs
+    type: rss
+    frequency: daily
+    jurisdiction: UK
+    trust: official
+  - id: govuk-pepr-collection
+    name: GOV.UK — packaging EPR collection
+    url: https://www.gov.uk/government/collections/extended-producer-responsibility-for-packaging
+    type: page-watch
+    frequency: weekly
+    jurisdiction: UK
+    trust: official
+
+  # ---------------------------------------------------------------- United States
+  - id: federal-register
+    name: US Federal Register API — plastics
+    url: https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=plastic&conditions%5Bagencies%5D%5B%5D=environmental-protection-agency&conditions%5Bagencies%5D%5B%5D=food-and-drug-administration&conditions%5Bagencies%5D%5B%5D=federal-trade-commission&conditions%5Btype%5D%5B%5D=RULE&conditions%5Btype%5D%5B%5D=PRORULE&conditions%5Btype%5D%5B%5D=NOTICE&order=newest&per_page=50
+    type: api
+    keywords: [plastic, microplastic, packaging, recycl, "green guides", "food contact", "polymer"]
+    handler: federal_register
+    frequency: daily
+    jurisdiction: US-FED
+    trust: official
+  - id: us-or-deq
+    name: Oregon DEQ — Recycling Modernization Act
+    url: https://www.oregon.gov/deq/recycling/pages/modernizing-oregons-recycling-system.aspx
+    type: page-watch
+    frequency: weekly
+    jurisdiction: US-OR
+    trust: official
+  - id: us-me-dep
+    name: Maine DEP — EPR for packaging
+    url: https://www.maine.gov/dep/waste/recycle/epr.html
+    type: page-watch
+    frequency: weekly
+    jurisdiction: US-ME
+    trust: official
+  - id: us-mn-pca
+    name: Minnesota PCA — packaging EPR
+    url: https://www.pca.state.mn.us/business-with-us/extended-producer-responsibility-for-packaging
+    type: page-watch
+    frequency: weekly
+    jurisdiction: US-MN
+    trust: official
+  - id: us-ca-calrecycle
+    name: CalRecycle — SB 54 regulations
+    url: https://calrecycle.ca.gov/packaging/packaging-epr/
+    type: page-watch
+    frequency: weekly
+    jurisdiction: US-CA
+    trust: official
+    enabled: false
+    notes: HTTP 403 to automated clients — see unreachable.md.
+
+  # ---------------------------------------------------------------- EU Member States
+  - id: fr-citeo
+    name: Citeo — packaging eco-modulation and tariffs
+    url: https://www.citeo.com/
+    type: page-watch
+    frequency: weekly
+    jurisdiction: EU-FR
+    trust: official
+    lang: fr
+    notes: State-approved (agréé) PRO; facts on eco-modulation also need the ministerial order where possible.
+  - id: fr-legifrance
+    name: Légifrance — Journal officiel
+    url: https://www.legifrance.gouv.fr/
+    type: page-watch
+    frequency: daily
+    jurisdiction: EU-FR
+    trust: official
+    lang: fr
+    enabled: false
+    notes: HTTP 403 to automated clients; the official PISTE API needs a registered key — see unreachable.md.
+  - id: nl-verpact
+    name: Verpact — fees and eco-modulation
+    url: https://www.verpact.nl/en
+    type: page-watch
+    frequency: weekly
+    jurisdiction: EU-NL
+    trust: official
+  - id: de-zsvr
+    name: Zentrale Stelle Verpackungsregister — news
+    url: https://www.verpackungsregister.org/
+    type: page-watch
+    frequency: weekly
+    jurisdiction: EU-DE
+    trust: official
+    lang: de
+  - id: es-boe
+    name: BOE — Spanish official gazette (daily summary)
+    url: https://www.boe.es/rss/boe.php
+    type: rss
+    frequency: daily
+    jurisdiction: EU-ES
+    trust: official
+    lang: es
+    keywords: [envase, plástico, residuo, "responsabilidad ampliada"]
+  - id: it-gazzetta
+    name: Gazzetta Ufficiale — Serie generale
+    url: https://www.gazzettaufficiale.it/rss/serie_generale.xml
+    type: rss
+    frequency: daily
+    jurisdiction: EU-IT
+    trust: official
+    lang: it
+    keywords: [imballaggi, plastica, rifiuti, "responsabilità estesa"]
+  - id: se-naturvardsverket
+    name: Naturvårdsverket — producer responsibility for packaging
+    url: https://www.naturvardsverket.se/amnesomraden/producentansvar/producentansvar-for-forpackningar/
+    type: page-watch
+    frequency: weekly
+    jurisdiction: EU-SE
+    trust: official
+    lang: sv
+
+  # ---------------------------------------------------------------- China
+  - id: cn-ndrc-notices
+    name: NDRC — notices (通知)
+    url: https://www.ndrc.gov.cn/xxgk/zcfb/tz/
+    type: page-watch
+    frequency: daily
+    jurisdiction: CN
+    trust: official
+    lang: zh
+  - id: cn-govcn-policy
+    name: State Council — latest policies (最新政策)
+    url: https://www.gov.cn/zhengce/zuixin/
+    type: page-watch
+    frequency: daily
+    jurisdiction: CN
+    trust: official
+    lang: zh
+  - id: cn-mee
+    name: Ministry of Ecology and Environment — policy documents
+    url: https://www.mee.gov.cn/zcwj/
+    type: page-watch
+    frequency: daily
+    jurisdiction: CN
+    trust: official
+    lang: zh
+
+  # ---------------------------------------------------------------- Leads only (not citable)
+  - id: plastics-europe
+    name: Plastics Europe — news
+    url: https://plasticseurope.org/news/
+    type: page-watch
+    frequency: weekly
+    jurisdiction: EU
+    trust: trade-association
+  - id: pre-news
+    name: Plastics Recyclers Europe — news
+    url: https://www.plasticsrecyclers.eu/news/
+    type: page-watch
+    frequency: weekly
+    jurisdiction: EU
+    trust: trade-association
+  - id: packaging-europe
+    name: Packaging Europe — sustainability news
+    url: https://packagingeurope.com/feed
+    type: rss
+    frequency: daily
+    jurisdiction: EU
+    trust: media
+    keywords: [regulation, PPWR, EPR, directive, law, legislation, tax, ban]
+  - id: ends-europe
+    name: ENDS Europe
+    url: https://www.endseurope.com/
+    type: email-alert
+    frequency: daily
+    jurisdiction: EU
+    trust: media
+    notes: Subscription content; forward relevant alerts as leads.

@@ -155,6 +155,8 @@ def api_federal_register(client: httpx.Client, source: Source) -> list[Snapshot]
     out = []
     for doc in r.json().get("results", [])[: config()["fetch"]["max_items_per_feed"]]:
         body = f"{doc.get('title', '')}\n\n{doc.get('abstract') or ''}"
+        if not _keep(source, body):  # full-text search is broad; require a keyword in title/abstract
+            continue
         if doc.get("raw_text_url"):
             try:
                 rt = client.get(doc["raw_text_url"])
@@ -167,7 +169,69 @@ def api_federal_register(client: httpx.Client, source: Source) -> list[Snapshot]
     return out
 
 
-API_HANDLERS = {"federal_register": api_federal_register}
+CELLAR_SPARQL = "https://publications.europa.eu/webapi/rdf/sparql"
+CELLAR_QUERY = """PREFIX cdm: <http://publications.europa.eu/ontology/cdm#>
+SELECT DISTINCT ?celex ?date ?title WHERE {
+  ?work cdm:resource_legal_id_celex ?celex ; cdm:work_date_document ?date .
+  ?expr cdm:expression_belongs_to_work ?work ; cdm:expression_title ?title ;
+        cdm:expression_uses_language <http://publications.europa.eu/resource/authority/language/ENG> .
+  FILTER(?date >= "%(since)s"^^xsd:date && ?date <= "%(until)s"^^xsd:date)
+  FILTER(REGEX(?title, "%(regex)s", "i"))
+} ORDER BY DESC(?date) LIMIT 60"""
+
+
+def api_cellar(client: httpx.Client, source: Source) -> list[Snapshot]:
+    """EU legal acts and Commission documents from the Publications Office (the data behind EUR-Lex,
+    which blocks automated clients). Consolidated versions (CELEX 0...) and merger cases are skipped."""
+    since = (today() - timedelta(days=config()["fetch"]["max_feed_item_age_days"])).isoformat()
+    regex = "|".join(source.keywords) or "plastic|packaging"
+    q = CELLAR_QUERY % {"since": since, "until": today().isoformat(), "regex": regex}
+    r = client.get(CELLAR_SPARQL, params={"query": q, "format": "application/sparql-results+json"},
+                   headers={"Accept": "application/sparql-results+json"}, timeout=120)
+    r.raise_for_status()
+    out, seen = [], set()
+    for b in r.json()["results"]["bindings"]:
+        celex = b["celex"]["value"]
+        if celex in seen or celex.startswith("0") or celex[5:6] == "M" or celex.startswith("6"):
+            continue
+        seen.add(celex)
+        url = f"https://publications.europa.eu/resource/celex/{celex}"
+        try:
+            text, _, _ = fetch_url(client, url, "full")
+        except Exception as e:
+            log.info("  CELLAR text unavailable for %s (%s); keeping title only", celex, e)
+            text = b["title"]["value"]
+        out.append(make_snapshot(source, url, f"CELEX {celex}\n{text}", b["title"]["value"][:300], b["date"]["value"]))
+        if len(out) >= config()["fetch"]["max_items_per_feed"]:
+            break
+    return out
+
+
+def api_have_your_say(client: httpx.Client, source: Source) -> list[Snapshot]:
+    """Commission 'Have Your Say' initiatives. The snapshot text is built only from stable fields, so
+    its hash changes when the initiative's stage or feedback period changes."""
+    out, seen = [], set()
+    for term in source.keywords or ["plastic"]:
+        r = client.get(str(source.url), params={"text": term, "size": 20, "language": "EN"})
+        r.raise_for_status()
+        for it in r.json().get("initiativeResultDtoPage", {}).get("content", []):
+            iid = int(it["id"])
+            if iid in seen:
+                continue
+            seen.add(iid)
+            statuses = "\n".join(
+                f"Stage: {st.get('frontEndStage')}; feedback {st.get('receivingFeedbackStatus')} "
+                f"from {st.get('feedbackStartDate')} to {st.get('feedbackEndDate')}"
+                for st in it.get("currentStatuses", []))
+            snippet = _full_text(f"<p>{it.get('snippet') or ''}</p>".encode())
+            text = (f"{it.get('shortTitle')}\nReference: {it.get('reference')}\nForeseen act type: "
+                    f"{it.get('foreseenActType')}\nStatus: {it.get('initiativeStatus')}\n{statuses}\n\n{snippet}")
+            url = f"https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/{iid}_en"
+            out.append(make_snapshot(source, url, text, it.get("shortTitle")))
+    return out
+
+
+API_HANDLERS = {"federal_register": api_federal_register, "cellar": api_cellar, "have_your_say": api_have_your_say}
 
 
 def fetch_source(client: httpx.Client, source: Source) -> list[Snapshot]:
