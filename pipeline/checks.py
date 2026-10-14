@@ -156,6 +156,21 @@ def check_event_date(d: str, now: date | None = None) -> CheckResult:
                        detail=f"{d} {'<=' if ok else 'is after'} today {now}")
 
 
+def check_event_age(d: str, detected: date | None = None, max_days: int | None = None) -> CheckResult:
+    """Reject events that were already old when the pipeline first saw them: they are not news.
+
+    Age is measured from the detection date (the candidate's creation date), not from the issue date, so an
+    item does not go stale while it waits for the next issue. Month-precision dates count from month end.
+    """
+    detected = detected or today()
+    max_days = max_days if max_days is not None else config()["review"]["max_event_age_days"]
+    _, end = fuzzy_date_bounds(d)
+    age = (detected - end).days
+    ok = age <= max_days
+    return CheckResult(layer=1, name="event-age", passed=ok, severity="info" if ok else "reject",
+                       detail=f"event {d} is {age} days before detection on {detected} (limit {max_days})")
+
+
 def next_step_expired(d: str, now: date | None = None) -> bool:
     _, end = fuzzy_date_bounds(d)
     return end < (now or today())
@@ -219,8 +234,8 @@ def check_schema(draft: DraftUpdate) -> CheckResult:
 
 def deterministic_checks(draft: DraftUpdate, dossier: Dossier, snapshot_texts: list[str] | None = None,
                          status_fn=None, trusted=None, now: date | None = None,
-                         check_urls: bool | None = None) -> list[CheckResult]:
-    """All layer-1 and layer-2 checks for a drafted update."""
+                         check_urls: bool | None = None, detected: date | None = None) -> list[CheckResult]:
+    """All layer-1 and layer-2 checks for a drafted update. `detected`: when the candidate was first seen."""
     if check_urls is None:
         check_urls = config()["review"]["check_source_urls"]
     results = [check_schema(draft), check_domain(draft.source_url, trusted)]
@@ -228,6 +243,7 @@ def deterministic_checks(draft: DraftUpdate, dossier: Dossier, snapshot_texts: l
         results.append(check_url_live(draft.source_url, status_fn))
     results += [
         check_event_date(draft.date, now),
+        check_event_age(draft.date, detected or now),
         check_stage_change(dossier.stage, draft.stage_change),
         check_duplicate(draft, dossier),
         check_quote(draft.source_quote, draft.source_url, snapshot_texts),

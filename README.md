@@ -29,7 +29,7 @@ biweekly: L1+L2 re-check → L4 editorial review → publish gate ──▶ issu
 ## Review layers
 
 1. **Deterministic (code):** pydantic schema; every `source_url` returns HTTP 200 and is on the official-domain whitelist;
-   event dates not in the future; past next steps marked *to be confirmed*; stage moves only forward (backward or a jump of
+   event dates not in the future and no more than 60 days old when first detected; past next steps marked *to be confirmed*; stage moves only forward (backward or a jump of
    more than two stages goes to a human); no duplicate events.
 2. **Provenance (code):** the `source_quote`, normalised for whitespace, quotation marks and case, must be found in a saved
    snapshot of the cited URL. Otherwise the update is rejected.

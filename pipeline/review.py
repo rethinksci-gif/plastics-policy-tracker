@@ -69,7 +69,8 @@ def layer3(llm: LLM, claim: str, url: str, source_text: str, quote: str, impact:
 
 def review_candidate(llm: LLM | None, c: Candidate, dossier: Dossier, status_fn=None,
                      check_urls: bool | None = None) -> ReviewRecord:
-    checks: list[CheckResult] = deterministic_checks(c.draft, dossier, status_fn=status_fn, check_urls=check_urls)
+    checks: list[CheckResult] = deterministic_checks(c.draft, dossier, status_fn=status_fn, check_urls=check_urls,
+                                                       detected=c.created)
     reasons = [f"L{r.layer} {r.name}: {r.detail}" for r in blocking(checks)]
     if c.source_trust != "official":
         reasons.insert(0, f"L1 source-trust: lead came from a {c.source_trust} source; facts need an official source")

@@ -150,3 +150,25 @@ def test_review_excerpt_contains_quote_in_long_document():
     ex = excerpt_for_review(long_text, "The act will apply from 1 January 2027.", 20000)
     assert len(ex) < 22000
     assert quote_in_text("The act will apply from 1 January 2027.", ex)[0]
+
+
+# --- layer 1: stale events -----------------------------------------------------------
+
+
+def test_stale_event_is_rejected(dossier):
+    d = draft(date="2025-09-22")  # the issue-1 pellet item: a year old when detected
+    assert any(r.name == "event-age" for r in blocking(run(d, dossier)))
+
+
+def test_event_age_boundaries():
+    from pipeline.checks import check_event_age
+    assert check_event_age("2026-08-15", detected=TODAY, max_days=60).passed       # 60 days
+    assert not check_event_age("2026-08-14", detected=TODAY, max_days=60).passed   # 61 days
+    assert check_event_age("2026-08", detected=TODAY, max_days=60).passed          # month counts from 31 Aug
+
+
+def test_age_measured_from_detection_not_issue_date(dossier):
+    # detected 50 days after the event; the issue is composed three weeks later -> still accepted
+    res = deterministic_checks(draft(date="2026-08-01"), dossier, status_fn=lambda u: 200, trusted=TRUSTED,
+                               now=date(2026, 10, 14), check_urls=True, detected=date(2026, 9, 20))
+    assert not any(r.name == "event-age" for r in blocking(res))

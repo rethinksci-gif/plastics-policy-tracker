@@ -46,6 +46,8 @@ triage:
 
 review:
   min_confidence: 0.8
+  # Events older than this when first detected are not news and are rejected at layer 1.
+  max_event_age_days: 60
   # Stage moves larger than this many steps forward are flagged for human review.
   max_stage_jump: 2
   check_source_urls: true

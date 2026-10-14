@@ -22,6 +22,7 @@ import { url } from '../lib/data';
       <li>Every record is validated against a strict schema.</li>
       <li>Every source link must return HTTP 200 and be on our whitelist of official domains.</li>
       <li>Dates must make sense: an event that has happened cannot be dated after today; next steps whose date has passed are marked <em>to be confirmed</em>.</li>
+      <li>Only news counts: an event that was already more than 60 days old when we first detected it is rejected.</li>
       <li>Stage changes must be legal: stages only move forward. A backwards move, a jump of more than two stages, or a move to <em>withdrawn</em>/<em>stalled</em> is sent to a human.</li>
       <li>The same event cannot be recorded twice in a dossier.</li>
     </ul>

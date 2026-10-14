@@ -238,7 +238,8 @@ def run(llm: LLM, dry_run: bool = False, issue_date: date | None = None, status_
     # Global re-check of layers 1+2 (dates, duplicates and provenance may have changed since the daily run).
     recheck_failures = {}
     for c in list(passed):
-        res = deterministic_checks(c.draft, dossiers[c.triage.dossier_id], status_fn=status_fn)
+        res = deterministic_checks(c.draft, dossiers[c.triage.dossier_id], status_fn=status_fn,
+                                   detected=c.created)
         bad = blocking(res)
         if bad:
             recheck_failures[c.id] = [f"L{r.layer} {r.name}: {r.detail}" for r in bad]
