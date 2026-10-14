@@ -1,0 +1,63 @@
+{
+ "review_id": "2026-10-14-002",
+ "candidate_id": "2026-10-14-002",
+ "dossier_id": "eu-ppwr",
+ "created": "2026-10-14T10:46:23.076846Z",
+ "impact": "high",
+ "checks": [
+  {
+   "layer": 1,
+   "name": "schema",
+   "passed": true,
+   "severity": "info",
+   "detail": "valid"
+  },
+  {
+   "layer": 1,
+   "name": "trusted-domain",
+   "passed": true,
+   "severity": "info",
+   "detail": "domain trust: official"
+  },
+  {
+   "layer": 1,
+   "name": "url-200",
+   "passed": false,
+   "severity": "reject",
+   "detail": "HTTP 202"
+  },
+  {
+   "layer": 1,
+   "name": "event-date",
+   "passed": true,
+   "severity": "info",
+   "detail": "2026-10-09 <= today 2026-10-14"
+  },
+  {
+   "layer": 1,
+   "name": "stage-transition",
+   "passed": true,
+   "severity": "info",
+   "detail": "no stage change"
+  },
+  {
+   "layer": 1,
+   "name": "duplicate",
+   "passed": true,
+   "severity": "info",
+   "detail": "no duplicate"
+  },
+  {
+   "layer": 2,
+   "name": "quote-provenance",
+   "passed": true,
+   "severity": "info",
+   "detail": "verbatim quote found in snapshot"
+  }
+ ],
+ "llm_review": null,
+ "outcome": "quarantined",
+ "reasons": [
+  "L1 url-200: HTTP 202"
+ ]
+}

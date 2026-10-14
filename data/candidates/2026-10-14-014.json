@@ -1,0 +1,20 @@
+{
+ "id": "2026-10-14-014",
+ "created": "2026-10-14",
+ "snapshot_id": "2026-10-14/govuk-search-f04fec89dd",
+ "source_id": "govuk-search",
+ "source_url": "https://www.gov.uk/guidance/issuing-prns-and-perns-as-a-reprocessor-or-exporter",
+ "source_trust": "official",
+ "title": "Issuing PRNs and PERNs as a reprocessor or exporter - GOV.UK",
+ "triage": {
+  "relevance": 0.7,
+  "dossier_id": "uk-pepr",
+  "new_dossier_suggestion": null,
+  "category": "guidance",
+  "reason": "GOV.UK published updated official guidance (1 Oct 2026) for accredited reprocessors and exporters on issuing PRNs/PERNs under UK packaging EPR, including the new 2026-27 allowance to issue on 'reasonably associated' material, which sets out operative rules for producers' recycling obligations."
+ },
+ "draft": null,
+ "status": "discarded",
+ "review_id": null,
+ "issue": null
+}

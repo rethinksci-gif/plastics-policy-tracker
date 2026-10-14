@@ -1,0 +1,43 @@
+{
+ "id": "2026-10-14-008",
+ "created": "2026-10-14",
+ "snapshot_id": "2026-10-14/eu-have-your-say-7fa75a88b9",
+ "source_id": "eu-have-your-say",
+ "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14712_en",
+ "source_trust": "official",
+ "title": "Green-listing certain waste for the purposes of shipments to recovery between Member States",
+ "triage": {
+  "relevance": 0.7,
+  "dossier_id": "eu-wsr",
+  "new_dossier_suggestion": null,
+  "category": "consultation",
+  "reason": "A Commission delegated regulation on green-listing certain waste for shipments to recovery under the Waste Shipment Regulation is in active preparation, with its public feedback period closing on 15 September 2026, a recent concrete step."
+ },
+ "draft": {
+  "dossier_id": "eu-wsr",
+  "date": "2026-09-15",
+  "summary": "The feedback period for the initiative 'Green-listing certain waste for the purposes of shipments to recovery between Member States' closed on 15 September 2026.",
+  "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14712_en",
+  "source_quote": "frontEndStage: ISC_WORKFLOW; receivingFeedbackStatus: CLOSED; feedbackStartDate: 2026/08/18 15:16:00; feedbackEndDate: 2026/09/15 23:59:59",
+  "source_quote_en": null,
+  "source_lang": "en",
+  "stage_change": null,
+  "next_steps": [],
+  "key_dates": [
+   {
+    "date": "2026-08-18",
+    "text": "Feedback period on the green-listing initiative opens.",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14712_en"
+   },
+   {
+    "date": "2026-09-15",
+    "text": "Feedback period on the green-listing initiative closes.",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14712_en"
+   }
+  ],
+  "interpretation": "If adopted, the delegated regulation may ease administrative requirements for intra-EU shipments of the listed waste to recovery, which could benefit recyclers and converters using such waste."
+ },
+ "status": "passed",
+ "review_id": "2026-10-14-008",
+ "issue": null
+}

@@ -1,27 +1,76 @@
 {
  "passed": [
   {
-   "review_id": "seed-eu-ppwr-004",
-   "dossier": "eu-ppwr",
+   "review_id": "seed-cn-plastic-pollution-control-001",
+   "dossier": "cn-plastic-pollution-control",
    "reasons": []
   },
   {
-   "review_id": "seed-eu-ppwr-003",
-   "dossier": "eu-ppwr",
+   "review_id": "seed-cn-recycled-plastic-standards-003",
+   "dossier": "cn-recycled-plastic-standards",
    "reasons": []
   },
   {
-   "review_id": "seed-eu-ppwr-002",
-   "dossier": "eu-ppwr",
+   "review_id": "seed-cn-recycled-plastic-standards-002",
+   "dossier": "cn-recycled-plastic-standards",
    "reasons": []
   },
   {
-   "review_id": "seed-eu-ppwr-001",
-   "dossier": "eu-ppwr",
+   "review_id": "seed-cn-recycled-plastic-standards-001",
+   "dossier": "cn-recycled-plastic-standards",
+   "reasons": []
+  },
+  {
+   "review_id": "seed-eu-iaa-002",
+   "dossier": "eu-iaa",
+   "reasons": []
+  },
+  {
+   "review_id": "seed-eu-iaa-001",
+   "dossier": "eu-iaa",
+   "reasons": []
+  },
+  {
+   "review_id": "seed-eu-reach-microplastics-002",
+   "dossier": "eu-reach-microplastics",
+   "reasons": []
+  },
+  {
+   "review_id": "seed-eu-reach-microplastics-001",
+   "dossier": "eu-reach-microplastics",
+   "reasons": []
+  },
+  {
+   "review_id": "seed-fr-epr-packaging-recycled-bonus-002",
+   "dossier": "fr-epr-packaging-recycled-bonus",
+   "reasons": []
+  },
+  {
+   "review_id": "seed-fr-epr-packaging-recycled-bonus-003",
+   "dossier": "fr-epr-packaging-recycled-bonus",
+   "reasons": []
+  },
+  {
+   "review_id": "seed-fr-epr-packaging-recycled-bonus-001",
+   "dossier": "fr-epr-packaging-recycled-bonus",
+   "reasons": []
+  },
+  {
+   "review_id": "seed-nl-verpact-fees-003",
+   "dossier": "nl-verpact-fees",
+   "reasons": []
+  },
+  {
+   "review_id": "seed-us-or-rma-002",
+   "dossier": "us-or-rma",
+   "reasons": []
+  },
+  {
+   "review_id": "seed-us-or-rma-001",
+   "dossier": "us-or-rma",
    "reasons": []
   }
  ],
  "failed": [],
- "skipped": 0,
- "llm_calls": 4
+ "llm_calls": 14
 }

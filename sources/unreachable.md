@@ -21,3 +21,4 @@ alternative exists, it is used instead (and noted here).
 | Packaging Europe RSS (`packagingeurope.com/feed`) | HTTP 404 | Lead source only. |
 | Washington Ecology Recycling Reform page | URL tried returned 404 | Session law text from `lawfilesext.leg.wa.gov`. |
 | Verpact news pages (`verpact.nl/nl/actueel/...`) | Rendered client-side; static HTML has only the title | Verpact's rates and fee-modulation pages, which are static. |
+| European Parliament documents (`www.europarl.europa.eu/doceo/...`) | Pages and PDFs fetched fine early in the day, then returned HTTP 202 (bot challenge) to every request. The RSS teaser text is still captured, but the HTTP 200 check fails, so such items are quarantined for a human | The Legislative Observatory (`oeil.secure.europarl.europa.eu`) answers normally and the relevant procedures are page-watched. |

@@ -1,0 +1,43 @@
+{
+ "id": "2026-10-14-007",
+ "created": "2026-10-14",
+ "snapshot_id": "2026-10-14/eu-have-your-say-7c624a3192",
+ "source_id": "eu-have-your-say",
+ "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/17712_en",
+ "source_trust": "official",
+ "title": "Early warning report on waste 2027",
+ "triage": {
+  "relevance": 0.9,
+  "dossier_id": "eu-wfd",
+  "new_dossier_suggestion": null,
+  "category": "consultation",
+  "reason": "The Commission opened public feedback on 28 September 2026 for the Early Warning Report on waste 2027, covering packaging and municipal waste reduction and recycling targets, making it a new consultation development under the Waste Framework Directive."
+ },
+ "draft": {
+  "dossier_id": "eu-wfd",
+  "date": "2026-09-28",
+  "summary": "A feedback period for the Early warning report on waste 2027 opened on 28 September 2026 and is open until 26 October 2026.",
+  "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/17712_en",
+  "source_quote": "frontEndStage: PLANNING_WORKFLOW; receivingFeedbackStatus: OPEN; feedbackStartDate: 2026/09/28 10:32:00; feedbackEndDate: 2026/10/26 23:59:59",
+  "source_quote_en": null,
+  "source_lang": "en",
+  "stage_change": null,
+  "next_steps": [],
+  "key_dates": [
+   {
+    "date": "2026-09-28",
+    "text": "Feedback period for the Early warning report on waste 2027 opened.",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/17712_en"
+   },
+   {
+    "date": "2026-10-26",
+    "text": "Feedback period for the Early warning report on waste 2027 ends.",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/17712_en"
+   }
+  ],
+  "interpretation": null
+ },
+ "status": "passed",
+ "review_id": "2026-10-14-007",
+ "issue": null
+}

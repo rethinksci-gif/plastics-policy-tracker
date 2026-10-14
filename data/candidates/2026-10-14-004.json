@@ -1,0 +1,43 @@
+{
+ "id": "2026-10-14-004",
+ "created": "2026-10-14",
+ "snapshot_id": "2026-10-14/eu-have-your-say-3b91dcb025",
+ "source_id": "eu-have-your-say",
+ "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14861_en",
+ "source_trust": "official",
+ "title": "List of non-OECD countries that are authorized to import certain non-hazardous waste from the EU",
+ "triage": {
+  "relevance": 0.85,
+  "dossier_id": "eu-wsr",
+  "new_dossier_suggestion": null,
+  "category": "consultation",
+  "reason": "The Commission has opened public feedback (18 Sep–16 Oct 2026) on a draft delegated regulation listing non-OECD countries authorised to import certain non-hazardous EU waste under the Waste Shipment Regulation, a concrete implementing step of Regulation (EU) 2024/1157."
+ },
+ "draft": {
+  "dossier_id": "eu-wsr",
+  "date": "2026-09-18",
+  "summary": "The European Commission opened a feedback period from 18 September 2026 to 16 October 2026 on a delegated regulation establishing a list of non-OECD countries authorised to import certain non-hazardous waste from the EU. The new Waste Shipment Regulation bans the export of non-hazardous waste to non-OECD countries from 21 May 2027.",
+  "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14861_en",
+  "source_quote": "shortTitle: List of non-OECD countries that are authorized to import certain non-hazardous waste from the EU\nreference: Ares(2025)7729795\nforeseenActType: REG_DEL\ninitiativeStatus: ACTIVE\nfrontEndStage: ISC_WORKFLOW; receivingFeedbackStatus: OPEN; feedbackStartDate: 2026/09/18 11:38:36; feedbackEndDate: 2026/10/16 23:59:59",
+  "source_quote_en": null,
+  "source_lang": "en",
+  "stage_change": null,
+  "next_steps": [],
+  "key_dates": [
+   {
+    "date": "2026-10-16",
+    "text": "Feedback period on the delegated regulation ends.",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14861_en"
+   },
+   {
+    "date": "2027-05-21",
+    "text": "The new Waste Shipment Regulation bans the export of non-hazardous waste to non-OECD countries from 21 May 2027.",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14861_en"
+   }
+  ],
+  "interpretation": "Recyclers and exporters of certain non-hazardous waste may need to monitor the final list of authorised non-OECD countries, as exports to unlisted non-OECD countries will be prohibited from 21 May 2027."
+ },
+ "status": "passed",
+ "review_id": "2026-10-14-004",
+ "issue": null
+}

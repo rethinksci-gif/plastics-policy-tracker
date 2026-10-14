@@ -1,0 +1,76 @@
+{
+ "review_id": "2026-10-14-012",
+ "candidate_id": "2026-10-14-012",
+ "dossier_id": "eu-public-procurement",
+ "created": "2026-10-14T10:46:48.933546Z",
+ "impact": "medium",
+ "checks": [
+  {
+   "layer": 1,
+   "name": "schema",
+   "passed": true,
+   "severity": "info",
+   "detail": "valid"
+  },
+  {
+   "layer": 1,
+   "name": "trusted-domain",
+   "passed": true,
+   "severity": "info",
+   "detail": "domain trust: official"
+  },
+  {
+   "layer": 1,
+   "name": "url-200",
+   "passed": true,
+   "severity": "info",
+   "detail": "HTTP 200"
+  },
+  {
+   "layer": 1,
+   "name": "event-date",
+   "passed": true,
+   "severity": "info",
+   "detail": "2026-09-15 <= today 2026-10-14"
+  },
+  {
+   "layer": 1,
+   "name": "stage-transition",
+   "passed": true,
+   "severity": "info",
+   "detail": "no stage change"
+  },
+  {
+   "layer": 1,
+   "name": "duplicate",
+   "passed": true,
+   "severity": "info",
+   "detail": "no duplicate"
+  },
+  {
+   "layer": 2,
+   "name": "quote-provenance",
+   "passed": true,
+   "severity": "info",
+   "detail": "verbatim quote found in snapshot"
+  }
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "quote_supports_summary": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "bodies_match": true,
+   "references_match": true,
+   "no_exaggeration": true,
+   "stage_supported": true,
+   "next_steps_supported": true,
+   "translation_faithful": true
+  },
+  "issues": []
+ },
+ "outcome": "passed",
+ "reasons": []
+}

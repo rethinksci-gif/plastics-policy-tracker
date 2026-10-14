@@ -59,6 +59,35 @@ sources:
     jurisdiction: EU
     trust: official
 
+  - id: oeil-omnibus-epr-reps
+    name: Legislative Observatory — 2025/0396(COD) suspending EPR authorised-representative rules (waste, WEEE, SUP)
+    url: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0396(COD)
+    type: page-watch
+    frequency: daily
+    jurisdiction: EU
+    trust: official
+  - id: oeil-omnibus-epr-reps-ppwr
+    name: Legislative Observatory — 2025/0397(COD) suspending EPR authorised-representative rules (batteries, packaging)
+    url: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0397(COD)
+    type: page-watch
+    frequency: daily
+    jurisdiction: EU
+    trust: official
+  - id: oeil-iaa
+    name: Legislative Observatory — 2026/0068(COD) Industrial Accelerator Act
+    url: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0068(COD)
+    type: page-watch
+    frequency: weekly
+    jurisdiction: EU
+    trust: official
+  - id: oeil-procurement
+    name: Legislative Observatory — 2026/0265(COD) Public Procurement Regulation
+    url: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)
+    type: page-watch
+    frequency: daily
+    jurisdiction: EU
+    trust: official
+
   - id: council-press
     name: Council of the EU — press releases
     url: https://www.consilium.europa.eu/en/rss/pressreleases.ashx

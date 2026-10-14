@@ -160,6 +160,8 @@ def fetch_rss(client: httpx.Client, source: Source) -> list[Snapshot]:
         except Exception as e:  # keep the feed teaser rather than nothing; it is still the publisher's text
             log.info("  item fetch failed (%s), keeping feed text: %s", e, link)
             text, title = trafilatura.extract(teaser) or teaser, None
+        if published:
+            text = f"published: {entry.get('published') or entry.get('updated')}\n\n{text}"
         out.append(make_snapshot(source, link, text, title or entry.get("title"), published))
     return out
 
@@ -274,7 +276,8 @@ def api_govuk_search(client: httpx.Client, source: Source) -> list[Snapshot]:
             except Exception as e:
                 log.info("  page fetch failed (%s): %s", e, url)
                 continue
-            out.append(make_snapshot(source, url, text, title or res.get("title"), ts))
+            header = f"public_timestamp: {res.get('public_timestamp')}\ntitle: {res.get('title')}\n\n"
+            out.append(make_snapshot(source, url, header + text, title or res.get("title"), ts))
     return out
 
 

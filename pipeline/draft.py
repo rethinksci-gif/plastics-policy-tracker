@@ -6,7 +6,7 @@ import logging
 
 from pydantic import BaseModel, model_validator
 
-from .config import config, model_pro
+from .config import config, model_pro, today
 from .llm import LLM, parallel_map, prompt_parts
 from .models import DraftUpdate
 from .store import load_candidates, load_dossiers, load_snapshot, save_candidate
@@ -36,7 +36,7 @@ def run(llm: LLM) -> dict:
         snap = load_snapshot(cand.snapshot_id)
         recent = "\n".join(f"- {u.date}: {u.summary}" for u in d.updates[:5]) or "(none)"
         system, user = prompt_parts(
-            "drafter", stage=d.stage, url=snap.url, dossier_id=d.id, dossier_title=d.title,
+            "drafter", today=today().isoformat(), stage=d.stage, url=snap.url, dossier_id=d.id, dossier_title=d.title,
             jurisdiction=d.jurisdiction, recent_updates=recent, title=snap.title or "",
             published=snap.published or "unknown", text=snap.text[:limit],
         )

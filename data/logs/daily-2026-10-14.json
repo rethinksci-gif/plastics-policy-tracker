@@ -1,0 +1,1206 @@
+{
+ "date": "2026-10-14",
+ "fetch": {
+  "new": [
+   "2026-10-14/cn-govcn-policy-e9e76abe39",
+   "2026-10-14/cn-mee-4149271e67",
+   "2026-10-14/cn-samr-recycled-plastics-7433a0d166",
+   "2026-10-14/dg-env-news-9a54fb5b21",
+   "2026-10-14/dg-env-plastics-79e7aaf128",
+   "2026-10-14/efsa-15a71fccc2",
+   "2026-10-14/efsa-29abc6d15d",
+   "2026-10-14/efsa-5a8cd4ffba",
+   "2026-10-14/efsa-7d931e9939",
+   "2026-10-14/efsa-8fb8eb844a",
+   "2026-10-14/efsa-cbef842b39",
+   "2026-10-14/efsa-cd9889d3cc",
+   "2026-10-14/efsa-d14b1bdd66",
+   "2026-10-14/ep-envi-1cbf382789",
+   "2026-10-14/ep-envi-2ef0febfa9",
+   "2026-10-14/ep-envi-7de5e71644",
+   "2026-10-14/ep-envi-c863513d0f",
+   "2026-10-14/eu-have-your-say-0731348826",
+   "2026-10-14/eu-have-your-say-0f3334d0d7",
+   "2026-10-14/eu-have-your-say-12821b8743",
+   "2026-10-14/eu-have-your-say-140b9c5493",
+   "2026-10-14/eu-have-your-say-14fcfdb4ca",
+   "2026-10-14/eu-have-your-say-18e2340dff",
+   "2026-10-14/eu-have-your-say-18ef2cc5c8",
+   "2026-10-14/eu-have-your-say-1cb8c38480",
+   "2026-10-14/eu-have-your-say-24d2c7cf85",
+   "2026-10-14/eu-have-your-say-2f95663613",
+   "2026-10-14/eu-have-your-say-2fe28ca456",
+   "2026-10-14/eu-have-your-say-31e9af5a3d",
+   "2026-10-14/eu-have-your-say-34ff1e584a",
+   "2026-10-14/eu-have-your-say-35eb5b54e6",
+   "2026-10-14/eu-have-your-say-35ec2970f7",
+   "2026-10-14/eu-have-your-say-362bb028b1",
+   "2026-10-14/eu-have-your-say-37914adbb6",
+   "2026-10-14/eu-have-your-say-384093bef6",
+   "2026-10-14/eu-have-your-say-3b91dcb025",
+   "2026-10-14/eu-have-your-say-3c6d66fc73",
+   "2026-10-14/eu-have-your-say-41345e1418",
+   "2026-10-14/eu-have-your-say-42b27fb0db",
+   "2026-10-14/eu-have-your-say-42c382efdd",
+   "2026-10-14/eu-have-your-say-47a7739353",
+   "2026-10-14/eu-have-your-say-4da4720282",
+   "2026-10-14/eu-have-your-say-55f3a02929",
+   "2026-10-14/eu-have-your-say-5769711aec",
+   "2026-10-14/eu-have-your-say-5c3aa8dba4",
+   "2026-10-14/eu-have-your-say-5c3d9b3c84",
+   "2026-10-14/eu-have-your-say-61fabbcf3d",
+   "2026-10-14/eu-have-your-say-63914f3f7d",
+   "2026-10-14/eu-have-your-say-63fb32e108",
+   "2026-10-14/eu-have-your-say-6550373a25",
+   "2026-10-14/eu-have-your-say-68682e3fdd",
+   "2026-10-14/eu-have-your-say-687b9d1342",
+   "2026-10-14/eu-have-your-say-7c624a3192",
+   "2026-10-14/eu-have-your-say-7d521d4bce",
+   "2026-10-14/eu-have-your-say-7fa75a88b9",
+   "2026-10-14/eu-have-your-say-7fc8f4e677",
+   "2026-10-14/eu-have-your-say-827aeae9c8",
+   "2026-10-14/eu-have-your-say-832b408ffe",
+   "2026-10-14/eu-have-your-say-84e4bf988c",
+   "2026-10-14/eu-have-your-say-868e3cf21e",
+   "2026-10-14/eu-have-your-say-86ff6788dd",
+   "2026-10-14/eu-have-your-say-89b32d231b",
+   "2026-10-14/eu-have-your-say-8a9ea156cb",
+   "2026-10-14/eu-have-your-say-8d51a8ce88",
+   "2026-10-14/eu-have-your-say-8f88b5739f",
+   "2026-10-14/eu-have-your-say-90ad52ffe0",
+   "2026-10-14/eu-have-your-say-9195620892",
+   "2026-10-14/eu-have-your-say-97a61f1f11",
+   "2026-10-14/eu-have-your-say-9c7cf3eaca",
+   "2026-10-14/eu-have-your-say-9db165a248",
+   "2026-10-14/eu-have-your-say-9e6ab817ff",
+   "2026-10-14/eu-have-your-say-b007f6cc60",
+   "2026-10-14/eu-have-your-say-bb56c3f729",
+   "2026-10-14/eu-have-your-say-bbd22983e2",
+   "2026-10-14/eu-have-your-say-c1522a7ef5",
+   "2026-10-14/eu-have-your-say-c15cb5e039",
+   "2026-10-14/eu-have-your-say-c1ef6011ad",
+   "2026-10-14/eu-have-your-say-c34ca8e1ce",
+   "2026-10-14/eu-have-your-say-c3d8b24853",
+   "2026-10-14/eu-have-your-say-c4123dd671",
+   "2026-10-14/eu-have-your-say-c4928d59b8",
+   "2026-10-14/eu-have-your-say-c85e13032e",
+   "2026-10-14/eu-have-your-say-c937e371d7",
+   "2026-10-14/eu-have-your-say-c9be381e40",
+   "2026-10-14/eu-have-your-say-ce5eda64ab",
+   "2026-10-14/eu-have-your-say-d05ee4f532",
+   "2026-10-14/eu-have-your-say-d8570f3f9a",
+   "2026-10-14/eu-have-your-say-da2920e312",
+   "2026-10-14/eu-have-your-say-db4e16f978",
+   "2026-10-14/eu-have-your-say-dbed4b73b9",
+   "2026-10-14/eu-have-your-say-dc247a9e08",
+   "2026-10-14/eu-have-your-say-e0a60705d6",
+   "2026-10-14/eu-have-your-say-e33e1d05b6",
+   "2026-10-14/eu-have-your-say-e37104c3ec",
+   "2026-10-14/eu-have-your-say-e3f0aa694a",
+   "2026-10-14/eu-have-your-say-e984d895a6",
+   "2026-10-14/eu-have-your-say-ec1afa262b",
+   "2026-10-14/eu-have-your-say-f33f95c008",
+   "2026-10-14/eu-have-your-say-f71a7cab05",
+   "2026-10-14/eu-have-your-say-f986f9d7d3",
+   "2026-10-14/eu-have-your-say-fc22d3af08",
+   "2026-10-14/eu-have-your-say-fdeade4bc6",
+   "2026-10-14/eu-have-your-say-fe729acecd",
+   "2026-10-14/federal-register-d2b1bcbed2",
+   "2026-10-14/fr-citeo-ae25f06307",
+   "2026-10-14/govuk-search-0716946227",
+   "2026-10-14/govuk-search-3bce899ab9",
+   "2026-10-14/govuk-search-4fb8a2bc5f",
+   "2026-10-14/govuk-search-ca6063307f",
+   "2026-10-14/govuk-search-d866201125",
+   "2026-10-14/govuk-search-f04fec89dd",
+   "2026-10-14/govuk-search-f53c1d4e1a",
+   "2026-10-14/it-gazzetta-005fa6aa3d",
+   "2026-10-14/nl-verpact-751869e567",
+   "2026-10-14/nl-verpact-e0be056971",
+   "2026-10-14/nl-verpact-ef23364836",
+   "2026-10-14/oeil-omnibus-epr-reps-10dc33fb72",
+   "2026-10-14/oeil-omnibus-epr-reps-ppwr-c2b314c45e",
+   "2026-10-14/oeil-pellets-016db5b31a",
+   "2026-10-14/oeil-ppwr-7c77acaa2e",
+   "2026-10-14/oeil-wfd-f43fb07ca0",
+   "2026-10-14/pre-news-ffb292afeb"
+  ]
+ },
+ "triage": {
+  "candidates": [
+   "2026-10-14-001",
+   "2026-10-14-002",
+   "2026-10-14-003",
+   "2026-10-14-004",
+   "2026-10-14-005",
+   "2026-10-14-006",
+   "2026-10-14-007",
+   "2026-10-14-008",
+   "2026-10-14-009",
+   "2026-10-14-010",
+   "2026-10-14-011",
+   "2026-10-14-012",
+   "2026-10-14-013",
+   "2026-10-14-014"
+  ],
+  "discarded": [
+   {
+    "snapshot": "2026-10-14/cn-govcn-policy-e9e76abe39",
+    "url": "https://www.gov.cn/zhengce/zuixin/",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The document is only the navigation/header of the State Council's 'latest policies' index page with no substantive content, so it reports no new concrete plastics-related development."
+   },
+   {
+    "snapshot": "2026-10-14/cn-mee-4149271e67",
+    "url": "https://www.mee.gov.cn/zcwj/",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The document is a generic index page of Chinese environmental policy documents and does not report a new concrete plastics-related law, regulation, standard, tax, or EPR development."
+   },
+   {
+    "snapshot": "2026-10-14/cn-samr-recycled-plastics-7433a0d166",
+    "url": "https://std.samr.gov.cn/gb/search/gbQueryPage?searchText=%E5%86%8D%E7%94%9F%E5%A1%91%E6%96%99&sortOrder=desc&pageSize=20&pageNumber=1",
+    "relevance": 0.3,
+    "dossier_id": "cn-recycled-plastic-standards",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "SAMR standards database listing of recycled plastics standards shows only older or upcoming standards issued in July 2026, outside the last 60 days, with no new concrete development reported."
+   },
+   {
+    "snapshot": "2026-10-14/dg-env-news-9a54fb5b21",
+    "url": "https://environment.ec.europa.eu/news_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "A generic DG Environment news index page whose items concern water resilience, agriculture emissions, Ecolabel and green cities \u2014 no concrete plastics law, regulation, tax, EPR or treaty development."
+   },
+   {
+    "snapshot": "2026-10-14/dg-env-plastics-79e7aaf128",
+    "url": "https://environment.ec.europa.eu/topics/plastics_en",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "Generic DG Environment overview topic page with no new concrete development, event date or legal change reported."
+   },
+   {
+    "snapshot": "2026-10-14/efsa-15a71fccc2",
+    "url": "https://www.efsa.europa.eu/en/events/19th-plenary-meeting-panel-food-contact-materials-fcm",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is only a save-the-date notice for a future EFSA food contact materials panel meeting, not a concrete plastics law or regulatory development."
+   },
+   {
+    "snapshot": "2026-10-14/efsa-29abc6d15d",
+    "url": "https://www.efsa.europa.eu/en/events/18th-plenary-meeting-panel-food-contact-materials-fcm",
+    "relevance": 0.2,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is only an announcement of a future EFSA panel meeting (March 2027) with no new legal or regulatory development on plastics."
+   },
+   {
+    "snapshot": "2026-10-14/efsa-5a8cd4ffba",
+    "url": "https://www.efsa.europa.eu/en/events/22nd-plenary-meeting-panel-food-contact-materials-fcm",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is only an event announcement for a future EFSA food contact materials panel plenary meeting, not a new concrete plastics law or regulatory development."
+   },
+   {
+    "snapshot": "2026-10-14/efsa-7d931e9939",
+    "url": "https://www.efsa.europa.eu/en/events/20th-plenary-meeting-panel-food-contact-materials-fcm",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is an EFSA event announcement for a future plenary meeting, not a new concrete development in a plastics law, regulation, or standard."
+   },
+   {
+    "snapshot": "2026-10-14/efsa-8fb8eb844a",
+    "url": "https://www.efsa.europa.eu/en/events/23rd-plenary-meeting-panel-food-contact-materials-fcm",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is only an event announcement for a future EFSA panel plenary meeting in 2027 with no concrete plastics regulatory development."
+   },
+   {
+    "snapshot": "2026-10-14/efsa-cbef842b39",
+    "url": "https://www.efsa.europa.eu/en/podcast/episode-44-forever-chemicals-what-are-health-risks-pfas",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "EFSA podcast on PFAS health risks is educational background, not a new plastics law or regulatory development."
+   },
+   {
+    "snapshot": "2026-10-14/efsa-cd9889d3cc",
+    "url": "https://www.efsa.europa.eu/en/events/21st-plenary-meeting-panel-food-contact-materials-fcm",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is only an EFSA event/plenary meeting announcement for September 2027 with no legal decision, proposal or regulatory change concerning plastics."
+   },
+   {
+    "snapshot": "2026-10-14/efsa-d14b1bdd66",
+    "url": "https://www.efsa.europa.eu/en/events/17th-plenary-meeting-panel-food-contact-materials-fcm",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is only an announcement of a future EFSA panel plenary meeting with no concrete plastics law, regulation or policy development."
+   },
+   {
+    "snapshot": "2026-10-14/ep-envi-1cbf382789",
+    "url": "https://www.europarl.europa.eu/committees/en/product/product-details/20260929CAN79685",
+    "relevance": 0.05,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "legislative-step",
+    "reason": "The document covers ENVI committee consideration of draft reports on the EU ETS Directive revision and the maritime MRV Regulation, which concern climate/emissions policy and have no link to plastics, packaging, waste or plastics-related chemicals."
+   },
+   {
+    "snapshot": "2026-10-14/ep-envi-7de5e71644",
+    "url": "https://www.europarl.europa.eu/committees/en/product/product-details/20260929CAN79687",
+    "relevance": 0.85,
+    "dossier_id": null,
+    "new_dossier_suggestion": "EU Environmental Omnibus / EPR authorised representative requirements \u2014 Commission proposals (10 Dec 2025) and ENVI draft reports suspending the obligation to appoint authorised representatives under EPR schemes for batteries, packaging (PPWR), WEEE and single-use plastics; cross-cutting instrument affecting multiple EPR dossiers, no single existing dossier covers it.",
+    "category": "legislative-step",
+    "reason": "ENVI voted on 5 October 2026 on draft reports amending EPR authorised-representative rules across packaging, WEEE, batteries and single-use plastics legislation, a concrete recent legislative step that spans several instruments."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-0731348826",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/18512_en",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "EU consultation reviewing the International Procurement Instrument is unrelated to plastics, packaging, waste, recycling, microplastics or related chemicals."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-0f3334d0d7",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/11952_en",
+    "relevance": 0.2,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The page concerns a 2019 RoHS delegated-directive exemption consultation on cadmium/lead in recovered PVC profiles, with feedback closed in 2019 \u2014 an older item, not a new plastics-related development in the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-12821b8743",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14687_en",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The initiative concerns alignment of the CLP Regulation with GHS revisions for chemical classification and labelling generally, not a plastics-specific instrument, and its feedback period dates from May 2025, so it is neither new nor within the plastics tracker's scope."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-140b9c5493",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14550_en",
+    "relevance": 0.3,
+    "dossier_id": "eu-ppwr",
+    "new_dossier_suggestion": null,
+    "category": "proposal",
+    "reason": "EC Have Your Say page for a planned delegated act under the PPWR on reuse exemptions for plastic wrappings and straps, but it shows no recent date or change, so it is not a new development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-18e2340dff",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13217_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is an EU transport emissions accounting initiative (CountEmissions EU) unrelated to plastics, packaging, waste or chemicals, and its consultation closed in 2023 so it is not a new development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-18ef2cc5c8",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/11560_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The document concerns identification of ICT technical specifications for public procurement, unrelated to plastics and an older 2019 initiative with no new development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-1cb8c38480",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/18052_en",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is an evaluation roadmap for the Clean Vehicles Directive concerning clean vehicles in public procurement, unrelated to plastics, packaging, waste, recycling, microplastics or chemicals in plastics."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-24d2c7cf85",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/12452_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a 2020 European Commission consultation on foreign subsidies, unrelated to plastics, packaging, waste or chemicals."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-2f95663613",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/17932_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The initiative concerns a tourism correction factor for food waste reduction targets and has no connection to plastics, packaging, waste from plastics, recycling or plastics-related chemicals."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-2fe28ca456",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14792_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "The document concerns revision of EU eInvoicing rules in public procurement and has no connection to plastics, packaging, waste, recycling, microplastics or chemicals in plastics."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-31e9af5a3d",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/12411_en",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "The page describes a 2021 consultation on POPs concentration limits in waste and shows no new plastics-related development within the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-34ff1e584a",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/1740_en",
+    "relevance": 0.2,
+    "dossier_id": "eu-cea",
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "This is a closed 2018/2019 Commission consultation on the EU Product Policy Framework for the circular economy, with no new development in the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-35eb5b54e6",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13150_en",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "Closed 2023 consultation on consumer repair and reuse, not a recent plastics-related development or new legal step."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-35ec2970f7",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13550_en",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a 2022 consultation on public procurement eForms standard forms with no plastics, packaging, waste or chemicals content, and the feedback period closed in 2022, so it is neither new nor plastics-related."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-362bb028b1",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/12306_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is an old, unchanged Commission consultation page on the Industrial Emissions Directive revision, not a new plastics-related legal development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-37914adbb6",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19133_en",
+    "relevance": 0.2,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "The initiative concerns green public procurement criteria for apparel textiles under the Ecodesign for Sustainable Products Regulation, a textiles instrument rather than a plastics, packaging, waste or recycling measure, so it falls outside the tracker's plastics scope."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-384093bef6",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/18272_en",
+    "relevance": 0.2,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This planned implementing regulation concerns registration and EPR for textile, textile-related and footwear producers under the Waste Framework Directive, not a plastics, packaging, recycling or microplastics instrument, and shows no new development within the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-3c6d66fc73",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/12399_en",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is the 2020 EU batteries legislation initiative page, unrelated to plastics and not a new development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-41345e1418",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13801_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This initiative concerns uniform rules on the size of small immediate packaging units for veterinary medicinal products, which is pharmaceutical regulation and unrelated to plastics, packaging waste, recycling or microplastics."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-42b27fb0db",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13432_en",
+    "relevance": 0.2,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is an older (2022/2023) Commission implementing-act initiative on reporting the non-recycled plastic packaging waste own resource, with no new development in the last 60 days and no matching dossier."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-42c382efdd",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/18577_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "Initiative concerns endocrine disruptor criteria under the CLP chemicals Regulation, not a plastics-related law, regulation, or instrument."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-47a7739353",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/12621_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This concerns EU rules on foreign subsidies distorting the single market (acquisitions and public procurement), with no relation to plastics, packaging, waste, recycling, microplastics or plastics chemicals, and the underlying 2020\u20132021 consultations are long past."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-4da4720282",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13467_en",
+    "relevance": 0.3,
+    "dossier_id": "eu-supd",
+    "new_dossier_suggestion": null,
+    "category": "implementing-act",
+    "reason": "The initiative concerns the SUPD implementing act on calculating and reporting recycled content in single-use plastic bottles, but the only dated step shown (feedback period) closed on 2025-08-19, well outside the 60-day window, so it reports no new development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-5769711aec",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/12583_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is an old, closed 2022 consultation page on industrial pollution and the E-PRTR, with no new plastics-related legal development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-5c3aa8dba4",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14427_en",
+    "relevance": 0.1,
+    "dossier_id": "eu-public-procurement",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is an older evaluation initiative page for the Public Procurement Directives with feedback closed in March 2025, showing no new plastics-related development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-5c3d9b3c84",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13032_en",
+    "relevance": 0.3,
+    "dossier_id": "eu-supd",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "It concerns the SUPD implementing act on calculating and reporting separate collection of single-use plastic beverage bottles, but the initiative dates from 2021 with feedback closed in June 2021, so it is not a new development in the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-61fabbcf3d",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/1194_en",
+    "relevance": 0.2,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a 2017 Commission initiative record for the 8th Amendment to Annex II of the End-of-Life Vehicles Directive 2000/53/EC, an old event with no new plastics-related development within the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-63914f3f7d",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/16632_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The initiative concerns international carbon credits for the EU 2040 climate target and is unrelated to plastics, packaging, waste, recycling, microplastics or chemicals in plastics, and its consultation closed in May 2026."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-63fb32e108",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13006_en",
+    "relevance": 0.2,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "Old Have Your Say page on heavy metals exemptions for end-of-life vehicles, not a new plastics-related development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-6550373a25",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/12497_en",
+    "relevance": 0.2,
+    "dossier_id": null,
+    "new_dossier_suggestion": "EU food contact materials regulation revision",
+    "category": "consultation",
+    "reason": "The document shows an old consultation (feedback closed in 2023) on revising EU food contact materials rules, with no new development in the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-68682e3fdd",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13669_en",
+    "relevance": 0.05,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is an evaluation of the EU e-invoicing in public procurement Directive, unrelated to plastics, packaging, waste, recycling, microplastics or chemicals in plastics."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-7d521d4bce",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/17472_en",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "implementing-act",
+    "reason": "Planned EU implementing decision on reporting obligations for used textiles and textile waste under the Waste Framework Directive, not a plastics-specific development and not shown as new within the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-7fc8f4e677",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14467_en",
+    "relevance": 0.2,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The page concerns NZIA implementing rules on environmental sustainability criteria for public procurement of clean technologies (solar, wind, batteries, heat pumps, grids), not a plastics-related instrument, and its feedback window closed on 2025-10-14, so it reports no new plastics development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-827aeae9c8",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/11802_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "Old 2018/2019 ELV Directive amendment page about heavy metal exemptions in vehicles, unrelated to plastics and not a new development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-832b408ffe",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/17632_en",
+    "relevance": 0.2,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The page is a generic EU CLP Regulation (chemicals classification and labelling) initiative entry that shows only a planned/active status with no new concrete plastics-related development or dated change within the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-84e4bf988c",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13151_en",
+    "relevance": 0.2,
+    "dossier_id": "eu-supd",
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "This is a stale 2021 Have Your Say feedback page for an SUPD implementing act on reporting of post-consumption waste of tobacco products with plastic filters, with no new development in the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-868e3cf21e",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/18668_en",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The initiative concerns a delegated act on waste battery collection rate calculation methodology and targets, not plastics, packaging, recycling or related chemicals, so it falls outside the tracker's scope."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-86ff6788dd",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/12263_en",
+    "relevance": 0.3,
+    "dossier_id": "eu-ppwr",
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "The page is an old Commission Have Your Say initiative on packaging requirements with feedback closed in 2023, not a new development within the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-89b32d231b",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13398_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This initiative concerns transitional packaging and labelling rules for veterinary medicinal products, not plastics packaging or waste, and its consultation closed in 2022, so it is neither in scope nor a new development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-8a9ea156cb",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/16572_en",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "Page describes an active but not-new EU implementing act initiative for INCITE, with no concrete plastics-related legal development in the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-8d51a8ce88",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/12823_en",
+    "relevance": 0.2,
+    "dossier_id": "eu-pellet-losses",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "Unchanged Have Your Say initiative page with feedback closed in January 2024 and no recent plastics-related development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-8f88b5739f",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/12013_en",
+    "relevance": 0.3,
+    "dossier_id": "eu-food-contact-recycled-plastics",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This Have-Your-Say page for the amendment of Regulation (EU) No 282/2008 (recycled plastics in food contact) shows only an unchanged, long-active adoption workflow (feedback closed since 2022) with no new development in the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-90ad52ffe0",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/12975_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a 2023 CLP chemicals classification/labelling/packaging consultation, not a recent plastics-related law or regulation."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-97a61f1f11",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/1580_en",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "Ecodesign energy labelling initiative for computers and servers with no plastics, packaging, waste or recycling content, and consultation closed in 2024."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-9c7cf3eaca",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/17672_en",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "This initiative concerns ecodesign requirements for iron and steel products (linked to the Industrial Accelerator Act), not plastics, packaging, waste or related chemicals, so it falls outside the tracker's scope despite being an official EU consultation."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-9db165a248",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14086_en",
+    "relevance": 0.2,
+    "dossier_id": "eu-public-procurement",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is an old (2023/2024) status page for an implementing regulation amending eForms standard procurement notice forms, not a new plastics-specific development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-9e6ab817ff",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/12979_en",
+    "relevance": 0.05,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The page merely shows a closed 2022 public consultation on the general Product Liability Directive, with no new plastics-related development and no change in the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-b007f6cc60",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/17772_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This document concerns end-of-waste criteria for textile waste, not plastics, and appears to be an older initiative with no recent development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-bb56c3f729",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13225_en",
+    "relevance": 0.3,
+    "dossier_id": "eu-wfd",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The page is an unchanged Have Your Say initiative for the Waste Framework review with feedback closed in 2023, showing no new development within the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-bbd22983e2",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13926_en",
+    "relevance": 0.1,
+    "dossier_id": "eu-public-procurement",
+    "new_dossier_suggestion": null,
+    "category": "implementing-act",
+    "reason": "The page concerns an EU public procurement eForms amendment with no plastics-specific content and no recent development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-c1522a7ef5",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14250_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The document concerns a review of ecodesign requirements for electric motors and variable speed drives, which is unrelated to plastics, packaging, waste, recycling, microplastics or chemicals in plastics."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-c15cb5e039",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/2063_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a 2019 CLP Regulation amendment consultation on chemical classification and labelling, unrelated to plastics-specific instruments and long closed, so it is neither new nor within the tracker's scope."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-c1ef6011ad",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/1581_en",
+    "relevance": 0.05,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is an ecodesign review of computers and servers with no plastics-specific content, and its feedback period closed in 2024, so it reports no new plastics-related development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-c34ca8e1ce",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14422_en",
+    "relevance": 0.3,
+    "dossier_id": "eu-supd",
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "This is the Commission's evaluation ('Have Your Say') initiative for the Single-Use Plastics Directive and fishing gear, but its feedback window closed on 2026-03-17, well outside the last-60-day window, so it reports no new development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-c3d8b24853",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14794_en",
+    "relevance": 0.3,
+    "dossier_id": "eu-supd",
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "Closed Commission consultation page for an environmental simplification proposal touching single-use plastic waste, WEEE and waste, but feedback ended in May 2026 and no new development is shown in the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-c4123dd671",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/1502_en",
+    "relevance": 0.2,
+    "dossier_id": "eu-supd",
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "This is the European Commission's 2018 Have Your Say page for the SUPD proposal, whose feedback period closed in 2018, so it describes an old, unchanged event with no new development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-c4928d59b8",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/12318_en",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a ship waste management implementing act on on-board storage capacity calculation from 2020-2021, unrelated to plastics and not a recent development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-c937e371d7",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/12633_en",
+    "relevance": 0.3,
+    "dossier_id": "eu-elvr",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is an unchanged Commission 'Have Your Say' page for the ELV revision whose feedback window closed in December 2023, describing an older milestone rather than a new development in the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-c9be381e40",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/1143_en",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "This is a closed 2018 evaluation consultation on the Urban Waste Water Treatment Directive, unrelated to plastics and not a recent development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-d05ee4f532",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15753_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "The document concerns a public consultation on simplifying defence and sensitive security procurement rules, with no connection to plastics, packaging, waste, recycling, microplastics or related chemicals."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-d8570f3f9a",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14549_en",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "This is a review of the EU emissions trading system covering maritime, aviation and stationary installations; the only tangential link is a possible extension to municipal solid waste incineration, and it does not concern any plastics, packaging, recycling, microplastics or chemicals-in-plastics instrument."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-da2920e312",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13168_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "The document concerns the review of CO2 emission standards for heavy-duty vehicles, an old (2021/2023) transport initiative with no connection to plastics, packaging, waste or related chemicals."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-db4e16f978",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/12889_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The document concerns EU energy efficiency guidelines and is unrelated to plastics, packaging, waste, recycling, microplastics or plastics-related chemicals."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-dbed4b73b9",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/16638_en",
+    "relevance": 0.3,
+    "dossier_id": "eu-ppwr",
+    "new_dossier_suggestion": null,
+    "category": "implementing-act",
+    "reason": "The page shows a planned implementing act on harmonised standards under the PPWR, but its feedback start date (3 February 2026) is outside the last 60 days and it is not a new concrete development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-e0a60705d6",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14516_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a European Commission initiative on Foreign Subsidies Guidelines concerning notification of concentrations and foreign financial contributions in public procurement, unrelated to plastics, packaging, waste, recycling, microplastics or chemicals in plastics, and the consultation already closed in April 2025."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-e33e1d05b6",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13501_en",
+    "relevance": 0.3,
+    "dossier_id": "eu-food-contact-recycled-plastics",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The page describes an ongoing initiative to align Regulation (EU) No 10/2011 with Regulation (EU) 2022/1616, but shows no new development within the last 60 days (feedback started in February 2025)."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-e37104c3ec",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/12256_en",
+    "relevance": 0.3,
+    "dossier_id": "eu-wsr",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is an outdated 2020 Have Your Say initiative page on EU transboundary waste shipment rules for plastic waste with no new development in the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-e3f0aa694a",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/1373_en",
+    "relevance": 0.2,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "This is an unchanged 2017 roadmap/call-for-evidence page for the Circular Economy Monitoring Framework, with feedback closed in 2017, so it reports no new development within the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-e984d895a6",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/12043_en",
+    "relevance": 0.1,
+    "dossier_id": "eu-elvr",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a stale (2019) delegated act amending heavy-metal exemptions under the End-of-Life Vehicles Directive 2000/53/EC for hexavalent chromium, not a plastics, packaging, waste or recycled-plastics development within the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-ec1afa262b",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13139_en",
+    "relevance": 0.3,
+    "dossier_id": "eu-supd",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is an old 2020/2021 Have Your Say page for a planned SUPD implementing act, with no new development in the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-f33f95c008",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/12317_en",
+    "relevance": 0.2,
+    "dossier_id": null,
+    "new_dossier_suggestion": "EU implementing regulation on monitoring and reporting of passively fished waste (marine litter)",
+    "category": "implementing-act",
+    "reason": "Old initiative page from 2022 with no new development in the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-f71a7cab05",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13679_en",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is an ecodesign/energy-efficiency review of air heating and cooling products with no plastics, packaging, waste, recycling or plastics-chemicals content, and its feedback window closed in 2024."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-f986f9d7d3",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13601_en",
+    "relevance": 0.05,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is an AI Liability Directive initiative page; the 'circular economy' mentions are incidental references in the product liability context and it reports no plastics-related legislative development."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-fc22d3af08",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/18833_en",
+    "relevance": 0.2,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "The initiative concerns VAT rules for the circular economy broadly, not specifically plastics, packaging, waste, or recycling, so it is largely outside the tracker's scope."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-fdeade4bc6",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/1912_en",
+    "relevance": 0.2,
+    "dossier_id": "eu-elvr",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a stale ELV Directive evaluation page (Ares(2018)4731779, feedback closed in 2021) showing no new development within the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/eu-have-your-say-fe729acecd",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13170_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The initiative concerns revision of EU legislation on geospatial environmental data and access to environmental information, not a concrete plastics-related development."
+   },
+   {
+    "snapshot": "2026-10-14/federal-register-d2b1bcbed2",
+    "url": "https://www.federalregister.gov/documents/2023/12/26/2023-27942/general-services-administration-acquisition-regulation-reduction-of-single-use-plastic-packaging",
+    "relevance": 0.3,
+    "dossier_id": "us-federal",
+    "new_dossier_suggestion": null,
+    "category": "proposal",
+    "reason": "The document is the December 2023 GSA proposed rule on reducing single-use plastic packaging in federal procurement (GSAR Case 2022-G517), an older event outside the last 60 days, so it only matches the existing us-federal dossier without being a new development."
+   },
+   {
+    "snapshot": "2026-10-14/fr-citeo-ae25f06307",
+    "url": "https://www.citeo.com/",
+    "relevance": 0.2,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The Citeo homepage is a generic background/communication page about French household packaging EPR with no new proposal, decision, fee change or other concrete development."
+   },
+   {
+    "snapshot": "2026-10-14/govuk-search-3bce899ab9",
+    "url": "https://www.gov.uk/government/publications/public-register-of-reprocessors-and-exporters-of-uk-packaging-waste",
+    "relevance": 0.2,
+    "dossier_id": "uk-pepr",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a routine weekly update to the public register of packaging waste reprocessors and exporters, with no new legal, regulatory, tax, or EPR scheme development."
+   },
+   {
+    "snapshot": "2026-10-14/govuk-search-4fb8a2bc5f",
+    "url": "https://www.gov.uk/guidance/packaging-waste-regulatory-requirements-and-compliance-for-reprocessors-and-exporters",
+    "relevance": 0.3,
+    "dossier_id": "uk-pepr",
+    "new_dossier_suggestion": null,
+    "category": "guidance",
+    "reason": "The page was updated on 2026-10-08 but merely restates the previously announced mandatory registration and new accreditation process that took effect from September 2025, so it reports no new concrete development within the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/govuk-search-ca6063307f",
+    "url": "https://www.gov.uk/government/publications/packuk-annual-reports",
+    "relevance": 0.4,
+    "dossier_id": "uk-pepr",
+    "new_dossier_suggestion": null,
+    "category": "publication",
+    "reason": "PackUK added its annual report for 2025/26, an official publication about the UK packaging EPR scheme, but it does not itself introduce a new legal, regulatory, or tax change."
+   },
+   {
+    "snapshot": "2026-10-14/govuk-search-d866201125",
+    "url": "https://www.gov.uk/government/people/juliet-sotnick",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a GOV.UK biography page for an individual, not a report of any new plastics law, regulation, tax, EPR or treaty development."
+   },
+   {
+    "snapshot": "2026-10-14/govuk-search-f53c1d4e1a",
+    "url": "https://www.gov.uk/government/publications/packaging-waste-data-reported-by-reprocessors-and-exporters",
+    "relevance": 0.2,
+    "dossier_id": "uk-pepr",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a routine data publication on packaging waste reported by reprocessors and exporters under UK EPR, not a new legal or regulatory development."
+   },
+   {
+    "snapshot": "2026-10-14/it-gazzetta-005fa6aa3d",
+    "url": "https://www.gazzettaufficiale.it/atto/serie_generale/caricaArticolo?art.versione=1&art.idGruppo=0&art.flagTipoArticolo=0&art.codiceRedazionale=25G00212&art.idArticolo=1&art.idSottoArticolo=1&art.idSottoArticolo1=10&art.dataPubblicazioneGazzetta=2025-12-30&art.progressivo=0",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The page contains no substantive content \u2014 it is a Gazzetta Ufficiale placeholder/loading screen with only navigation and boilerplate text, so it reports no concrete plastics-related development."
+   },
+   {
+    "snapshot": "2026-10-14/nl-verpact-751869e567",
+    "url": "https://www.verpact.nl/en/fee-modulation-plastic",
+    "relevance": 0.2,
+    "dossier_id": "nl-verpact-fees",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The document contains only a page title with no substantive text and reports no new fee change or concrete development, so it appears to be an unchanged background page on Verpact's fee modulation."
+   },
+   {
+    "snapshot": "2026-10-14/nl-verpact-e0be056971",
+    "url": "https://www.verpact.nl/en",
+    "relevance": 0.2,
+    "dossier_id": "nl-verpact-fees",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The document is only a bare homepage title with no content, so it reports no new concrete development on Dutch packaging fees."
+   },
+   {
+    "snapshot": "2026-10-14/nl-verpact-ef23364836",
+    "url": "https://www.verpact.nl/nl/actueel/nieuws-extra-stimulans-voor-inzet-van-circulaire-plastics-uit-europa",
+    "relevance": 0.3,
+    "dossier_id": "nl-verpact-fees",
+    "new_dossier_suggestion": null,
+    "category": "fee-or-tax",
+    "reason": "Only a headline is available announcing an extra incentive for using circular plastics from Europe, with no date or substantive detail to confirm it as a new, concrete fee-modulation development rather than background."
+   },
+   {
+    "snapshot": "2026-10-14/oeil-omnibus-epr-reps-10dc33fb72",
+    "url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0396(COD)",
+    "relevance": 0.9,
+    "dossier_id": null,
+    "new_dossier_suggestion": "EU Omnibus VIII on environmental legislation \u2014 suspension of EPR authorised-representative rules for waste, WEEE and single-use plastics",
+    "category": "legislative-step",
+    "reason": "The procedure file shows a committee report tabled on 09/10/2026 in a live legislative procedure to suspend EPR authorised-representative rules covering waste, WEEE and SUP."
+   },
+   {
+    "snapshot": "2026-10-14/oeil-omnibus-epr-reps-ppwr-c2b314c45e",
+    "url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0397(COD)",
+    "relevance": 0.3,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "Procedure file for Omnibus VIII shows only older events (proposal Dec 2025, committee referral Feb 2026) and no new legislative step in the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/oeil-pellets-016db5b31a",
+    "url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0373(COD)",
+    "relevance": 0.3,
+    "dossier_id": "eu-pellet-losses",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "Procedure file summarizes the completed plastic pellet losses regulation timeline, with no development in the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/oeil-ppwr-7c77acaa2e",
+    "url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0396(COD)",
+    "relevance": 0.3,
+    "dossier_id": "eu-ppwr",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The Legislative Observatory procedure file recaps the completed PPWR procedure and reports no new concrete development within the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-14/oeil-wfd-f43fb07ca0",
+    "url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0234(COD)",
+    "relevance": 0.2,
+    "dossier_id": "eu-wfd",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "Procedure file for a completed Waste Framework Directive revision (textiles and food waste) whose final act was published in September 2025, older than the 60-day window."
+   },
+   {
+    "snapshot": "2026-10-14/pre-news-ffb292afeb",
+    "url": "https://www.plasticsrecyclers.eu/news/",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a trade-association news index page listing conferences, awards and event announcements, with no new concrete plastics law, regulation, tax, EPR or treaty development and no item within the last 60 days."
+   }
+  ],
+  "new_dossier_suggestions": [
+   {
+    "snapshot": "2026-10-14/ep-envi-7de5e71644",
+    "url": "https://www.europarl.europa.eu/committees/en/product/product-details/20260929CAN79687",
+    "relevance": 0.85,
+    "dossier_id": null,
+    "new_dossier_suggestion": "EU Environmental Omnibus / EPR authorised representative requirements \u2014 Commission proposals (10 Dec 2025) and ENVI draft reports suspending the obligation to appoint authorised representatives under EPR schemes for batteries, packaging (PPWR), WEEE and single-use plastics; cross-cutting instrument affecting multiple EPR dossiers, no single existing dossier covers it.",
+    "category": "legislative-step",
+    "reason": "ENVI voted on 5 October 2026 on draft reports amending EPR authorised-representative rules across packaging, WEEE, batteries and single-use plastics legislation, a concrete recent legislative step that spans several instruments."
+   },
+   {
+    "snapshot": "2026-10-14/oeil-omnibus-epr-reps-10dc33fb72",
+    "url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0396(COD)",
+    "relevance": 0.9,
+    "dossier_id": null,
+    "new_dossier_suggestion": "EU Omnibus VIII on environmental legislation \u2014 suspension of EPR authorised-representative rules for waste, WEEE and single-use plastics",
+    "category": "legislative-step",
+    "reason": "The procedure file shows a committee report tabled on 09/10/2026 in a live legislative procedure to suspend EPR authorised-representative rules covering waste, WEEE and SUP."
+   }
+  ],
+  "leads": []
+ },
+ "draft": {
+  "drafted": [
+   "2026-10-14-001",
+   "2026-10-14-002",
+   "2026-10-14-003",
+   "2026-10-14-004",
+   "2026-10-14-005",
+   "2026-10-14-006",
+   "2026-10-14-007",
+   "2026-10-14-008",
+   "2026-10-14-009",
+   "2026-10-14-010",
+   "2026-10-14-011",
+   "2026-10-14-012",
+   "2026-10-14-013"
+  ],
+  "skipped": [
+   {
+    "candidate": "2026-10-14-014",
+    "reason": "The source is operational guidance for accredited reprocessors and exporters on issuing PRNs and PERNs under the existing EPR for packaging regime. It does not report a new development, legislative change, or stage change for the uk-pepr dossier."
+   }
+  ]
+ },
+ "review": {
+  "passed": [
+   "2026-10-14-003",
+   "2026-10-14-004",
+   "2026-10-14-005",
+   "2026-10-14-006",
+   "2026-10-14-007",
+   "2026-10-14-008",
+   "2026-10-14-009",
+   "2026-10-14-010",
+   "2026-10-14-011",
+   "2026-10-14-012",
+   "2026-10-14-013"
+  ],
+  "quarantined": [
+   {
+    "candidate": "2026-10-14-001",
+    "dossier": "eu-wfd",
+    "impact": "medium",
+    "reasons": [
+     "L1 url-200: HTTP 202",
+     "L2 quote-provenance: not found in snapshot: 'published: fri, 09 oct 2026 11:32:25 gmt report on the proposal for a directive '"
+    ]
+   },
+   {
+    "candidate": "2026-10-14-002",
+    "dossier": "eu-ppwr",
+    "impact": "high",
+    "reasons": [
+     "L1 url-200: HTTP 202"
+    ]
+   }
+  ],
+  "human_review": [],
+  "issues": []
+ },
+ "llm_calls": 148,
+ "llm_usage": {
+  "prompt_tokens": 243975,
+  "completion_tokens": 162514
+ }
+}

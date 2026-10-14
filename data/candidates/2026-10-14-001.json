@@ -1,0 +1,32 @@
+{
+ "id": "2026-10-14-001",
+ "created": "2026-10-14",
+ "snapshot_id": "2026-10-14/ep-envi-2ef0febfa9",
+ "source_id": "ep-envi",
+ "source_url": "https://www.europarl.europa.eu/doceo/document/A-10-2026-0267_EN.html",
+ "source_trust": "official",
+ "title": "REPORT on the proposal for a directive of the European Parliament and of the Council suspending the application of the rules on the appointment of authorised representatives for extended producer responsibility for waste, waste electrical and electronical equipment and single use plastic waste - A10-0267/2026",
+ "triage": {
+  "relevance": 0.9,
+  "dossier_id": "eu-wfd",
+  "new_dossier_suggestion": null,
+  "category": "legislative-step",
+  "reason": "ENVI committee report on a proposal for a directive suspending EPR authorised representative rules for waste, WEEE and single-use plastics is a new EU legislative step."
+ },
+ "draft": {
+  "dossier_id": "eu-wfd",
+  "date": "2026-10-09",
+  "summary": "On 9 October 2026 the European Parliament's Committee on the Environment, Public Health and Food Safety published a report on a proposal for a directive suspending the application of rules on the appointment of authorised representatives for extended producer responsibility for waste, waste electrical and electronical equipment and single use plastic waste.",
+  "source_url": "https://www.europarl.europa.eu/doceo/document/A-10-2026-0267_EN.html",
+  "source_quote": "published: Fri, 09 Oct 2026 11:32:25 GMT\n\nREPORT on the proposal for a directive of the European Parliament and of the Council suspending the application of the rules on the appointment of authorised representatives for extended producer responsibility for waste, waste electrical and electronical equipment and single use plastic waste - A10-0267/2026\nCommittee on the Environment, Public Health and Food Safety",
+  "source_quote_en": null,
+  "source_lang": "en",
+  "stage_change": "parliament-council",
+  "next_steps": [],
+  "key_dates": [],
+  "interpretation": null
+ },
+ "status": "quarantined",
+ "review_id": "2026-10-14-001",
+ "issue": null
+}

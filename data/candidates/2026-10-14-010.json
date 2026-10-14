@@ -1,0 +1,38 @@
+{
+ "id": "2026-10-14-010",
+ "created": "2026-10-14",
+ "snapshot_id": "2026-10-14/eu-have-your-say-c85e13032e",
+ "source_id": "eu-have-your-say",
+ "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19243_en",
+ "source_trust": "official",
+ "title": "Commission Implementing Decision on harmonised packaging and packaging waste labels under Regulation (EU) 2025/40 ",
+ "triage": {
+  "relevance": 0.8,
+  "dossier_id": "eu-ppwr",
+  "new_dossier_suggestion": null,
+  "category": "implementing-act",
+  "reason": "The Commission has launched an active initiative for a Commission Implementing Decision on harmonised packaging labels under PPWR, with feedback opened on 14 September 2026, a concrete implementing-act development."
+ },
+ "draft": {
+  "dossier_id": "eu-ppwr",
+  "date": "2026-09-14",
+  "summary": "A Commission Implementing Decision on harmonised packaging and packaging waste labels under Regulation (EU) 2025/40 is planned as a Commission implementing decision (reference Ares(2026)8548456). The initiative status is active and the front-end stage is 'INIT_PLANNED'; receiving feedback is disabled, with a listed feedback start date of 14 September 2026.",
+  "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19243_en",
+  "source_quote": "shortTitle: Commission Implementing Decision on harmonised packaging and packaging waste labels under Regulation (EU) 2025/40 \nreference: Ares(2026)8548456\nforeseenActType: DEC_IMPL\ninitiativeStatus: ACTIVE\nfrontEndStage: INIT_PLANNED; receivingFeedbackStatus: DISABLED; feedbackStartDate: 2026/09/14 16:56:00; feedbackEndDate: None",
+  "source_quote_en": null,
+  "source_lang": "en",
+  "stage_change": null,
+  "next_steps": [],
+  "key_dates": [
+   {
+    "date": "2026-09-14",
+    "text": "Listed feedback start date.",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19243_en"
+   }
+  ],
+  "interpretation": "For brand owners, harmonised labels on recycled and bio-based content could affect packaging markings; for recyclers, clearer labels may support sorting."
+ },
+ "status": "passed",
+ "review_id": "2026-10-14-010",
+ "issue": null
+}

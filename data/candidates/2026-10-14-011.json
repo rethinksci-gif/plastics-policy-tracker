@@ -1,0 +1,32 @@
+{
+ "id": "2026-10-14-011",
+ "created": "2026-10-14",
+ "snapshot_id": "2026-10-14/eu-have-your-say-ce5eda64ab",
+ "source_id": "eu-have-your-say",
+ "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19033_en",
+ "source_trust": "official",
+ "title": "Sustainability criteria for plastic recycling technologies ",
+ "triage": {
+  "relevance": 0.8,
+  "dossier_id": "eu-ppwr",
+  "new_dossier_suggestion": null,
+  "category": "consultation",
+  "reason": "The Commission's Have Your Say page shows a feedback consultation (closed 16 Sep 2026) on a planned delegated decision setting sustainability criteria for plastic recycling technologies used in packaging, a recent step under the PPWR framework."
+ },
+ "draft": {
+  "dossier_id": "eu-ppwr",
+  "date": "2026-09-16",
+  "summary": "A public feedback period on the delegated act establishing sustainability criteria for plastic recycling technologies ran from 14 August 2026 to 16 September 2026; feedback is closed.",
+  "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19033_en",
+  "source_quote": "frontEndStage: PLANNING_WORKFLOW; receivingFeedbackStatus: CLOSED; feedbackStartDate: 2026/08/14 10:48:59; feedbackEndDate: 2026/09/16 23:59:59\n\nsnippet: requires the Commission to create sustainability rules for\nplastic\nrecycling technologies.",
+  "source_quote_en": null,
+  "source_lang": "en",
+  "stage_change": null,
+  "next_steps": [],
+  "key_dates": [],
+  "interpretation": "The sustainability criteria may affect which recycled plastics can be used in packaging, with potential implications for recyclers and converters."
+ },
+ "status": "passed",
+ "review_id": "2026-10-14-011",
+ "issue": null
+}

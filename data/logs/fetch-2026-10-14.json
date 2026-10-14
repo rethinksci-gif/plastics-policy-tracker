@@ -1,13 +1,30 @@
 {
  "new": [
-  "2026-10-14/govuk-search-8f747c7ac2",
-  "2026-10-14/govuk-search-55b4c4465a",
-  "2026-10-14/govuk-search-5e069610e4",
-  "2026-10-14/govuk-search-2e97a579f4",
-  "2026-10-14/govuk-search-30e41ee25f",
-  "2026-10-14/govuk-search-20fc95a29e",
-  "2026-10-14/govuk-search-58a65830e5"
+  "2026-10-14/oeil-omnibus-epr-reps-10dc33fb72",
+  "2026-10-14/oeil-omnibus-epr-reps-ppwr-c2b314c45e",
+  "2026-10-14/oeil-iaa-e06c6dba48",
+  "2026-10-14/ep-envi-2ef0febfa9",
+  "2026-10-14/ep-envi-c863513d0f",
+  "2026-10-14/ep-envi-1cbf382789",
+  "2026-10-14/ep-envi-7de5e71644",
+  "2026-10-14/efsa-cbef842b39",
+  "2026-10-14/efsa-8fb8eb844a",
+  "2026-10-14/efsa-5a8cd4ffba",
+  "2026-10-14/efsa-cd9889d3cc",
+  "2026-10-14/efsa-7d931e9939",
+  "2026-10-14/efsa-15a71fccc2",
+  "2026-10-14/efsa-29abc6d15d",
+  "2026-10-14/efsa-d14b1bdd66",
+  "2026-10-14/govuk-search-0716946227",
+  "2026-10-14/govuk-search-3bce899ab9",
+  "2026-10-14/govuk-search-a3ae2921ac",
+  "2026-10-14/govuk-search-f04fec89dd",
+  "2026-10-14/govuk-search-f53c1d4e1a",
+  "2026-10-14/govuk-search-d866201125",
+  "2026-10-14/govuk-search-4fb8a2bc5f",
+  "2026-10-14/govuk-search-ca6063307f",
+  "2026-10-14/cn-samr-recycled-plastics-7433a0d166"
  ],
- "unchanged": 1,
+ "unchanged": 4,
  "errors": {}
 }

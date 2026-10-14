@@ -1,0 +1,64 @@
+{
+ "review_id": "2026-10-14-001",
+ "candidate_id": "2026-10-14-001",
+ "dossier_id": "eu-wfd",
+ "created": "2026-10-14T10:46:23.075696Z",
+ "impact": "medium",
+ "checks": [
+  {
+   "layer": 1,
+   "name": "schema",
+   "passed": true,
+   "severity": "info",
+   "detail": "valid"
+  },
+  {
+   "layer": 1,
+   "name": "trusted-domain",
+   "passed": true,
+   "severity": "info",
+   "detail": "domain trust: official"
+  },
+  {
+   "layer": 1,
+   "name": "url-200",
+   "passed": false,
+   "severity": "reject",
+   "detail": "HTTP 202"
+  },
+  {
+   "layer": 1,
+   "name": "event-date",
+   "passed": true,
+   "severity": "info",
+   "detail": "2026-10-09 <= today 2026-10-14"
+  },
+  {
+   "layer": 1,
+   "name": "stage-transition",
+   "passed": false,
+   "severity": "flag",
+   "detail": "in-application -> parliament-council: stage moves backwards"
+  },
+  {
+   "layer": 1,
+   "name": "duplicate",
+   "passed": true,
+   "severity": "info",
+   "detail": "no duplicate"
+  },
+  {
+   "layer": 2,
+   "name": "quote-provenance",
+   "passed": false,
+   "severity": "reject",
+   "detail": "not found in snapshot: 'published: fri, 09 oct 2026 11:32:25 gmt report on the proposal for a directive '"
+  }
+ ],
+ "llm_review": null,
+ "outcome": "quarantined",
+ "reasons": [
+  "L1 url-200: HTTP 202",
+  "L2 quote-provenance: not found in snapshot: 'published: fri, 09 oct 2026 11:32:25 gmt report on the proposal for a directive '"
+ ]
+}

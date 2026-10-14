@@ -93,3 +93,6 @@ aside.analysis { margin: 0.8rem 0; padding: 0.6rem 0.9rem; border: 1px dashed va
 .fail { color: var(--bad); font-weight: 600; }
 .flag { color: var(--warn); font-weight: 600; }
 .theme-toggle { margin-left: auto; background: none; border: 1px solid var(--line); color: var(--muted); border-radius: 6px; padding: 0.2rem 0.55rem; font: inherit; font-size: 0.85rem; cursor: pointer; }
+.prose table { display: block; overflow-x: auto; }
+.prose a, .timeline a, .events a, td { overflow-wrap: anywhere; }
+blockquote { overflow-wrap: break-word; }

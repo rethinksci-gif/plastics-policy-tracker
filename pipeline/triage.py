@@ -21,6 +21,7 @@ def triage_snapshot(llm: LLM, snapshot, dossier_list: str, source_name: str) -> 
     system, user = prompt_parts(
         "triage",
         dossiers=dossier_list,
+        today=today().isoformat(),
         source_name=source_name,
         trust=snapshot.trust,
         jurisdiction=snapshot.jurisdiction,
