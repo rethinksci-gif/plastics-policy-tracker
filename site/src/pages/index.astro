@@ -1,0 +1,52 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Upcoming from '../components/Upcoming.astro';
+import { dossiers, fmtDate, issues, url } from '../lib/data';
+
+const all = await issues();
+const latest = all[0];
+const rendered = latest ? await render(latest) : null;
+const Content = rendered?.Content;
+const ds = await dossiers();
+const recent = ds
+  .flatMap((d) => d.updates.map((u) => ({ ...u, dossier: d })))
+  .sort((a, b) => b.date.localeCompare(a.date))
+  .slice(0, 8);
+---
+<Base>
+  <h1>Plastics laws and regulations, checked against the source</h1>
+  <p class="lede">
+    A biweekly tracker of {ds.length} plastics-related laws, regulations, standards, taxes and treaties across the EU,
+    its Member States, the UK, the US, China and global negotiations. Every update quotes its official source and has
+    passed <a href={url('verification/')}>four layers of review</a>.
+  </p>
+  <div class="grid2">
+    <section>
+      {latest && Content ? (
+        <>
+          {latest.collection === 'drafts' && <div class="banner">Draft preview — this issue has not been published.</div>}
+          <h2><a href={url(`issues/${latest.id}/`)}>{latest.data.title}</a></h2>
+          <div class="prose"><Content /></div>
+        </>
+      ) : (
+        <>
+          <h2>Latest verified updates</h2>
+          <p class="muted small">The first newsletter issue has not been published yet. These are the most recent verified events in the dossiers.</p>
+          <ul class="events">
+            {recent.map((r) => (
+              <li>
+                <div class="when">{fmtDate(r.date)} · <a href={url(`dossiers/${r.dossier.id}/`)}>{r.dossier.short_title ?? r.dossier.title}</a></div>
+                <div>{r.summary}</div>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </section>
+    <aside>
+      <h2>Next 60 days</h2>
+      <Upcoming />
+    </aside>
+  </div>
+</Base>

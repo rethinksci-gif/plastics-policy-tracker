@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/data';
+---
+<Base title="Search" noindex>
+  <h1>Search</h1>
+  <link href={url('pagefind/pagefind-ui.css')} rel="stylesheet" />
+  <div id="search"></div>
+  <p class="small muted">Search covers issues, dossiers and review records. The index is built with the site; it is not available in <code>astro dev</code>.</p>
+  <script is:inline define:vars={{ base: url('pagefind/') }}>
+    const s = document.createElement('script');
+    s.src = base + 'pagefind-ui.js';
+    s.onload = () => new PagefindUI({ element: '#search', showSubResults: true, resetStyles: false });
+    document.head.appendChild(s);
+  </script>
+</Base>

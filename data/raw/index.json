@@ -1,0 +1,12 @@
+{
+ "hashes": {
+  "97738ad3404d614d6f8f364654bc1d2beba1eceb8ed199719e1ee9fe928ef44e": "2026-10-14/dg-env-97738ad340",
+  "a0e925492b7e476fae03ff3b0848a27a9bf228b97fe40616898103597b8cbb26": "2026-10-14/cellar-a0e925492b",
+  "d30354297ef1a94d5c60de8edc4e01807447d5030b958a5b41339e3498da4b08": "2026-10-14/dg-env-d30354297e"
+ },
+ "urls": {
+  "https://environment.ec.europa.eu/topics/waste-and-recycling/packaging-waste_en": "d30354297ef1a94d5c60de8edc4e01807447d5030b958a5b41339e3498da4b08",
+  "https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en": "97738ad3404d614d6f8f364654bc1d2beba1eceb8ed199719e1ee9fe928ef44e",
+  "https://publications.europa.eu/resource/celex/32025R0040": "a0e925492b7e476fae03ff3b0848a27a9bf228b97fe40616898103597b8cbb26"
+ }
+}

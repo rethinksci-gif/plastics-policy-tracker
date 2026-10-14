@@ -88,8 +88,16 @@ def make_snapshot(source: Source, url: str, text: str, title: str | None, publis
     )
 
 
+# Per-host request headers. The EU Publications Office (CELLAR) serves the official legal texts that
+# EUR-Lex displays; it negotiates on Accept/Accept-Language and wants ISO 639-2 language codes.
+HOST_HEADERS = {
+    "publications.europa.eu": {"Accept": "application/xhtml+xml, text/html;q=0.9", "Accept-Language": "eng"},
+}
+
+
 def fetch_url(client: httpx.Client, url: str, mode: str = "main") -> tuple[str, str | None, int]:
-    r = client.get(url)
+    host = httpx.URL(url).host
+    r = client.get(url, headers=HOST_HEADERS.get(host, {}))
     if r.status_code != 200 or not r.content:
         raise httpx.HTTPStatusError(f"HTTP {r.status_code} (empty={not r.content})", request=r.request, response=r)
     text, title = extract_text(r.content, r.headers.get("content-type", ""), mode)

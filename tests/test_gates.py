@@ -142,3 +142,11 @@ def test_updates_must_be_reverse_chronological(dossier):
     data["updates"].append({**data["updates"][0], "date": "2026-08-01", "review_id": "seed-002"})
     with pytest.raises(ValueError):
         Dossier.model_validate(data)
+
+
+def test_review_excerpt_contains_quote_in_long_document():
+    from pipeline.checks import excerpt_for_review
+    long_text = ("Filler sentence about nothing in particular. " * 4000) + SOURCE_TEXT + (" More filler." * 3000)
+    ex = excerpt_for_review(long_text, "The act will apply from 1 January 2027.", 20000)
+    assert len(ex) < 22000
+    assert quote_in_text("The act will apply from 1 January 2027.", ex)[0]

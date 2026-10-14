@@ -10,7 +10,7 @@ from __future__ import annotations
 import json
 from datetime import date, datetime, timezone
 
-from .checks import check_domain, check_event_date, check_quote, quote_in_text, snapshots_for_url
+from .checks import excerpt_for_review, check_domain, check_event_date, check_quote, quote_in_text, snapshots_for_url
 from .config import REVIEWS, config, model_pro
 from .llm import LLM, prompt_parts
 from .models import Candidate, DraftUpdate, LLMReview, ReviewRecord, TriageResult
@@ -41,7 +41,8 @@ def run(only: list[str] | None = None) -> dict:
                                     "source_quote": u.source_quote, "source_quote_en": u.source_quote_en,
                                     "stage_change": u.stage_change}, indent=1, ensure_ascii=False)
                 system, user = prompt_parts("reviewer", claim=claim, url=url,
-                                            text=snap.text[: config()["llm"]["max_snapshot_chars"]])
+                                            text=excerpt_for_review(snap.text, u.source_quote,
+                                                                 config()["llm"]["max_snapshot_chars"]))
                 review = llm.json_call(model_pro(), system, user, LLMReview, max_tokens=1500)
                 if review.verdict != "supported" or review.confidence < config()["review"]["min_confidence"]:
                     reasons.append(f"L3 reviewer: {review.verdict} ({review.confidence:.2f}); "

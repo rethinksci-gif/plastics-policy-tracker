@@ -1,0 +1,63 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/data';
+---
+<Base title="How we verify" description="The four review layers every update must pass before it is published.">
+  <div class="prose">
+    <h1>How we verify</h1>
+    <p class="lede">Drafting is done with the help of a language model. Language models can invent things, so nothing reaches this site
+      on the model's word. Every update must pass four independent layers of checks. Anything that fails is held back,
+      logged publicly and sent to a human.</p>
+
+    <h2>Where facts come from</h2>
+    <p>We monitor official sources daily: EUR-Lex and the EU Publications Office, the Commission's <em>Have Your Say</em> portal,
+      Parliament's Legislative Observatory, Council press releases, DG Environment, ECHA, EFSA, UNEP, the Basel Convention,
+      WTO ePing, the US Federal Register, state legislatures, GOV.UK, and national governments and statutory bodies. Trade
+      associations and media are used only as <strong>leads</strong>: every fact on the site must trace to an official source.
+      Each document we rely on is saved as a text snapshot with its URL, retrieval time and SHA-256 hash in the
+      <a href="https://github.com/rethinksci-gif/plastics-policy-tracker/tree/main/data/raw">public archive</a>.</p>
+
+    <h2>Layer 1 — deterministic checks (code)</h2>
+    <ul>
+      <li>Every record is validated against a strict schema.</li>
+      <li>Every source link must return HTTP 200 and be on our whitelist of official domains.</li>
+      <li>Dates must make sense: an event that has happened cannot be dated after today; next steps whose date has passed are marked <em>to be confirmed</em>.</li>
+      <li>Stage changes must be legal: stages only move forward. A backwards move, a jump of more than two stages, or a move to <em>withdrawn</em>/<em>stalled</em> is sent to a human.</li>
+      <li>The same event cannot be recorded twice in a dossier.</li>
+    </ul>
+
+    <h2>Layer 2 — source provenance (code)</h2>
+    <p>Every update carries a <strong>verbatim quote</strong> from its source. After normalising whitespace, quotation marks and letter case,
+      the quote must be found in the saved snapshot of the cited page. If it is not there, the update is rejected outright.
+      This is the main defence against invented content. For sources in other languages we keep the original quote and show an English translation next to it.</p>
+
+    <h2>Layer 3 — an independent reviewer (separate model call)</h2>
+    <p>A separate reviewer call sees <em>only</em> the source text and the claim, never the drafter's reasoning. It is told to look for
+      errors and to assume the claim is wrong until the source proves it. It checks dates, numbers, institutions, legal references,
+      stage changes and next steps, and looks for overstatement or inference that the source does not contain. Only a verdict of
+      <code>supported</code> with confidence ≥ 0.80 passes.</p>
+
+    <h2>Layer 4 — editorial review of the whole issue</h2>
+    <p>Before an issue goes out, the full set of items is checked together: contradictions between items or with a dossier's history,
+      missing high-impact developments, consistent terminology and British spelling, faithful translations, and a strict
+      separation of fact from interpretation. Interpretation only ever appears in boxes labelled <em>Analysis</em>.</p>
+
+    <h2>What happens when something fails</h2>
+    <ul>
+      <li>It goes into <strong>quarantine</strong>: not published, recorded in the review report, and opened as a GitHub issue for a human to check.</li>
+      <li><strong>Publish gate:</strong> if more than 30% of an issue's items are quarantined, or any high-impact item is quarantined,
+        the issue is not published automatically. It waits for the editor to approve it by hand.</li>
+    </ul>
+
+    <h2>Review records</h2>
+    <p>Every published update shows its source link, the quote (expandable) and a review ID linking to its full review record.
+      Every issue links to its issue-level review report, including the quarantined items and the reasons. All records are
+      also kept in the <a href="https://github.com/rethinksci-gif/plastics-policy-tracker/tree/main/reviews">repository</a>.</p>
+
+    <h2>Limits</h2>
+    <p>Some official sites block automated access; these are listed in
+      <a href="https://github.com/rethinksci-gif/plastics-policy-tracker/blob/main/sources/unreachable.md">unreachable.md</a>,
+      and we do not substitute secondary sources for them. This is a monitoring tool, not legal advice; always rely on the official text.
+      See also the <a href={url('about/')}>about page</a>.</p>
+  </div>
+</Base>

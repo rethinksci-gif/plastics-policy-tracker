@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import { fmtDate, issues, url } from '../../lib/data';
+const all = await issues();
+---
+<Base title="Archive" description="All past issues of the Plastics Policy Tracker newsletter.">
+  <h1>Archive</h1>
+  <p class="lede">Every issue, with its review report. Issues are published every other Monday.</p>
+  {all.length === 0 && <p class="muted">No issues published yet.</p>}
+  <div class="dlist">
+    {all.map((i) => (
+      <article class="card">
+        <h3 style="margin:0"><a href={url(`issues/${i.id}/`)}>{i.data.title}</a> {i.collection === 'drafts' && <span class="badge draft">draft</span>}</h3>
+        <div class="small muted">{fmtDate(i.data.date)} · {i.data.items_count} verified changes · {i.data.quarantined_count} held for review · <a href={url(`reviews/${i.data.review_report}/`)}>review report</a></div>
+        {i.data.highlights.length > 0 && <ul class="small">{i.data.highlights.map((h) => <li>{h}</li>)}</ul>}
+      </article>
+    ))}
+  </div>
+</Base>

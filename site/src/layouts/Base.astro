@@ -1,0 +1,60 @@
+---
+import '../styles/global.css';
+import { SITE_NAME, url } from '../lib/data';
+
+interface Props { title?: string; description?: string; noindex?: boolean }
+const { title, description = 'Plastics laws and regulations worldwide, tracked and checked against official sources.', noindex = false } = Astro.props;
+const fullTitle = title ? `${title} · ${SITE_NAME}` : SITE_NAME;
+const path = Astro.url.pathname;
+const nav = [
+  ['', 'Latest'], ['issues/', 'Archive'], ['dossiers/', 'Dossiers'], ['calendar/', 'Calendar'],
+  ['verification/', 'How we verify'], ['search/', 'Search'], ['about/', 'About'],
+];
+const isCurrent = (p: string) => (p === '' ? path === url('') || path === url('') + '/' : path.startsWith(url(p)));
+---
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="alternate" type="application/rss+xml" title={SITE_NAME} href={url('rss.xml')} />
+    <link rel="icon" href={url('favicon.svg')} type="image/svg+xml" />
+    <script is:inline>
+      try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap">
+        <a class="brand" href={url('')}>Plastics <span>Policy</span> Tracker</a>
+        <nav class="main" aria-label="Main">
+          {nav.map(([p, label]) => <a href={url(p)} aria-current={isCurrent(p) ? 'page' : undefined}>{label}</a>)}
+        </nav>
+        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Toggle colour theme">◐</button>
+      </div>
+    </header>
+    <main data-pagefind-body={noindex ? undefined : ''}>
+      <div class="wrap"><slot /></div>
+    </main>
+    <footer class="site">
+      <div class="wrap">
+        Every fact on this site is traced to an official source and passes four layers of checks —
+        <a href={url('verification/')}>how we verify</a>. <a href={url('rss.xml')}>RSS</a> ·
+        <a href={url('calendar.ics')}>Calendar (.ics)</a> ·
+        <a href="https://github.com/rethinksci-gif/plastics-policy-tracker">Source and review archive on GitHub</a>.
+        Not legal advice.
+      </div>
+    </footer>
+    <script is:inline>
+      document.getElementById('theme-toggle').addEventListener('click', () => {
+        const root = document.documentElement;
+        const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        root.dataset.theme = dark ? 'light' : 'dark';
+        try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+      });
+    </script>
+  </body>
+</html>

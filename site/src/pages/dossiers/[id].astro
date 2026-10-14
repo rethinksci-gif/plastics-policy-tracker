@@ -1,0 +1,77 @@
+---
+import Base from '../../layouts/Base.astro';
+import { STAGES, dossiers, fmtDate, jurName, todayIso, url } from '../../lib/data';
+
+export async function getStaticPaths() {
+  return (await dossiers()).map((d) => ({ params: { id: d.id }, props: { d } }));
+}
+const { d } = Astro.props;
+const idx = STAGES.indexOf(d.stage);
+const today = todayIso();
+const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return u; } };
+---
+<Base title={d.short_title ?? d.title} description={d.summary ?? d.title}>
+  <p class="small muted"><a href={url('dossiers/')}>Dossiers</a> / {jurName(d.jurisdiction)}</p>
+  <h1>{d.title}</h1>
+  {d.title_original && <p class="muted" lang="und">{d.title_original}</p>}
+  <div class="dossier-row"><div class="meta small">
+    <span class="badge">{jurName(d.jurisdiction)}</span>
+    <span class="badge">{d.instrument}</span>
+    <span class="badge stage">{d.stage}</span>
+    <span class={`badge ${d.impact}`}>{d.impact} impact</span>
+  </div></div>
+  {idx >= 0 ? (
+    <div class="stagebar" aria-label="Legislative stage">
+      {STAGES.map((s, i) => <span class={i < idx ? 'done' : i === idx ? 'now' : ''}>{s}</span>)}
+    </div>
+  ) : <p><span class="badge draft">{d.stage}</span></p>}
+  {d.summary && <p class="lede">{d.summary}</p>}
+  <div class="grid2">
+    <section>
+      <h2>Verified timeline</h2>
+      {d.updates.length === 0 && <p class="muted">No verified updates yet.</p>}
+      <ol class="timeline">
+        {d.updates.map((u) => (
+          <li>
+            <div class="date">{fmtDate(u.date)} {u.stage_change && <span class="badge stage">→ {u.stage_change}</span>}</div>
+            <div>{u.summary}</div>
+            <details>
+              <summary>Source quote{u.source_lang !== 'en' ? ` (${u.source_lang}, with translation)` : ''}</summary>
+              <blockquote lang={u.source_lang}>{u.source_quote}</blockquote>
+              {u.source_quote_en && <blockquote><em>English translation:</em> {u.source_quote_en}</blockquote>}
+            </details>
+            <div class="small muted">
+              Source: <a href={u.source_url} rel="noopener">{host(u.source_url)}</a> ·
+              Review <a href={url(`reviews/${u.review_id}/`)}><code>{u.review_id}</code></a>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+    <aside>
+      <h2>Next steps</h2>
+      {d.next_steps.length === 0 && <p class="muted small">None recorded.</p>}
+      <ul class="events">
+        {d.next_steps.map((n) => (
+          <li>
+            <div class="when">{fmtDate(n.date)} {(n.status === 'to-be-confirmed' || n.date < today.slice(0, n.date.length)) && <span class="badge draft">to be confirmed</span>}</div>
+            <div class="small">{n.text} <a href={n.source_url} rel="noopener">source</a></div>
+          </li>
+        ))}
+      </ul>
+      <h2>Key dates</h2>
+      {d.key_dates.length === 0 && <p class="muted small">None recorded.</p>}
+      <ul class="events">
+        {d.key_dates.map((k) => (
+          <li><div class="when">{fmtDate(k.date)}</div><div class="small">{k.text} {k.source_url && <a href={k.source_url} rel="noopener">source</a>}</div></li>
+        ))}
+      </ul>
+      <h2>Affects</h2>
+      <p class="small">{d.affected.join(', ')}</p>
+      <h2>Topics</h2>
+      <p class="small">{d.topics.map((t) => <a href={url(`dossiers/?topic=${encodeURIComponent(t)}`)}>{t}</a>).reduce((a: any[], x, i) => (i ? [...a, ' · ', x] : [x]), [])}</p>
+      <h2>Official sources</h2>
+      <ul class="small">{d.official_links.map((l) => <li><a href={l} rel="noopener">{host(l)}</a></li>)}</ul>
+    </aside>
+  </div>
+</Base>

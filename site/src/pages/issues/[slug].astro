@@ -1,0 +1,19 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { fmtDate, issues, url } from '../../lib/data';
+
+export async function getStaticPaths() {
+  const all = await issues();
+  return all.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const isDraft = entry.collection === 'drafts';
+---
+<Base title={entry.data.title} description={entry.data.description} noindex={isDraft}>
+  {isDraft && <div class="banner">Draft preview — this issue has not been published. It is shown only in local builds with SHOW_DRAFTS=1.</div>}
+  <p class="small muted">{fmtDate(entry.data.date)} · <a href={url(`reviews/${entry.data.review_report}/`)}>Review report</a></p>
+  <h1>{entry.data.title}</h1>
+  <article class="prose"><Content /></article>
+</Base>

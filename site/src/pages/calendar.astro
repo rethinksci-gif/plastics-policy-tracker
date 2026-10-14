@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import { calendarEvents, fmtDate, todayIso, url } from '../lib/data';
+const today = todayIso();
+const events = await calendarEvents();
+const upcoming = events.filter((e) => e.end >= today);
+const past = events.filter((e) => e.end < today).reverse().slice(0, 30);
+const byMonth = new Map<string, typeof upcoming>();
+for (const e of upcoming) { const m = e.date.slice(0, 7); byMonth.set(m, [...(byMonth.get(m) ?? []), e]); }
+---
+<Base title="Calendar" description="Application dates, deadlines and expected next steps for every tracked dossier.">
+  <h1>Calendar</h1>
+  <p class="lede">Application dates, legal deadlines and expected next steps. Subscribe in any calendar app:
+    <a href={url('calendar.ics')}><code>calendar.ics</code></a>. Dates known only to the month are shown as month-long events.</p>
+  {[...byMonth].map(([m, es]) => (
+    <section>
+      <h2>{fmtDate(m)}</h2>
+      <ul class="events">
+        {es.map((e) => (
+          <li>
+            <div class="when">{fmtDate(e.date)} <span class="badge">{e.kind}</span></div>
+            <div><a href={url(`dossiers/${e.dossier}/`)}>{e.title}</a> — {e.text} {e.source_url && <a class="small" href={e.source_url} rel="noopener">source</a>}</div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+  <details>
+    <summary>Recent past dates</summary>
+    <ul class="events">{past.map((e) => <li><div class="when">{fmtDate(e.date)}</div><div><a href={url(`dossiers/${e.dossier}/`)}>{e.title}</a> — {e.text}</div></li>)}</ul>
+  </details>
+</Base>

@@ -12,7 +12,7 @@ import json
 import logging
 from datetime import datetime, timezone
 
-from .checks import blocking, deterministic_checks, flags, quote_in_text, snapshots_for_url
+from .checks import blocking, deterministic_checks, excerpt_for_review, flags, quote_in_text, snapshots_for_url
 from .config import REVIEWS, config, model_pro
 from .github import open_issue
 from .llm import LLM, prompt_parts
@@ -41,7 +41,8 @@ def claim_text(c: Candidate) -> str:
 def llm_review(llm: LLM, c: Candidate, source_text: str) -> LLMReview:
     """Layer 3. The reviewer sees only the snapshot and the claim — never the drafting prompt or reasoning."""
     limit = config()["llm"]["max_snapshot_chars"]
-    system, user = prompt_parts("reviewer", claim=claim_text(c), url=c.draft.source_url, text=source_text[:limit])
+    text = excerpt_for_review(source_text, c.draft.source_quote, limit)
+    system, user = prompt_parts("reviewer", claim=claim_text(c), url=c.draft.source_url, text=text)
     return llm.json_call(model_pro(), system, user, LLMReview, max_tokens=1500)
 
 

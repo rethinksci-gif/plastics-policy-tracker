@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/data';
+---
+<Base title="About" description="About the Plastics Policy Tracker.">
+  <div class="prose">
+    <h1>About</h1>
+    <p>The Plastics Policy Tracker follows the laws, regulations, standards, taxes, producer-responsibility schemes and treaties that
+      shape plastics production, packaging, recycling and waste: in the EU and its Member States, the UK, the US (federal and state),
+      China, and global negotiations.</p>
+    <p>It is written for recyclers, converters, brand owners, retailers and the people who advise them. A new issue is published every
+      other Monday; the <a href={url('dossiers/')}>dossiers</a> and <a href={url('calendar/')}>calendar</a> are updated as changes are verified.</p>
+    <h2>How it works</h2>
+    <p>An automated pipeline fetches official sources every day, flags relevant changes, drafts updates with a language model (DeepSeek)
+      and runs them through four layers of checks described on <a href={url('verification/')}>How we verify</a>. Everything,
+      from source snapshots to prompts, review reports and quarantined items, is public on
+      <a href="https://github.com/rethinksci-gif/plastics-policy-tracker">GitHub</a>.</p>
+    <h2>Subscribe</h2>
+    <ul>
+      <li><a href={url('rss.xml')}>RSS feed</a> of issues</li>
+      <li><a href={url('calendar.ics')}>Calendar feed</a> of deadlines and application dates</li>
+    </ul>
+    <h2>Corrections</h2>
+    <p>Found an error? Please <a href="https://github.com/rethinksci-gif/plastics-policy-tracker/issues/new">open an issue</a> with the official source.</p>
+    <p class="small muted">Not legal advice. Spelling: British English.</p>
+  </div>
+</Base>

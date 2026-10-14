@@ -1,0 +1,27 @@
+{
+ "passed": [
+  {
+   "review_id": "seed-eu-ppwr-004",
+   "dossier": "eu-ppwr",
+   "reasons": []
+  },
+  {
+   "review_id": "seed-eu-ppwr-003",
+   "dossier": "eu-ppwr",
+   "reasons": []
+  },
+  {
+   "review_id": "seed-eu-ppwr-002",
+   "dossier": "eu-ppwr",
+   "reasons": []
+  },
+  {
+   "review_id": "seed-eu-ppwr-001",
+   "dossier": "eu-ppwr",
+   "reasons": []
+  }
+ ],
+ "failed": [],
+ "skipped": 0,
+ "llm_calls": 4
+}

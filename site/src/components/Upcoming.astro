@@ -1,0 +1,18 @@
+---
+import { calendarEvents, fmtDate, todayIso, url } from '../lib/data';
+interface Props { days?: number; limit?: number }
+const { days = 60, limit = 12 } = Astro.props;
+const today = todayIso();
+const horizon = new Date(Date.now() + days * 864e5).toISOString().slice(0, 10);
+const events = (await calendarEvents()).filter((e) => e.end >= today && e.date <= horizon).slice(0, limit);
+---
+<ul class="events">
+  {events.length === 0 && <li class="muted">No recorded dates in the next {days} days.</li>}
+  {events.map((e) => (
+    <li>
+      <div class="when">{fmtDate(e.date)} {e.kind !== 'key date' && <span class="badge">{e.kind}</span>}</div>
+      <div><a href={url(`dossiers/${e.dossier}/`)}>{e.title}</a> — {e.text}</div>
+    </li>
+  ))}
+</ul>
+<p class="small"><a href={url('calendar/')}>Full calendar</a> · <a href={url('calendar.ics')}>Subscribe (.ics)</a></p>

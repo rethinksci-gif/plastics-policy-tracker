@@ -57,6 +57,8 @@ class LLM:
     def json_call(self, model: str, system: str, user: str, schema: type[T], max_tokens: int = 4000) -> T:
         """One logical call. Each HTTP attempt counts against the budget."""
         retries = config()["llm"]["max_retries"]
+        # DeepSeek reasoning tokens count against max_tokens; leave headroom so the JSON is not cut off.
+        budget = max_tokens + config()["llm"]["reasoning_headroom"]
         last_err: Exception | None = None
         for attempt in range(retries + 1):
             if self.calls >= self.max_calls:
@@ -68,12 +70,16 @@ class LLM:
                     messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
                     response_format={"type": "json_object"},
                     temperature=config()["llm"]["temperature"],
-                    max_tokens=max_tokens,
+                    max_tokens=budget,
                 )
                 if resp.usage:
                     self.usage["prompt_tokens"] += resp.usage.prompt_tokens or 0
                     self.usage["completion_tokens"] += resp.usage.completion_tokens or 0
-                content = (resp.choices[0].message.content or "").strip()
+                choice = resp.choices[0]
+                content = (choice.message.content or "").strip()
+                if choice.finish_reason == "length":
+                    budget *= 2
+                    raise LLMError(f"output truncated at max_tokens; retrying with {budget}")
                 if not content:
                     raise LLMError("empty response")
                 return schema.model_validate(json.loads(content))

@@ -128,14 +128,13 @@ def check_domain(url: str, trusted=None) -> CheckResult:
 
 
 def default_url_status(url: str) -> int:
-    from .fetch import http_client
+    from .fetch import HOST_HEADERS, http_client
 
     with http_client() as c:
         try:
-            r = c.head(url)
-            if r.status_code in (403, 405, 501) or r.status_code >= 400:
-                r = c.get(url)
-            return r.status_code
+            host = urlparse(url).hostname or ""
+            with c.stream("GET", url, headers=HOST_HEADERS.get(host, {})) as r:
+                return r.status_code
         except Exception:
             return 0
 
@@ -277,3 +276,20 @@ def validate_dossier(d: Dossier, now: date | None = None, status_fn=None, truste
             out.append(CheckResult(layer=1, name="next-step-date", passed=False, severity="flag",
                                    detail=f"[{d.id}] next step {ns.date} has passed; mark to-be-confirmed"))
     return out
+
+
+def excerpt_for_review(text: str, quote: str, limit: int, head: int = 6000) -> str:
+    """Text to show a reviewer. Long documents are cut to the document head plus a wide window
+    around where the quote occurs, so the reviewer always sees the quoted passage in context."""
+    if len(text) <= limit:
+        return text
+    hay = normalise(text)
+    frag = normalise(_ELLIPSIS.split(quote)[0])[:120]
+    idx = hay.find(frag)
+    if idx < 0:
+        return text[:limit]
+    centre = int(idx / max(len(hay), 1) * len(text))  # normalisation shrinks text slightly; window absorbs drift
+    half = (limit - head) // 2
+    start, end = max(head, centre - half), min(len(text), centre + half)
+    return f"{text[:head]}\n\n[... {start - head} characters omitted ...]\n\n{text[start:end]}" + (
+        f"\n\n[... {len(text) - end} characters omitted ...]" if end < len(text) else "")
