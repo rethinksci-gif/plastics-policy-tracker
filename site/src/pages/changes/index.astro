@@ -1,0 +1,68 @@
+---
+import Base from '../../layouts/Base.astro';
+import { ROOT_NAMES, allChanges, fmtDate, jurName, jurRoot, stageLabel, url } from '../../lib/data';
+
+const changes = await allChanges();
+const roots = ['GLOBAL', 'EU', 'UK', 'US', 'CN'].filter((r) => changes.some((c) => jurRoot(c.d.jurisdiction) === r));
+const months = [...new Set(changes.map((c) => c.u.date.slice(0, 7)))];
+const fmtIssue = (slug: string) => `Issue ${Number(slug.split('-issue-')[1])}`;
+---
+<Base title="Latest changes" description="Every verified change to the tracked plastics laws and policies, newest first.">
+  <h1>Latest changes</h1>
+  <p class="lede">Every verified change to the laws and policies we track, newest first. Changes appear here as soon as they
+    pass review, before the next newsletter issue. <a href={url('changes/rss.xml')}>RSS feed of all changes</a>.</p>
+
+  <form class="filters" id="filters" aria-label="Filter changes">
+    <select name="jur" aria-label="Jurisdiction"><option value="">All jurisdictions</option>{roots.map((r) => <option value={r}>{ROOT_NAMES[r]}</option>)}</select>
+    <select name="impact" aria-label="Impact"><option value="">Any impact</option><option>high</option><option>medium</option><option>low</option></select>
+    <select name="since" aria-label="Period">
+      <option value="">All dates</option><option value="30">Last 30 days</option><option value="90">Last 90 days</option><option value="365">Last 12 months</option>
+    </select>
+  </form>
+  <p class="small muted" id="count" aria-live="polite">{changes.length} changes</p>
+
+  <div id="list">
+    {months.map((m) => (
+      <section data-month={m}>
+        <h2>{fmtDate(m)}</h2>
+        <ul class="events">
+          {changes.filter((c) => c.u.date.startsWith(m)).map((c) => (
+            <li class="change" data-root={jurRoot(c.d.jurisdiction)} data-impact={c.d.impact} data-date={c.u.date.length === 7 ? `${c.u.date}-28` : c.u.date}>
+              <div class="when">{fmtDate(c.u.date)} · <a href={url(`dossiers/${c.d.id}/#change-${c.u.review_id}`)}>{c.d.short_title ?? c.d.title}</a>
+                <span class="badge">{jurName(c.d.jurisdiction)}</span> <span class={`badge ${c.d.impact}`}>{c.d.impact}</span>
+                {c.u.stage_change && <span class="badge stage">→ {stageLabel(c.u.stage_change)}</span>}
+              </div>
+              <div>{c.u.summary}</div>
+              <div class="small muted">Review <a href={url(`reviews/${c.u.review_id}/`)}><code>{c.u.review_id}</code></a>{c.issue && <> · <a href={url(`issues/${c.issue}/`)}>{fmtIssue(c.issue)}</a></>}</div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+
+  <script>
+    const form = document.getElementById('filters') as HTMLFormElement;
+    const items = Array.from(document.querySelectorAll<HTMLElement>('li.change'));
+    const sections = Array.from(document.querySelectorAll<HTMLElement>('section[data-month]'));
+    const count = document.getElementById('count')!;
+    const params = new URLSearchParams(location.search);
+    for (const [k, v] of params) { const el = form.elements.namedItem(k) as HTMLSelectElement | null; if (el) el.value = v; }
+    function apply() {
+      const f = new FormData(form);
+      const since = Number(f.get('since') || 0);
+      const cutoff = since ? new Date(Date.now() - since * 864e5).toISOString().slice(0, 10) : '';
+      let n = 0;
+      for (const li of items) {
+        const ok = (!f.get('jur') || li.dataset.root === f.get('jur')) && (!f.get('impact') || li.dataset.impact === f.get('impact')) &&
+          (!cutoff || li.dataset.date! >= cutoff);
+        li.hidden = !ok; if (ok) n++;
+      }
+      for (const s of sections) s.hidden = Array.from(s.querySelectorAll<HTMLElement>('li.change')).every((li) => li.hidden);
+      count.textContent = `${n} change${n === 1 ? '' : 's'}`;
+      const p = new URLSearchParams(); for (const [k, v] of f) if (v) p.set(k, String(v));
+      history.replaceState(null, '', p.size ? `?${p}` : location.pathname);
+    }
+    form.addEventListener('change', apply); apply();
+  </script>
+</Base>

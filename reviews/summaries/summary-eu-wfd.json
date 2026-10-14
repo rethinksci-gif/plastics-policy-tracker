@@ -1,0 +1,32 @@
+{
+ "review_id": "summary-eu-wfd",
+ "dossier_id": "eu-wfd",
+ "summary": "Directive 2008/98/EC on waste. It was amended by Directive (EU) 2025/1892, which Member States must transpose by 17 June 2027, and a Commission proposal of 10 December 2025 (COM(2025) 986) would simplify some of its requirements.",
+ "summary_sha256": "746ebcc80db2031b0917e2a6a5b51e5a60ca2be14b2b9cb4113d913c51953e97",
+ "created": "2026-10-14T11:46:32.938690Z",
+ "impact": "medium",
+ "sources": [
+  "https://publications.europa.eu/resource/celex/32008L0098",
+  "https://publications.europa.eu/resource/celex/32025L1892",
+  "https://publications.europa.eu/resource/celex/52025PC0986",
+  "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/17712_en"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "passed",
+ "reasons": []
+}

@@ -1,0 +1,30 @@
+{
+ "review_id": "summary-eu-iaa",
+ "dossier_id": "eu-iaa",
+ "summary": "Commission proposal COM(2026) 100 for a regulation establishing a framework of measures for the acceleration of industrial capacity and decarbonisation in strategic sectors. The sectors listed include the manufacture of rubber and plastic products (NACE C22).",
+ "summary_sha256": "82359341be3622b5ccc57c3e89a3d74450803d9a66231969b764f17043a04396",
+ "created": "2026-10-14T11:46:24.616919Z",
+ "impact": "medium",
+ "sources": [
+  "https://publications.europa.eu/resource/celex/52026PC0100",
+  "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0068(COD)"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.98,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "passed",
+ "reasons": []
+}

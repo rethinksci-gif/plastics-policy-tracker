@@ -1,0 +1,29 @@
+{
+ "review_id": "summary-eu-pellet-losses",
+ "dossier_id": "eu-pellet-losses",
+ "summary": "Regulation (EU) 2025/2365 on preventing plastic pellet losses to reduce microplastic pollution. It applies from 17 December 2027; certain provisions apply from 16 December 2025.",
+ "summary_sha256": "601a0617994f1d864b7acc0560d35f5a313af4f09c9fbe4175047a0010419e57",
+ "created": "2026-10-14T11:46:24.062098Z",
+ "impact": "medium",
+ "sources": [
+  "https://publications.europa.eu/resource/celex/32025R2365"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 1.0,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "passed",
+ "reasons": []
+}

@@ -1,0 +1,30 @@
+{
+ "review_id": "summary-us-md-epr",
+ "dossier_id": "us-md-epr",
+ "summary": "SB 901 (Chapter 431 of 2025) requires producers of packaging and paper products to submit producer responsibility plans to the Maryland Department of the Environment.",
+ "summary_sha256": "9154223e108dd171683fddacfd02fc2942ede3ecaa570e9da8df0f658c9e94a4",
+ "created": "2026-10-14T11:44:27.201542Z",
+ "impact": "medium",
+ "sources": [
+  "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0901?ys=2025RS",
+  "https://mgaleg.maryland.gov/2025RS/fnotes/bil_0001/sb0901.pdf"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.9,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "passed",
+ "reasons": []
+}

@@ -1,0 +1,31 @@
+{
+ "review_id": "summary-cn-recycled-plastic-standards",
+ "dossier_id": "cn-recycled-plastic-standards",
+ "summary": "Recommended national standards (GB/T) on recycled plastics, listed on the national standards information public service platform. They include identification and marking of recycled plastics (GB/T 45090-2024), requirements for the chain of custody management system of recycled plastics (GB/T 47982-2026) and testing and characterisation of mechanically recycled PP and PE (GB/T 47920-2026).",
+ "summary_sha256": "7882b2622f9420dd75d9d3b842e41706e106df0a95c59f19bbc1bdf4a19c20fb",
+ "created": "2026-10-14T11:46:24.932728Z",
+ "impact": "medium",
+ "sources": [
+  "https://std.samr.gov.cn/gb/search/gbDetailed?id=581F4B90BAB380E8E06397BE0A0AF9E7",
+  "https://std.samr.gov.cn/gb/search/gbDetailed?id=55B3892F9697336AE06397BE0A0A4BF9",
+  "https://std.samr.gov.cn/gb/search/gbDetailed?id=28045D84DA1A9055E06397BE0A0A7C5C"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.88,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "passed",
+ "reasons": []
+}

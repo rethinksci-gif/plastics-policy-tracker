@@ -1,0 +1,42 @@
+{
+ "review_id": "summary-fr-epr-packaging-recycled-bonus",
+ "dossier_id": "fr-epr-packaging-recycled-bonus",
+ "summary": "Under the French EPR schemes, producers that incorporate recycled plastic receive a bonus (prime) on their eco-contribution. Collection, sorting, recycling and incorporation must take place within 1,500 km of the barycentre of metropolitan France, in an EU country or a third country with equivalent standards.",
+ "summary_sha256": "4a0cec5c0882163249d42f8b1a88b41fee7f6aecfaa8b4658326be3a6b54d1ee",
+ "created": "2026-10-14T11:43:56.453443Z",
+ "impact": "high",
+ "sources": [
+  "https://www.ecologie.gouv.fr/sites/default/files/documents/FAQ-IMPR-avril2026_0.pdf",
+  "https://ecd-bo.citeo.com/ecd2/medias/citeo/public/fr/guide-du-tarif-des-emballages-menagers-2026.pdf"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.9,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "confirm_model": "deepseek-v4-pro",
+ "outcome": "passed",
+ "reasons": []
+}

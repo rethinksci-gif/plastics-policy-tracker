@@ -82,6 +82,7 @@ jobs:
             data/logs/
             data/candidates/
             reviews/items/
+            reviews/summaries/
           if-no-files-found: ignore
 
       - name: Commit to staging and open/update PR

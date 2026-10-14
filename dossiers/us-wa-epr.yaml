@@ -3,30 +3,42 @@ title: Washington State — Recycling Reform Act (E2SSB 5284) packaging and pape
 short_title: Washington packaging EPR
 jurisdiction: US-WA
 instrument: EPR-scheme
-topics: [EPR, packaging, paper, needs-assessment]
+topics:
+- EPR
+- packaging
+- paper
+- needs-assessment
 stage: implementing-acts
-affected: [brand-owners, recyclers, municipalities]
+affected:
+- brand-owners
+- recyclers
+- municipalities
 impact: medium
 official_links:
-  - https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/Senate/5284-S2.SL.pdf
-summary: >-
-  Engrossed Second Substitute Senate Bill 5284 (Chapter 316, Laws of 2025) creates producer responsibility for
-  packaging and paper products in Washington, overseen by the Department of Ecology.
+- https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/Senate/5284-S2.SL.pdf
+summary: Engrossed Second Substitute Senate Bill 5284 (Chapter 316, Laws of 2025) on producer responsibility
+  for packaging and paper products in Washington State, approved by the Governor on 17 May 2025. After
+  1 July 2026 producers must be members of a producer responsibility organisation registered in the state,
+  or register as a producer responsibility organisation that will implement an individual plan.
 updates:
-  - date: 2025-05-17
-    summary: The Governor approved E2SSB 5284 on 17 May 2025 after it passed the House (14 April 2025) and Senate (23 April 2025).
-    source_url: https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/Senate/5284-S2.SL.pdf
-    source_quote: "Passed by the Senate April 23, 2025. Passed by the House April 14, 2025. Approved by the Governor May 17, 2025."
-    stage_change: adopted
-    review_id: seed-us-wa-epr-001
+- date: '2025-05-17'
+  summary: The Governor approved E2SSB 5284 on 17 May 2025 after it passed the House (14 April 2025) and
+    Senate (23 April 2025).
+  source_url: https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/Senate/5284-S2.SL.pdf
+  source_quote: Passed by the Senate April 23, 2025. Passed by the House April 14, 2025. Approved by the
+    Governor May 17, 2025.
+  source_lang: en
+  stage_change: adopted
+  review_id: seed-us-wa-epr-001
 next_steps: []
 key_dates:
-  - date: 2026-07-01
-    text: After this date producers must be a member of a registered producer responsibility organisation (Sec. 104).
-    source_url: https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/Senate/5284-S2.SL.pdf
-  - date: 2026-10-01
-    text: Initial statewide collection lists due (Sec. 109).
-    source_url: https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/Senate/5284-S2.SL.pdf
-  - date: 2026-12-31
-    text: Preliminary needs assessment due (Sec. 111).
-    source_url: https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/Senate/5284-S2.SL.pdf
+- date: '2026-07-01'
+  text: After this date producers must be a member of a registered producer responsibility organisation
+    (Sec. 104).
+  source_url: https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/Senate/5284-S2.SL.pdf
+- date: '2026-10-01'
+  text: Initial statewide collection lists due (Sec. 109).
+  source_url: https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/Senate/5284-S2.SL.pdf
+- date: '2026-12-31'
+  text: Preliminary needs assessment due (Sec. 111).
+  source_url: https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/Senate/5284-S2.SL.pdf

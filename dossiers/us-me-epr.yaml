@@ -3,32 +3,45 @@ title: Maine — Stewardship Program for Packaging (EPR)
 short_title: Maine packaging EPR
 jurisdiction: US-ME
 instrument: EPR-scheme
-topics: [EPR, packaging, stewardship-organization]
+topics:
+- EPR
+- packaging
+- stewardship-organization
 stage: implementing-acts
-affected: [brand-owners, municipalities, recyclers]
+affected:
+- brand-owners
+- municipalities
+- recyclers
 impact: medium
 official_links:
-  - https://www.maine.gov/dep/waste/recycle/epr.html
-summary: >-
-  Maine's 2021 packaging stewardship law is run by a stewardship organisation under contract with the
-  Department of Environmental Protection; the program rule is Chapter 428.
+- https://www.maine.gov/dep/waste/recycle/epr.html
+summary: Maine's Stewardship Program for Packaging, established by a law passed in July 2021. The Board
+  of Environmental Protection adopted the program rule, Chapter 428, in December 2024, and it was amended
+  in March 2026. A stewardship organisation is to run the program day to day; in September 2026 the Department
+  of Environmental Protection announced it would revise its request for proposals after none were submitted.
 updates:
-  - date: 2026-09-11
-    summary: Maine DEP announced it will revise its request for proposals for the stewardship organisation.
-    source_url: https://www.maine.gov/dep/waste/recycle/epr.html
-    source_quote: "Maine DEP to Revise Request for Proposals for Stewardship Organization. (September 11, 2026)"
-    review_id: seed-us-me-epr-003
-  - date: 2026-08-20
-    summary: No proposals had been submitted by the deadline of Maine DEP's request for proposals RFP-202605094 for a stewardship organisation.
-    source_url: https://www.maine.gov/dep/waste/recycle/epr.html
-    source_quote: "Stewardship Organization RFP-202605094 Announcement: No Proposals Submitted as of Deadline. (August 20, 2026)"
-    review_id: seed-us-me-epr-002
-  - date: 2026-03
-    summary: >-
-      Program rule Chapter 428 was amended to add Appendix A, the Packaging Material Types List, and to align with
-      changes made to the law in June 2025.
-    source_url: https://www.maine.gov/dep/waste/recycle/epr.html
-    source_quote: "in March 2026, Chapter 428 was amended to include Appendix A, The Packaging Material Types List and to align with changes made to the law in June 2025."
-    review_id: seed-us-me-epr-001
+- date: '2026-09-11'
+  summary: Maine DEP announced it will revise its request for proposals for the stewardship organisation.
+  source_url: https://www.maine.gov/dep/waste/recycle/epr.html
+  source_quote: Maine DEP to Revise Request for Proposals for Stewardship Organization. (September 11,
+    2026)
+  source_lang: en
+  review_id: seed-us-me-epr-003
+- date: '2026-08-20'
+  summary: No proposals had been submitted by the deadline of Maine DEP's request for proposals RFP-202605094
+    for a stewardship organisation.
+  source_url: https://www.maine.gov/dep/waste/recycle/epr.html
+  source_quote: 'Stewardship Organization RFP-202605094 Announcement: No Proposals Submitted as of Deadline.
+    (August 20, 2026)'
+  source_lang: en
+  review_id: seed-us-me-epr-002
+- date: 2026-03
+  summary: Program rule Chapter 428 was amended to add Appendix A, the Packaging Material Types List,
+    and to align with changes made to the law in June 2025.
+  source_url: https://www.maine.gov/dep/waste/recycle/epr.html
+  source_quote: in March 2026, Chapter 428 was amended to include Appendix A, The Packaging Material Types
+    List and to align with changes made to the law in June 2025.
+  source_lang: en
+  review_id: seed-us-me-epr-001
 next_steps: []
 key_dates: []

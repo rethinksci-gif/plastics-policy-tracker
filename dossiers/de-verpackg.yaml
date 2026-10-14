@@ -1,36 +1,48 @@
 id: de-verpackg
 title: Germany — Packaging Act and its replacement adapting German law to the PPWR (VerpackDG)
-title_original: Gesetz zur Anpassung des Verpackungsrechts und anderer Rechtsbereiche an die Verordnung (EU) 2025/40
 short_title: Germany VerpackG / VerpackDG
+title_original: Gesetz zur Anpassung des Verpackungsrechts und anderer Rechtsbereiche an die Verordnung
+  (EU) 2025/40
 jurisdiction: EU-DE
 instrument: national-law
-topics: [EPR, packaging, PPWR-implementation, deposit]
+topics:
+- EPR
+- packaging
+- PPWR-implementation
+- deposit
 stage: adopted
-affected: [brand-owners, retailers, importers, recyclers]
+affected:
+- brand-owners
+- retailers
+- importers
+- recyclers
 impact: high
 official_links:
-  - https://dserver.bundestag.de/brd/2026/0377-26.pdf
-  - https://dserver.bundestag.de/btd/21/063/2106398.pdf
-  - https://www.verpackungsregister.org/
-summary: >-
-  Germany's law adapting packaging law to Regulation (EU) 2025/40 was adopted by the Bundestag on 11 June 2026.
-  It repeals the 2017 Packaging Act (VerpackG) with effect from the end of 11 August 2026.
+- https://dserver.bundestag.de/brd/2026/0377-26.pdf
+- https://dserver.bundestag.de/btd/21/063/2106398.pdf
+- https://www.verpackungsregister.org/
+summary: Germany's law adapting packaging law and other areas of law to Regulation (EU) 2025/40, adopted
+  by the Bundestag on 11 June 2026.
 updates:
-  - date: 2026-06-11
-    summary: >-
-      The Bundestag adopted the law adapting packaging law and other areas of law to Regulation (EU) 2025/40 at
-      its 83rd sitting on 11 June 2026, following the environment committee's report (Drucksache 21/6398).
-    source_url: https://dserver.bundestag.de/brd/2026/0377-26.pdf
-    source_quote: "Der Deutsche Bundestag hat in seiner 83. Sitzung am 11. Juni 2026 aufgrund der Beschlussempfehlung und des Berichtes des Ausschusses fü r Umwelt, Klimaschutz, Naturschutz und nukleare Sicherheit – Drucksache 21/6398 –"
-    source_quote_en: "At its 83rd sitting on 11 June 2026, on the basis of the recommendation and report of the Committee on the Environment, Climate Action, Nature Conservation and Nuclear Safety – printed paper 21/6398 – the German Bundestag ..."
-    source_lang: de
-    stage_change: adopted
-    review_id: seed-de-verpackg-001
+- date: '2026-06-11'
+  summary: The Bundestag adopted the law adapting packaging law and other areas of law to Regulation (EU)
+    2025/40 at its 83rd sitting on 11 June 2026, following the environment committee's report (Drucksache
+    21/6398).
+  source_url: https://dserver.bundestag.de/brd/2026/0377-26.pdf
+  source_quote: Der Deutsche Bundestag hat in seiner 83. Sitzung am 11. Juni 2026 aufgrund der Beschlussempfehlung
+    und des Berichtes des Ausschusses fü r Umwelt, Klimaschutz, Naturschutz und nukleare Sicherheit –
+    Drucksache 21/6398 –
+  source_quote_en: At its 83rd sitting on 11 June 2026, on the basis of the recommendation and report
+    of the Committee on the Environment, Climate Action, Nature Conservation and Nuclear Safety – printed
+    paper 21/6398 – the German Bundestag ...
+  source_lang: de
+  stage_change: adopted
+  review_id: seed-de-verpackg-001
 next_steps: []
 key_dates:
-  - date: 2026-08-11
-    text: The 2017 Packaging Act (VerpackG) ceases to have effect at the end of this day (Article 7).
-    source_url: https://dserver.bundestag.de/brd/2026/0377-26.pdf
-  - date: 2030-01-01
-    text: Article 4 point 1 enters into force (Article 8(1)).
-    source_url: https://dserver.bundestag.de/brd/2026/0377-26.pdf
+- date: '2026-08-11'
+  text: The 2017 Packaging Act (VerpackG) ceases to have effect at the end of this day (Article 7).
+  source_url: https://dserver.bundestag.de/brd/2026/0377-26.pdf
+- date: '2030-01-01'
+  text: Article 4 point 1 enters into force (Article 8(1)).
+  source_url: https://dserver.bundestag.de/brd/2026/0377-26.pdf

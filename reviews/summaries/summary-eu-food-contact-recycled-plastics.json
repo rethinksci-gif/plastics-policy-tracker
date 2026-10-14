@@ -1,0 +1,42 @@
+{
+ "review_id": "summary-eu-food-contact-recycled-plastics",
+ "dossier_id": "eu-food-contact-recycled-plastics",
+ "summary": "Commission Regulation (EU) 2022/1616 governs recycled plastic materials and articles intended to come into contact with food, including authorisation of recycling processes and the framework for novel technologies.",
+ "summary_sha256": "f9a90586ecba4bbf74a01397e49fcb62ed116fa8567ffaa90c47711089987ff7",
+ "created": "2026-10-14T11:43:33.064315Z",
+ "impact": "high",
+ "sources": [
+  "https://publications.europa.eu/resource/celex/32022R1616",
+  "https://publications.europa.eu/resource/celex/32025R2269"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "confirm_model": "deepseek-v4-pro",
+ "outcome": "passed",
+ "reasons": []
+}

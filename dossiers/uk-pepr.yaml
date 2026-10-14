@@ -3,26 +3,36 @@ title: UK — Extended producer responsibility for packaging (pEPR)
 short_title: UK packaging EPR
 jurisdiction: UK
 instrument: EPR-scheme
-topics: [EPR, packaging, fees, PRN]
+topics:
+- EPR
+- packaging
+- fees
+- PRN
 stage: in-application
-affected: [brand-owners, importers, retailers, recyclers, reprocessors]
+affected:
+- brand-owners
+- importers
+- retailers
+- recyclers
+- reprocessors
 impact: high
 official_links:
-  - https://www.legislation.gov.uk/uksi/2024/1332/made
-  - https://www.gov.uk/government/collections/extended-producer-responsibility-for-packaging
-  - https://www.gov.uk/guidance/extended-producer-responsibility-for-packaging-who-is-affected-and-what-to-do
-summary: >-
-  The Producer Responsibility Obligations (Packaging and Packaging Waste) Regulations 2024 require obligated
-  producers to report packaging data, meet recycling obligations through PRNs/PERNs and pay waste disposal fees
-  for household packaging to PackUK, the scheme administrator.
+- https://www.legislation.gov.uk/uksi/2024/1332/made
+- https://www.gov.uk/government/collections/extended-producer-responsibility-for-packaging
+- https://www.gov.uk/guidance/extended-producer-responsibility-for-packaging-who-is-affected-and-what-to-do
+summary: The Producer Responsibility Obligations (Packaging and Packaging Waste) Regulations 2024 set
+  extended producer responsibility for packaging in the UK. Large producers must report packaging data,
+  meet recycling obligations with PRNs or PERNs, and pay a waste disposal fee for household packaging
+  to PackUK, the scheme administrator; small producers have fewer obligations.
 updates:
-  - date: 2024-12-11
-    summary: >-
-      The Producer Responsibility Obligations (Packaging and Packaging Waste) Regulations 2024 (SI 2024/1332) were
-      made on 11 December 2024.
-    source_url: https://www.legislation.gov.uk/uksi/2024/1332/made
-    source_quote: "These Regulations may be cited as the Producer Responsibility Obligations (Packaging and Packaging Waste) Regulations 2024."
-    stage_change: adopted
-    review_id: seed-uk-pepr-001
+- date: '2024-12-11'
+  summary: The Producer Responsibility Obligations (Packaging and Packaging Waste) Regulations 2024 (SI
+    2024/1332) were made on 11 December 2024.
+  source_url: https://www.legislation.gov.uk/uksi/2024/1332/made
+  source_quote: These Regulations may be cited as the Producer Responsibility Obligations (Packaging and
+    Packaging Waste) Regulations 2024.
+  source_lang: en
+  stage_change: adopted
+  review_id: seed-uk-pepr-001
 next_steps: []
 key_dates: []

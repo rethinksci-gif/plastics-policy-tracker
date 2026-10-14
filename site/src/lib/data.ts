@@ -76,3 +76,75 @@ export async function calendarEvents(): Promise<CalEvent[]> {
   }
   return out.sort((a, b) => a.date.localeCompare(b.date));
 }
+
+// ---------------------------------------------------------------------------
+// Laws & policies library
+// ---------------------------------------------------------------------------
+
+export const INSTRUMENTS: Record<string, string> = {
+  regulation: 'Regulation', directive: 'Directive', 'implementing-act': 'Implementing act', 'delegated-act': 'Delegated act',
+  decision: 'Decision', 'national-law': 'National law', standard: 'Standard', treaty: 'Treaty', tax: 'Tax',
+  'EPR-scheme': 'EPR scheme', policy: 'Policy',
+};
+export const instrumentName = (i: string) => INSTRUMENTS[i] ?? i;
+
+export const ROOT_NAMES: Record<string, string> = {
+  GLOBAL: 'Global', EU: 'EU and Member States', UK: 'United Kingdom', US: 'United States', CN: 'China',
+};
+export const jurRoot = (c: string) => c.split('-')[0];
+
+const daysBetween = (a: string, b: string) => (Date.parse(b) - Date.parse(a)) / 864e5;
+
+/** review_id -> slug of the published issue that carried it. */
+export async function issueOfReview(): Promise<Map<string, string>> {
+  const out = new Map<string, string>();
+  const published = new Set((await getCollection('issues')).map((i) => i.id));
+  for (const r of await getCollection('issueReviews')) {
+    if (r.data.decision !== 'publish' || !published.has(r.data.issue)) continue;
+    for (const p of r.data.published_items) out.set(p.review_id, r.data.issue);
+  }
+  return out;
+}
+
+export interface LibraryEntry {
+  d: Dossier;
+  summary: string | null;          // shown only when its review passed for exactly this text
+  summaryStatus: 'verified' | 'pending' | 'failed' | 'none';
+  summaryReviewId: string | null;
+  lastChange: string | null;       // date of the newest verified update
+  changedRecently: boolean;        // newest update within 30 days
+  nextDate: CalEvent | null;       // next upcoming key date / next step
+}
+
+export async function library(): Promise<LibraryEntry[]> {
+  const reviews = new Map((await getCollection('summaryReviews')).map((r) => [r.data.dossier_id, r.data]));
+  const today = todayIso();
+  const events = (await calendarEvents()).filter((e) => e.end >= today);
+  return (await dossiers()).map((d) => {
+    const r = reviews.get(d.id);
+    let summaryStatus: LibraryEntry['summaryStatus'] = 'none';
+    if (d.summary) {
+      if (!r || r.summary.trim() !== d.summary.trim()) summaryStatus = 'pending';
+      else summaryStatus = r.outcome === 'passed' ? 'verified' : 'failed';
+    }
+    const last = d.updates[0]?.date ?? null;
+    return {
+      d,
+      summary: summaryStatus === 'verified' ? d.summary! : null,
+      summaryStatus,
+      summaryReviewId: r && summaryStatus !== 'pending' ? r.review_id : null,
+      lastChange: last,
+      changedRecently: !!last && daysBetween(dateEnd(last), today) <= 30,
+      nextDate: events.find((e) => e.dossier === d.id) ?? null,
+    };
+  });
+}
+
+export interface ChangeEntry { d: Dossier; u: Dossier['updates'][number]; issue: string | null }
+
+export async function allChanges(): Promise<ChangeEntry[]> {
+  const issueMap = await issueOfReview();
+  return (await dossiers())
+    .flatMap((d) => d.updates.map((u) => ({ d, u, issue: issueMap.get(u.review_id) ?? null })))
+    .sort((a, b) => b.u.date.localeCompare(a.u.date) || a.d.title.localeCompare(b.d.title));
+}

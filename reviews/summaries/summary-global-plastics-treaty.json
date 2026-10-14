@@ -1,0 +1,42 @@
+{
+ "review_id": "summary-global-plastics-treaty",
+ "dossier_id": "global-plastics-treaty",
+ "summary": "Negotiations on an international legally binding instrument on plastic pollution, including in the marine environment, mandated by the UN Environment Assembly resolution of 2 March 2022 (UNEP/EA.5/Res.14). Since the second part of the fifth session (INC-5.2), work has continued through informal Heads of Delegation meetings.",
+ "summary_sha256": "e1295bdb691917861bb9b75f9e56167d339e5fb47c24e8128fb78223d2467057",
+ "created": "2026-10-14T11:44:00.791896Z",
+ "impact": "high",
+ "sources": [
+  "https://www.unep.org/inc-plastic-pollution",
+  "https://wedocs.unep.org/rest/api/core/bitstreams/3ed3ef9f-1c62-4f8b-b0fc-11ac6234d5c6/content"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.9,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": {
+  "verdict": "supported",
+  "confidence": 0.98,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "confirm_model": "deepseek-v4-pro",
+ "outcome": "passed",
+ "reasons": []
+}

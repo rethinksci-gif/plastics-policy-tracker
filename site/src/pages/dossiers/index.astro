@@ -1,62 +1,166 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { STAGES, dossiers, stageLabel, fmtDate, jurName, url } from '../../lib/data';
-const ds = await dossiers();
+import {
+  ROOT_NAMES, STAGES, fmtDate, instrumentName, jurName, jurRoot, jurSortKey, library, stageLabel, url,
+} from '../../lib/data';
+
+const lib = await library();
 const uniq = (xs: string[]) => [...new Set(xs)].sort();
-const jurs = uniq(ds.map((d) => d.jurisdiction));
-const topics = uniq(ds.flatMap((d) => d.topics));
-const stages = [...STAGES, 'withdrawn', 'stalled'].filter((s) => ds.some((d) => d.stage === s));
+const jurs = uniq(lib.map((e) => e.d.jurisdiction)).sort((a, b) => jurSortKey(a).localeCompare(jurSortKey(b)));
+const topics = uniq(lib.flatMap((e) => e.d.topics));
+const stages = [...STAGES, 'withdrawn', 'stalled'].filter((s) => lib.some((e) => e.d.stage === s));
+const roots = ['GLOBAL', 'EU', 'UK', 'US', 'CN'].filter((r) => lib.some((e) => jurRoot(e.d.jurisdiction) === r));
+const count = (f: (e: (typeof lib)[number]) => boolean) => lib.filter(f).length;
+const byInstrument = Object.entries(
+  lib.reduce<Record<string, number>>((acc, e) => ((acc[instrumentName(e.d.instrument)] = (acc[instrumentName(e.d.instrument)] ?? 0) + 1), acc), {}),
+).sort((a, b) => b[1] - a[1]);
+const impactRank = { high: 0, medium: 1, low: 2 } as const;
 ---
-<Base title="Dossiers" description="Every tracked plastics law and regulation, filterable by jurisdiction, topic, stage and impact.">
-  <h1>Dossiers</h1>
-  <p class="lede">One card per instrument: current stage, verified timeline, next steps and key dates.</p>
-  <form class="filters" id="filters" aria-label="Filter dossiers">
-    <input type="search" name="q" placeholder="Filter by name…" aria-label="Filter by name" />
-    <select name="jur" aria-label="Jurisdiction"><option value="">All jurisdictions</option>{jurs.map((j) => <option value={j}>{jurName(j)}</option>)}</select>
+<Base title="Laws & policies" description={`${lib.length} plastics laws, regulations, standards, taxes and treaties, each with a verified timeline of changes.`}>
+  <h1>Laws &amp; policies</h1>
+  <p class="lede">
+    {lib.length} plastics-related laws, regulations, standards, taxes and treaties across the EU, its Member States, the UK,
+    the US, China and global negotiations. Each has its own page with a timeline of every verified change, and its own
+    RSS and calendar feed.
+  </p>
+
+  <div class="stats">
+    {roots.map((r) => <a class="stat" href={`?jur=${r}`} data-root-link={r}><span class="n">{count((e) => jurRoot(e.d.jurisdiction) === r)}</span><span class="l">{ROOT_NAMES[r]}</span></a>)}
+    <div class="stat"><span class="n">{count((e) => e.changedRecently)}</span><span class="l">changed in the last 30 days</span></div>
+    <div class="stat"><span class="n">{count((e) => e.d.impact === 'high')}</span><span class="l">high impact</span></div>
+  </div>
+  <p class="small muted">By type: {byInstrument.map(([k, n], i) => <>{i > 0 && ' · '}{k} {n}</>)}. See also <a href={url('changes/')}>all recent changes</a>.</p>
+
+  <form class="filters" id="filters" aria-label="Filter laws and policies">
+    <input type="search" name="q" placeholder="Search by name…" aria-label="Search by name" />
+    <select name="jur" aria-label="Jurisdiction">
+      <option value="">All jurisdictions</option>
+      {roots.map((r) => <option value={r}>{ROOT_NAMES[r]} (all)</option>)}
+      {jurs.filter((j) => j.includes('-')).map((j) => <option value={j}>— {jurName(j)}</option>)}
+    </select>
     <select name="topic" aria-label="Topic"><option value="">All topics</option>{topics.map((t) => <option value={t}>{t}</option>)}</select>
     <select name="stage" aria-label="Stage"><option value="">All stages</option>{stages.map((s) => <option value={s}>{stageLabel(s)}</option>)}</select>
     <select name="impact" aria-label="Impact"><option value="">Any impact</option><option>high</option><option>medium</option><option>low</option></select>
+    <select name="sort" aria-label="Sort"><option value="jur">Group by jurisdiction</option><option value="recent">Most recently changed</option><option value="impact">Impact</option><option value="next">Next key date</option></select>
+    <div class="seg" role="group" aria-label="View">
+      <label><input type="radio" name="view" value="cards" checked /> Cards</label>
+      <label><input type="radio" name="view" value="table" /> Stage table</label>
+    </div>
   </form>
-  <p class="small muted" id="count">{ds.length} dossiers</p>
-  <div class="dlist" id="list">
-    {ds.map((d) => {
-      const last = d.updates[0];
-      return (
-        <article class="card dossier-row" data-jur={d.jurisdiction} data-topics={d.topics.join(' ')} data-stage={d.stage} data-impact={d.impact} data-name={`${d.title} ${d.short_title ?? ''} ${d.title_original ?? ''}`.toLowerCase()}>
-          <h3><a href={url(`dossiers/${d.id}/`)}>{d.title}</a></h3>
-          <div class="meta small">
-            <span class="badge">{jurName(d.jurisdiction)}</span>
-            <span class="badge stage">{stageLabel(d.stage)}</span>
-            <span class={`badge ${d.impact}`}>{d.impact} impact</span>
-            <span class="muted">{d.topics.join(' · ')}</span>
-          </div>
-          {last && <p class="small" style="margin:0.4rem 0 0"><strong>{fmtDate(last.date)}:</strong> {last.summary}</p>}
-        </article>
-      );
-    })}
+  <p class="small muted" id="count" aria-live="polite">{lib.length} laws and policies</p>
+
+  <div id="cards" class="dlist">
+    {roots.map((r) => <h2 class="group" data-group-header={r}>{ROOT_NAMES[r]}</h2>)}
+    {lib.map((e) => (
+      <article class="card dossier-row lib-item" data-id={e.d.id} data-root={jurRoot(e.d.jurisdiction)} data-jur={e.d.jurisdiction}
+        data-topics={e.d.topics.join(' ')} data-stage={e.d.stage} data-impact={e.d.impact}
+        data-name={`${e.d.title} ${e.d.short_title ?? ''} ${e.d.title_original ?? ''}`.toLowerCase()}
+        data-recent={e.lastChange ?? ''} data-next={e.nextDate?.date ?? '9999'} data-rank={impactRank[e.d.impact]}
+        data-order={jurSortKey(e.d.jurisdiction) + e.d.title}>
+        <h3><a href={url(`dossiers/${e.d.id}/`)}>{e.d.title}</a></h3>
+        <div class="meta small">
+          <span class="badge">{jurName(e.d.jurisdiction)}</span>
+          <span class="badge">{instrumentName(e.d.instrument)}</span>
+          <span class="badge stage">{stageLabel(e.d.stage)}</span>
+          <span class={`badge ${e.d.impact}`}>{e.d.impact} impact</span>
+          {e.changedRecently && <span class="badge new">changed recently</span>}
+        </div>
+        {e.summary
+          ? <p class="small summary">{e.summary}</p>
+          : <p class="small muted summary">{e.summaryStatus === 'none' ? '' : 'Overview awaiting verification.'}</p>}
+        <dl class="kv small">
+          <div><dt>Last verified change</dt><dd>{e.lastChange ? <>{fmtDate(e.lastChange)} — {e.d.updates[0].summary}</> : <span class="muted">none verified yet</span>}</dd></div>
+          {e.nextDate && <div><dt>Next date</dt><dd>{fmtDate(e.nextDate.date)} — {e.nextDate.text}</dd></div>}
+        </dl>
+      </article>
+    ))}
   </div>
+
+  <div id="table" class="table-scroll" hidden>
+    <table class="matrix">
+      <thead>
+        <tr><th>Law or policy</th><th>Jurisdiction</th>{STAGES.map((s) => <th class="st" title={stageLabel(s)}><span>{stageLabel(s)}</span></th>)}<th>Last change</th><th>Next date</th></tr>
+      </thead>
+      <tbody>
+        {lib.map((e) => {
+          const idx = STAGES.indexOf(e.d.stage);
+          return (
+            <tr class="lib-item" data-id={e.d.id} data-root={jurRoot(e.d.jurisdiction)} data-jur={e.d.jurisdiction}
+              data-topics={e.d.topics.join(' ')} data-stage={e.d.stage} data-impact={e.d.impact}
+              data-name={`${e.d.title} ${e.d.short_title ?? ''} ${e.d.title_original ?? ''}`.toLowerCase()}
+              data-recent={e.lastChange ?? ''} data-next={e.nextDate?.date ?? '9999'} data-rank={impactRank[e.d.impact]}
+              data-order={jurSortKey(e.d.jurisdiction) + e.d.title}>
+              <td><a href={url(`dossiers/${e.d.id}/`)}>{e.d.short_title ?? e.d.title}</a> <span class={`badge ${e.d.impact}`}>{e.d.impact}</span></td>
+              <td class="small">{jurName(e.d.jurisdiction)}</td>
+              {STAGES.map((_, i) => <td class={`cell ${i < idx ? 'done' : i === idx ? 'now' : ''}`} aria-label={i === idx ? `current stage: ${stageLabel(e.d.stage)}` : undefined}></td>)}
+              <td class="small nowrap">{e.lastChange ? fmtDate(e.lastChange) : '—'}</td>
+              <td class="small nowrap">{e.nextDate ? fmtDate(e.nextDate.date) : '—'}</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+    <p class="small muted">Filled cells: stages passed; dark cell: current stage. {lib.filter((e) => STAGES.indexOf(e.d.stage) < 0).length > 0 && 'Withdrawn or stalled instruments have no dark cell.'}</p>
+  </div>
+
   <script>
     const form = document.getElementById('filters') as HTMLFormElement;
-    const rows = Array.from(document.querySelectorAll<HTMLElement>('#list > article'));
+    const cardsBox = document.getElementById('cards')!;
+    const tableBox = document.getElementById('table')!;
+    const tbody = tableBox.querySelector('tbody')!;
+    const cards = Array.from(cardsBox.querySelectorAll<HTMLElement>('article.lib-item'));
+    const rows = Array.from(tbody.querySelectorAll<HTMLElement>('tr.lib-item'));
+    const headers = Array.from(cardsBox.querySelectorAll<HTMLElement>('[data-group-header]'));
     const count = document.getElementById('count')!;
     const params = new URLSearchParams(location.search);
-    for (const [k, v] of params) { const el = form.elements.namedItem(k) as HTMLInputElement | null; if (el) el.value = v; }
+    for (const [k, v] of params) {
+      const el = form.elements.namedItem(k) as HTMLInputElement | RadioNodeList | null;
+      if (el) (el as any).value = v;
+    }
+    const cmp: Record<string, (a: HTMLElement, b: HTMLElement) => number> = {
+      jur: (a, b) => a.dataset.order!.localeCompare(b.dataset.order!),
+      recent: (a, b) => b.dataset.recent!.localeCompare(a.dataset.recent!) || a.dataset.order!.localeCompare(b.dataset.order!),
+      impact: (a, b) => Number(a.dataset.rank) - Number(b.dataset.rank) || a.dataset.order!.localeCompare(b.dataset.order!),
+      next: (a, b) => a.dataset.next!.localeCompare(b.dataset.next!),
+    };
+    function matches(el: HTMLElement, f: FormData) {
+      const q = String(f.get('q') || '').toLowerCase();
+      const jur = String(f.get('jur') || '');
+      return (!q || el.dataset.name!.includes(q)) &&
+        (!jur || el.dataset.jur === jur || el.dataset.root === jur) &&
+        (!f.get('topic') || el.dataset.topics!.split(' ').includes(String(f.get('topic')))) &&
+        (!f.get('stage') || el.dataset.stage === f.get('stage')) &&
+        (!f.get('impact') || el.dataset.impact === f.get('impact'));
+    }
     function apply() {
       const f = new FormData(form);
-      const q = String(f.get('q') || '').toLowerCase();
+      const sort = String(f.get('sort') || 'jur');
+      const view = String(f.get('view') || 'cards');
       let n = 0;
-      for (const r of rows) {
-        const ok = (!q || r.dataset.name!.includes(q)) &&
-          (!f.get('jur') || r.dataset.jur === f.get('jur')) &&
-          (!f.get('topic') || r.dataset.topics!.split(' ').includes(String(f.get('topic')))) &&
-          (!f.get('stage') || r.dataset.stage === f.get('stage')) &&
-          (!f.get('impact') || r.dataset.impact === f.get('impact'));
-        r.hidden = !ok; if (ok) n++;
+      for (const el of [...cards, ...rows]) { const ok = matches(el, f); el.hidden = !ok; if (ok && el.tagName === 'ARTICLE') n++; }
+      // Cards: grouped under jurisdiction headers, or one flat sorted list.
+      const sortedCards = [...cards].sort(cmp[sort]);
+      if (sort === 'jur') {
+        for (const h of headers) {
+          const group = sortedCards.filter((c) => c.dataset.root === h.dataset.groupHeader);
+          h.hidden = group.every((c) => c.hidden);
+          cardsBox.append(h, ...group);
+        }
+      } else {
+        headers.forEach((h) => (h.hidden = true));
+        cardsBox.append(...sortedCards);
       }
-      count.textContent = `${n} of ${rows.length} dossiers`;
-      const p = new URLSearchParams(); for (const [k, v] of f) if (v) p.set(k, String(v));
+      tbody.append(...[...rows].sort(cmp[sort]));
+      cardsBox.hidden = view !== 'cards';
+      tableBox.hidden = view !== 'table';
+      count.textContent = n === cards.length ? `${n} laws and policies` : `${n} of ${cards.length} laws and policies`;
+      const p = new URLSearchParams();
+      for (const [k, v] of f) if (v && !(k === 'sort' && v === 'jur') && !(k === 'view' && v === 'cards')) p.set(k, String(v));
       history.replaceState(null, '', p.size ? `?${p}` : location.pathname);
     }
-    form.addEventListener('input', apply); form.addEventListener('submit', (e) => e.preventDefault()); apply();
+    form.addEventListener('input', apply);
+    form.addEventListener('change', apply);
+    form.addEventListener('submit', (e) => e.preventDefault());
+    apply();
   </script>
 </Base>

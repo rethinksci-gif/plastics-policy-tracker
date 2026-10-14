@@ -3,17 +3,19 @@ title: Colorado — Producer Responsibility Program for Statewide Recycling (HB 
 short_title: Colorado packaging EPR
 jurisdiction: US-CO
 instrument: EPR-scheme
-topics: [EPR, packaging, paper]
+topics:
+- EPR
+- packaging
+- paper
 stage: in-application
-affected: [brand-owners, recyclers, municipalities]
+affected:
+- brand-owners
+- recyclers
+- municipalities
 impact: medium
 official_links:
-  - https://cdphe.colorado.gov/
-  - https://leg.colorado.gov/bills/hb22-1355
-summary: >-
-  Colorado's packaging and paper EPR program under HB 22-1355, overseen by the Department of Public Health and
-  Environment. No update has been verified yet: the official CDPHE and legislature pages could not be fetched
-  automatically (see unreachable.md).
+- https://cdphe.colorado.gov/
+- https://leg.colorado.gov/bills/hb22-1355
 updates: []
 next_steps: []
 key_dates: []

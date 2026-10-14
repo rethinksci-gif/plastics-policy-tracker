@@ -1,0 +1,42 @@
+{
+ "review_id": "summary-uk-drs",
+ "dossier_id": "uk-drs",
+ "summary": "A deposit return scheme for single-use drinks containers in England and Northern Ireland, run by a deposit management organisation, starting on 1 October 2027.",
+ "summary_sha256": "b447cc4f8717922f4303c55340a41c2c58100acf9ab2e89bf0ffb1be07f13ea1",
+ "created": "2026-10-14T11:44:14.336272Z",
+ "impact": "high",
+ "sources": [
+  "https://www.gov.uk/guidance/deposit-return-scheme-drinks-producer-and-retailer-responsibilities",
+  "https://www.gov.uk/government/publications/vat-provisions-for-deposit-return-schemes-drs"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.9,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "confirm_model": "deepseek-v4-pro",
+ "outcome": "passed",
+ "reasons": []
+}

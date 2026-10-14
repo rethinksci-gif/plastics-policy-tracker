@@ -34,6 +34,9 @@ def cmd_daily(a):
         report["triage"] = triage.run(llm, report["fetch"]["new"])
         report["draft"] = draft.run(llm)
         report["review"] = review.run(llm, dry_run=a.dry_run)
+        from . import summary_review
+        from .store import load_dossiers
+        report["summary_review"] = summary_review.run(llm, list(load_dossiers().values()))
         leads = report["triage"]["leads"]
         if leads and not a.dry_run:
             body = "Relevant items from trade-association or media sources. They are **not** published; find the " \
@@ -111,6 +114,15 @@ def cmd_capture(a):
     sys.exit(1 if failed else 0)
 
 
+def cmd_review_summaries(a):
+    from . import summary_review
+    from .llm import LLM
+    from .store import load_dossiers
+
+    ds = [d for d in load_dossiers().values() if not a.only or d.id in a.only]
+    _save_report("summary-review", summary_review.run(LLM(), ds, force=a.force))
+
+
 def cmd_review_seeds(a):
     from .seed_review import run
 
@@ -151,6 +163,11 @@ def main(argv=None):
     s.add_argument("--mode", default="main", choices=["main", "full"])
     s.add_argument("--lang", default="en")
     s.set_defaults(fn=cmd_capture)
+
+    s = sub.add_parser("review-summaries", help="review dossier summaries that are new or changed")
+    s.add_argument("--only", nargs="*")
+    s.add_argument("--force", action="store_true", help="re-review even if unchanged")
+    s.set_defaults(fn=cmd_review_summaries)
 
     s = sub.add_parser("review-seeds", help="layer 3 review of seeded dossier updates")
     s.add_argument("--only", nargs="*")

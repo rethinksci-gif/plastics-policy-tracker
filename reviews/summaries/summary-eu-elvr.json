@@ -1,0 +1,43 @@
+{
+ "review_id": "summary-eu-elvr",
+ "dossier_id": "eu-elvr",
+ "summary": "Regulation (EU) 2026/1738 on circularity requirements for vehicle design and on management of end-of-life vehicles replaces Directives 2000/53/EC and 2005/64/EC. It sets mandatory post-consumer recycled plastic content for new vehicle types (15% from 1 September 2032, 25% from 1 September 2036).",
+ "summary_sha256": "aed1f1b44c965409e1894a10bed5d6b6ee6688078f41bf3099709752e8983604",
+ "created": "2026-10-14T11:43:26.002688Z",
+ "impact": "high",
+ "sources": [
+  "https://publications.europa.eu/resource/celex/32026R1738",
+  "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0284(COD)",
+  "https://environment.ec.europa.eu/topics/waste-and-recycling/end-life-vehicles_en"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.98,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "confirm_model": "deepseek-v4-pro",
+ "outcome": "passed",
+ "reasons": []
+}

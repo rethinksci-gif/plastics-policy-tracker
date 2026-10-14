@@ -1,0 +1,29 @@
+{
+ "review_id": "summary-us-federal",
+ "dossier_id": "us-federal",
+ "summary": "A GSA Acquisition Regulation rule, effective 8 July 2024, adds a provision and clause to identify single-use plastic free packaging for products under the Federal Supply Schedules.",
+ "summary_sha256": "bdebe9443ba7678fcd872bc153cac4df9b71f4efb9a67c742b70cd7c789b7cd1",
+ "created": "2026-10-14T11:46:47.455767Z",
+ "impact": "low",
+ "sources": [
+  "https://www.federalregister.gov/documents/2024/06/06/2024-12192/general-services-administration-acquisition-regulation-reduction-of-single-use-plastic-packaging"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "passed",
+ "reasons": []
+}

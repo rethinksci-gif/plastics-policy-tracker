@@ -1,0 +1,44 @@
+{
+ "review_id": "summary-eu-wsr",
+ "dossier_id": "eu-wsr",
+ "summary": "Regulation (EU) 2024/1157 on shipments of waste repeals Regulation (EC) No 1013/2006. It applies from 21 May 2026, with other dates for specific provisions; the prohibition on exporting plastic waste classified under entry B3011 to countries to which the OECD Decision does not apply applies from 21 November 2026.",
+ "summary_sha256": "cd3ff331fb5a123284258e3208f97607d69377a157aafa440d87404d604a7ef5",
+ "created": "2026-10-14T11:46:35.852963Z",
+ "impact": "high",
+ "sources": [
+  "https://publications.europa.eu/resource/celex/32024R1157",
+  "https://environment.ec.europa.eu/topics/waste-and-recycling/waste-shipments_en",
+  "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14861_en",
+  "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14712_en"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.9,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "confirm_model": "deepseek-v4-pro",
+ "outcome": "passed",
+ "reasons": []
+}

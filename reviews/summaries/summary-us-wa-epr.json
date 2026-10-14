@@ -1,0 +1,29 @@
+{
+ "review_id": "summary-us-wa-epr",
+ "dossier_id": "us-wa-epr",
+ "summary": "Engrossed Second Substitute Senate Bill 5284 (Chapter 316, Laws of 2025) on producer responsibility for packaging and paper products in Washington State, approved by the Governor on 17 May 2025. After 1 July 2026 producers must be members of a producer responsibility organisation registered in the state, or register as a producer responsibility organisation that will implement an individual plan.",
+ "summary_sha256": "f8e6415d87b6b36e54a91636593afcf73c5d5324eb5bb5c9bb7bc82a4916b2ec",
+ "created": "2026-10-14T11:47:24.099303Z",
+ "impact": "medium",
+ "sources": [
+  "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/Senate/5284-S2.SL.pdf"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.9,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "passed",
+ "reasons": []
+}

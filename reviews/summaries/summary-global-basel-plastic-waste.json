@@ -1,0 +1,41 @@
+{
+ "review_id": "summary-global-basel-plastic-waste",
+ "dossier_id": "global-basel-plastic-waste",
+ "summary": "Amendments to the Basel Convention annexes on plastic waste, effective from 1 January 2021. They add entry Y48 to Annex II, covering plastic waste, including mixtures of such wastes, unless these are hazardous (entry A3210) or presumed not to be hazardous (entry B3011).",
+ "summary_sha256": "ece857a9554b9783a3c4436fd01d25904c19561c805d67fd9beddc94a1557a1a",
+ "created": "2026-10-14T11:46:36.153279Z",
+ "impact": "high",
+ "sources": [
+  "https://www.basel.int/Implementation/Plasticwaste/PlasticWasteAmendments/Overview/tabid/8426/Default.aspx"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 1.0,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": {
+  "verdict": "supported",
+  "confidence": 1.0,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "confirm_model": "deepseek-v4-pro",
+ "outcome": "passed",
+ "reasons": []
+}

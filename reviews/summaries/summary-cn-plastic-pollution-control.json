@@ -1,0 +1,30 @@
+{
+ "review_id": "summary-cn-plastic-pollution-control",
+ "dossier_id": "cn-plastic-pollution-control",
+ "summary": "Action plan on plastic pollution control for the 14th Five-Year Plan period, issued by the National Development and Reform Commission and the Ministry of Ecology and Environment (Fagai Huanzi [2021] No. 1298). It aims to further improve whole-chain governance of plastic pollution, promote source reduction in plastic production and use, promote plastic substitutes, and speed up the proper collection and recycling of plastic waste.",
+ "summary_sha256": "4f59614bd6035abe8299b8f97e039cc4d8c86cbe7cc9fb383b86d1e58b8799b3",
+ "created": "2026-10-14T11:46:24.634962Z",
+ "impact": "medium",
+ "sources": [
+  "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk10/202109/t20210916_945621.html",
+  "https://www.ndrc.gov.cn/xxgk/zcfb/tz/"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "passed",
+ "reasons": []
+}

@@ -1,0 +1,43 @@
+{
+ "review_id": "summary-nl-verpact-fees",
+ "dossier_id": "nl-verpact-fees",
+ "summary": "Verpact, the Dutch packaging producer responsibility organisation, sets the annual packaging waste management fee. From 2027 the discount for recyclate and bio-based drop-ins rises to up to EUR 0.78/kg, with the full discount only for material from countries on Verpact's list.",
+ "summary_sha256": "bd5e58db3b8e4fa76ae6496f75895b0cfc5e3b74cb2f712386686b91f9b184b0",
+ "created": "2026-10-14T11:44:10.863644Z",
+ "impact": "high",
+ "sources": [
+  "https://www.verpact.nl/en/fee-modulation-plastic-2027-circulair-plastics",
+  "https://www.verpact.nl/nl/tarieven",
+  "https://www.verpact.nl/en/rates"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.88,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "confirm_model": "deepseek-v4-pro",
+ "outcome": "passed",
+ "reasons": []
+}

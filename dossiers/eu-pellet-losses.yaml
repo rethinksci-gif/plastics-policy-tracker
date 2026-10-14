@@ -3,30 +3,38 @@ title: Plastic Pellet Losses Regulation — Regulation (EU) 2025/2365
 short_title: Pellet Losses Regulation
 jurisdiction: EU
 instrument: regulation
-topics: [microplastics, pellets, logistics]
+topics:
+- microplastics
+- pellets
+- logistics
 stage: in-force
-affected: [polymer-producers, converters, recyclers, logistics]
+affected:
+- polymer-producers
+- converters
+- recyclers
+- logistics
 impact: medium
 official_links:
-  - https://eur-lex.europa.eu/eli/reg/2025/2365/oj/eng
-  - https://publications.europa.eu/resource/celex/32025R2365
-summary: >-
-  Regulation (EU) 2025/2365 sets obligations on economic operators handling plastic pellets, and on carriers,
-  to prevent pellet losses. It applies from 17 December 2027, with some provisions applying earlier.
+- https://eur-lex.europa.eu/eli/reg/2025/2365/oj/eng
+- https://publications.europa.eu/resource/celex/32025R2365
+summary: Regulation (EU) 2025/2365 on preventing plastic pellet losses to reduce microplastic pollution.
+  It applies from 17 December 2027; certain provisions apply from 16 December 2025.
 updates:
-  - date: 2025-11-26
-    summary: >-
-      Regulation (EU) 2025/2365 of 12 November 2025 on preventing plastic pellet losses to reduce microplastic
-      pollution was published in the Official Journal on 26 November 2025.
-    source_url: https://publications.europa.eu/resource/celex/32025R2365
-    source_quote: "Official Journal of the European Union EN L series 2025/2365 26.11.2025 REGULATION (EU) 2025/2365 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 12 November 2025 on preventing plastic pellet losses to reduce microplastic pollution"
-    stage_change: published
-    review_id: seed-eu-pellet-losses-001
+- date: '2025-11-26'
+  summary: Regulation (EU) 2025/2365 of 12 November 2025 on preventing plastic pellet losses to reduce
+    microplastic pollution was published in the Official Journal on 26 November 2025.
+  source_url: https://publications.europa.eu/resource/celex/32025R2365
+  source_quote: Official Journal of the European Union EN L series 2025/2365 26.11.2025 REGULATION (EU)
+    2025/2365 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 12 November 2025 on preventing plastic
+    pellet losses to reduce microplastic pollution
+  source_lang: en
+  stage_change: published
+  review_id: seed-eu-pellet-losses-001
 next_steps: []
 key_dates:
-  - date: 2025-12-16
-    text: Articles 3(1), 5(6) second subparagraph, 16, 17(1) and 18(2)-(3) apply.
-    source_url: https://publications.europa.eu/resource/celex/32025R2365
-  - date: 2027-12-17
-    text: Regulation applies in general.
-    source_url: https://publications.europa.eu/resource/celex/32025R2365
+- date: '2025-12-16'
+  text: Articles 3(1), 5(6) second subparagraph, 16, 17(1) and 18(2)-(3) apply.
+  source_url: https://publications.europa.eu/resource/celex/32025R2365
+- date: '2027-12-17'
+  text: Regulation applies in general.
+  source_url: https://publications.europa.eu/resource/celex/32025R2365

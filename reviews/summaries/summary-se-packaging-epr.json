@@ -1,0 +1,30 @@
+{
+ "review_id": "summary-se-packaging-epr",
+ "dossier_id": "se-packaging-epr",
+ "summary": "Since 1 January 2024 Swedish municipalities collect household packaging waste, financed by producers. All municipalities must have kerbside collection of paper, plastic, metal and glass packaging by 1 January 2027.",
+ "summary_sha256": "5718099a166296957f527baf4a0dcd41d682470084cbe9b1ceaa91dc06886e4c",
+ "created": "2026-10-14T11:44:12.734573Z",
+ "impact": "medium",
+ "sources": [
+  "https://www.naturvardsverket.se/vagledning-och-stod/producentansvar/producentansvar-for-forpackningar/kommuners-insamling-av-forpackningsavfall-fran-hushall-och-vissa-verksamheter/",
+  "https://www.naturvardsverket.se/vagledning-och-stod/producentansvar/producentansvar-for-forpackningar/"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "passed",
+ "reasons": []
+}

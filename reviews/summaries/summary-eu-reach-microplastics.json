@@ -1,0 +1,30 @@
+{
+ "review_id": "summary-eu-reach-microplastics",
+ "dossier_id": "eu-reach-microplastics",
+ "summary": "Commission Regulation (EU) 2023/2055 restricts synthetic polymer microparticles under REACH (Annex XVII, entry 78), with transitional periods of 4 to 12 years for specific products. Regulation (EU) 2026/1168 amends the derogations.",
+ "summary_sha256": "75daf51daec8e58601f5e21b42a3090d92964f9cb393d20a7ac0b6ec2bb8ed47",
+ "created": "2026-10-14T11:43:45.484470Z",
+ "impact": "medium",
+ "sources": [
+  "https://publications.europa.eu/resource/celex/32023R2055",
+  "https://publications.europa.eu/resource/celex/32026R1168"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "passed",
+ "reasons": []
+}

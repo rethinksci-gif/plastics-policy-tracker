@@ -1,0 +1,41 @@
+{
+ "review_id": "summary-us-ca-sb54",
+ "dossier_id": "us-ca-sb54",
+ "summary": "California's SB 54 Plastic Pollution Prevention and Packaging Producer Responsibility Act. Its permanent regulations were approved by the Office of Administrative Law and took effect on 1 May 2026.",
+ "summary_sha256": "381bc45a5620759183ea9a73deeb790a97244b04bf5f91127e5e81ba5cb992f0",
+ "created": "2026-10-14T11:46:45.155752Z",
+ "impact": "high",
+ "sources": [
+  "https://www2.calrecycle.ca.gov/PublicNotices/Details/7127"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.98,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": {
+  "verdict": "supported",
+  "confidence": 1.0,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "confirm_model": "deepseek-v4-pro",
+ "outcome": "passed",
+ "reasons": []
+}

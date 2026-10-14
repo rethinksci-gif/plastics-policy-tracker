@@ -7,7 +7,7 @@ const { title, description = 'Plastics laws and regulations worldwide, tracked a
 const fullTitle = title ? `${title} · ${SITE_NAME}` : SITE_NAME;
 const path = Astro.url.pathname;
 const nav = [
-  ['', 'Latest'], ['issues/', 'Archive'], ['dossiers/', 'Dossiers'], ['calendar/', 'Calendar'],
+  ['', 'Latest issue'], ['issues/', 'Archive'], ['dossiers/', 'Laws & policies'], ['changes/', 'Changes'], ['calendar/', 'Calendar'],
   ['verification/', 'How we verify'], ['search/', 'Search'], ['about/', 'About'],
 ];
 const isCurrent = (p: string) => (p === '' ? path === url('') || path === url('') + '/' : path.startsWith(url(p)));
@@ -21,6 +21,7 @@ const isCurrent = (p: string) => (p === '' ? path === url('') || path === url(''
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex" />}
     <link rel="alternate" type="application/rss+xml" title={SITE_NAME} href={url('rss.xml')} />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME}: all changes`} href={url('changes/rss.xml')} />
     <link rel="icon" href={url('favicon.svg')} type="image/svg+xml" />
     <script is:inline>
       try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}

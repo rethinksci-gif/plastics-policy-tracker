@@ -1,0 +1,30 @@
+{
+ "review_id": "summary-es-packaging-plastic-tax",
+ "dossier_id": "es-packaging-plastic-tax",
+ "summary": "Spain's Law 7/2022 of 8 April on waste and contaminated soils for a circular economy sets a tax rate of EUR 0.45 per kilogram (Article 78) for its special tax on non-reusable plastic packaging. Royal Decree 1055/2022 of 27 December governs packaging and packaging waste.",
+ "summary_sha256": "c43aad6b0999c35822e9ca25652aec02090957fb7726e333dcb6aca3d8ff8beb",
+ "created": "2026-10-14T11:46:24.601656Z",
+ "impact": "medium",
+ "sources": [
+  "https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809",
+  "https://www.boe.es/buscar/act.php?id=BOE-A-2022-22690"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "passed",
+ "reasons": []
+}

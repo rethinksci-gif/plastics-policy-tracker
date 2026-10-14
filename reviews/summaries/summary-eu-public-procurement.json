@@ -1,0 +1,31 @@
+{
+ "review_id": "summary-eu-public-procurement",
+ "dossier_id": "eu-public-procurement",
+ "summary": "Commission proposal COM(2026) 590 for a regulation on public contracts and concessions, repealing Directives 2014/23/EU, 2014/24/EU and 2014/25/EU. It strengthens the contribution of procurement to circularity, recycled and refurbished content and waste recovery, and creates a framework for mandatory green procurement requirements for certain product categories.",
+ "summary_sha256": "f2a6f0569af2c6049a8bc6ff45a84ca26a4da6319e1c17f07cfbf3da744f53e1",
+ "created": "2026-10-14T11:46:29.570028Z",
+ "impact": "medium",
+ "sources": [
+  "https://publications.europa.eu/resource/celex/52026PC0590",
+  "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)",
+  "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15492_en"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "passed",
+ "reasons": []
+}

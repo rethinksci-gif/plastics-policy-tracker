@@ -1,0 +1,43 @@
+{
+ "review_id": "summary-de-verpackg",
+ "dossier_id": "de-verpackg",
+ "summary": "Germany's law adapting packaging law and other areas of law to Regulation (EU) 2025/40, adopted by the Bundestag on 11 June 2026.",
+ "summary_sha256": "3ec63acb800ad6580ee6332b04127dd79b5642c09568d348d0336f14314a1d01",
+ "created": "2026-10-14T11:47:46.009551Z",
+ "impact": "high",
+ "sources": [
+  "https://dserver.bundestag.de/brd/2026/0377-26.pdf",
+  "https://dserver.bundestag.de/btd/21/063/2106398.pdf",
+  "https://www.verpackungsregister.org/"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.98,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "confirm_model": "deepseek-v4-pro",
+ "outcome": "passed",
+ "reasons": []
+}

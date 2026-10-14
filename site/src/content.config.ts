@@ -108,4 +108,22 @@ const issueReviews = defineCollection({
   }),
 });
 
-export const collections = { dossiers, issues, drafts, reviews, issueReviews };
+const summaryReviews = defineCollection({
+  loader: glob({ base: '../reviews/summaries', pattern: '*.json' }),
+  schema: z.object({
+    review_id: z.string(),
+    dossier_id: z.string(),
+    summary: z.string(),
+    created: z.string(),
+    impact: z.string(),
+    sources: z.array(z.string()).default([]),
+    llm_review: llmReview.nullish(),
+    model: z.string().nullish(),
+    confirm_review: llmReview.nullish(),
+    confirm_model: z.string().nullish(),
+    outcome: z.string(),
+    reasons: z.array(z.string()).default([]),
+  }),
+});
+
+export const collections = { dossiers, issues, drafts, reviews, issueReviews, summaryReviews };

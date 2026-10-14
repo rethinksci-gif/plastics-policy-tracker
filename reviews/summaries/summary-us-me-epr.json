@@ -1,0 +1,29 @@
+{
+ "review_id": "summary-us-me-epr",
+ "dossier_id": "us-me-epr",
+ "summary": "Maine's Stewardship Program for Packaging, established by a law passed in July 2021. The Board of Environmental Protection adopted the program rule, Chapter 428, in December 2024, and it was amended in March 2026. A stewardship organisation is to run the program day to day; in September 2026 the Department of Environmental Protection announced it would revise its request for proposals after none were submitted.",
+ "summary_sha256": "eff0d65ee7a6de064df7ab802e357e6972e568e5619e42b92b21a99f91a14440",
+ "created": "2026-10-14T11:46:50.300677Z",
+ "impact": "medium",
+ "sources": [
+  "https://www.maine.gov/dep/waste/recycle/epr.html"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "passed",
+ "reasons": []
+}

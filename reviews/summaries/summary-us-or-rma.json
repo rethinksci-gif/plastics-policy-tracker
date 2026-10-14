@@ -1,0 +1,29 @@
+{
+ "review_id": "summary-us-or-rma",
+ "dossier_id": "us-or-rma",
+ "summary": "Oregon's Recycling Modernization Act (SB 582, 2021) makes producers of packaging, paper products and food serviceware fund improvements to the recycling system through a producer responsibility organisation.",
+ "summary_sha256": "6e4da4c5c540faf7c0bb2cbe87e1302fbe1dfeab17fd898aa9fdf6ad3f525400",
+ "created": "2026-10-14T11:44:32.233816Z",
+ "impact": "medium",
+ "sources": [
+  "https://www.oregon.gov/deq/recycling/pages/modernizing-oregons-recycling-system.aspx"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.9,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "passed",
+ "reasons": []
+}

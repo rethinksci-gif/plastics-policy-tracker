@@ -1,0 +1,43 @@
+{
+ "review_id": "summary-uk-pepr",
+ "dossier_id": "uk-pepr",
+ "summary": "The Producer Responsibility Obligations (Packaging and Packaging Waste) Regulations 2024 set extended producer responsibility for packaging in the UK. Large producers must report packaging data, meet recycling obligations with PRNs or PERNs, and pay a waste disposal fee for household packaging to PackUK, the scheme administrator; small producers have fewer obligations.",
+ "summary_sha256": "e6bc842bcb84b144c411ffe1fdae316a72bc430d78633ac7584f9b30b9c8fd1d",
+ "created": "2026-10-14T11:46:37.492765Z",
+ "impact": "high",
+ "sources": [
+  "https://www.legislation.gov.uk/uksi/2024/1332/made",
+  "https://www.gov.uk/government/collections/extended-producer-responsibility-for-packaging",
+  "https://www.gov.uk/guidance/extended-producer-responsibility-for-packaging-who-is-affected-and-what-to-do"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.98,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "confirm_model": "deepseek-v4-pro",
+ "outcome": "passed",
+ "reasons": []
+}

@@ -1,0 +1,42 @@
+{
+ "review_id": "summary-uk-plastic-packaging-tax",
+ "dossier_id": "uk-plastic-packaging-tax",
+ "summary": "A tax on plastic packaging components manufactured in or imported into the UK that contain less than 30% recycled plastic, in force since 1 April 2022.",
+ "summary_sha256": "c844fbf3a6ed6ee6b40dfe781ca5f037e55a1f5aafd05bd27283983eba2a31f1",
+ "created": "2026-10-14T11:44:16.475748Z",
+ "impact": "high",
+ "sources": [
+  "https://www.gov.uk/guidance/check-if-you-need-to-register-for-plastic-packaging-tax",
+  "https://www.gov.uk/government/consultations/draft-legislation-plastic-packaging-tax-chemical-recycling-and-adoption-of-a-mass-balance-approach"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.98,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "confirm_model": "deepseek-v4-pro",
+ "outcome": "passed",
+ "reasons": []
+}

@@ -1,0 +1,41 @@
+{
+ "review_id": "summary-eu-plastics-end-of-waste",
+ "dossier_id": "eu-plastics-end-of-waste",
+ "summary": "A planned Commission implementing regulation establishing EU-wide end-of-waste criteria for plastic waste: a single, harmonised set of criteria for when plastic waste ceases to be waste.",
+ "summary_sha256": "dbc5b2a695ab974a4413eee3c5e80d98e48dc092d72aea5e17ad90267eb9ccc5",
+ "created": "2026-10-14T11:46:28.176679Z",
+ "impact": "high",
+ "sources": [
+  "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14848_en"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.9,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": {
+  "verdict": "supported",
+  "confidence": 0.9,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "confirm_model": "deepseek-v4-pro",
+ "outcome": "passed",
+ "reasons": []
+}

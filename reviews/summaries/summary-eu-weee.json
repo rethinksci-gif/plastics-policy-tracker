@@ -1,0 +1,31 @@
+{
+ "review_id": "summary-eu-weee",
+ "dossier_id": "eu-weee",
+ "summary": "Directive 2012/19/EU on waste electrical and electronic equipment, amended by Directive (EU) 2024/884. A December 2025 Commission proposal would suspend the rules on appointing authorised representatives for EPR.",
+ "summary_sha256": "07c9b07817d1c9a0417a6c594578eeca15e5c5ec4edbb61846b3b9eeebaf2ee1",
+ "created": "2026-10-14T11:43:51.711439Z",
+ "impact": "medium",
+ "sources": [
+  "https://publications.europa.eu/resource/celex/32012L0019",
+  "https://publications.europa.eu/resource/celex/32024L0884",
+  "https://publications.europa.eu/resource/celex/52025PC0983"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "passed",
+ "reasons": []
+}

@@ -1,0 +1,43 @@
+{
+ "review_id": "summary-eu-cea",
+ "dossier_id": "eu-cea",
+ "summary": "A planned Commission proposal to facilitate the free movement of circular products, secondary raw materials and waste, and to increase supply of and demand for recycled materials.",
+ "summary_sha256": "9ebf3ec40554cba5f18562dea73e8cf07a3eb01f79f1b8ae69874dff6526fe97",
+ "created": "2026-10-14T11:43:26.010278Z",
+ "impact": "high",
+ "sources": [
+  "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14812_en",
+  "https://publications.europa.eu/resource/celex/52025DC0870",
+  "https://environment.ec.europa.eu/strategy/circular-economy_en"
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.9,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": {
+  "verdict": "supported",
+  "confidence": 0.95,
+  "checks": {
+   "facts_supported": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "references_match": true,
+   "bodies_match": true,
+   "no_exaggeration": true
+  },
+  "issues": []
+ },
+ "confirm_model": "deepseek-v4-pro",
+ "outcome": "passed",
+ "reasons": []
+}

@@ -52,6 +52,10 @@ biweekly: L1+L2 re-check → L4 editorial review → publish gate ──▶ issu
 
 `fast` = `DEEPSEEK_MODEL_FAST` (default `deepseek-flash`), `pro` = `DEEPSEEK_MODEL_PRO` (default `deepseek-v4-pro`).
 
+Dossier overviews (`summary`) are reviewed the same way against the snapshots of each dossier's official sources
+(`python -m pipeline review-summaries`, also run by the daily workflow for new or edited summaries; records in
+`reviews/summaries/`). The site shows an overview only while that exact text has a passing review.
+
 Anything that fails is quarantined: it is not published, it is written to `reviews/`, and it is opened as a GitHub issue
 labelled `needs-human-review`. If more than 30% of an issue's items are quarantined, or any high-impact item is, the issue
 waits for manual approval.
@@ -64,6 +68,7 @@ uv run python -m pipeline biweekly [--force] [--dry-run] [--force-publish]
 uv run python -m pipeline validate [--urls]           # layer 1+2 over all dossiers
 uv run python -m pipeline capture URL... --source-id X --jurisdiction EU [--mode full] [--lang fr]
 uv run python -m pipeline review-seeds                # layers 1–3 for hand-seeded dossier updates
+uv run python -m pipeline review-summaries [--only ID...] [--force]   # review new or edited dossier overviews
 uv run pytest -q
 ```
 
