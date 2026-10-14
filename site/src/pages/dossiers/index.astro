@@ -17,6 +17,7 @@ const byInstrument = Object.entries(
 const impactRank = { high: 0, medium: 1, low: 2 } as const;
 ---
 <Base title="Laws & policies" description={`${lib.length} plastics laws, regulations, standards, taxes and treaties, each with a verified timeline of changes.`}>
+  <p class="eyebrow">Library</p>
   <h1>Laws &amp; policies</h1>
   <p class="lede">
     {lib.length} plastics-related laws, regulations, standards, taxes and treaties across the EU, its Member States, the UK,
@@ -29,49 +30,52 @@ const impactRank = { high: 0, medium: 1, low: 2 } as const;
     <div class="stat"><span class="n">{count((e) => e.changedRecently)}</span><span class="l">changed in the last 30 days</span></div>
     <div class="stat"><span class="n">{count((e) => e.d.impact === 'high')}</span><span class="l">high impact</span></div>
   </div>
-  <p class="small muted">By type: {byInstrument.map(([k, n], i) => <>{i > 0 && ' · '}{k} {n}</>)}. See also <a href={url('changes/')}>all recent changes</a>.</p>
+  <p class="small muted">By type: {byInstrument.map(([k, n], i) => <>{i > 0 && ' · '}{k} {n}</>)} · <a href={url('changes/')}>All recent changes →</a></p>
 
-  <form class="filters" id="filters" aria-label="Filter laws and policies">
-    <input type="search" name="q" placeholder="Search by name…" aria-label="Search by name" />
-    <select name="jur" aria-label="Jurisdiction">
-      <option value="">All jurisdictions</option>
-      {roots.map((r) => <option value={r}>{ROOT_NAMES[r]} (all)</option>)}
-      {jurs.filter((j) => j.includes('-')).map((j) => <option value={j}>— {jurName(j)}</option>)}
-    </select>
-    <select name="topic" aria-label="Topic"><option value="">All topics</option>{topics.map((t) => <option value={t}>{t}</option>)}</select>
-    <select name="stage" aria-label="Stage"><option value="">All stages</option>{stages.map((s) => <option value={s}>{stageLabel(s)}</option>)}</select>
-    <select name="impact" aria-label="Impact"><option value="">Any impact</option><option>high</option><option>medium</option><option>low</option></select>
-    <select name="sort" aria-label="Sort"><option value="jur">Group by jurisdiction</option><option value="recent">Most recently changed</option><option value="impact">Impact</option><option value="next">Next key date</option></select>
-    <div class="seg" role="group" aria-label="View">
-      <label><input type="radio" name="view" value="cards" checked /> Cards</label>
-      <label><input type="radio" name="view" value="table" /> Stage table</label>
+  <div class="toolbar">
+    <form class="filters" id="filters" aria-label="Filter laws and policies">
+      <input class="wide" type="search" name="q" placeholder="Search by name, e.g. PPWR, SB 54, plastic tax…" aria-label="Search by name" />
+      <select name="jur" aria-label="Jurisdiction">
+        <option value="">All jurisdictions</option>
+        {roots.map((r) => <option value={r}>{ROOT_NAMES[r]} (all)</option>)}
+        {jurs.filter((j) => j.includes('-')).map((j) => <option value={j}>— {jurName(j)}</option>)}
+      </select>
+      <select name="topic" aria-label="Topic"><option value="">All topics</option>{topics.map((t) => <option value={t}>{t}</option>)}</select>
+      <select name="stage" aria-label="Stage"><option value="">All stages</option>{stages.map((s) => <option value={s}>{stageLabel(s)}</option>)}</select>
+      <select name="impact" aria-label="Impact"><option value="">Any impact</option><option value="high">High impact</option><option value="medium">Medium impact</option><option value="low">Low impact</option></select>
+      <select name="sort" aria-label="Sort"><option value="jur">Group by jurisdiction</option><option value="recent">Most recently changed</option><option value="impact">Impact</option><option value="next">Next key date</option></select>
+    </form>
+    <div class="toolbar-foot">
+      <span class="count" id="count" aria-live="polite">{lib.length} laws and policies</span>
+      <div class="seg" role="group" aria-label="View">
+        <label><input form="filters" type="radio" name="view" value="cards" checked /> Cards</label>
+        <label><input form="filters" type="radio" name="view" value="table" /> Stage table</label>
+      </div>
     </div>
-  </form>
-  <p class="small muted" id="count" aria-live="polite">{lib.length} laws and policies</p>
+  </div>
 
-  <div id="cards" class="dlist">
+  <div id="cards" class="lib-grid">
     {roots.map((r) => <h2 class="group" data-group-header={r}>{ROOT_NAMES[r]}</h2>)}
     {lib.map((e) => (
-      <article class="card dossier-row lib-item" data-id={e.d.id} data-root={jurRoot(e.d.jurisdiction)} data-jur={e.d.jurisdiction}
+      <article class="law lib-item" data-id={e.d.id} data-root={jurRoot(e.d.jurisdiction)} data-jur={e.d.jurisdiction}
         data-topics={e.d.topics.join(' ')} data-stage={e.d.stage} data-impact={e.d.impact}
         data-name={`${e.d.title} ${e.d.short_title ?? ''} ${e.d.title_original ?? ''}`.toLowerCase()}
         data-recent={e.lastChange ?? ''} data-next={e.nextDate?.date ?? '9999'} data-rank={impactRank[e.d.impact]}
         data-order={jurSortKey(e.d.jurisdiction) + e.d.title}>
-        <h3><a href={url(`dossiers/${e.d.id}/`)}>{e.d.title}</a></h3>
-        <div class="meta small">
+        <div class="badges">
           <span class="badge">{jurName(e.d.jurisdiction)}</span>
           <span class="badge">{instrumentName(e.d.instrument)}</span>
-          <span class="badge stage">{stageLabel(e.d.stage)}</span>
           <span class={`badge ${e.d.impact}`}>{e.d.impact} impact</span>
           {e.changedRecently && <span class="badge new">changed recently</span>}
         </div>
-        {e.summary
-          ? <p class="small summary">{e.summary}</p>
-          : <p class="small muted summary">{e.summaryStatus === 'none' ? '' : 'Overview awaiting verification.'}</p>}
-        <dl class="kv small">
-          <div><dt>Last verified change</dt><dd>{e.lastChange ? <>{fmtDate(e.lastChange)} — {e.d.updates[0].summary}</> : <span class="muted">none verified yet</span>}</dd></div>
-          {e.nextDate && <div><dt>Next date</dt><dd>{fmtDate(e.nextDate.date)} — {e.nextDate.text}</dd></div>}
-        </dl>
+        <h3><a href={url(`dossiers/${e.d.id}/`)}>{e.d.title}</a></h3>
+        <span class="badge stage" style="align-self:flex-start">{stageLabel(e.d.stage)}</span>
+        {e.summary && <p class="summary">{e.summary}</p>}
+        {!e.summary && e.summaryStatus !== 'none' && <p class="summary">Overview awaiting verification.</p>}
+        <div class="foot">
+          <div class="line"><b>Last change</b> {e.lastChange ? <>{fmtDate(e.lastChange)} — {e.d.updates[0].summary}</> : 'none verified yet'}</div>
+          {e.nextDate && <div class="line"><b>Next</b> {fmtDate(e.nextDate.date)} — {e.nextDate.text}</div>}
+        </div>
       </article>
     ))}
   </div>
@@ -160,6 +164,8 @@ const impactRank = { high: 0, medium: 1, low: 2 } as const;
     }
     form.addEventListener('input', apply);
     form.addEventListener('change', apply);
+    // The view toggle sits outside the <form> element (form="filters"), so its events do not bubble to it.
+    document.querySelectorAll<HTMLInputElement>('input[name=view]').forEach((r) => r.addEventListener('change', apply));
     form.addEventListener('submit', (e) => e.preventDefault());
     apply();
   </script>

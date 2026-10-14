@@ -16,9 +16,11 @@ const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./,
 const fmtIssue = (slug: string) => `Issue ${Number(slug.split('-issue-')[1])}`;
 ---
 <Base title={d.short_title ?? d.title} description={e.summary ?? `${d.title}: verified timeline of changes.`}>
-  <p class="small muted"><a href={url('dossiers/')}>Laws &amp; policies</a> / {jurName(d.jurisdiction)}</p>
-  <h1>{d.title}</h1>
-  {d.title_original && <p class="muted" lang="und">{d.title_original}</p>}
+  <p class="crumbs"><a href={url('dossiers/')}>Laws &amp; policies</a> / <a href={url(`dossiers/?jur=${d.jurisdiction}`)}>{jurName(d.jurisdiction)}</a></p>
+  <div class="law-head">
+    <h1>{d.title}</h1>
+    {d.title_original && <p class="muted" lang="und" style="margin:0">{d.title_original}</p>}
+  </div>
 
   <dl class="glance">
     <div><dt>Type</dt><dd>{instrumentName(d.instrument)}</dd></div>
@@ -26,7 +28,7 @@ const fmtIssue = (slug: string) => `Issue ${Number(slug.split('-issue-')[1])}`;
     <div><dt>Current stage</dt><dd>{stageLabel(d.stage)}</dd></div>
     <div><dt>Impact</dt><dd><span class={`badge ${d.impact}`}>{d.impact}</span></dd></div>
     <div><dt>Last verified change</dt><dd>{e.lastChange ? fmtDate(e.lastChange) : '—'}</dd></div>
-    <div><dt>Next date</dt><dd>{e.nextDate ? <>{fmtDate(e.nextDate.date)}<span class="small muted" style="font-weight:400"> — {e.nextDate.text}</span></> : '—'}</dd></div>
+    {e.nextDate && <div class="next"><dt>Next date</dt><dd>{fmtDate(e.nextDate.date)}</dd><span class="small muted">{e.nextDate.text}</span></div>}
   </dl>
 
   {idx >= 0 ? (
@@ -38,7 +40,7 @@ const fmtIssue = (slug: string) => `Issue ${Number(slug.split('-issue-')[1])}`;
   {e.summary && (
     <>
       <p class="lede">{e.summary}</p>
-      {e.summaryReviewId && <p class="small muted">Overview checked against the official sources · <a href={url(`reviews/${e.summaryReviewId}/`)}>review record</a></p>}
+      {e.summaryReviewId && <p class="verified"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Overview checked against the official sources · <a href={url(`reviews/${e.summaryReviewId}/`)}>review record</a></p>}
     </>
   )}
   {!e.summary && e.summaryStatus !== 'none' && (
@@ -47,8 +49,8 @@ const fmtIssue = (slug: string) => `Issue ${Number(slug.split('-issue-')[1])}`;
 
   <div class="subscribe" aria-label="Follow this law">
     <span class="small muted">Follow only this law:</span>
-    <a href={url(`dossiers/${d.id}/rss.xml`)}>RSS feed</a>
-    <a href={url(`dossiers/${d.id}/calendar.ics`)}>Calendar (.ics)</a>
+    <a href={url(`dossiers/${d.id}/rss.xml`)}><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="19" r="2.5"/><path d="M3 10a11 11 0 0 1 11 11h-3a8 8 0 0 0-8-8zm0-6a17 17 0 0 1 17 17h-3A14 14 0 0 0 3 7z"/></svg> RSS feed</a>
+    <a href={url(`dossiers/${d.id}/calendar.ics`)}><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> Calendar (.ics)</a>
   </div>
 
   <div class="grid2">
@@ -65,13 +67,13 @@ const fmtIssue = (slug: string) => `Issue ${Number(slug.split('-issue-')[1])}`;
           return (
             <li id={`change-${u.review_id}`}>
               <div class="date">{fmtDate(u.date)} {u.stage_change && <span class="badge stage">→ {stageLabel(u.stage_change)}</span>}</div>
-              <div>{u.summary}</div>
+              <div class="body">{u.summary}</div>
               <details>
                 <summary>Source quote{u.source_lang !== 'en' ? ` (${u.source_lang}, with translation)` : ''}</summary>
                 <blockquote lang={u.source_lang}>{u.source_quote}</blockquote>
                 {u.source_quote_en && <blockquote><em>English translation:</em> {u.source_quote_en}</blockquote>}
               </details>
-              <div class="small muted">
+              <div class="meta">
                 Source: <a href={u.source_url} rel="noopener">{host(u.source_url)}</a> ·
                 Review <a href={url(`reviews/${u.review_id}/`)}><code>{u.review_id}</code></a>
                 {issue && <> · reported in <a href={url(`issues/${issue}/`)}>{fmtIssue(issue)}</a></>}
@@ -81,30 +83,36 @@ const fmtIssue = (slug: string) => `Issue ${Number(slug.split('-issue-')[1])}`;
         })}
       </ol>
     </section>
-    <aside>
-      <h2>Next steps</h2>
+    <aside class="sticky-side" style="display:grid;gap:0.8rem">
+      <div class="panel">
+      <h2 style="font-size:1rem">Next steps</h2>
       {d.next_steps.length === 0 && <p class="muted small">None recorded.</p>}
       <ul class="events">
         {d.next_steps.map((n) => (
           <li>
             <div class="when">{fmtDate(n.date)} {(n.status === 'to-be-confirmed' || n.date < today.slice(0, n.date.length)) && <span class="badge draft">to be confirmed</span>}</div>
-            <div class="small">{n.text} <a href={n.source_url} rel="noopener">source</a></div>
+            <div class="what">{n.text} <a href={n.source_url} rel="noopener">source</a></div>
           </li>
         ))}
       </ul>
-      <h2>Key dates</h2>
+      </div>
+      <div class="panel">
+      <h2 style="font-size:1rem">Key dates</h2>
       {d.key_dates.length === 0 && <p class="muted small">None recorded.</p>}
       <ul class="events">
         {d.key_dates.map((k) => (
-          <li><div class="when">{fmtDate(k.date)} {k.date < today.slice(0, k.date.length) && <span class="badge">past</span>}</div><div class="small">{k.text} {k.source_url && <a href={k.source_url} rel="noopener">source</a>}</div></li>
+          <li><div class="when">{fmtDate(k.date)} {k.date < today.slice(0, k.date.length) && <span class="badge">past</span>}</div><div class="what">{k.text} {k.source_url && <a href={k.source_url} rel="noopener">source</a>}</div></li>
         ))}
       </ul>
-      <h2>Affects</h2>
-      <p class="small">{d.affected.join(', ')}</p>
-      <h2>Topics</h2>
-      <p class="small">{d.topics.map((t, i) => <>{i > 0 && ' · '}<a href={url(`dossiers/?topic=${encodeURIComponent(t)}`)}>{t}</a></>)}</p>
-      <h2>Official sources</h2>
-      <ul class="small">{d.official_links.map((l) => <li><a href={l} rel="noopener">{host(l)}</a></li>)}</ul>
+      </div>
+      <div class="panel small">
+      <h3 style="margin-top:0">Affects</h3>
+      <p style="margin:0">{d.affected.join(', ')}</p>
+      <h3>Topics</h3>
+      <p style="margin:0">{d.topics.map((t, i) => <>{i > 0 && ' · '}<a href={url(`dossiers/?topic=${encodeURIComponent(t)}`)}>{t}</a></>)}</p>
+      <h3>Official sources</h3>
+      <ul style="margin:0;padding-left:1.1rem">{d.official_links.map((l) => <li><a href={l} rel="noopener">{host(l)}</a></li>)}</ul>
+      </div>
     </aside>
   </div>
 </Base>

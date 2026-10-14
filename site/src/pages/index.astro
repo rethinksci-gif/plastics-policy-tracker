@@ -1,52 +1,80 @@
 ---
-import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Upcoming from '../components/Upcoming.astro';
-import { dossiers, fmtDate, issues, url } from '../lib/data';
+import { ROOT_NAMES, allChanges, calendarEvents, fmtDate, issues, jurName, jurRoot, library, todayIso, url } from '../lib/data';
 
 const all = await issues();
 const latest = all[0];
-const rendered = latest ? await render(latest) : null;
-const Content = rendered?.Content;
-const ds = await dossiers();
-const recent = ds
-  .flatMap((d) => d.updates.map((u) => ({ ...u, dossier: d })))
-  .sort((a, b) => b.date.localeCompare(a.date))
-  .slice(0, 8);
+const lib = await library();
+const changes = await allChanges();
+const today = todayIso();
+const in60 = new Date(Date.now() + 60 * 864e5).toISOString().slice(0, 10);
+const upcomingCount = (await calendarEvents()).filter((e) => e.end >= today && e.date <= in60).length;
+const roots = ['EU', 'UK', 'US', 'CN', 'GLOBAL'].filter((r) => lib.some((e) => jurRoot(e.d.jurisdiction) === r));
 ---
 <Base>
-  <h1>Plastics laws and regulations, checked against the source</h1>
-  <p class="lede">
-    A biweekly tracker of <a href={url('dossiers/')}>{ds.length} plastics-related laws, regulations, standards, taxes and treaties</a>
-    across the EU, its Member States, the UK, the US, China and global negotiations. Every update quotes its official source and has
-    passed <a href={url('verification/')}>four layers of review</a>. Follow <a href={url('changes/')}>every change as it is verified</a>.
-  </p>
-  <div class="grid2">
-    <section>
-      {latest && Content ? (
-        <>
-          {latest.collection === 'drafts' && <div class="banner">Draft preview — this issue has not been published.</div>}
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Biweekly · source-verified</p>
+      <h1>Plastics laws and regulations, checked against the source</h1>
+      <p class="lede">
+        We track {lib.length} plastics-related laws, regulations, standards, taxes and treaties across the EU, its Member States,
+        the UK, the US, China and global negotiations. Every change quotes its official source and passes{' '}
+        <a href={url('verification/')}>four layers of review</a> before it is published.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href={url('dossiers/')}>Browse laws &amp; policies</a>
+        <a class="btn btn-ghost" href={url('changes/')}>Latest changes</a>
+        <a class="btn btn-ghost" href={url('rss.xml')}>Subscribe (RSS)</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <a class="stat" href={url('dossiers/')}><span class="n">{lib.length}</span><span class="l">laws and policies tracked</span></a>
+      <a class="stat" href={url('changes/')}><span class="n">{changes.length}</span><span class="l">verified changes on record</span></a>
+      <a class="stat" href={url('calendar/')}><span class="n">{upcomingCount}</span><span class="l">dates in the next 60 days</span></a>
+      <a class="stat" href={url('issues/')}><span class="n">{all.filter((i) => i.collection !== 'drafts').length}</span><span class="l">issues published</span></a>
+    </div>
+  </section>
+
+  <div class="grid2" style="margin-top:2rem">
+    <div>
+      {latest ? (
+        <article class="card issue-card">
+          {latest.collection === 'drafts' && <div class="banner">Draft preview — not published.</div>}
+          <p class="eyebrow">Latest issue · {fmtDate(latest.data.date)}</p>
           <h2><a href={url(`issues/${latest.id}/`)}>{latest.data.title}</a></h2>
-          <div class="prose"><Content /></div>
-        </>
+          <p class="small muted" style="margin:0">{latest.data.items_count} verified changes · {latest.data.quarantined_count} held for review ·{' '}
+            <a href={url(`reviews/${latest.data.review_report}/`)}>review report</a></p>
+          {latest.data.highlights.length > 0 && <ul>{latest.data.highlights.map((h) => <li>{h}</li>)}</ul>}
+          <a class="btn btn-primary" href={url(`issues/${latest.id}/`)}>Read the issue</a>
+        </article>
       ) : (
-        <>
-          <h2>Latest verified updates</h2>
-          <p class="muted small">The first newsletter issue has not been published yet. These are the most recent verified events in the dossiers.</p>
-          <ul class="events">
-            {recent.map((r) => (
-              <li>
-                <div class="when">{fmtDate(r.date)} · <a href={url(`dossiers/${r.dossier.id}/`)}>{r.dossier.short_title ?? r.dossier.title}</a></div>
-                <div>{r.summary}</div>
-              </li>
-            ))}
-          </ul>
-        </>
+        <p class="muted">The first issue has not been published yet.</p>
       )}
-    </section>
-    <aside>
-      <h2>Next 60 days</h2>
-      <Upcoming />
+
+      <div class="section-head"><h2>Recent changes</h2><a href={url('changes/')}>All changes →</a></div>
+      <ul class="feed">
+        {changes.slice(0, 6).map(({ d, u }) => (
+          <li>
+            <div class="d">{fmtDate(u.date)}</div>
+            <div>
+              <div class="t"><a href={url(`dossiers/${d.id}/#change-${u.review_id}`)}>{d.short_title ?? d.title}</a><span class="badge">{jurName(d.jurisdiction)}</span><span class={`badge ${d.impact}`}>{d.impact}</span></div>
+              <p class="s">{u.summary}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <aside class="sticky-side">
+      <div class="panel">
+        <h2 style="font-size:1.05rem">Next 60 days</h2>
+        <Upcoming />
+      </div>
     </aside>
+  </div>
+
+  <div class="section-head"><h2>Browse by jurisdiction</h2><a href={url('dossiers/')}>All {lib.length} →</a></div>
+  <div class="jur-tiles">
+    {roots.map((r) => <a class="jur-tile" href={url(`dossiers/?jur=${r}`)}>{ROOT_NAMES[r]}<span>{lib.filter((e) => jurRoot(e.d.jurisdiction) === r).length}</span></a>)}
   </div>
 </Base>

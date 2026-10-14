@@ -8,12 +8,27 @@ export async function getStaticPaths() {
   return all.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
+const toc = headings.filter((h) => h.depth === 2);
 const isDraft = entry.collection === 'drafts';
 ---
 <Base title={entry.data.title} description={entry.data.description} noindex={isDraft}>
   {isDraft && <div class="banner">Draft preview — this issue has not been published. It is shown only in local builds with SHOW_DRAFTS=1.</div>}
-  <p class="small muted">{fmtDate(entry.data.date)} · <a href={url(`reviews/${entry.data.review_report}/`)}>Review report</a></p>
+  <p class="crumbs"><a href={url('issues/')}>Archive</a> / {entry.data.title}</p>
   <h1>{entry.data.title}</h1>
-  <article class="prose"><Content /></article>
+  <div class="issue-meta">
+    <span>{fmtDate(entry.data.date)}</span>
+    <span class="badge stage">{entry.data.items_count} verified changes</span>
+    {entry.data.quarantined_count > 0 && <span class="badge draft">{entry.data.quarantined_count} held for review</span>}
+    <a href={url(`reviews/${entry.data.review_report}/`)}>Review report</a>
+  </div>
+  <div class="grid2">
+    <article class="prose"><Content /></article>
+    <aside class="sticky-side">
+      <nav class="panel toc" aria-label="In this issue">
+        <p class="eyebrow">Contents</p>
+        <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+      </nav>
+    </aside>
+  </div>
 </Base>

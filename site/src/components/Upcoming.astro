@@ -1,18 +1,25 @@
 ---
-import { calendarEvents, fmtDate, todayIso, url } from '../lib/data';
-interface Props { days?: number; limit?: number }
-const { days = 60, limit = 12 } = Astro.props;
+import { calendarEvents, todayIso, url } from '../lib/data';
+interface Props { days?: number; limit?: number; links?: boolean }
+const { days = 60, limit = 8, links = true } = Astro.props;
 const today = todayIso();
 const horizon = new Date(Date.now() + days * 864e5).toISOString().slice(0, 10);
 const events = (await calendarEvents()).filter((e) => e.end >= today && e.date <= horizon).slice(0, limit);
+const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 ---
 <ul class="events">
-  {events.length === 0 && <li class="muted">No recorded dates in the next {days} days.</li>}
-  {events.map((e) => (
-    <li>
-      <div class="when">{fmtDate(e.date)} {e.kind !== 'key date' && <span class="badge">{e.kind}</span>}</div>
-      <div><a href={url(`dossiers/${e.dossier}/`)}>{e.title}</a> — {e.text}</div>
-    </li>
-  ))}
+  {events.length === 0 && <li class="muted small">No recorded dates in the next {days} days.</li>}
+  {events.map((e) => {
+    const [, m, d] = e.date.split('-');
+    return (
+      <li class="dated">
+        <span class="datechip" aria-hidden="true"><b>{d ? Number(d) : '–'}</b><span>{MON[Number(m) - 1]}</span></span>
+        <div>
+          <div class="when"><a href={url(`dossiers/${e.dossier}/`)}>{e.title}</a>{e.kind !== 'key date' && <span class="badge">{e.kind}</span>}</div>
+          <div class="what muted">{e.text}</div>
+        </div>
+      </li>
+    );
+  })}
 </ul>
-<p class="small"><a href={url('calendar/')}>Full calendar</a> · <a href={url('calendar.ics')}>Subscribe (.ics)</a></p>
+{links && <p class="small" style="margin:0.6rem 0 0"><a href={url('calendar/')}>Full calendar</a> · <a href={url('calendar.ics')}>Subscribe (.ics)</a></p>}
