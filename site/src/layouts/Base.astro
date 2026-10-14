@@ -7,7 +7,7 @@ const { title, description = 'Plastics laws and regulations worldwide, tracked a
 const fullTitle = title ? `${title} · ${SITE_NAME}` : SITE_NAME;
 const path = Astro.url.pathname;
 const nav = [
-  ['', 'Latest issue'], ['dossiers/', 'Laws & policies'], ['changes/', 'Changes'], ['calendar/', 'Calendar'],
+  ['', 'Overview'], ['dossiers/', 'Laws & policies'], ['changes/', 'Changes'], ['calendar/', 'Calendar'],
   ['issues/', 'Archive'], ['verification/', 'How we verify'],
 ];
 const isCurrent = (p: string) => (p === '' ? path === url('') || path === url('') + '/' : path.startsWith(url(p)));
@@ -112,6 +112,12 @@ const isCurrent = (p: string) => (p === '' ? path === url('') || path === url(''
         const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
         root.dataset.theme = dark ? 'light' : 'dark';
         try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          const m = document.querySelector('details.menu[open]');
+          if (m) { m.removeAttribute('open'); m.querySelector('summary').focus(); }
+        }
       });
       document.addEventListener('click', (e) => {
         const m = document.querySelector('details.menu[open]');

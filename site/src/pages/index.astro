@@ -13,30 +13,42 @@ const upcomingCount = (await calendarEvents()).filter((e) => e.end >= today && e
 const roots = ['EU', 'UK', 'US', 'CN', 'GLOBAL'].filter((r) => lib.some((e) => jurRoot(e.d.jurisdiction) === r));
 ---
 <Base>
-  <section class="hero">
+  <section class="hero" aria-labelledby="hero-title">
     <div>
-      <p class="eyebrow">Biweekly · source-verified</p>
-      <h1>Plastics laws and regulations, checked against the source</h1>
+      <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Independent policy intelligence · Biweekly</p>
+      <h1 id="hero-title">A clearer view of<br />plastics policy.</h1>
       <p class="lede">
-        We track {lib.length} plastics-related laws, regulations, standards, taxes and treaties across the EU, its Member States,
-        the UK, the US, China and global negotiations. Every change quotes its official source and passes{' '}
-        <a href={url('verification/')}>four layers of review</a> before it is published.
+        Follow the laws shaping plastics, packaging and recycling.
+        Official sources. Verified changes. The dates that matter.
       </p>
       <div class="btn-row">
-        <a class="btn btn-primary" href={url('dossiers/')}>Browse laws &amp; policies</a>
+        <a class="btn btn-primary" href={url('dossiers/')}>Explore laws &amp; policies <span aria-hidden="true">↗</span></a>
         <a class="btn btn-ghost" href={url('changes/')}>Latest changes</a>
-        <a class="btn btn-ghost" href={url('rss.xml')}>Subscribe (RSS)</a>
+
       </div>
     </div>
-    <div class="hero-stats">
+    <aside class="hero-note" aria-label="Our approach">
+      <span class="note-index">01 — EVIDENCE FIRST</span>
+      <h2>Policy moves fast.<br />Stay close to the source.</h2>
+      <p>Every published change links to an official source and passes four layers of review.</p>
+      <a href={url('verification/')}>How we verify <span aria-hidden="true">→</span></a>
+    </aside>
+  </section>
+    <div class="hero-stats" aria-label="Tracker at a glance">
       <a class="stat" href={url('dossiers/')}><span class="n">{lib.length}</span><span class="l">laws and policies tracked</span></a>
       <a class="stat" href={url('changes/')}><span class="n">{changes.length}</span><span class="l">verified changes on record</span></a>
       <a class="stat" href={url('calendar/')}><span class="n">{upcomingCount}</span><span class="l">dates in the next 60 days</span></a>
       <a class="stat" href={url('issues/')}><span class="n">{all.filter((i) => i.collection !== 'drafts').length}</span><span class="l">issues published</span></a>
     </div>
+
+  <section class="jur-section" aria-labelledby="jur-heading">
+    <div class="section-head"><h2 id="jur-heading">Explore by jurisdiction</h2><a href={url('dossiers/')}>View all policies →</a></div>
+    <div class="jur-tiles">
+      {roots.map((r) => <a class="jur-tile" href={url(`dossiers/?jur=${r}`)}><span class="jur-code">{r === 'GLOBAL' ? 'WORLD' : r}</span><strong>{ROOT_NAMES[r]}</strong><span class="jur-meta">{lib.filter((e) => jurRoot(e.d.jurisdiction) === r).length} policies <span aria-hidden="true">↗</span></span></a>)}
+    </div>
   </section>
 
-  <div class="grid2" style="margin-top:2rem">
+  <div class="grid2 home-content">
     <div>
       {latest ? (
         <article class="card issue-card">
@@ -67,14 +79,14 @@ const roots = ['EU', 'UK', 'US', 'CN', 'GLOBAL'].filter((r) => lib.some((e) => j
     </div>
     <aside class="sticky-side">
       <div class="panel">
-        <h2 style="font-size:1.05rem">Next 60 days</h2>
+        <p class="eyebrow">On the horizon</p><h2 class="calendar-title">Next 60 days <span class="badge stage">{upcomingCount} dates</span></h2>
         <Upcoming />
       </div>
     </aside>
   </div>
 
-  <div class="section-head"><h2>Browse by jurisdiction</h2><a href={url('dossiers/')}>All {lib.length} →</a></div>
-  <div class="jur-tiles">
-    {roots.map((r) => <a class="jur-tile" href={url(`dossiers/?jur=${r}`)}>{ROOT_NAMES[r]}<span>{lib.filter((e) => jurRoot(e.d.jurisdiction) === r).length}</span></a>)}
-  </div>
+  <section class="subscribe-band">
+    <div><p class="eyebrow">Keep the evidence in view</p><h2>Your next policy briefing, in your feed.</h2><p class="muted">Follow the biweekly briefing or subscribe to individual policy changes.</p></div>
+    <a class="btn btn-primary" href={url('rss.xml')}>Subscribe via RSS <span aria-hidden="true">↗</span></a>
+  </section>
 </Base>
