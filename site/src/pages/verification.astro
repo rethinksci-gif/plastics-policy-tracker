@@ -35,12 +35,21 @@ import { url } from '../lib/data';
     <p>A separate reviewer call sees <em>only</em> the source text and the claim, never the drafter's reasoning. It is told to look for
       errors and to assume the claim is wrong until the source proves it. It checks dates, numbers, institutions, legal references,
       stage changes and next steps, and looks for overstatement or inference that the source does not contain. Only a verdict of
-      <code>supported</code> with confidence ≥ 0.80 passes.</p>
+      <code>supported</code> with confidence ≥ 0.80 passes. Items about high-impact instruments that pass then go to a
+      second, independent reviewer running on a stronger model, and must pass both. The model used for each review is
+      shown in its review record.</p>
 
     <h2>Layer 4 — editorial review of the whole issue</h2>
     <p>Before an issue goes out, the full set of items is checked together: contradictions between items or with a dossier's history,
       missing high-impact developments, consistent terminology and British spelling, faithful translations, and a strict
-      separation of fact from interpretation. Interpretation only ever appears in boxes labelled <em>Analysis</em>.</p>
+      separation of fact from interpretation. Interpretation only ever appears in boxes labelled <em>Analysis</em>.
+      Only factual problems hold an item back; wording and house-style points are listed in the review report for the
+      editor but never stop publication.</p>
+
+    <h2>Which model does what</h2>
+    <p>Screening sources, drafting and the first review run on a fast model (DeepSeek Flash). Code, not a model, checks
+      the facts most at risk of invention (quotes, dates, sources). A stronger model (DeepSeek V4 Pro) is used only for
+      the second opinion on high-impact items and for the editorial review of each issue.</p>
 
     <h2>What happens when something fails</h2>
     <ul>

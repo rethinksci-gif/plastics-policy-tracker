@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 import logging
 
-from .config import LOGS, config, model_fast, today
+from .config import LOGS, config, model_for, today
 from .llm import LLM, parallel_map, prompt_parts
 from .models import Candidate, TriageResult
 from .store import load_dossiers, load_snapshot, load_sources, next_candidate_id, save_candidate
@@ -30,7 +30,7 @@ def triage_snapshot(llm: LLM, snapshot, dossier_list: str, source_name: str) -> 
         published=snapshot.published or "unknown",
         text=_truncate(snapshot.text, 12000),
     )
-    return llm.json_call(model_fast(), system, user, TriageResult, max_tokens=600)
+    return llm.json_call(model_for("triage"), system, user, TriageResult, max_tokens=600)
 
 
 def run(llm: LLM, snapshot_ids: list[str]) -> dict:

@@ -13,7 +13,7 @@ import logging
 from datetime import datetime, timezone
 
 from .checks import blocking, deterministic_checks, excerpt_for_review, flags, quote_in_text, snapshots_for_url
-from .config import REVIEWS, config, model_pro
+from .config import REVIEWS, config, model_for
 from .github import open_issue
 from .llm import LLM, parallel_map, prompt_parts
 from .models import Candidate, CheckResult, Dossier, LLMReview, ReviewRecord
@@ -38,12 +38,33 @@ def claim_text(c: Candidate) -> str:
     return json.dumps(claim, indent=1, ensure_ascii=False)
 
 
-def llm_review(llm: LLM, c: Candidate, source_text: str) -> LLMReview:
-    """Layer 3. The reviewer sees only the snapshot and the claim — never the drafting prompt or reasoning."""
-    limit = config()["llm"]["max_snapshot_chars"]
-    text = excerpt_for_review(source_text, c.draft.source_quote, limit)
-    system, user = prompt_parts("reviewer", claim=claim_text(c), url=c.draft.source_url, text=text)
-    return llm.json_call(model_pro(), system, user, LLMReview, max_tokens=1500)
+def _verdict_ok(r: LLMReview) -> bool:
+    return r.verdict == "supported" and r.confidence >= config()["review"]["min_confidence"]
+
+
+def _reason(label: str, r: LLMReview) -> str:
+    return f"L3 {label}: {r.verdict} (confidence {r.confidence:.2f}); " + "; ".join(r.issues[:5])
+
+
+def layer3(llm: LLM, claim: str, url: str, source_text: str, quote: str, impact: str) -> dict:
+    """Layer 3. Each reviewer sees only the snapshot and the claim — never the drafting prompt or reasoning.
+
+    Every item gets the `review` stage model. Items with impact: high that pass it get an independent
+    second opinion from the `review_high_confirm` stage model; both must pass. Items the first reviewer
+    rejects are quarantined anyway, so they never use the second model.
+    """
+    text = excerpt_for_review(source_text, quote, config()["llm"]["max_snapshot_chars"])
+    system, user = prompt_parts("reviewer", claim=claim, url=url, text=text)
+    out = {"review": None, "model": model_for("review"), "confirm": None, "confirm_model": None, "reasons": []}
+    out["review"] = llm.json_call(out["model"], system, user, LLMReview, max_tokens=1500)
+    if not _verdict_ok(out["review"]):
+        out["reasons"].append(_reason("reviewer", out["review"]))
+    elif impact == "high":
+        out["confirm_model"] = model_for("review_high_confirm")
+        out["confirm"] = llm.json_call(out["confirm_model"], system, user, LLMReview, max_tokens=1500)
+        if not _verdict_ok(out["confirm"]):
+            out["reasons"].append(_reason("high-impact confirmation", out["confirm"]))
+    return out
 
 
 def review_candidate(llm: LLM | None, c: Candidate, dossier: Dossier, status_fn=None,
@@ -52,16 +73,13 @@ def review_candidate(llm: LLM | None, c: Candidate, dossier: Dossier, status_fn=
     reasons = [f"L{r.layer} {r.name}: {r.detail}" for r in blocking(checks)]
     if c.source_trust != "official":
         reasons.insert(0, f"L1 source-trust: lead came from a {c.source_trust} source; facts need an official source")
-    review = None
+    l3 = {"review": None, "model": None, "confirm": None, "confirm_model": None}
     if not reasons:
         snaps = snapshots_for_url(c.draft.source_url) or [load_snapshot(c.snapshot_id)]
         matching = [s for s in snaps if quote_in_text(c.draft.source_quote, s.text)[0]] or [snaps[-1]]
         src = max(matching, key=lambda s: len(s.text))  # fullest snapshot gives the reviewer most context
-        review = llm_review(llm, c, src.text)
-        min_conf = config()["review"]["min_confidence"]
-        if review.verdict != "supported" or review.confidence < min_conf:
-            reasons.append(f"L3 reviewer: {review.verdict} (confidence {review.confidence:.2f}); "
-                           + "; ".join(review.issues[:5]))
+        l3 = layer3(llm, claim_text(c), c.draft.source_url, src.text, c.draft.source_quote, dossier.impact)
+        reasons += l3["reasons"]
     flag_reasons = [f"L{r.layer} {r.name}: {r.detail}" for r in flags(checks) if r.name == "stage-transition"]
     if reasons:
         outcome = "quarantined"
@@ -71,8 +89,8 @@ def review_candidate(llm: LLM | None, c: Candidate, dossier: Dossier, status_fn=
         outcome = "passed"
     return ReviewRecord(
         review_id=c.id, candidate_id=c.id, dossier_id=dossier.id, created=datetime.now(timezone.utc),
-        impact=dossier.impact, checks=checks, llm_review=review, model=model_pro() if review else None,
-        outcome=outcome, reasons=reasons,
+        impact=dossier.impact, checks=checks, llm_review=l3["review"], model=l3["model"] if l3["review"] else None,
+        confirm_review=l3["confirm"], confirm_model=l3["confirm_model"], outcome=outcome, reasons=reasons,
     )
 
 
@@ -102,11 +120,16 @@ def record_markdown(rec: ReviewRecord, c: Candidate) -> str:
         lines.append(f"| {r.layer} | {r.name} | {mark} | {r.detail.replace('|', '/')} |")
     lines += ["", "## Layer 3: independent reviewer", ""]
     if rec.llm_review:
-        lr = rec.llm_review
-        lines.append(f"Verdict **{lr.verdict}**, confidence {lr.confidence:.2f}.")
-        lines += [""] + [f"- {k}: {'yes' if v else 'NO'}" for k, v in lr.checks.items()]
-        if lr.issues:
-            lines += ["", "Issues:"] + [f"- {i}" for i in lr.issues]
+        for title, lr, model in (("Reviewer", rec.llm_review, rec.model),
+                                 ("High-impact confirmation", rec.confirm_review, rec.confirm_model)):
+            if lr is None:
+                continue
+            lines += [f"**{title}** (`{model or 'model not recorded'}`): verdict **{lr.verdict}**, "
+                      f"confidence {lr.confidence:.2f}."]
+            lines += [""] + [f"- {k}: {'yes' if v else 'NO'}" for k, v in lr.checks.items()]
+            if lr.issues:
+                lines += ["", "Issues:"] + [f"- {i}" for i in lr.issues]
+            lines.append("")
     else:
         lines.append("Not run (blocked by an earlier layer).")
     if rec.reasons:

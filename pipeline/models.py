@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import re
 from datetime import date, datetime
-from enum import Enum
 from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, HttpUrl, field_validator, model_validator
@@ -282,6 +281,8 @@ class ReviewRecord(BaseModel):
     checks: list[CheckResult]
     llm_review: LLMReview | None = None
     model: str | None = None  # model that ran the layer-3 review
+    confirm_review: LLMReview | None = None  # second opinion for impact: high items
+    confirm_model: str | None = None
     outcome: Literal["passed", "quarantined", "human-review"]
     reasons: list[str] = Field(default_factory=list)
 
@@ -294,5 +295,6 @@ class EditorialReview(BaseModel):
     terminology_issues: list[str] = Field(default_factory=list)
     translation_issues: list[str] = Field(default_factory=list)
     fact_vs_interpretation_issues: list[str] = Field(default_factory=list)
-    item_flags: dict[str, list[str]] = Field(default_factory=dict)  # candidate id -> problems
+    item_flags: dict[str, list[str]] = Field(default_factory=dict)  # candidate id -> blocking (factual) problems
+    style_notes: dict[str, list[str]] = Field(default_factory=dict)  # candidate id -> wording notes, never blocking
     notes: str = ""

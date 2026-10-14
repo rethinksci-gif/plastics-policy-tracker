@@ -6,7 +6,7 @@ import logging
 
 from pydantic import BaseModel, model_validator
 
-from .config import config, model_pro, today
+from .config import config, model_for, today
 from .llm import LLM, parallel_map, prompt_parts
 from .models import DraftUpdate
 from .store import load_candidates, load_dossiers, load_snapshot, save_candidate
@@ -40,7 +40,7 @@ def run(llm: LLM) -> dict:
             jurisdiction=d.jurisdiction, recent_updates=recent, title=snap.title or "",
             published=snap.published or "unknown", text=snap.text[:limit],
         )
-        return llm.json_call(model_pro(), system, user, _DraftOrSkip, max_tokens=2500)
+        return llm.json_call(model_for("draft"), system, user, _DraftOrSkip, max_tokens=2500)
 
     cands = load_candidates("triaged")
     for cand, out in zip(cands, parallel_map(one, cands)):

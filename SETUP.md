@@ -26,8 +26,8 @@ Optional, on the **Variables** tab of the same page (no secret needed; defaults 
 
 | Variable | Purpose |
 |---|---|
-| `DEEPSEEK_MODEL_FAST` | Model for triage (`deepseek-flash`) |
-| `DEEPSEEK_MODEL_PRO` | Model for drafting and review (`deepseek-flash`; the project uses only deepseek-flash) |
+| `DEEPSEEK_MODEL_FAST` | Fast tier: triage, drafting, first review, highlights (`deepseek-flash`) |
+| `DEEPSEEK_MODEL_PRO` | Pro tier: second review of high-impact items, editorial review (`deepseek-v4-pro`) |
 | `MAX_LLM_CALLS_PER_RUN` | Cost cap per run (`300`); the run stops and opens an issue when reached |
 
 ## 3. Turn on GitHub Pages

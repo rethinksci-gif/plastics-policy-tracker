@@ -10,7 +10,7 @@ from datetime import date, datetime, timedelta, timezone
 from pydantic import BaseModel
 
 from .checks import blocking, deterministic_checks
-from .config import ISSUES, REVIEWS, config, model_pro, today
+from .config import ISSUES, REVIEWS, config, model_for, today
 from .llm import LLM, prompt_parts
 from .models import Candidate, Dossier, EditorialReview, KeyDate, NextStep, Update, fuzzy_date_bounds
 from .store import dump_yaml, load_candidates, load_dossiers, save_candidate, save_dossier
@@ -109,7 +109,24 @@ def editorial_review(llm: LLM, items: list[dict], quarantined: list[dict], dossi
         quarantined=json.dumps(quarantined, indent=1, ensure_ascii=False) or "[]",
         history=json.dumps(history, indent=1, ensure_ascii=False),
     )
-    return llm.json_call(model_pro(), system, user, EditorialReview, max_tokens=3000)
+    return llm.json_call(model_for("editor"), system, user, EditorialReview, max_tokens=3000)
+
+
+BLOCKING_KEYS = ("contradictions", "history_conflicts", "translation_issues", "fact_vs_interpretation_issues")
+
+
+def editorial_blocking(ed: EditorialReview) -> dict[str, list[str]]:
+    """Items layer 4 holds back. Only factual problems (item_flags) block; terminology and style notes
+    (terminology_issues, style_notes) are reported in the review record and never quarantine an item."""
+    return {cid: probs for cid, probs in ed.item_flags.items() if probs}
+
+
+def editorial_unattached_blocking(ed: EditorialReview) -> list[str]:
+    """Blocking findings the editor could not pin to an item; these hold the whole issue. The editor's
+    `passed` flag is not used on its own, so a model that fails an issue for style alone cannot hold it."""
+    if ed.item_flags:
+        return []
+    return [x for key in BLOCKING_KEYS for x in getattr(ed, key)]
 
 
 def write_highlights(llm: LLM, items: list[dict]) -> list[str]:
@@ -118,7 +135,7 @@ def write_highlights(llm: LLM, items: list[dict]) -> list[str]:
     slim = [{k: i[k] for k in ("title", "jurisdiction", "impact", "date", "summary", "stage_before", "stage_after")}
             for i in items]
     system, user = prompt_parts("highlights", items=json.dumps(slim, indent=1, ensure_ascii=False))
-    return llm.json_call(model_pro(), system, user, Highlights, max_tokens=800).highlights[:5]
+    return llm.json_call(model_for("highlights"), system, user, Highlights, max_tokens=800).highlights[:5]
 
 
 # ---------------------------------------------------------------------------
@@ -210,7 +227,6 @@ def run(llm: LLM, dry_run: bool = False, issue_date: date | None = None, status_
         override_gate: bool = False) -> dict:
     """override_gate: the maintainer has checked a held issue and approved it (force_publish)."""
     issue_date = issue_date or today()
-    window_start = issue_date - timedelta(days=config()["schedule"]["issue_window_days"])
     dossiers = load_dossiers()
     number = issue_number()
     slug = f"{issue_date.isoformat()}-issue-{number:03d}"
@@ -243,9 +259,9 @@ def run(llm: LLM, dry_run: bool = False, issue_date: date | None = None, status_
 
     # Layer 4 — editorial review of the whole issue.
     editorial = editorial_review(llm, items, q_items, dossiers, issue_date) if items else EditorialReview(passed=True)
-    for cid, problems in editorial.item_flags.items():
+    for cid, problems in editorial_blocking(editorial).items():
         match = next((i for i in items if i["id"] == cid), None)
-        if match and problems:
+        if match:
             items.remove(match)
             c = next(c for c in passed if c.id == cid)
             passed.remove(c)
@@ -264,8 +280,9 @@ def run(llm: LLM, dry_run: bool = False, issue_date: date | None = None, status_
     high_q = [q for q in q_items if q["impact"] == "high"]
     if gate_cfg["hold_on_high_impact_quarantine"] and high_q:
         hold_reasons.append("high-impact item(s) quarantined: " + ", ".join(sorted({q["dossier"] for q in high_q})))
-    if not editorial.passed and not editorial.item_flags:
-        hold_reasons.append("editorial review did not pass: " + editorial.notes[:300])
+    unattached = editorial_unattached_blocking(editorial)
+    if unattached:
+        hold_reasons.append("editorial review found blocking problems not tied to one item: " + "; ".join(unattached)[:400])
     if dry_run:
         decision = "dry-run"
     elif hold_reasons and not override_gate:
@@ -346,8 +363,18 @@ def write_issue_report(r: dict) -> None:
     if not r["quarantined_items"]:
         lines.append("- none")
     lines += ["", "## Layer 4: editorial review", "", f"Passed: **{ed['passed']}**", "", ed.get("notes", ""), ""]
-    for key in ("contradictions", "history_conflicts", "missing_high_impact", "terminology_issues",
-                "translation_issues", "fact_vs_interpretation_issues"):
+    lines += ["### Blocking (factual) findings", ""]
+    blocking_found = False
+    for key in ("contradictions", "history_conflicts", "translation_issues", "fact_vs_interpretation_issues"):
         if ed.get(key):
+            blocking_found = True
             lines += [f"**{key.replace('_', ' ')}**", ""] + [f"- {x}" for x in ed[key]] + [""]
+    if not blocking_found:
+        lines += ["None.", ""]
+    lines += ["### Style and terminology notes (reported only, not blocking)", ""]
+    notes = [f"- {x}" for x in ed.get("terminology_issues", [])]
+    notes += [f"- `{cid}`: {x}" for cid, xs in (ed.get("style_notes") or {}).items() for x in xs]
+    lines += (notes or ["None."]) + [""]
+    if ed.get("missing_high_impact"):
+        lines += ["### High-impact dossiers with held or missing items", ""] + [f"- {x}" for x in ed["missing_high_impact"]] + [""]
     (out / f"{r['review_id']}.md").write_text("\n".join(lines) + "\n")

@@ -11,7 +11,17 @@ export async function getStaticPaths() {
 const { kind, item, issue } = Astro.props;
 const mark = (passed: boolean, sev: string) => (passed ? ['pass', 'pass'] : sev === 'flag' ? ['flag', 'flag'] : ['fail', 'FAIL']);
 const ed = issue?.editorial_review ?? {};
-const edKeys = ['contradictions', 'history_conflicts', 'missing_high_impact', 'terminology_issues', 'translation_issues', 'fact_vs_interpretation_issues'];
+const blockingKeys = ['contradictions', 'history_conflicts', 'translation_issues', 'fact_vs_interpretation_issues'];
+const styleNotes: string[] = [
+  ...(ed.terminology_issues ?? []),
+  ...Object.entries(ed.style_notes ?? {}).flatMap(([id, xs]) => (xs as string[]).map((x) => `${id}: ${x}`)),
+];
+const l3 = item
+  ? [
+      { title: 'Reviewer', r: item.llm_review, model: item.model },
+      { title: 'High-impact confirmation (second, independent reviewer)', r: item.confirm_review, model: item.confirm_model },
+    ].filter((x) => x.r)
+  : [];
 ---
 {kind === 'item' && item && (
   <Base title={`Review ${item.review_id}`} description={`Review record ${item.review_id} for ${item.dossier_id}`}>
@@ -25,13 +35,14 @@ const edKeys = ['contradictions', 'history_conflicts', 'missing_high_impact', 't
       <tbody>{item.checks.map((c) => { const [cls, txt] = mark(c.passed, c.severity); return <tr><td>{c.layer}</td><td>{c.name}</td><td class={cls}>{txt}</td><td class="small">{c.detail}</td></tr>; })}</tbody>
     </table></div>
     <h2>Layer 3: independent reviewer</h2>
-    {item.llm_review ? (
+    {l3.length > 0 ? l3.map(({ title, r, model }) => (
       <>
-        <p>Verdict <strong>{item.llm_review.verdict}</strong>, confidence {item.llm_review.confidence.toFixed(2)} (threshold 0.80).</p>
-        <ul class="small">{Object.entries(item.llm_review.checks).map(([k, v]) => <li>{k.replace(/_/g, ' ')}: <span class={v ? 'pass' : 'fail'}>{v ? 'yes' : 'no'}</span></li>)}</ul>
-        {item.llm_review.issues.length > 0 && <><h3>Issues raised</h3><ul class="small">{item.llm_review.issues.map((i) => <li>{i}</li>)}</ul></>}
+        <h3>{title}</h3>
+        <p>Verdict <strong>{r!.verdict}</strong>, confidence {r!.confidence.toFixed(2)} (threshold 0.80){model && <> · model <code>{model}</code></>}.</p>
+        <ul class="small">{Object.entries(r!.checks).map(([k, v]) => <li>{k.replace(/_/g, ' ')}: <span class={v ? 'pass' : 'fail'}>{v ? 'yes' : 'no'}</span></li>)}</ul>
+        {r!.issues.length > 0 && <><p class="small"><strong>Issues raised</strong></p><ul class="small">{r!.issues.map((i) => <li>{i}</li>)}</ul></>}
       </>
-    ) : <p class="muted">Not run — an earlier layer blocked the item.</p>}
+    )) : <p class="muted">Not run — an earlier layer blocked the item.</p>}
     {item.reasons.length > 0 && <><h2>Why it was not passed</h2><ul>{item.reasons.map((r) => <li>{r}</li>)}</ul></>}
   </Base>
 )}
@@ -55,6 +66,12 @@ const edKeys = ['contradictions', 'history_conflicts', 'missing_high_impact', 't
     <h2>Layer 4: editorial review</h2>
     <p>Passed: <strong class={ed.passed ? 'pass' : 'fail'}>{String(ed.passed)}</strong></p>
     {ed.notes && <p class="small">{ed.notes}</p>}
-    {edKeys.filter((k) => (ed[k] ?? []).length).map((k) => <><h3>{k.replace(/_/g, ' ')}</h3><ul class="small">{ed[k].map((x: string) => <li>{x}</li>)}</ul></>)}
+    <h3>Blocking (factual) findings</h3>
+    {blockingKeys.every((k) => !(ed[k] ?? []).length) && <p class="small muted">None.</p>}
+    {blockingKeys.filter((k) => (ed[k] ?? []).length).map((k) => <><p class="small"><strong>{k.replace(/_/g, ' ')}</strong></p><ul class="small">{ed[k].map((x: string) => <li>{x}</li>)}</ul></>)}
+    <h3>Style and terminology notes</h3>
+    <p class="small muted">Reported to the editor only; these never hold an item back.</p>
+    {styleNotes.length ? <ul class="small">{styleNotes.map((x) => <li>{x}</li>)}</ul> : <p class="small muted">None.</p>}
+    {(ed.missing_high_impact ?? []).length > 0 && <><h3>High-impact dossiers with held or missing items</h3><ul class="small">{ed.missing_high_impact.map((x: string) => <li>{x}</li>)}</ul></>}
   </Base>
 )}
