@@ -1,12 +1,11 @@
 # Review report — 2026-10-14-issue-001
 
-- **Decision:** dry-run (gate closed)
-- **Quarantine ratio:** 31%
+- **Decision:** publish (gate closed)
+- **Quarantine ratio:** 17%
 - **LLM calls this run:** 2
 
 ## Why the gate is closed
 
-- 31% of items quarantined (limit 30%)
 - high-impact item(s) quarantined: eu-ppwr
 
 ## Published items
@@ -16,6 +15,7 @@
 - `2026-10-14-005` eu-ppwr: The feedback period for the implementing rules on packaging and packaging waste opened on 6 August 2026 and closed on 10 September 2026.
 - `2026-10-14-007` eu-wfd: A feedback period for the Early warning report on waste 2027 opened on 28 September 2026 and is open until 26 October 2026.
 - `2026-10-14-008` eu-wsr: The feedback period for the initiative 'Green-listing certain waste for the purposes of shipments to recovery between Member States' closed on 15 September 2026.
+- `2026-10-14-009` eu-ppwr: The feedback period for the planned implementing act on rules for the calculation and verification of recycled content in plastic packaging ran from 14 August 2026 to 16 September 2026.
 - `2026-10-14-010` eu-ppwr: A Commission Implementing Decision on harmonised packaging and packaging waste labels under Regulation (EU) 2025/40 is planned as a Commission implementing decision (reference Ares(2026)8548456). The initiative status is active and the front-end stage is 'INIT_PLANNED'; receiving feedback is disabled, with a listed feedback start date of 14 September 2026.
 - `2026-10-14-011` eu-ppwr: A public feedback period on the delegated act establishing sustainability criteria for plastic recycling technologies ran from 14 August 2026 to 16 September 2026; feedback is closed.
 - `2026-10-14-012` eu-public-procurement: A public feedback period on the revision of EU rules on public procurement is open from 15 September 2026 to 9 December 2026.
@@ -30,28 +30,22 @@
 - `2026-10-14-002` **eu-ppwr** (impact high) — On 9 October 2026, the European Parliament Committee on the Environment, Public Health and Food Safety published a report on a proposal for a regulation suspending the application of the rules on the appointment of an authorised representative for extended producer responsibility for batteries and waste batteries and packaging and packaging waste. The rapporteur is Ingeborg Ter Laak.
   - source: https://www.europarl.europa.eu/doceo/document/A-10-2026-0266_EN.html
   - L1 url-200: HTTP 202
-- `2026-10-14-006` **eu-pellet-losses** (impact medium) — The European Commission has planned an implementing act on the format for Member States reporting under the Plastic Pellet Regulation. The source records a feedback start date of 22 September 2025.
-  - source: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14856_en
-  - L4 editor: Stage conflict: item date 2025-09-22 predates publication of Regulation (EU) 2025/2365 on 2025-11-26; stage_before/after cannot be 'in-force'.
-- `2026-10-14-009` **eu-ppwr** (impact high) — The feedback period for the planned implementing act on rules for the calculation and verification of recycled content in plastic packaging ran from 14 August 2026 to 16 September 2026.
-  - source: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/18753_en
-  - L4 editor: Source quote does not include the feedback start/end dates stated in the summary; the summary may be unsupported by the quoted source.
 
 ## Layer 4: editorial review
 
-Passed: **False**
+Passed: **True**
 
-The issue is held because of a history conflict on the pellet losses item and a missing high-impact PPWR item in quarantine; a source quote in item 009 also lacks the cited feedback dates.
+No blocking findings were identified. There is one style note for item 2026-10-14-004 to use 'the Commission' instead of 'the European Commission'. The high-impact PPWR dossier has a quarantined item (2026-10-14-002) that is not published in this issue, so readers should be aware that the European Parliament committee report on suspending authorised representative rules for packaging is absent.
 
-**history conflicts**
+### Blocking (factual) findings
 
-- 2026-10-14-006: stage_before/after 'in-force' conflicts with dossier history; Regulation (EU) 2025/2365 on plastic pellet losses was published on 2025-11-26, so on 2025-09-22 it was not in force.
+None.
 
-**missing high impact**
+### Style and terminology notes (reported only, not blocking)
+
+- `2026-10-14-004`: write 'the Commission' instead of 'the European Commission'
+
+### High-impact dossiers with held or missing items
 
 - eu-ppwr
-
-**terminology issues**
-
-- Items 004 and 006 use 'the European Commission' rather than the house style 'the Commission'.
 

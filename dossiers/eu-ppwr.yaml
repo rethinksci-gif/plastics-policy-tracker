@@ -3,73 +3,174 @@ title: Packaging and Packaging Waste Regulation (PPWR)
 short_title: PPWR
 jurisdiction: EU
 instrument: regulation
-topics: [packaging, recycled-content, EPR, reuse, labelling, PFAS]
+topics:
+- packaging
+- recycled-content
+- EPR
+- reuse
+- labelling
+- PFAS
 stage: in-application
-affected: [recyclers, converters, brand-owners, retailers, importers]
+affected:
+- recyclers
+- converters
+- brand-owners
+- retailers
+- importers
 impact: high
 official_links:
-  - https://eur-lex.europa.eu/eli/reg/2025/40/oj/eng
-  - https://publications.europa.eu/resource/celex/32025R0040
-  - https://environment.ec.europa.eu/topics/waste-and-recycling/packaging-waste_en
-  - https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en
-summary: >-
-  Regulation (EU) 2025/40 replaces the 1994 Packaging Directive with directly applicable rules on
-  packaging design, recycled content, reuse, labelling, EPR and deposit return. It applies from
-  12 August 2026; most detailed obligations depend on implementing and delegated acts due 2026–2030.
+- https://eur-lex.europa.eu/eli/reg/2025/40/oj/eng
+- https://publications.europa.eu/resource/celex/32025R0040
+- https://environment.ec.europa.eu/topics/waste-and-recycling/packaging-waste_en
+- https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en
+summary: Regulation (EU) 2025/40 replaces the 1994 Packaging Directive with directly applicable rules
+  on packaging design, recycled content, reuse, labelling, EPR and deposit return. It applies from 12
+  August 2026; most detailed obligations depend on implementing and delegated acts due 2026–2030.
 updates:
-  - date: 2026-08-12
-    summary: The Regulation became applicable across the EU on 12 August 2026; Article 67(5) applies from 12 February 2029.
-    source_url: https://publications.europa.eu/resource/celex/32025R0040
-    source_quote: "It shall apply from 12 August 2026. However, Article 67(5) shall apply from 12 February 2029."
-    stage_change: in-application
-    review_id: seed-eu-ppwr-004
-  - date: 2026-02
-    summary: >-
-      The Commission adopted a delegated act exempting economic operators using pallet wrappings and
-      straps from the 100% reuse targets for transport packaging.
-    source_url: https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en
-    source_quote: "A delegated act exempting economic operators using pallet wrappings and straps from the 100% reuse targets for transport packaging was adopted in February 2026."
-    review_id: seed-eu-ppwr-003
-  - date: 2025-02-11
-    summary: The Regulation entered into force on 11 February 2025.
-    source_url: https://environment.ec.europa.eu/topics/waste-and-recycling/packaging-waste_en
-    source_quote: "Status: In force since 11 February 2025"
-    stage_change: in-force
-    review_id: seed-eu-ppwr-002
-  - date: 2025-01-22
-    summary: >-
-      Regulation (EU) 2025/40 of 19 December 2024 on packaging and packaging waste was published in the
-      Official Journal on 22 January 2025.
-    source_url: https://publications.europa.eu/resource/celex/32025R0040
-    source_quote: "Official Journal of the European Union EN L series 2025/40 22.1.2025 REGULATION (EU) 2025/40 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 19 December 2024 on packaging and packaging waste"
-    stage_change: published
-    review_id: seed-eu-ppwr-001
+- date: '2026-09-16'
+  summary: A public feedback period on the delegated act establishing sustainability criteria for plastic
+    recycling technologies ran from 14 August 2026 to 16 September 2026; feedback is closed.
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19033_en
+  source_quote: |-
+    frontEndStage: PLANNING_WORKFLOW; receivingFeedbackStatus: CLOSED; feedbackStartDate: 2026/08/14 10:48:59; feedbackEndDate: 2026/09/16 23:59:59
+
+    snippet: requires the Commission to create sustainability rules for
+    plastic
+    recycling technologies.
+  source_lang: en
+  review_id: 2026-10-14-011
+- date: '2026-09-16'
+  summary: The feedback period for the planned implementing act on rules for the calculation and verification
+    of recycled content in plastic packaging ran from 14 August 2026 to 16 September 2026.
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/18753_en
+  source_quote: |-
+    Plastic
+    packaging – harmonisation of rules for calculating and verifying recycled content in
+    plastic
+    packaging This act will ensure uniform rules for implementing
+    ...
+    calculation and verification of the percentage of recycled content in
+    plastic
+    packaging recovered from post-consumer
+    plastic
+    waste recycled and collected within the Union
+  source_lang: en
+  review_id: 2026-10-14-009
+- date: '2026-09-14'
+  summary: A Commission Implementing Decision on harmonised packaging and packaging waste labels under
+    Regulation (EU) 2025/40 is planned as a Commission implementing decision (reference Ares(2026)8548456).
+    The initiative status is active and the front-end stage is 'INIT_PLANNED'; receiving feedback is disabled,
+    with a listed feedback start date of 14 September 2026.
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19243_en
+  source_quote: "shortTitle: Commission Implementing Decision on harmonised packaging and packaging waste\
+    \ labels under Regulation (EU) 2025/40 \nreference: Ares(2026)8548456\nforeseenActType: DEC_IMPL\n\
+    initiativeStatus: ACTIVE\nfrontEndStage: INIT_PLANNED; receivingFeedbackStatus: DISABLED; feedbackStartDate:\
+    \ 2026/09/14 16:56:00; feedbackEndDate: None"
+  source_lang: en
+  review_id: 2026-10-14-010
+- date: '2026-09-10'
+  summary: The feedback period for the implementing rules on packaging and packaging waste opened on 6
+    August 2026 and closed on 10 September 2026.
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15352_en
+  source_quote: 'frontEndStage: ISC_WORKFLOW; receivingFeedbackStatus: CLOSED; feedbackStartDate: 2026/08/06
+    15:24:00; feedbackEndDate: 2026/09/10 23:59:59'
+  source_lang: en
+  review_id: 2026-10-14-005
+- date: '2026-08-14'
+  summary: A feedback period on a planned implementing act ran from 14 August 2026 to 16 September 2026.
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/18752_en
+  source_quote: |-
+    foreseenActType: DEC_IMPL
+    initiativeStatus: ACTIVE
+    frontEndStage: PLANNING_WORKFLOW; receivingFeedbackStatus: CLOSED; feedbackStartDate: 2026/08/14 10:48:30; feedbackEndDate: 2026/09/16 23:59:59
+  source_lang: en
+  review_id: 2026-10-14-003
+- date: '2026-08-12'
+  summary: The Regulation became applicable across the EU on 12 August 2026; Article 67(5) applies from
+    12 February 2029.
+  source_url: https://publications.europa.eu/resource/celex/32025R0040
+  source_quote: It shall apply from 12 August 2026. However, Article 67(5) shall apply from 12 February
+    2029.
+  source_lang: en
+  stage_change: in-application
+  review_id: seed-eu-ppwr-004
+- date: 2026-02
+  summary: The Commission adopted a delegated act exempting economic operators using pallet wrappings
+    and straps from the 100% reuse targets for transport packaging.
+  source_url: https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en
+  source_quote: A delegated act exempting economic operators using pallet wrappings and straps from the
+    100% reuse targets for transport packaging was adopted in February 2026.
+  source_lang: en
+  review_id: seed-eu-ppwr-003
+- date: '2025-02-11'
+  summary: The Regulation entered into force on 11 February 2025.
+  source_url: https://environment.ec.europa.eu/topics/waste-and-recycling/packaging-waste_en
+  source_quote: 'Status: In force since 11 February 2025'
+  source_lang: en
+  stage_change: in-force
+  review_id: seed-eu-ppwr-002
+- date: '2025-01-22'
+  summary: Regulation (EU) 2025/40 of 19 December 2024 on packaging and packaging waste was published
+    in the Official Journal on 22 January 2025.
+  source_url: https://publications.europa.eu/resource/celex/32025R0040
+  source_quote: Official Journal of the European Union EN L series 2025/40 22.1.2025 REGULATION (EU) 2025/40
+    OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 19 December 2024 on packaging and packaging waste
+  source_lang: en
+  stage_change: published
+  review_id: seed-eu-ppwr-001
 next_steps:
-  - date: 2026-12-31
-    text: Implementing act on the methodology for calculating and verifying recycled content (Art. 7(8)) due.
-    source_url: https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en
-  - date: 2026-12-31
-    text: Delegated act on sustainability criteria for plastic recycling technologies (Art. 7(9)) due.
-    source_url: https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en
-  - date: 2026-12-31
-    text: Implementing act on equivalence of recycled content rules in third countries (Art. 7(10)) due.
-    source_url: https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en
-  - date: 2027-02-12
-    text: Implementing act on reporting to the Commission (Art. 56(7)) due.
-    source_url: https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en
-  - date: 2027-06-30
-    text: Implementing act on calculation rules for reuse targets (Art. 30(4)) due.
-    source_url: https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en
+- date: '2026-12-31'
+  text: Implementing act on the methodology for calculating and verifying recycled content (Art. 7(8))
+    due.
+  source_url: https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en
+  status: expected
+- date: '2026-12-31'
+  text: Delegated act on sustainability criteria for plastic recycling technologies (Art. 7(9)) due.
+  source_url: https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en
+  status: expected
+- date: '2026-12-31'
+  text: Implementing act on equivalence of recycled content rules in third countries (Art. 7(10)) due.
+  source_url: https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en
+  status: expected
+- date: '2027-02-12'
+  text: Implementing act on reporting to the Commission (Art. 56(7)) due.
+  source_url: https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en
+  status: expected
+- date: '2027-06-30'
+  text: Implementing act on calculation rules for reuse targets (Art. 30(4)) due.
+  source_url: https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en
+  status: expected
 key_dates:
-  - date: 2026-08-12
-    text: PPWR applies; PFAS limits for food-contact packaging apply.
-    source_url: https://publications.europa.eu/resource/celex/32025R0040
-  - date: 2028-01-01
-    text: Design-for-recycling criteria delegated acts due (Art. 6(4)).
-    source_url: https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en
-  - date: 2029-02-12
-    text: Article 67(5) applies.
-    source_url: https://publications.europa.eu/resource/celex/32025R0040
-  - date: 2030-01-01
-    text: Recycled-at-scale methodology implementing acts due (Art. 6(5)).
-    source_url: https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en
+- date: '2026-08-06'
+  text: Feedback start date (2026/08/06 15:24:00)
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15352_en
+- date: '2026-08-12'
+  text: PPWR applies; PFAS limits for food-contact packaging apply.
+  source_url: https://publications.europa.eu/resource/celex/32025R0040
+- date: '2026-08-14'
+  text: Feedback period start
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/18752_en
+- date: '2026-08-14'
+  text: Feedback period opened.
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/18753_en
+- date: '2026-09-10'
+  text: Feedback end date (2026/09/10 23:59:59)
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15352_en
+- date: '2026-09-14'
+  text: Listed feedback start date.
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19243_en
+- date: '2026-09-16'
+  text: Feedback period end
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/18752_en
+- date: '2026-09-16'
+  text: Feedback period closed.
+  source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/18753_en
+- date: '2028-01-01'
+  text: Design-for-recycling criteria delegated acts due (Art. 6(4)).
+  source_url: https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en
+- date: '2029-02-12'
+  text: Article 67(5) applies.
+  source_url: https://publications.europa.eu/resource/celex/32025R0040
+- date: '2030-01-01'
+  text: Recycled-at-scale methodology implementing acts due (Art. 6(5)).
+  source_url: https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en
