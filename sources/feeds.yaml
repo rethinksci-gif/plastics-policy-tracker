@@ -174,27 +174,16 @@ sources:
       HS 3915/3923/3926 and keywords "plastic", "packaging"; forward relevant notifications as issues.
 
   # ---------------------------------------------------------------- United Kingdom
-  - id: govuk-defra-packaging
-    name: GOV.UK — Defra news on packaging
-    url: https://www.gov.uk/search/news-and-communications.atom?keywords=packaging&organisations%5B%5D=department-for-environment-food-rural-affairs
-    type: rss
+  - id: govuk-search
+    name: GOV.UK search API — packaging EPR, Plastic Packaging Tax, deposit return
+    url: https://www.gov.uk/api/search.json
+    type: api
+    handler: govuk_search
     frequency: daily
     jurisdiction: UK
     trust: official
-  - id: govuk-defra-drs
-    name: GOV.UK — deposit return scheme
-    url: https://www.gov.uk/search/all.atom?keywords=deposit+return+scheme&organisations%5B%5D=department-for-environment-food-rural-affairs
-    type: rss
-    frequency: daily
-    jurisdiction: UK
-    trust: official
-  - id: govuk-hmrc-ppt
-    name: GOV.UK — HMRC Plastic Packaging Tax
-    url: https://www.gov.uk/search/all.atom?keywords=plastic+packaging+tax&organisations%5B%5D=hm-revenue-customs
-    type: rss
-    frequency: daily
-    jurisdiction: UK
-    trust: official
+    keywords: ["plastic packaging tax", "extended producer responsibility", "deposit return scheme", "packaging waste", "PackUK", "single-use plastic"]
+    notes: GOV.UK atom search feeds ignore the keyword filter, so the JSON search API is used instead.
   - id: govuk-pepr-collection
     name: GOV.UK — packaging EPR collection
     url: https://www.gov.uk/government/collections/extended-producer-responsibility-for-packaging
@@ -206,7 +195,7 @@ sources:
   # ---------------------------------------------------------------- United States
   - id: federal-register
     name: US Federal Register API — plastics
-    url: https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=plastic&conditions%5Bagencies%5D%5B%5D=environmental-protection-agency&conditions%5Bagencies%5D%5B%5D=food-and-drug-administration&conditions%5Bagencies%5D%5B%5D=federal-trade-commission&conditions%5Btype%5D%5B%5D=RULE&conditions%5Btype%5D%5B%5D=PRORULE&conditions%5Btype%5D%5B%5D=NOTICE&order=newest&per_page=50
+    url: https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=plastic&conditions%5Bagencies%5D%5B%5D=environmental-protection-agency&conditions%5Bagencies%5D%5B%5D=federal-trade-commission&conditions%5Btype%5D%5B%5D=RULE&conditions%5Btype%5D%5B%5D=PRORULE&conditions%5Btype%5D%5B%5D=NOTICE&order=newest&per_page=50
     type: api
     keywords: [plastic, microplastic, packaging, recycl, "green guides", "food contact", "polymer"]
     handler: federal_register
@@ -233,6 +222,31 @@ sources:
     type: page-watch
     frequency: weekly
     jurisdiction: US-MN
+    trust: official
+    enabled: false
+    notes: Radware bot challenge — see unreachable.md.
+  - id: us-ca-public-notices
+    name: CalRecycle public notices (SB 54)
+    url: https://www2.calrecycle.ca.gov/PublicNotices/Details/7127
+    type: page-watch
+    frequency: weekly
+    jurisdiction: US-CA
+    trust: official
+  - id: us-wa-ecology
+    name: Washington Ecology — Recycling Reform Act
+    url: https://ecology.wa.gov/waste-toxics/reducing-recycling-waste/recycling-reform
+    type: page-watch
+    frequency: weekly
+    jurisdiction: US-WA
+    trust: official
+    enabled: false
+    notes: URL returned 404 on 2026-10-14; needs the current Ecology page.
+  - id: us-md-sb901
+    name: Maryland General Assembly — SB 901 (2025) status
+    url: https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0901?ys=2025RS
+    type: page-watch
+    frequency: weekly
+    jurisdiction: US-MD
     trust: official
   - id: us-ca-calrecycle
     name: CalRecycle — SB 54 regulations
@@ -299,12 +313,22 @@ sources:
     keywords: [imballaggi, plastica, rifiuti, "responsabilità estesa"]
   - id: se-naturvardsverket
     name: Naturvårdsverket — producer responsibility for packaging
-    url: https://www.naturvardsverket.se/amnesomraden/producentansvar/producentansvar-for-forpackningar/
+    url: https://www.naturvardsverket.se/vagledning-och-stod/producentansvar/producentansvar-for-forpackningar/
     type: page-watch
     frequency: weekly
     jurisdiction: EU-SE
     trust: official
     lang: sv
+
+  - id: it-normattiva-plastic-tax
+    name: Normattiva — Law 160/2019 (plastic tax provisions)
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2019-12-27;160~art1-com652"
+    type: page-watch
+    frequency: weekly
+    jurisdiction: EU-IT
+    trust: official
+    lang: it
+    notes: Only the head of Article 1 is served statically; kept to detect changes. See unreachable.md.
 
   # ---------------------------------------------------------------- China
   - id: cn-ndrc-notices
@@ -323,6 +347,15 @@ sources:
     jurisdiction: CN
     trust: official
     lang: zh
+  - id: cn-samr-recycled-plastics
+    name: SAMR national standards platform — recycled plastics (再生塑料)
+    url: https://std.samr.gov.cn/gb/search/gbQueryPage?searchText=%E5%86%8D%E7%94%9F%E5%A1%91%E6%96%99&sortOrder=desc&pageSize=20&pageNumber=1
+    type: page-watch
+    frequency: weekly
+    jurisdiction: CN
+    trust: official
+    lang: zh
+    notes: JSON search results; a change means a new or revised recycled-plastics standard.
   - id: cn-mee
     name: Ministry of Ecology and Environment — policy documents
     url: https://www.mee.gov.cn/zcwj/
@@ -340,6 +373,8 @@ sources:
     frequency: weekly
     jurisdiction: EU
     trust: trade-association
+    enabled: false
+    notes: HTTP 403 to automated clients.
   - id: pre-news
     name: Plastics Recyclers Europe — news
     url: https://www.plasticsrecyclers.eu/news/
@@ -351,6 +386,7 @@ sources:
     name: Packaging Europe — sustainability news
     url: https://packagingeurope.com/feed
     type: rss
+    enabled: false
     frequency: daily
     jurisdiction: EU
     trust: media

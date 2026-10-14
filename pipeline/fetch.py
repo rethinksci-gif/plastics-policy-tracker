@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import io
+import re
 import logging
 from datetime import datetime, timedelta, timezone
 from time import mktime
@@ -37,15 +38,20 @@ def sha256(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
-def _full_text(raw_html: str) -> str:
-    tree = lxml_html.fromstring(raw_html)
+_UTF8_PARSER = lxml_html.HTMLParser(encoding="utf-8")
+
+
+def _full_text(raw_html: bytes) -> str:
+    """All visible text. Input must be UTF-8 bytes (lxml otherwise guesses, often as Latin-1)."""
+    tree = lxml_html.fromstring(raw_html, parser=_UTF8_PARSER)
     for bad in tree.xpath("//script|//style|//noscript|//nav|//header|//footer"):
         bad.drop_tree()
     lines = [" ".join(t.split()) for t in tree.itertext()]
     return "\n".join(line for line in lines if line)
 
 
-def extract_text(content: bytes, content_type: str, mode: str = "main") -> tuple[str, str | None]:
+def extract_text(content: bytes, content_type: str, mode: str = "main",
+                 encoding: str | None = None) -> tuple[str, str | None]:
     """Return (text, title). PDFs are read with pypdf; HTML with trafilatura (or full text)."""
     if "pdf" in content_type or content[:5] == b"%PDF-":
         from pypdf import PdfReader
@@ -53,10 +59,12 @@ def extract_text(content: bytes, content_type: str, mode: str = "main") -> tuple
         reader = PdfReader(io.BytesIO(content))
         text = "\n".join((page.extract_text() or "") for page in reader.pages)
         return text.strip(), None
-    raw = content.decode("utf-8", errors="replace")
+    raw = content.decode(encoding or "utf-8", errors="replace")
+    # Drop the XML declaration: the text is re-encoded as UTF-8 below whatever it originally declared.
+    raw = re.sub(r"^\s*<\?xml[^>]*\?>", "", raw)
     title = None
     try:
-        t = lxml_html.fromstring(raw.encode()).findtext(".//title")
+        t = lxml_html.fromstring(raw.encode(), parser=_UTF8_PARSER).findtext(".//title")
         title = " ".join(t.split()) if t else None
     except Exception:
         pass
@@ -98,9 +106,21 @@ HOST_HEADERS = {
 def fetch_url(client: httpx.Client, url: str, mode: str = "main") -> tuple[str, str | None, int]:
     host = httpx.URL(url).host
     r = client.get(url, headers=HOST_HEADERS.get(host, {}))
+    if r.status_code == 300 and host == "publications.europa.eu":
+        # CELLAR lists several items (act, annexes): fetch each and join them.
+        items = list(dict.fromkeys(re.findall(r'href="(http[^"]+/DOC_\d+)"', r.text)))[:6]
+        parts, title = [], None
+        for item in items:
+            ri = client.get(item, headers=HOST_HEADERS[host])
+            if ri.status_code == 200 and ri.content:
+                text, t = extract_text(ri.content, ri.headers.get("content-type", ""), mode, ri.encoding)
+                parts.append(text)
+                title = title or t
+        if parts:
+            return "\n\n".join(parts), title, 200
     if r.status_code != 200 or not r.content:
         raise httpx.HTTPStatusError(f"HTTP {r.status_code} (empty={not r.content})", request=r.request, response=r)
-    text, title = extract_text(r.content, r.headers.get("content-type", ""), mode)
+    text, title = extract_text(r.content, r.headers.get("content-type", ""), mode, r.encoding)
     return text, title, r.status_code
 
 
@@ -219,19 +239,47 @@ def api_have_your_say(client: httpx.Client, source: Source) -> list[Snapshot]:
             if iid in seen:
                 continue
             seen.add(iid)
+            # Field names and values exactly as the official API returns them, so they can be quoted verbatim.
             statuses = "\n".join(
-                f"Stage: {st.get('frontEndStage')}; feedback {st.get('receivingFeedbackStatus')} "
-                f"from {st.get('feedbackStartDate')} to {st.get('feedbackEndDate')}"
+                f"frontEndStage: {st.get('frontEndStage')}; receivingFeedbackStatus: {st.get('receivingFeedbackStatus')}; "
+                f"feedbackStartDate: {st.get('feedbackStartDate')}; feedbackEndDate: {st.get('feedbackEndDate')}"
                 for st in it.get("currentStatuses", []))
             snippet = _full_text(f"<p>{it.get('snippet') or ''}</p>".encode())
-            text = (f"{it.get('shortTitle')}\nReference: {it.get('reference')}\nForeseen act type: "
-                    f"{it.get('foreseenActType')}\nStatus: {it.get('initiativeStatus')}\n{statuses}\n\n{snippet}")
+            text = (f"shortTitle: {it.get('shortTitle')}\nreference: {it.get('reference')}\nforeseenActType: "
+                    f"{it.get('foreseenActType')}\ninitiativeStatus: {it.get('initiativeStatus')}\n{statuses}\n\n"
+                    f"snippet: {snippet}")
             url = f"https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/{iid}_en"
             out.append(make_snapshot(source, url, text, it.get("shortTitle")))
     return out
 
 
-API_HANDLERS = {"federal_register": api_federal_register, "cellar": api_cellar, "have_your_say": api_have_your_say}
+def api_govuk_search(client: httpx.Client, source: Source) -> list[Snapshot]:
+    """GOV.UK search API (the site's own search index). Each keyword is a phrase query; a result is kept
+    only if the phrase appears in its title or description, then the page itself is captured."""
+    cutoff = (today() - timedelta(days=config()["fetch"]["max_feed_item_age_days"])).isoformat()
+    out, seen = [], set()
+    for phrase in source.keywords:
+        r = client.get(str(source.url), params={"q": f'"{phrase}"', "order": "-public_timestamp", "count": 20,
+                                                 "fields": "title,link,public_timestamp,description"})
+        r.raise_for_status()
+        for res in r.json().get("results", []):
+            ts = (res.get("public_timestamp") or "")[:10]
+            blurb = f"{res.get('title', '')} {res.get('description', '')}".lower()
+            if ts < cutoff or phrase.lower() not in blurb or res["link"] in seen:
+                continue
+            seen.add(res["link"])
+            url = "https://www.gov.uk" + res["link"]
+            try:
+                text, title, _ = fetch_url(client, url, source.extract)
+            except Exception as e:
+                log.info("  page fetch failed (%s): %s", e, url)
+                continue
+            out.append(make_snapshot(source, url, text, title or res.get("title"), ts))
+    return out
+
+
+API_HANDLERS = {"federal_register": api_federal_register, "cellar": api_cellar, "have_your_say": api_have_your_say,
+                "govuk_search": api_govuk_search}
 
 
 def fetch_source(client: httpx.Client, source: Source) -> list[Snapshot]:

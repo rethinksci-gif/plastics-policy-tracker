@@ -1,0 +1,31 @@
+id: se-packaging-epr
+title: Sweden — producer responsibility for packaging and municipal collection
+title_original: Producentansvar för förpackningar (förordning 2022:1274)
+short_title: Sweden packaging EPR
+jurisdiction: EU-SE
+instrument: EPR-scheme
+topics: [EPR, packaging, kerbside-collection]
+stage: in-application
+affected: [brand-owners, municipalities, recyclers]
+impact: medium
+official_links:
+  - https://www.naturvardsverket.se/vagledning-och-stod/producentansvar/producentansvar-for-forpackningar/kommuners-insamling-av-forpackningsavfall-fran-hushall-och-vissa-verksamheter/
+  - https://www.naturvardsverket.se/vagledning-och-stod/producentansvar/producentansvar-for-forpackningar/
+summary: >-
+  Since 1 January 2024 Swedish municipalities collect household packaging waste, financed by producers.
+  All municipalities must have kerbside collection of paper, plastic, metal and glass packaging by 1 January 2027.
+updates:
+  - date: 2024-01-01
+    summary: >-
+      From 1 January 2024 municipalities took operational responsibility for collecting household packaging
+      waste and informing households about prevention and sorting.
+    source_url: https://www.naturvardsverket.se/vagledning-och-stod/producentansvar/producentansvar-for-forpackningar/kommuners-insamling-av-forpackningsavfall-fran-hushall-och-vissa-verksamheter/
+    source_quote: "Från den 1 januari 2024 har kommunerna det operativa ansvaret för att samla in hushållens förpackningsavfall och att informera hushållen om förebyggande åtgärder samt sortering av förpackningsavfall."
+    source_quote_en: "From 1 January 2024, municipalities have operational responsibility for collecting households' packaging waste and for informing households about prevention measures and the sorting of packaging waste."
+    source_lang: sv
+    review_id: seed-se-packaging-epr-001
+next_steps: []
+key_dates:
+  - date: 2027-01-01
+    text: All municipalities must have kerbside collection of paper, plastic, metal and glass packaging; bulky packaging collected via accessible collection points.
+    source_url: https://www.naturvardsverket.se/vagledning-och-stod/producentansvar/producentansvar-for-forpackningar/kommuners-insamling-av-forpackningsavfall-fran-hushall-och-vissa-verksamheter/

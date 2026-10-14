@@ -1,0 +1,123 @@
+name: Biweekly issue
+
+# Every Monday 06:00 UTC; the pipeline publishes only on ISO weeks matching the anchor week's parity
+# (schedule.anchor_iso_week in config.yaml). Manual runs publish regardless of the week.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run: compose the draft issue and review report as artefacts, change nothing"
+        type: boolean
+        default: true
+      force_publish:
+        description: "Maintainer approval: publish even if the publish gate is closed"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pipeline-staging
+  cancel-in-progress: false
+
+jobs:
+  compose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    outputs:
+      decision: ${{ steps.compose.outputs.decision }}
+    env:
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      DEEPSEEK_MODEL_FAST: ${{ vars.DEEPSEEK_MODEL_FAST || 'deepseek-flash' }}
+      DEEPSEEK_MODEL_PRO: ${{ vars.DEEPSEEK_MODEL_PRO || 'deepseek-v4-pro' }}
+      MAX_LLM_CALLS_PER_RUN: ${{ vars.MAX_LLM_CALLS_PER_RUN || '300' }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Use staging
+        run: |
+          git config user.name "plastics-policy-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin staging >/dev/null; then
+            git checkout -B staging origin/staging
+            git merge --no-edit origin/main
+          else
+            git checkout -B staging origin/main
+          fi
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+
+      - run: uv sync --frozen
+
+      - name: Compose issue (layer 1+2 re-check, layer 4 editorial review, publish gate)
+        id: compose
+        run: |
+          ARGS=""
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then ARGS="--force"; fi
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          if [ "${{ inputs.force_publish }}" = "true" ]; then ARGS="$ARGS --force-publish"; fi
+          uv run python -m pipeline biweekly $ARGS
+
+      - name: Validate dossiers
+        if: steps.compose.outputs.decision == 'publish'
+        run: uv run python -m pipeline validate
+
+      - name: Upload draft issue and review report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: issue-${{ github.run_id }}
+          path: |
+            issues/
+            data/drafts/
+            reviews/issues/
+            data/logs/
+          if-no-files-found: ignore
+
+      - name: Publish — commit, merge staging into main
+        if: steps.compose.outputs.decision == 'publish'
+        run: |
+          git add -A
+          git commit -m "Publish ${{ steps.compose.outputs.issue }}" || true
+          git push origin staging
+          git checkout -B main origin/main
+          git merge --no-ff --no-edit staging -m "Publish ${{ steps.compose.outputs.issue }} (merge staging)"
+          git push origin main
+          PR=$(gh pr list --head staging --base main --state open --json number -q '.[0].number')
+          if [ -n "$PR" ]; then gh pr comment "$PR" --body "Merged into main by the publish workflow for ${{ steps.compose.outputs.issue }}."; fi
+
+      - name: Hold — commit draft and ask the maintainer
+        if: steps.compose.outputs.decision == 'hold'
+        run: |
+          git add -A
+          git commit -m "Draft ${{ steps.compose.outputs.issue }} held by publish gate" || true
+          git push origin staging
+          PR=$(gh pr list --head staging --base main --state open --json number -q '.[0].number')
+          if [ -z "$PR" ]; then
+            gh pr create --head staging --base main --title "Issue held for approval: ${{ steps.compose.outputs.issue }}" --body-file data/logs/pr-body.md
+          else
+            gh pr edit "$PR" --title "Issue held for approval: ${{ steps.compose.outputs.issue }}"
+            gh pr comment "$PR" --body-file data/logs/pr-body.md
+          fi
+
+  deploy:
+    needs: compose
+    if: needs.compose.outputs.decision == 'publish'
+    uses: ./.github/workflows/pages.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

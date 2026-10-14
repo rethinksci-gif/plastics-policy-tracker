@@ -1,0 +1,30 @@
+id: cn-plastic-pollution-control
+title: China — plastic pollution control action plan (single-use plastics restrictions)
+title_original: “十四五”塑料污染治理行动方案（发改环资〔2021〕1298号）
+short_title: China plastic pollution control
+jurisdiction: CN
+instrument: policy
+topics: [single-use, plastic-bans, recycling, source-reduction]
+stage: in-application
+affected: [converters, brand-owners, retailers, e-commerce]
+impact: medium
+official_links:
+  - https://www.mee.gov.cn/xxgk2018/xxgk/xxgk10/202109/t20210916_945621.html
+  - https://www.ndrc.gov.cn/xxgk/zcfb/tz/
+summary: >-
+  The NDRC and the Ministry of Ecology and Environment's action plan for plastic pollution control in the
+  14th Five-Year Plan period (2021–2025), building on the 2020 opinions restricting single-use plastics.
+  A successor plan for 2026–2030 has not yet been verified.
+updates:
+  - date: 2021-09-16
+    summary: >-
+      The NDRC and the Ministry of Ecology and Environment issued the notice publishing the 14th Five-Year Plan
+      action plan on plastic pollution control (Fagai Huanzi [2021] No. 1298).
+    source_url: https://www.mee.gov.cn/xxgk2018/xxgk/xxgk10/202109/t20210916_945621.html
+    source_quote: "国家发展改革委 生态环境部关于印发“十四五”塑料污染治理行动方案的通知"
+    source_quote_en: "Notice of the National Development and Reform Commission and the Ministry of Ecology and Environment on issuing the 14th Five-Year Plan action plan on plastic pollution control"
+    source_lang: zh
+    stage_change: in-application
+    review_id: seed-cn-plastic-pollution-control-001
+next_steps: []
+key_dates: []

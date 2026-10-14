@@ -7,7 +7,7 @@ import logging
 from pydantic import BaseModel, model_validator
 
 from .config import config, model_pro
-from .llm import LLM, prompt_parts
+from .llm import LLM, parallel_map, prompt_parts
 from .models import DraftUpdate
 from .store import load_candidates, load_dossiers, load_snapshot, save_candidate
 
@@ -31,7 +31,7 @@ def run(llm: LLM) -> dict:
     dossiers = load_dossiers()
     limit = config()["llm"]["max_snapshot_chars"]
     report = {"drafted": [], "skipped": []}
-    for cand in load_candidates("triaged"):
+    def one(cand):
         d = dossiers[cand.triage.dossier_id]
         snap = load_snapshot(cand.snapshot_id)
         recent = "\n".join(f"- {u.date}: {u.summary}" for u in d.updates[:5]) or "(none)"
@@ -40,12 +40,15 @@ def run(llm: LLM) -> dict:
             jurisdiction=d.jurisdiction, recent_updates=recent, title=snap.title or "",
             published=snap.published or "unknown", text=snap.text[:limit],
         )
-        out = llm.json_call(model_pro(), system, user, _DraftOrSkip, max_tokens=2500)
+        return llm.json_call(model_pro(), system, user, _DraftOrSkip, max_tokens=2500)
+
+    cands = load_candidates("triaged")
+    for cand, out in zip(cands, parallel_map(one, cands)):
         if out.skip or out.draft is None:
             cand.status = "discarded"
             report["skipped"].append({"candidate": cand.id, "reason": out.reason})
         else:
-            out.draft.dossier_id = d.id
+            out.draft.dossier_id = cand.triage.dossier_id
             cand.draft = out.draft
             cand.status = "drafted"
             report["drafted"].append(cand.id)

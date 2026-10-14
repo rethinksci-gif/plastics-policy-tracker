@@ -1,0 +1,39 @@
+id: nl-verpact-fees
+title: Netherlands — Verpact packaging waste management fee and plastic fee modulation
+short_title: Verpact fee modulation
+jurisdiction: EU-NL
+instrument: EPR-scheme
+topics: [EPR, packaging, eco-modulation, recycled-content, bio-based]
+stage: in-application
+affected: [brand-owners, importers, converters, recyclers]
+impact: high
+official_links:
+  - https://www.verpact.nl/en/fee-modulation-plastic-2027-circulair-plastics
+  - https://www.verpact.nl/nl/tarieven
+  - https://www.verpact.nl/en/rates
+summary: >-
+  Verpact, the Dutch packaging producer responsibility organisation, sets the annual packaging waste
+  management fee. From 2027 the discount for recyclate and bio-based drop-ins rises to up to EUR 0.78/kg,
+  with the full discount only for material from countries on Verpact's list.
+updates:
+  - date: 2026-09
+    summary: >-
+      Verpact set its 2027 material rates and deposit producer contributions; producers combining good
+      recyclability with recyclate or bio-based drop-ins can receive up to EUR 1.18 per kg off the plastic fee in 2027.
+    source_url: https://www.verpact.nl/nl/tarieven
+    source_quote: "Ontwerp je je plastic verpakking goed recyclebaar én zet je recyclaat en/of biobased drop-ins in? Dan kun je in 2027 tot € 1,18 per kg korting krijgen op je Verpact Afvalbeheerbijdrage voor plastic verpakkingen."
+    source_quote_en: "Do you design your plastic packaging to be readily recyclable and use recyclate and/or bio-based drop-ins? Then in 2027 you can receive a discount of up to EUR 1.18 per kg on your Verpact waste management fee for plastic packaging."
+    source_lang: nl
+    review_id: seed-nl-verpact-fees-002
+  - date: 2026-09
+    summary: >-
+      Under the 2027 Circular Plastics scheme, material originating from a country on Verpact's list receives
+      the full discount, while material from other countries receives one quarter of it.
+    source_url: https://www.verpact.nl/en/fee-modulation-plastic-2027-circulair-plastics
+    source_quote: "If the material originates from a country on our list, you receive the full discount. If it comes from another country, you receive one-quarter of the discount."
+    review_id: seed-nl-verpact-fees-001
+next_steps: []
+key_dates:
+  - date: 2027-01-01
+    text: 2027 rates and Circular Plastics discounts (up to EUR 0.78/kg; origin-based tiers) apply.
+    source_url: https://www.verpact.nl/en/fee-modulation-plastic-2027-circulair-plastics

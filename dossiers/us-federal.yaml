@@ -1,0 +1,27 @@
+id: us-federal
+title: US federal — single-use plastic packaging in federal procurement (GSAR)
+short_title: US federal procurement (GSAR SUP-free packaging)
+jurisdiction: US-FED
+instrument: regulation
+topics: [public-procurement, single-use, packaging]
+stage: in-application
+affected: [brand-owners, federal-suppliers]
+impact: low
+official_links:
+  - https://www.federalregister.gov/documents/2024/06/06/2024-12192/general-services-administration-acquisition-regulation-reduction-of-single-use-plastic-packaging
+  - https://www.federalregister.gov/
+summary: >-
+  A GSA Acquisition Regulation rule lets Federal Supply Schedule contractors identify products packaged and/or
+  shipped without single-use plastic packaging. Other federal plastics actions are monitored via the
+  Federal Register API.
+updates:
+  - date: 2024-07-08
+    summary: >-
+      GSA's final rule adding a provision and clause to identify single-use plastic free packaging for products under
+      the Federal Supply Schedules took effect on 8 July 2024.
+    source_url: https://www.federalregister.gov/documents/2024/06/06/2024-12192/general-services-administration-acquisition-regulation-reduction-of-single-use-plastic-packaging
+    source_quote: "The General Services Administration is amending the General Services Administration Acquisition Regulation to add a new provision and clause to identify single-use plastic free packaging availability for products under the Federal Supply Schedules with the goal of reducing single-use plastic waste. DATES: Effective July 8, 2024."
+    stage_change: in-force
+    review_id: seed-us-federal-001
+next_steps: []
+key_dates: []

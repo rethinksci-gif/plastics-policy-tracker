@@ -1,0 +1,52 @@
+{
+ "review_id": "seed-cn-plastic-pollution-control-001",
+ "candidate_id": "seed",
+ "dossier_id": "cn-plastic-pollution-control",
+ "created": "2026-10-14T10:22:17.663382Z",
+ "impact": "medium",
+ "checks": [
+  {
+   "layer": 1,
+   "name": "event-date",
+   "passed": true,
+   "severity": "info",
+   "detail": "2021-09-16 <= today 2026-10-14"
+  },
+  {
+   "layer": 1,
+   "name": "trusted-domain",
+   "passed": true,
+   "severity": "info",
+   "detail": "domain trust: official"
+  },
+  {
+   "layer": 2,
+   "name": "quote-provenance",
+   "passed": true,
+   "severity": "info",
+   "detail": "verbatim quote found in snapshot"
+  }
+ ],
+ "llm_review": {
+  "verdict": "partially_supported",
+  "confidence": 0.85,
+  "checks": {
+   "quote_supports_summary": true,
+   "dates_match": false,
+   "numbers_match": true,
+   "bodies_match": true,
+   "references_match": true,
+   "no_exaggeration": true,
+   "stage_supported": true,
+   "next_steps_supported": true,
+   "translation_faithful": true
+  },
+  "issues": [
+   "The date field uses 2021-09-16 (the webpage publication/generation date), but the notice itself is dated 2021年9月8日 (2021-09-08) at the bottom of the source, so the event date does not match."
+  ]
+ },
+ "outcome": "quarantined",
+ "reasons": [
+  "L3 reviewer: partially_supported (0.85); The date field uses 2021-09-16 (the webpage publication/generation date), but the notice itself is dated 2021年9月8日 (2021-09-08) at the bottom of the source, so the event date does not match."
+ ]
+}

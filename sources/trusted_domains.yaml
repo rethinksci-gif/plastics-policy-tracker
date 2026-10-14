@@ -52,6 +52,9 @@ official:
   - verpact.nl                # state-recognised producer responsibility organisation (statutory fee schedule)
   # Germany
   - gesetze-im-internet.de
+  - bundestag.de               # dserver.bundestag.de (Drucksachen), dip.bundestag.de
+  - bundesrat.de
+  - recht.bund.de             # electronic Bundesgesetzblatt
   - bundesgesetzblatt.de
   - bmuv.de
   - bmukn.de
@@ -61,10 +64,15 @@ official:
   - gazzettaufficiale.it
   - normattiva.it
   - mase.gov.it
+  - adm.gov.it                # Agenzia delle Dogane e dei Monopoli (plastic tax)
+  - senato.it
+  - camera.it
   - conai.org                 # national packaging consortium established by law (Legislative Decree 152/2006)
   # Spain
   - boe.es
   - miteco.gob.es
+  - agenciatributaria.gob.es
+  - hacienda.gob.es
   # Sweden
   - riksdagen.se
   - regeringen.se

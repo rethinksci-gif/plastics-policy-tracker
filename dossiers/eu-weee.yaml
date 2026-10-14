@@ -1,0 +1,38 @@
+id: eu-weee
+title: WEEE Directive — Directive 2012/19/EU
+short_title: WEEE Directive
+jurisdiction: EU
+instrument: directive
+topics: [WEEE, EPR, electronics]
+stage: in-application
+affected: [recyclers, brand-owners, importers]
+impact: medium
+official_links:
+  - https://eur-lex.europa.eu/eli/dir/2012/19/oj/eng
+  - https://publications.europa.eu/resource/celex/32012L0019
+  - https://publications.europa.eu/resource/celex/32024L0884
+  - https://publications.europa.eu/resource/celex/52025PC0983
+summary: >-
+  Directive 2012/19/EU on waste electrical and electronic equipment, amended by Directive (EU) 2024/884.
+  A December 2025 Commission proposal would suspend the rules on appointing authorised representatives for EPR.
+updates:
+  - date: 2025-12-10
+    summary: >-
+      The Commission proposed a directive (COM(2025) 983) suspending the application of the rules on the
+      appointment of authorised representatives for extended producer responsibility for waste, WEEE and
+      single-use plastic waste.
+    source_url: https://publications.europa.eu/resource/celex/52025PC0983
+    source_quote: "DIRECTIVE OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL suspending the application of the rules on the appointment of authorised representatives for extended producer responsibility for waste, waste electrical and electronical equipment and single use plastic waste"
+    review_id: seed-eu-weee-002
+  - date: 2024-03-19
+    summary: >-
+      Directive (EU) 2024/884 amending the WEEE Directive was published on 19 March 2024; Member States had to
+      transpose it by 9 October 2025.
+    source_url: https://publications.europa.eu/resource/celex/32024L0884
+    source_quote: "Member States shall bring into force the laws, regulations and administrative provisions necessary to comply with this Directive by 9 October 2025."
+    review_id: seed-eu-weee-001
+next_steps: []
+key_dates:
+  - date: 2025-10-09
+    text: Transposition deadline for Directive (EU) 2024/884.
+    source_url: https://publications.europa.eu/resource/celex/32024L0884

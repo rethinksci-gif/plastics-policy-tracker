@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { STAGES, dossiers, fmtDate, jurName, todayIso, url } from '../../lib/data';
+import { STAGES, dossiers, stageLabel, fmtDate, jurName, todayIso, url } from '../../lib/data';
 
 export async function getStaticPaths() {
   return (await dossiers()).map((d) => ({ params: { id: d.id }, props: { d } }));
@@ -17,14 +17,14 @@ const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./,
   <div class="dossier-row"><div class="meta small">
     <span class="badge">{jurName(d.jurisdiction)}</span>
     <span class="badge">{d.instrument}</span>
-    <span class="badge stage">{d.stage}</span>
+    <span class="badge stage">{stageLabel(d.stage)}</span>
     <span class={`badge ${d.impact}`}>{d.impact} impact</span>
   </div></div>
   {idx >= 0 ? (
     <div class="stagebar" aria-label="Legislative stage">
-      {STAGES.map((s, i) => <span class={i < idx ? 'done' : i === idx ? 'now' : ''}>{s}</span>)}
+      {STAGES.map((s, i) => <span class={i < idx ? 'done' : i === idx ? 'now' : ''}>{stageLabel(s)}</span>)}
     </div>
-  ) : <p><span class="badge draft">{d.stage}</span></p>}
+  ) : <p><span class="badge draft">{stageLabel(d.stage)}</span></p>}
   {d.summary && <p class="lede">{d.summary}</p>}
   <div class="grid2">
     <section>
@@ -33,7 +33,7 @@ const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./,
       <ol class="timeline">
         {d.updates.map((u) => (
           <li>
-            <div class="date">{fmtDate(u.date)} {u.stage_change && <span class="badge stage">→ {u.stage_change}</span>}</div>
+            <div class="date">{fmtDate(u.date)} {u.stage_change && <span class="badge stage">→ {stageLabel(u.stage_change)}</span>}</div>
             <div>{u.summary}</div>
             <details>
               <summary>Source quote{u.source_lang !== 'en' ? ` (${u.source_lang}, with translation)` : ''}</summary>

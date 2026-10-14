@@ -5,7 +5,9 @@ from __future__ import annotations
 import json
 import logging
 import os
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor
 from typing import TypeVar
 
 from pydantic import BaseModel, ValidationError
@@ -41,6 +43,13 @@ class LLM:
         self.calls = 0
         self.usage = {"prompt_tokens": 0, "completion_tokens": 0}
         self._client = client
+        self._lock = threading.Lock()
+
+    def _take_call(self) -> None:
+        with self._lock:
+            if self.calls >= self.max_calls:
+                raise BudgetExceeded(f"LLM call budget of {self.max_calls} reached")
+            self.calls += 1
 
     @property
     def client(self):
@@ -61,9 +70,7 @@ class LLM:
         budget = max_tokens + config()["llm"]["reasoning_headroom"]
         last_err: Exception | None = None
         for attempt in range(retries + 1):
-            if self.calls >= self.max_calls:
-                raise BudgetExceeded(f"LLM call budget of {self.max_calls} reached")
-            self.calls += 1
+            self._take_call()
             try:
                 resp = self.client.chat.completions.create(
                     model=model,
@@ -73,8 +80,9 @@ class LLM:
                     max_tokens=budget,
                 )
                 if resp.usage:
-                    self.usage["prompt_tokens"] += resp.usage.prompt_tokens or 0
-                    self.usage["completion_tokens"] += resp.usage.completion_tokens or 0
+                    with self._lock:
+                        self.usage["prompt_tokens"] += resp.usage.prompt_tokens or 0
+                        self.usage["completion_tokens"] += resp.usage.completion_tokens or 0
                 choice = resp.choices[0]
                 content = (choice.message.content or "").strip()
                 if choice.finish_reason == "length":
@@ -100,3 +108,14 @@ def prompt_parts(name: str, **values: str) -> tuple[str, str]:
     _, _, rest = text.partition("# System")
     system, _, user = rest.partition("# User")
     return render(system.strip(), **values), render(user.strip(), **values)
+
+
+def parallel_map(fn, items, workers: int | None = None) -> list:
+    """Run fn over items concurrently (LLM calls are I/O bound). Results keep input order.
+    The first exception (e.g. BudgetExceeded) is re-raised once running tasks finish."""
+    items = list(items)
+    if not items:
+        return []
+    workers = workers or config()["llm"].get("concurrency", 4)
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        return list(pool.map(fn, items))

@@ -7,6 +7,16 @@ export const STAGES = [
   'adopted', 'published', 'in-force', 'implementing-acts', 'in-application',
 ];
 
+const STAGE_LABELS: Record<string, string> = {
+  'parliament-council': 'Parliament & Council',
+  trilogue: 'trilogue / negotiation',
+  'impact-assessment': 'impact assessment',
+  'implementing-acts': 'implementing acts',
+  'in-force': 'in force',
+  'in-application': 'in application',
+};
+export const stageLabel = (s: string) => STAGE_LABELS[s] ?? s;
+
 export const JURISDICTIONS: Record<string, string> = {
   GLOBAL: 'Global', EU: 'European Union', UK: 'United Kingdom', US: 'United States', CN: 'China',
   'EU-FR': 'France', 'EU-NL': 'Netherlands', 'EU-DE': 'Germany', 'EU-IT': 'Italy', 'EU-ES': 'Spain', 'EU-SE': 'Sweden',

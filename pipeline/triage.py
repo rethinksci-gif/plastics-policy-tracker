@@ -6,7 +6,7 @@ import json
 import logging
 
 from .config import LOGS, config, model_fast, today
-from .llm import LLM, prompt_parts
+from .llm import LLM, parallel_map, prompt_parts
 from .models import Candidate, TriageResult
 from .store import load_dossiers, load_snapshot, load_sources, next_candidate_id, save_candidate
 
@@ -40,9 +40,10 @@ def run(llm: LLM, snapshot_ids: list[str]) -> dict:
     report = {"candidates": [], "discarded": [], "new_dossier_suggestions": [], "leads": []}
     LOGS.mkdir(parents=True, exist_ok=True)
     discard_log = LOGS / f"triage-{today().isoformat()}.jsonl"
-    for sid in snapshot_ids:
-        snap = load_snapshot(sid)
-        result = triage_snapshot(llm, snap, dossier_list, names.get(snap.source_id, snap.source_id))
+    snaps = [load_snapshot(sid) for sid in snapshot_ids]
+    results = parallel_map(
+        lambda sn: triage_snapshot(llm, sn, dossier_list, names.get(sn.source_id, sn.source_id)), snaps)
+    for sid, snap, result in zip(snapshot_ids, snaps, results):
         if result.dossier_id and result.dossier_id not in dossiers:
             result.new_dossier_suggestion = result.new_dossier_suggestion or result.dossier_id
             result.dossier_id = None

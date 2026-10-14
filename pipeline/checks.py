@@ -33,6 +33,7 @@ _QUOTES = {
 _INVISIBLE = re.compile("[­​‌‍⁠﻿]")
 _WS = re.compile(r"\s+")
 _HYPHEN_BREAK = re.compile(r"(\w)- (\w)")
+_SPACE_BEFORE_PUNCT = re.compile(r" ([,.;:)\]])")
 _ELLIPSIS = re.compile(r"\s*(?:\.\.\.|…|\[\.\.\.\]|\[…\])\s*")
 MIN_FRAGMENT = 20
 
@@ -43,6 +44,8 @@ def normalise(text: str) -> str:
     text = "".join(_QUOTES.get(ch, ch) for ch in text)
     text = _WS.sub(" ", text).strip().lower()
     text = _HYPHEN_BREAK.sub(r"\1\2", text)  # PDF line-break hyphenation: "recy- cled" -> "recycled"
+    text = _SPACE_BEFORE_PUNCT.sub(r"\1", text)  # HTML extraction artefacts: "requirements , including"
+    text = text.replace("( ", "(")
     # CJK text has no spaces between words; extraction may insert some. Drop them between CJK chars.
     text = re.sub(r"(?<=[　-鿿＀-￯]) (?=[　-鿿＀-￯])", "", text)
     return text
@@ -188,7 +191,8 @@ def check_duplicate(draft: DraftUpdate | Update, dossier: Dossier, exclude_self:
             seen_self = True
             continue
         same_quote = normalise(u.source_quote) == normalise(draft.source_quote)
-        same_event = u.date == draft.date and str(u.source_url).rstrip("/") == str(draft.source_url).rstrip("/")
+        same_event = (u.date == draft.date and str(u.source_url).rstrip("/") == str(draft.source_url).rstrip("/")
+                      and _similar(u.summary, draft.summary) > 0.6)
         near = u.date == draft.date and _similar(u.summary, draft.summary) > 0.85
         if same_quote or same_event or near:
             return CheckResult(layer=1, name="duplicate", passed=False,
@@ -265,6 +269,7 @@ def validate_dossier(d: Dossier, now: date | None = None, status_fn=None, truste
         for other in d.updates[i + 1:]:
             if normalise(other.source_quote) == normalise(u.source_quote) or (
                 other.date == u.date and str(other.source_url) == str(u.source_url)
+                and _similar(other.summary, u.summary) > 0.6
             ):
                 out.append(CheckResult(layer=1, name="duplicate", passed=False,
                                        detail=f"{tag} duplicate of update {other.date}"))

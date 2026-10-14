@@ -100,9 +100,15 @@ def cmd_validate(a):
 def cmd_capture(a):
     from .fetch import capture
 
+    failed = []
     for url in a.urls:
-        s = capture(url, a.source_id, "official", a.jurisdiction, a.mode, a.lang)
-        print(f"{s.id}  {len(s.text):>8} chars  {url}")
+        try:
+            s = capture(url, a.source_id, "official", a.jurisdiction, a.mode, a.lang)
+            print(f"{s.id}  {len(s.text):>8} chars  {url}")
+        except Exception as e:
+            failed.append(url)
+            print(f"FAILED {url}: {type(e).__name__}: {e}"[:300])
+    sys.exit(1 if failed else 0)
 
 
 def cmd_review_seeds(a):

@@ -20,6 +20,7 @@ llm:
   default_model_pro: deepseek-v4-pro
   max_calls_per_run: 300       # overridden by env MAX_LLM_CALLS_PER_RUN
   max_retries: 3
+  concurrency: 6             # parallel LLM requests
   reasoning_headroom: 8000   # extra max_tokens for the models' reasoning tokens
   timeout_seconds: 180
   temperature: 0

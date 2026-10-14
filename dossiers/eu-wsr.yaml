@@ -1,0 +1,40 @@
+id: eu-wsr
+title: Waste Shipment Regulation (WSR) — Regulation (EU) 2024/1157
+short_title: Waste Shipment Regulation
+jurisdiction: EU
+instrument: regulation
+topics: [waste-shipments, plastic-waste-exports, recycling]
+stage: in-application
+affected: [recyclers, waste-traders, exporters]
+impact: high
+official_links:
+  - https://eur-lex.europa.eu/eli/reg/2024/1157/oj/eng
+  - https://publications.europa.eu/resource/celex/32024R1157
+  - https://environment.ec.europa.eu/topics/waste-and-recycling/waste-shipments_en
+summary: >-
+  Regulation (EU) 2024/1157 replaces Regulation (EC) No 1013/2006. It applies from 21 May 2026; the
+  prohibition on exporting plastic waste (entry B3011) to non-OECD countries applies from 21 November 2026.
+updates:
+  - date: 2026-05-21
+    summary: The Regulation became generally applicable on 21 May 2026, with staggered dates for specific provisions.
+    source_url: https://publications.europa.eu/resource/celex/32024R1157
+    source_quote: "It shall apply from 21 May 2026."
+    stage_change: in-application
+    review_id: seed-eu-wsr-002
+  - date: 2024-04-30
+    summary: Regulation (EU) 2024/1157 of 11 April 2024 on shipments of waste was published in the Official Journal on 30 April 2024.
+    source_url: https://publications.europa.eu/resource/celex/32024R1157
+    source_quote: "Official Journal of the European Union EN L series 2024/1157 30.4.2024 REGULATION (EU) 2024/1157 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 11 April 2024 on shipments of waste"
+    stage_change: published
+    review_id: seed-eu-wsr-001
+next_steps: []
+key_dates:
+  - date: 2026-11-21
+    text: Export ban on plastic waste (entry B3011) to countries outside the OECD Decision applies (Art. 39(1)(d)).
+    source_url: https://publications.europa.eu/resource/celex/32024R1157
+  - date: 2027-05-21
+    text: Articles 38(2)(b), 40, 44(2)(a), 46 and 47 apply.
+    source_url: https://publications.europa.eu/resource/celex/32024R1157
+  - date: 2029-05-21
+    text: Earliest date non-OECD countries may request to receive EU plastic waste for recycling.
+    source_url: https://publications.europa.eu/resource/celex/32024R1157

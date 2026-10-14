@@ -1,0 +1,26 @@
+id: global-basel-plastic-waste
+title: Basel Convention plastic waste amendments
+short_title: Basel plastic waste amendments
+jurisdiction: GLOBAL
+instrument: treaty
+topics: [waste-shipments, plastic-waste-exports, PIC-procedure]
+stage: in-application
+affected: [recyclers, waste-traders, exporters]
+impact: high
+official_links:
+  - https://www.basel.int/Implementation/Plasticwaste/PlasticWasteAmendments/Overview/tabid/8426/Default.aspx
+  - https://www.basel.int/
+summary: >-
+  Amendments to Annexes II, VIII and IX of the Basel Convention bring most plastic waste under the prior informed
+  consent procedure (entries Y48, A3210 and B3011), effective from 1 January 2021.
+updates:
+  - date: 2021-01-01
+    summary: >-
+      The new Basel Convention entries on plastic waste, including entry Y48 in Annex II, became effective on
+      1 January 2021.
+    source_url: https://www.basel.int/Implementation/Plasticwaste/PlasticWasteAmendments/Overview/tabid/8426/Default.aspx
+    source_quote: "The new entries become effective as of 1 January 2021."
+    stage_change: in-application
+    review_id: seed-global-basel-plastic-waste-001
+next_steps: []
+key_dates: []

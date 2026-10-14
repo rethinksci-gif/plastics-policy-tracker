@@ -1,0 +1,35 @@
+id: es-packaging-plastic-tax
+title: Spain — packaging decree (RD 1055/2022) and tax on non-reusable plastic packaging (Law 7/2022)
+title_original: Real Decreto 1055/2022 de envases y residuos de envases; Impuesto especial sobre los envases de plástico no reutilizables
+short_title: Spain packaging EPR and plastic tax
+jurisdiction: EU-ES
+instrument: tax
+topics: [EPR, packaging, plastic-tax, reuse]
+stage: in-application
+affected: [brand-owners, importers, converters, retailers]
+impact: medium
+official_links:
+  - https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809
+  - https://www.boe.es/buscar/act.php?id=BOE-A-2022-22690
+summary: >-
+  Law 7/2022 created a special tax of EUR 0.45 per kilogram of non-recycled plastic in non-reusable packaging;
+  Royal Decree 1055/2022 governs packaging and packaging waste, including extended producer responsibility.
+updates:
+  - date: 2022-12-29
+    summary: Royal Decree 1055/2022 of 27 December on packaging and packaging waste was published in the BOE on 28 December 2022 and entered into force on 29 December 2022.
+    source_url: https://www.boe.es/buscar/act.php?id=BOE-A-2022-22690
+    source_quote: "Real Decreto 1055/2022, de 27 de diciembre, de envases y residuos de envases. Publicado en: «BOE» núm. 311, de 28/12/2022. Entrada en vigor: 29/12/2022"
+    source_quote_en: "Royal Decree 1055/2022 of 27 December on packaging and packaging waste. Published in: BOE no. 311 of 28/12/2022. Entry into force: 29/12/2022"
+    source_lang: es
+    stage_change: in-force
+    review_id: seed-es-packaging-plastic-tax-002
+  - date: 2022-04-08
+    summary: Law 7/2022 of 8 April set the tax rate on non-reusable plastic packaging at EUR 0.45 per kilogram.
+    source_url: https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809
+    source_quote: "Artículo 78. Tipo impositivo. El tipo impositivo será de 0,45 euros por kilogramo."
+    source_quote_en: "Article 78. Tax rate. The tax rate shall be EUR 0.45 per kilogram."
+    source_lang: es
+    stage_change: adopted
+    review_id: seed-es-packaging-plastic-tax-001
+next_steps: []
+key_dates: []

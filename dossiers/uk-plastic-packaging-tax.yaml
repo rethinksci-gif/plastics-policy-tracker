@@ -1,0 +1,29 @@
+id: uk-plastic-packaging-tax
+title: UK — Plastic Packaging Tax (PPT)
+short_title: UK Plastic Packaging Tax
+jurisdiction: UK
+instrument: tax
+topics: [tax, packaging, recycled-content, chemical-recycling, mass-balance]
+stage: in-application
+affected: [converters, importers, brand-owners, recyclers]
+impact: high
+official_links:
+  - https://www.gov.uk/guidance/check-if-you-need-to-register-for-plastic-packaging-tax
+  - https://www.gov.uk/government/collections/plastic-packaging-tax
+summary: >-
+  A tax on plastic packaging components manufactured in or imported into the UK that contain less than 30%
+  recycled plastic, in force since 1 April 2022.
+updates:
+  - date: 2026-04-01
+    summary: The Plastic Packaging Tax rate rose to £228.82 per tonne from 1 April 2026.
+    source_url: https://www.gov.uk/guidance/check-if-you-need-to-register-for-plastic-packaging-tax
+    source_quote: "£228.82 per tonne from 1 April 2026"
+    review_id: seed-uk-plastic-packaging-tax-002
+  - date: 2022-04-01
+    summary: Plastic Packaging Tax came into force on 1 April 2022 at £200 per tonne for plastic packaging components containing less than 30% recycled plastic.
+    source_url: https://www.gov.uk/guidance/check-if-you-need-to-register-for-plastic-packaging-tax
+    source_quote: "The tax came into force on 1 April 2022 and is charged at a rate of: - £200 per tonne from 1 April 2022"
+    stage_change: in-force
+    review_id: seed-uk-plastic-packaging-tax-001
+next_steps: []
+key_dates: []

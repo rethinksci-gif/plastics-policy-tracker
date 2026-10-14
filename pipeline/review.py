@@ -15,7 +15,7 @@ from datetime import datetime, timezone
 from .checks import blocking, deterministic_checks, excerpt_for_review, flags, quote_in_text, snapshots_for_url
 from .config import REVIEWS, config, model_pro
 from .github import open_issue
-from .llm import LLM, prompt_parts
+from .llm import LLM, parallel_map, prompt_parts
 from .models import Candidate, CheckResult, Dossier, LLMReview, ReviewRecord
 from .store import load_candidates, load_dossiers, load_snapshot, save_candidate
 
@@ -55,7 +55,8 @@ def review_candidate(llm: LLM | None, c: Candidate, dossier: Dossier, status_fn=
     review = None
     if not reasons:
         snaps = snapshots_for_url(c.draft.source_url) or [load_snapshot(c.snapshot_id)]
-        src = next((s for s in snaps if quote_in_text(c.draft.source_quote, s.text)[0]), snaps[-1])
+        matching = [s for s in snaps if quote_in_text(c.draft.source_quote, s.text)[0]] or [snaps[-1]]
+        src = max(matching, key=lambda s: len(s.text))  # fullest snapshot gives the reviewer most context
         review = llm_review(llm, c, src.text)
         min_conf = config()["review"]["min_confidence"]
         if review.verdict != "supported" or review.confidence < min_conf:
@@ -152,9 +153,10 @@ def raise_issue(rec: ReviewRecord, c: Candidate, dry_run: bool = False) -> str |
 def run(llm: LLM, dry_run: bool = False, status_fn=None) -> dict:
     dossiers = load_dossiers()
     report = {"passed": [], "quarantined": [], "human_review": [], "issues": []}
-    for c in load_candidates("drafted"):
+    cands = load_candidates("drafted")
+    recs = parallel_map(lambda c: review_candidate(llm, c, dossiers[c.triage.dossier_id], status_fn=status_fn), cands)
+    for c, rec in zip(cands, recs):
         dossier = dossiers[c.triage.dossier_id]
-        rec = review_candidate(llm, c, dossier, status_fn=status_fn)
         save_record(rec, c)
         c.review_id = rec.review_id
         c.status = "passed" if rec.outcome == "passed" else "quarantined"

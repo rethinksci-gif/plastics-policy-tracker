@@ -1,0 +1,51 @@
+id: eu-elvr
+title: End-of-Life Vehicles Regulation (ELVR) — Regulation (EU) 2026/1738
+short_title: ELVR
+jurisdiction: EU
+instrument: regulation
+topics: [vehicles, recycled-content, EPR, design-for-recycling]
+stage: in-force
+affected: [recyclers, converters, automotive-OEMs, dismantlers]
+impact: high
+official_links:
+  - https://publications.europa.eu/resource/celex/32026R1738
+  - https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0284(COD)
+  - https://environment.ec.europa.eu/topics/waste-and-recycling/end-life-vehicles_en
+summary: >-
+  Regulation (EU) 2026/1738 on circularity requirements for vehicle design and on management of end-of-life
+  vehicles replaces Directives 2000/53/EC and 2005/64/EC. It sets mandatory post-consumer recycled plastic
+  content for new vehicle types (15% from 1 September 2032, 25% from 1 September 2036).
+updates:
+  - date: 2026-07-24
+    summary: >-
+      Regulation (EU) 2026/1738 of 8 July 2026 on circularity requirements for vehicle design and on management
+      of end-of-life vehicles was published in the Official Journal on 24 July 2026.
+    source_url: https://publications.europa.eu/resource/celex/32026R1738
+    source_quote: "Official Journal of the European Union EN L series 2026/1738 24.7.2026 REGULATION (EU) 2026/1738 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 8 July 2026 on circularity requirements for vehicle design and on management of end-of-life vehicles"
+    stage_change: published
+    review_id: seed-eu-elvr-002
+  - date: 2026-07-08
+    summary: >-
+      The Regulation was signed on 8 July 2026. New vehicle types type-approved from 1 September 2032 must
+      contain at least 15% plastic recycled from post-consumer plastic waste.
+    source_url: https://publications.europa.eu/resource/celex/32026R1738
+    source_quote: "The plastic contained in each new vehicle type that is type-approved as from 1 September 2032 under Regulation (EU) 2018/858 shall contain a minimum of 15 % of plastic recycled by weight from post-consumer plastic waste."
+    stage_change: adopted
+    review_id: seed-eu-elvr-001
+next_steps: []
+key_dates:
+  - date: 2026-09-14
+    text: Delegated and implementing powers (including Art. 6 recycled content provisions) start to apply.
+    source_url: https://publications.europa.eu/resource/celex/32026R1738
+  - date: 2028-09-01
+    text: ELVR applies in general.
+    source_url: https://publications.europa.eu/resource/celex/32026R1738
+  - date: 2030-08-14
+    text: Audit requirement and Annex XIII criteria for plastic recycled in third countries apply.
+    source_url: https://publications.europa.eu/resource/celex/32026R1738
+  - date: 2032-09-01
+    text: New vehicle types must contain at least 15% post-consumer recycled plastic.
+    source_url: https://publications.europa.eu/resource/celex/32026R1738
+  - date: 2036-09-01
+    text: New vehicle types must contain at least 25% post-consumer recycled plastic.
+    source_url: https://publications.europa.eu/resource/celex/32026R1738

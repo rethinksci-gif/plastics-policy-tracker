@@ -1,0 +1,53 @@
+id: cn-recycled-plastic-standards
+title: China — national standards for recycled plastics
+title_original: 再生塑料国家标准（GB/T 40006 系列及相关标准）
+short_title: China recycled-plastic standards
+jurisdiction: CN
+instrument: standard
+topics: [recycled-content, standards, chain-of-custody, labelling, mechanical-recycling]
+stage: in-application
+affected: [recyclers, converters, brand-owners, exporters]
+impact: medium
+official_links:
+  - https://std.samr.gov.cn/gb/search/gbDetailed?id=581F4B90BAB380E8E06397BE0A0AF9E7
+  - https://std.samr.gov.cn/gb/search/gbDetailed?id=55B3892F9697336AE06397BE0A0A4BF9
+  - https://std.samr.gov.cn/gb/search/gbDetailed?id=28045D84DA1A9055E06397BE0A0A7C5C
+  - https://std.samr.gov.cn/
+summary: >-
+  Recommended national standards (GB/T) on recycled plastics, published through the State Administration for
+  Market Regulation's national standards platform: the GB/T 40006 series by polymer, marking and labelling
+  (GB/T 45090-2024), chain of custody (GB/T 47982-2026) and test methods (GB/T 47920-2026).
+updates:
+  - date: 2026-07-30
+    summary: >-
+      GB/T 47982-2026, Requirements for the chain of custody managing system of recycled plastics, was issued on
+      30 July 2026 and takes effect on 1 November 2026.
+    source_url: https://std.samr.gov.cn/gb/search/gbDetailed?id=581F4B90BAB380E8E06397BE0A0AF9E7
+    source_quote: "标准号 GB/T 47982-2026 发布日期 2026-07-30 实施日期 2026-11-01"
+    source_quote_en: "Standard number GB/T 47982-2026; issue date 2026-07-30; implementation date 2026-11-01"
+    source_lang: zh
+    review_id: seed-cn-recycled-plastic-standards-003
+  - date: 2026-07-02
+    summary: >-
+      GB/T 47920-2026 on testing and characterisation of mechanically recycled PP and PE recycled plastics, a
+      modified adoption of ISO 5677:2023, was issued on 2 July 2026 and takes effect on 1 February 2027.
+    source_url: https://std.samr.gov.cn/gb/search/gbDetailed?id=55B3892F9697336AE06397BE0A0A4BF9
+    source_quote: "标准号 GB/T 47920-2026 发布日期 2026-07-02 实施日期 2027-02-01"
+    source_quote_en: "Standard number GB/T 47920-2026; issue date 2026-07-02; implementation date 2027-02-01"
+    source_lang: zh
+    review_id: seed-cn-recycled-plastic-standards-002
+  - date: 2024-11-28
+    summary: GB/T 45090-2024 on marking and labelling of recycled plastics was issued on 28 November 2024 and took effect on 1 June 2025.
+    source_url: https://std.samr.gov.cn/gb/search/gbDetailed?id=28045D84DA1A9055E06397BE0A0A7C5C
+    source_quote: "标准号 GB/T 45090-2024 发布日期 2024-11-28 实施日期 2025-06-01"
+    source_quote_en: "Standard number GB/T 45090-2024; issue date 2024-11-28; implementation date 2025-06-01"
+    source_lang: zh
+    review_id: seed-cn-recycled-plastic-standards-001
+next_steps: []
+key_dates:
+  - date: 2026-11-01
+    text: GB/T 47982-2026 (chain of custody for recycled plastics) takes effect.
+    source_url: https://std.samr.gov.cn/gb/search/gbDetailed?id=581F4B90BAB380E8E06397BE0A0AF9E7
+  - date: 2027-02-01
+    text: GB/T 47920-2026 (testing of mechanically recycled PP/PE) takes effect.
+    source_url: https://std.samr.gov.cn/gb/search/gbDetailed?id=55B3892F9697336AE06397BE0A0A4BF9

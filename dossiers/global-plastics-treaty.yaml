@@ -1,0 +1,36 @@
+id: global-plastics-treaty
+title: Global plastics treaty — UNEP Intergovernmental Negotiating Committee (INC)
+short_title: Global plastics treaty (INC)
+jurisdiction: GLOBAL
+instrument: treaty
+topics: [treaty, production, product-design, waste-management, finance]
+stage: trilogue
+affected: [polymer-producers, converters, brand-owners, recyclers]
+impact: high
+official_links:
+  - https://www.unep.org/inc-plastic-pollution
+  - https://wedocs.unep.org/rest/api/core/bitstreams/3ed3ef9f-1c62-4f8b-b0fc-11ac6234d5c6/content
+summary: >-
+  Negotiations on an international legally binding instrument on plastic pollution, including in the marine
+  environment, mandated by the UN Environment Assembly resolution of 2 March 2022 (UNEP/EA.5/Res.14). Since the
+  second part of the fifth session (INC-5.2), work has continued through informal Heads of Delegation meetings.
+updates:
+  - date: 2026-07-29
+    summary: >-
+      In his fourth letter, the INC Chair reported on the informal in-person Heads of Delegation meeting held in
+      Nairobi from 30 June to 3 July 2026 and announced a second informal meeting in Bangkok from 27 to 30 September 2026.
+    source_url: https://wedocs.unep.org/rest/api/core/bitstreams/3ed3ef9f-1c62-4f8b-b0fc-11ac6234d5c6/content
+    source_quote: "second informal in-person HODs meeting to be held in Bangkok from 27 to 30 September 2026."
+    review_id: seed-global-plastics-treaty-002
+  - date: 2026-07-03
+    summary: >-
+      An informal in-person meeting of Heads of Delegation took place in Nairobi from 30 June to 3 July 2026, the
+      first substantive discussions in the ten months since INC-5.2.
+    source_url: https://wedocs.unep.org/rest/api/core/bitstreams/3ed3ef9f-1c62-4f8b-b0fc-11ac6234d5c6/content
+    source_quote: "Heads of Delegation (HODs) that took place in Nairobi between 30 June and 3 July 2026. This meeting was the first opportunity we had to engage in substantive discussions in the 10 months since the second part of the fifth session of the INC"
+    review_id: seed-global-plastics-treaty-001
+next_steps: []
+key_dates:
+  - date: 2026-09-27
+    text: Second informal in-person Heads of Delegation meeting, Bangkok (27–30 September 2026).
+    source_url: https://wedocs.unep.org/rest/api/core/bitstreams/3ed3ef9f-1c62-4f8b-b0fc-11ac6234d5c6/content

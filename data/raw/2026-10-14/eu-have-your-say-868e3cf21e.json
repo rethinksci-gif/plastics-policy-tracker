@@ -1,0 +1,13 @@
+{
+ "id": "2026-10-14/eu-have-your-say-868e3cf21e",
+ "source_id": "eu-have-your-say",
+ "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/18668_en",
+ "title": "Improved calculation methodology for collection rates of waste batteries and adaptation of collection targets",
+ "fetched_at": "2026-10-14T10:09:35.578574Z",
+ "published": null,
+ "sha256": "868e3cf21e1af364ad2268c676abebbb9af9a56aaac82a1e525a59202cd57427",
+ "trust": "official",
+ "jurisdiction": "EU",
+ "lang": "en",
+ "text": "shortTitle: Improved calculation methodology for collection rates of waste batteries and adaptation of collection targets\nreference: Ares(2026)6641246\nforeseenActType: DEC_DEL\ninitiativeStatus: ACTIVE\nfrontEndStage: INIT_PLANNED; receivingFeedbackStatus: DISABLED; feedbackStartDate: 2026/07/08 11:24:20; feedbackEndDate: None\n\nsnippet: reflect their longer lifetime. The objective is to support the\ncircular\neconomy\n, ensure high but realistic collection targets for waste batteries"
+}

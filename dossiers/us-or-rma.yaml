@@ -1,0 +1,37 @@
+id: us-or-rma
+title: Oregon — Plastic Pollution and Recycling Modernization Act (SB 582)
+short_title: Oregon RMA
+jurisdiction: US-OR
+instrument: EPR-scheme
+topics: [EPR, packaging, recycling, rulemaking]
+stage: in-application
+affected: [brand-owners, recyclers, municipalities]
+impact: medium
+official_links:
+  - https://www.oregon.gov/deq/recycling/pages/modernizing-oregons-recycling-system.aspx
+summary: >-
+  Oregon's Recycling Modernization Act (SB 582, 2021) makes producers of packaging, paper products and food
+  serviceware fund improvements to the recycling system through a producer responsibility organisation.
+updates:
+  - date: 2026-10
+    summary: >-
+      Oregon DEQ opened public comment on a third set of proposed rule amendments for implementing the Act, with
+      virtual hearings on 20 and 21 October 2026 and a comment deadline of 30 October 2026.
+    source_url: https://www.oregon.gov/deq/recycling/pages/modernizing-oregons-recycling-system.aspx
+    source_quote: "The deadline to submit comments is 4 p.m., on Oct. 30, 2026."
+    review_id: seed-us-or-rma-002
+  - date: 2026-10
+    summary: >-
+      Circular Action Alliance submitted a third amendment to its program plan, including changing a key metric
+      from diversion rate to pounds of material collected per household; DEQ is taking public comment until 19 October 2026.
+    source_url: https://www.oregon.gov/deq/recycling/pages/modernizing-oregons-recycling-system.aspx
+    source_quote: "Circular Action Alliance submitted a third program plan amendment containing a variety of proposed changes, including: - Changing a key metric from diversion rate to pounds of USCL material collected per household;"
+    review_id: seed-us-or-rma-001
+next_steps:
+  - date: 2026-10-19
+    text: Comment deadline on CAA's third program plan amendment.
+    source_url: https://www.oregon.gov/deq/recycling/pages/modernizing-oregons-recycling-system.aspx
+  - date: 2026-10-30
+    text: Comment deadline on the third RMA rulemaking.
+    source_url: https://www.oregon.gov/deq/recycling/pages/modernizing-oregons-recycling-system.aspx
+key_dates: []

@@ -1,0 +1,35 @@
+id: eu-food-contact-recycled-plastics
+title: Recycled plastics in food contact — Regulation (EU) 2022/1616
+short_title: Food-contact recycled plastics (2022/1616)
+jurisdiction: EU
+instrument: regulation
+topics: [food-contact, recycled-content, PET, novel-technologies]
+stage: in-application
+affected: [recyclers, converters, brand-owners]
+impact: high
+official_links:
+  - https://eur-lex.europa.eu/eli/reg/2022/1616/oj/eng
+  - https://publications.europa.eu/resource/celex/32022R1616
+  - https://publications.europa.eu/resource/celex/32025R2269
+summary: >-
+  Commission Regulation (EU) 2022/1616 governs recycled plastic materials and articles intended to come into
+  contact with food, including authorisation of recycling processes and the framework for novel technologies.
+updates:
+  - date: 2025-11-13
+    summary: >-
+      Commission Regulation (EU) 2025/2269 of 12 November 2025 was published, correcting Regulation (EU)
+      2022/1616 as regards labelling of recycled plastic, the development of recycling technologies and the
+      transfer of authorisations.
+    source_url: https://publications.europa.eu/resource/celex/32025R2269
+    source_quote: "COMMISSION REGULATION (EU) 2025/2269 of 12 November 2025 correcting Regulation (EU) 2022/1616 as regards labelling of recycled plastic, the development of recycling technologies and the transfer of authorisations"
+    review_id: seed-eu-food-contact-recycled-plastics-002
+  - date: 2022-09-20
+    summary: >-
+      Commission Regulation (EU) 2022/1616 of 15 September 2022 on recycled plastic materials and articles
+      intended to come into contact with foods was published, repealing Regulation (EC) No 282/2008.
+    source_url: https://publications.europa.eu/resource/celex/32022R1616
+    source_quote: "COMMISSION REGULATION (EU) 2022/1616 of 15 September 2022 on recycled plastic materials and articles intended to come into contact with foods, and repealing Regulation (EC) No 282/2008"
+    stage_change: published
+    review_id: seed-eu-food-contact-recycled-plastics-001
+next_steps: []
+key_dates: []

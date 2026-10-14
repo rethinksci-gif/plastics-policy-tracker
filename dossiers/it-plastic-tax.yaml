@@ -1,0 +1,20 @@
+id: it-plastic-tax
+title: Italy — tax on single-use plastic products (plastic tax)
+title_original: Imposta sul consumo dei manufatti con singolo impiego (MACSI)
+short_title: Italy plastic tax
+jurisdiction: EU-IT
+instrument: tax
+topics: [tax, packaging, single-use]
+stage: adopted
+affected: [converters, brand-owners, importers]
+impact: medium
+official_links:
+  - "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2019-12-27;160"
+  - "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-12-30;199"
+summary: >-
+  Italy's consumption tax on single-use plastic products, introduced by Law 160/2019 and repeatedly deferred.
+  No update has been verified yet: the relevant articles of the budget laws are not served as static text by
+  Normattiva or the Gazzetta Ufficiale (see unreachable.md).
+updates: []
+next_steps: []
+key_dates: []

@@ -1,0 +1,27 @@
+id: us-md-epr
+title: Maryland — Packaging and Paper Products Producer Responsibility Plans (SB 901, 2025)
+short_title: Maryland packaging EPR
+jurisdiction: US-MD
+instrument: EPR-scheme
+topics: [EPR, packaging, paper]
+stage: implementing-acts
+affected: [brand-owners, recyclers, municipalities]
+impact: medium
+official_links:
+  - https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0901?ys=2025RS
+  - https://mgaleg.maryland.gov/2025RS/fnotes/bil_0001/sb0901.pdf
+summary: >-
+  SB 901 (Chapter 431 of 2025) requires producers of packaging and paper products to submit producer
+  responsibility plans to the Maryland Department of the Environment.
+updates:
+  - date: 2025-05-13
+    summary: The Governor approved SB 901 on 13 May 2025 as Chapter 431.
+    source_url: https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0901?ys=2025RS
+    source_quote: "5/13/2025 Approved by the Governor - Chapter 431"
+    stage_change: adopted
+    review_id: seed-us-md-epr-001
+next_steps: []
+key_dates:
+  - date: 2028-07-01
+    text: Producer responsibility plans must be submitted to MDE for review and approval (per the Department of Legislative Services fiscal note).
+    source_url: https://mgaleg.maryland.gov/2025RS/fnotes/bil_0001/sb0901.pdf

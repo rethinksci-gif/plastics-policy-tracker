@@ -1,0 +1,98 @@
+name: Daily pipeline
+
+# fetch -> triage -> draft -> review (layers 1-3). Results are committed to the long-lived `staging`
+# branch and a PR staging -> main is opened or updated. Nothing reaches the public site from here.
+
+on:
+  schedule:
+    - cron: "15 5 * * *"   # 05:15 UTC every day
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run: no commits, no GitHub issues (artifacts only)"
+        type: boolean
+        default: false
+      sources:
+        description: "Optional space-separated source ids (default: all enabled)"
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: pipeline-staging
+  cancel-in-progress: false
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      DEEPSEEK_MODEL_FAST: ${{ vars.DEEPSEEK_MODEL_FAST || 'deepseek-flash' }}
+      DEEPSEEK_MODEL_PRO: ${{ vars.DEEPSEEK_MODEL_PRO || 'deepseek-v4-pro' }}
+      MAX_LLM_CALLS_PER_RUN: ${{ vars.MAX_LLM_CALLS_PER_RUN || '300' }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Switch to staging (create from main if missing) and bring in main
+        run: |
+          git config user.name "plastics-policy-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin staging >/dev/null; then
+            git checkout -B staging origin/staging
+            git merge --no-edit origin/main || { echo "::error::staging conflicts with main"; exit 1; }
+          else
+            git checkout -B staging origin/main
+          fi
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: uv sync --frozen
+
+      - name: Check secret
+        run: |
+          if [ -z "$DEEPSEEK_API_KEY" ]; then echo "::error::Repository secret DEEPSEEK_API_KEY is not set"; exit 1; fi
+
+      - name: Run pipeline
+        run: |
+          ARGS=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          for s in ${{ inputs.sources }}; do ARGS="$ARGS --source $s"; done
+          uv run python -m pipeline daily $ARGS
+
+      - name: Layer 1+2 check of all dossiers
+        run: uv run python -m pipeline validate
+
+      - name: Upload run artefacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-${{ github.run_id }}
+          path: |
+            data/logs/
+            data/candidates/
+            reviews/items/
+          if-no-files-found: ignore
+
+      - name: Commit to staging and open/update PR
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          git add -A data reviews dossiers issues
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "Daily pipeline $(date -u +%F): new snapshots, candidates and review records"
+          git push origin staging
+          if [ -z "$(gh pr list --head staging --base main --state open --json number -q '.[].number')" ]; then
+            gh pr create --head staging --base main \
+              --title "Staging: verified updates awaiting the next issue" \
+              --body "Daily pipeline output (snapshots, candidates, review records). Merged automatically when an issue is published; quarantined items are tracked in issues labelled \`needs-human-review\`."
+          fi

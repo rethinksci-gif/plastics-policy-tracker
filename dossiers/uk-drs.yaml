@@ -1,0 +1,33 @@
+id: uk-drs
+title: UK — Deposit Return Scheme for drinks containers (England and Northern Ireland)
+short_title: UK Deposit Return Scheme
+jurisdiction: UK
+instrument: regulation
+topics: [deposit-return, beverage-containers, PET, collection]
+stage: in-force
+affected: [brand-owners, retailers, recyclers, hospitality]
+impact: high
+official_links:
+  - https://www.gov.uk/guidance/deposit-return-scheme-drinks-producer-and-retailer-responsibilities
+  - https://www.gov.uk/government/publications/vat-provisions-for-deposit-return-schemes-drs
+summary: >-
+  A deposit return scheme for single-use drinks containers in England and Northern Ireland, run by a deposit
+  management organisation, starting on 1 October 2027.
+updates:
+  - date: 2026-07-13
+    summary: HMRC published a policy paper introducing new VAT accounting rules for supplies made under a statutory deposit return scheme.
+    source_url: https://www.gov.uk/government/publications/vat-provisions-for-deposit-return-schemes-drs
+    source_quote: "This measure introduces new VAT accounting rules for supplies made under a statutory Deposit Return Scheme (DRS)."
+    review_id: seed-uk-drs-002
+  - date: 2025-01-27
+    summary: >-
+      Defra guidance published on 27 January 2025 states that from 1 October 2027 customers will pay a refundable deposit for certain single-use
+      drink containers in England and Northern Ireland.
+    source_url: https://www.gov.uk/guidance/deposit-return-scheme-drinks-producer-and-retailer-responsibilities
+    source_quote: "From 1 October 2027, customers will pay a refundable deposit for certain single-use drink containers under the new Deposit Return Scheme (DRS)."
+    review_id: seed-uk-drs-001
+next_steps: []
+key_dates:
+  - date: 2027-10-01
+    text: Deposit Return Scheme starts in England and Northern Ireland; producers must be registered with the deposit management organisation.
+    source_url: https://www.gov.uk/guidance/deposit-return-scheme-drinks-producer-and-retailer-responsibilities

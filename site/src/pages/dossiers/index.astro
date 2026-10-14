@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { STAGES, dossiers, fmtDate, jurName, url } from '../../lib/data';
+import { STAGES, dossiers, stageLabel, fmtDate, jurName, url } from '../../lib/data';
 const ds = await dossiers();
 const uniq = (xs: string[]) => [...new Set(xs)].sort();
 const jurs = uniq(ds.map((d) => d.jurisdiction));
@@ -14,7 +14,7 @@ const stages = [...STAGES, 'withdrawn', 'stalled'].filter((s) => ds.some((d) => 
     <input type="search" name="q" placeholder="Filter by name…" aria-label="Filter by name" />
     <select name="jur" aria-label="Jurisdiction"><option value="">All jurisdictions</option>{jurs.map((j) => <option value={j}>{jurName(j)}</option>)}</select>
     <select name="topic" aria-label="Topic"><option value="">All topics</option>{topics.map((t) => <option value={t}>{t}</option>)}</select>
-    <select name="stage" aria-label="Stage"><option value="">All stages</option>{stages.map((s) => <option value={s}>{s}</option>)}</select>
+    <select name="stage" aria-label="Stage"><option value="">All stages</option>{stages.map((s) => <option value={s}>{stageLabel(s)}</option>)}</select>
     <select name="impact" aria-label="Impact"><option value="">Any impact</option><option>high</option><option>medium</option><option>low</option></select>
   </form>
   <p class="small muted" id="count">{ds.length} dossiers</p>
@@ -26,7 +26,7 @@ const stages = [...STAGES, 'withdrawn', 'stalled'].filter((s) => ds.some((d) => 
           <h3><a href={url(`dossiers/${d.id}/`)}>{d.title}</a></h3>
           <div class="meta small">
             <span class="badge">{jurName(d.jurisdiction)}</span>
-            <span class="badge stage">{d.stage}</span>
+            <span class="badge stage">{stageLabel(d.stage)}</span>
             <span class={`badge ${d.impact}`}>{d.impact} impact</span>
             <span class="muted">{d.topics.join(' · ')}</span>
           </div>

@@ -1,0 +1,45 @@
+id: eu-reach-microplastics
+title: REACH restriction on intentionally added microplastics (Annex XVII entry 78)
+short_title: REACH microplastics restriction
+jurisdiction: EU
+instrument: regulation
+topics: [microplastics, chemicals, REACH, cosmetics, sports-surfaces]
+stage: in-application
+affected: [polymer-producers, converters, brand-owners, cosmetics, sports-surface-operators]
+impact: medium
+official_links:
+  - https://eur-lex.europa.eu/eli/reg/2023/2055/oj/eng
+  - https://publications.europa.eu/resource/celex/32023R2055
+  - https://publications.europa.eu/resource/celex/32026R1168
+summary: >-
+  Commission Regulation (EU) 2023/2055 restricts synthetic polymer microparticles under REACH (Annex XVII,
+  entry 78), with transitional periods of 4 to 12 years for specific products. Regulation (EU) 2026/1168
+  amends the derogations.
+updates:
+  - date: 2026-06-02
+    summary: >-
+      Commission Regulation (EU) 2026/1168 of 1 June 2026 amending Annex XVII to REACH as regards synthetic
+      polymer microparticles was published, extending the medicinal-products derogation to clinical trials
+      and adding a derogation for product and process orientated research and development outside industrial sites.
+    source_url: https://publications.europa.eu/resource/celex/32026R1168
+    source_quote: "COMMISSION REGULATION (EU) 2026/1168 of 1 June 2026 amending Annex XVII to Regulation (EC) No 1907/2006 of the European Parliament and of the Council as regards synthetic polymer microparticles"
+    review_id: seed-eu-reach-microplastics-002
+  - date: 2023-09-27
+    summary: >-
+      Commission Regulation (EU) 2023/2055 of 25 September 2023 restricting synthetic polymer microparticles
+      under REACH was published in the Official Journal.
+    source_url: https://publications.europa.eu/resource/celex/32023R2055
+    source_quote: "COMMISSION REGULATION (EU) 2023/2055 of 25 September 2023 amending Annex XVII to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) as regards synthetic polymer microparticles"
+    stage_change: published
+    review_id: seed-eu-reach-microplastics-001
+next_steps: []
+key_dates:
+  - date: 2027-10-17
+    text: Restriction applies to rinse-off cosmetic products.
+    source_url: https://publications.europa.eu/resource/celex/32023R2055
+  - date: 2028-10-17
+    text: Restriction applies to fertilising products outside Regulation (EU) 2019/1009 and to agricultural/horticultural products.
+    source_url: https://publications.europa.eu/resource/celex/32023R2055
+  - date: 2031-10-17
+    text: Restriction applies to granular infill for synthetic sports surfaces and to plant protection products.
+    source_url: https://publications.europa.eu/resource/celex/32023R2055

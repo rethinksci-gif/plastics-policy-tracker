@@ -1,0 +1,35 @@
+id: eu-public-procurement
+title: Public Procurement Regulation (Public Procurement Act)
+short_title: Public Procurement Regulation
+jurisdiction: EU
+instrument: regulation
+topics: [public-procurement, circular-procurement, recycled-content, european-preference]
+stage: proposal
+affected: [recyclers, converters, brand-owners, public-buyers]
+impact: medium
+official_links:
+  - https://publications.europa.eu/resource/celex/52026PC0590
+  - https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)
+summary: >-
+  Proposal COM(2026) 590 would replace the three 2014 procurement directives with one directly applicable
+  regulation, including green public procurement obligations (circularity, recycled content) and a
+  horizontal framework for European preference requirements.
+updates:
+  - date: 2026-10
+    summary: >-
+      The Legislative Observatory lists the procedure 2026/0265(COD) at the preparatory phase in Parliament,
+      with the decision on the responsible committee still pending.
+    source_url: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)
+    source_quote: "European ParliamentCommittee responsible Rapporteur Appointed Pending final decision on the referral"
+    review_id: seed-eu-public-procurement-002
+  - date: 2026-09-09
+    summary: >-
+      The Commission published its proposal for a regulation on public contracts and concessions (COM(2026) 590),
+      which strengthens the contribution of procurement to circularity, recycled and refurbished content and
+      waste recovery, and creates a framework for mandatory green procurement requirements for certain products.
+    source_url: https://publications.europa.eu/resource/celex/52026PC0590
+    source_quote: "It strengthens the contribution of procurement to circularity, recycled and refurbished content, waste recovery and energy efficiency, and creates a framework for mandatory green procurement requirements for certain product categories where divergent application of requirement risks creating market fragmentation."
+    stage_change: proposal
+    review_id: seed-eu-public-procurement-001
+next_steps: []
+key_dates: []

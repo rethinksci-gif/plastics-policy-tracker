@@ -1,0 +1,53 @@
+id: fr-epr-packaging-recycled-bonus
+title: France — household packaging EPR bonus for recycled plastic (IMPR)
+title_original: Prime à l’incorporation de matière plastique recyclée (IMPR)
+short_title: France IMPR recycled-plastic bonus
+jurisdiction: EU-FR
+instrument: EPR-scheme
+topics: [EPR, packaging, recycled-content, eco-modulation, proximity-criterion]
+stage: in-application
+affected: [recyclers, converters, brand-owners]
+impact: high
+official_links:
+  - https://www.ecologie.gouv.fr/sites/default/files/documents/FAQ-IMPR-avril2026_0.pdf
+  - https://ecd-bo.citeo.com/ecd2/medias/citeo/public/fr/guide-du-tarif-des-emballages-menagers-2026.pdf
+  - https://www.ecologie.gouv.fr/
+summary: >-
+  Under the French EPR schemes, producers that incorporate recycled plastic receive a bonus (prime) on their
+  eco-contribution. Collection, sorting, recycling and incorporation must take place within 1,500 km of the
+  barycentre of metropolitan France, in an EU country or a third country with equivalent standards.
+updates:
+  - date: 2026-04
+    summary: >-
+      The ministry's FAQ on the bonus (April 2026) sets out three bonus levels per tonne of recycled plastic
+      incorporated: EUR 450, EUR 550, and EUR 550 in 2026–2027 rising to EUR 1,000 from 2028.
+    source_url: https://www.ecologie.gouv.fr/sites/default/files/documents/FAQ-IMPR-avril2026_0.pdf
+    source_quote: "Alinéa 3 : 550 € / tonne (2026-2027), puis 1 000 € / tonne à compter de 2028"
+    source_quote_en: "Paragraph 3: EUR 550 / tonne (2026-2027), then EUR 1,000 / tonne from 2028"
+    source_lang: fr
+    review_id: seed-fr-epr-packaging-recycled-bonus-003
+  - date: 2026-01
+    summary: >-
+      Citeo's 2026 household packaging tariff guide states that collection, sorting, recycling and
+      incorporation must take place within 1,500 km of the barycentre of metropolitan France, in an EU
+      Member State or a country meeting the standards set by the order.
+    source_url: https://ecd-bo.citeo.com/ecd2/medias/citeo/public/fr/guide-du-tarif-des-emballages-menagers-2026.pdf
+    source_quote: "La collecte, le tri, le recyclage ainsi que l’incorporation de matière recyclée doivent être effectués dans un rayon de 1 500 km autour du barycentre de la France métropolitaine, et dans un pays membre de l’Union européenne ou conforme aux normes définies par l’arrêté."
+    source_quote_en: "Collection, sorting, recycling and the incorporation of recycled material must be carried out within a radius of 1,500 km around the barycentre of metropolitan France, and in a Member State of the European Union or one compliant with the standards defined by the order."
+    source_lang: fr
+    review_id: seed-fr-epr-packaging-recycled-bonus-002
+  - date: 2025-09-05
+    summary: >-
+      An order (arrêté) of 5 September 2025 set the modulations applied to producers' financial contributions
+      when they incorporate recycled plastic.
+    source_url: https://www.ecologie.gouv.fr/sites/default/files/documents/FAQ-IMPR-avril2026_0.pdf
+    source_quote: "Arrêté du 5 septembre 2025 fixant les modulations applicables aux contributions financières versées par les producteurs lorsqu'ils incorporent des matières plastiques recyclées"
+    source_quote_en: "Order of 5 September 2025 setting the modulations applicable to the financial contributions paid by producers when they incorporate recycled plastic materials"
+    source_lang: fr
+    stage_change: adopted
+    review_id: seed-fr-epr-packaging-recycled-bonus-001
+next_steps: []
+key_dates:
+  - date: 2028-01-01
+    text: Bonus under paragraph 3 rises from EUR 550 to EUR 1,000 per tonne.
+    source_url: https://www.ecologie.gouv.fr/sites/default/files/documents/FAQ-IMPR-avril2026_0.pdf

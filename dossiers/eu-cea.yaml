@@ -1,0 +1,42 @@
+id: eu-cea
+title: Circular Economy Act (CEA)
+short_title: Circular Economy Act
+jurisdiction: EU
+instrument: regulation
+topics: [circular-economy, secondary-raw-materials, single-market-for-waste, recycled-content]
+stage: consultation
+affected: [recyclers, converters, brand-owners, waste-traders]
+impact: high
+official_links:
+  - https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14812_en
+  - https://publications.europa.eu/resource/celex/52025DC0870
+  - https://environment.ec.europa.eu/strategy/circular-economy_en
+summary: >-
+  A planned Commission proposal to facilitate the free movement of circular products, secondary raw materials
+  and waste, and to increase supply of and demand for recycled materials.
+updates:
+  - date: 2025-11-06
+    summary: >-
+      The Commission's public consultation and call for feedback on the Circular Economy Act, open from
+      1 August 2025, closed on 6 November 2025.
+    source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14812_en
+    source_quote: "receivingFeedbackStatus: CLOSED; feedbackStartDate: 2025/08/01 08:33:10; feedbackEndDate: 2025/11/06 23:59:59"
+    stage_change: consultation
+    review_id: seed-eu-cea-002
+  - date: 2025-10-21
+    summary: >-
+      The Commission work programme 2026 lists the Circular Economy Act as a legislative initiative under
+      Article 114 TFEU planned for the third quarter of 2026.
+    source_url: https://publications.europa.eu/resource/celex/52025DC0870
+    source_quote: "Circular Economy Act (legislative, Article 114 TFEU, Q3 2026)"
+    stage_change: planned
+    review_id: seed-eu-cea-001
+next_steps:
+  - date: 2026-09
+    text: Proposal planned for Q3 2026 in the Commission work programme (not yet published).
+    source_url: https://publications.europa.eu/resource/celex/52025DC0870
+    status: to-be-confirmed
+  - date: 2026-12
+    text: DG Environment states the Circular Economy Act is due for adoption in 2026.
+    source_url: https://environment.ec.europa.eu/strategy/circular-economy_en
+key_dates: []

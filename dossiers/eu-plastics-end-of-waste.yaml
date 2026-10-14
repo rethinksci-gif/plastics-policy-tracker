@@ -1,0 +1,25 @@
+id: eu-plastics-end-of-waste
+title: EU-wide end-of-waste criteria for plastic waste
+short_title: Plastics end-of-waste criteria
+jurisdiction: EU
+instrument: implementing-act
+topics: [end-of-waste, recycling, secondary-raw-materials]
+stage: consultation
+affected: [recyclers, converters, waste-traders]
+impact: high
+official_links:
+  - https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14848_en
+summary: >-
+  A planned Commission implementing regulation under the Waste Framework Directive setting a single, harmonised
+  set of criteria for when plastic waste ceases to be waste.
+updates:
+  - date: 2026-01-26
+    summary: >-
+      The feedback period on the Commission initiative for an implementing regulation establishing EU-wide
+      end-of-waste criteria for plastic waste ran from 23 December 2025 to 26 January 2026 and is closed.
+    source_url: https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14848_en
+    source_quote: "receivingFeedbackStatus: CLOSED; feedbackStartDate: 2025/12/23 10:24:00; feedbackEndDate: 2026/01/26 23:59:59"
+    stage_change: consultation
+    review_id: seed-eu-plastics-end-of-waste-001
+next_steps: []
+key_dates: []
