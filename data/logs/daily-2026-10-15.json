@@ -1,0 +1,91 @@
+{
+ "date": "2026-10-15",
+ "fetch": {
+  "new": [
+   "2026-10-15/eu-have-your-say-747d86ffc9",
+   "2026-10-15/oeil-omnibus-epr-reps-ppwr-71a2789c41",
+   "2026-10-15/oeil-procurement-d7c48e0e73",
+   "2026-10-15/dg-env-news-6ddb90179a",
+   "2026-10-15/efsa-d42197bb92",
+   "2026-10-15/cn-mee-98d88bc69d"
+  ],
+  "unchanged": 104,
+  "errors": {}
+ },
+ "triage": {
+  "candidates": [
+   "2026-10-15-001",
+   "2026-10-15-002"
+  ],
+  "discarded": [
+   {
+    "snapshot": "2026-10-15/oeil-omnibus-epr-reps-ppwr-71a2789c41",
+    "url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0397(COD)",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "Procedure file on Omnibus VIII simplification for batteries and industrial emissions reporting; no new plastics-related development in the last 60 days and no matching plastics dossier."
+   },
+   {
+    "snapshot": "2026-10-15/dg-env-news-6ddb90179a",
+    "url": "https://environment.ec.europa.eu/news_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The page is a general DG Environment news index with no new concrete plastics law, regulation, standard, tax, EPR scheme or treaty development."
+   },
+   {
+    "snapshot": "2026-10-15/efsa-d42197bb92",
+    "url": "https://www.efsa.europa.eu/en/events/23rd-plenary-meeting-panel-food-contact-materials-fcm-open-observers",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "It is only an announcement of a future EFSA food contact materials panel plenary meeting (November 2027) with no legal or regulatory development."
+   },
+   {
+    "snapshot": "2026-10-15/cn-mee-98d88bc69d",
+    "url": "https://www.mee.gov.cn/zcwj/",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The document is a general listing of Chinese environmental policy documents and notices, none of which specifically address plastics-related laws or regulations as new developments."
+   }
+  ],
+  "new_dossier_suggestions": [],
+  "leads": []
+ },
+ "draft": {
+  "drafted": [],
+  "skipped": [
+   {
+    "candidate": "2026-10-15-001",
+    "reason": "The source document is the Commission's 'have your say' initiative page for the revision of EU public procurement rules. Its only substantive content is the open public feedback period (feedbackStartDate 2026/09/15, feedbackEndDate 2026/12/10) with the initiative active in the adoption workflow. This is the same feedback period already recorded for this dossier (2026-09-15: feedback open from 15 September 2026 to 9 December 2026), and the source shows no new legislative stage, date, or development for the dossier as a whole. There is nothing not already captured to report."
+   },
+   {
+    "candidate": "2026-10-15-002",
+    "reason": "The procedure file contains no new development for this dossier. Its only legislative content \u2014 the publication of the legislative proposal COM(2026)0590 on 09/09/2026 and the status 'Preparatory phase in Parliament' with the committee referral decision still pending \u2014 is already recorded in the tracker's most recent updates. The remaining content is a routine transparency list of meetings between Commission officials and interest representatives (08/09/2026\u201314/10/2026), which is not a development of the instrument itself."
+   }
+  ]
+ },
+ "review": {
+  "passed": [],
+  "quarantined": [],
+  "human_review": [],
+  "issues": []
+ },
+ "summary_review": {
+  "reviewed": 0,
+  "passed": [],
+  "failed": {},
+  "llm_calls": 8
+ },
+ "llm_calls": 8,
+ "llm_usage": {
+  "prompt_tokens": 17752,
+  "completion_tokens": 9430
+ }
+}
