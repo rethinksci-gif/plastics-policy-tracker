@@ -1,0 +1,20 @@
+{
+ "id": "2026-10-16-002",
+ "created": "2026-10-16",
+ "snapshot_id": "2026-10-16/oeil-omnibus-epr-reps-c6ed10f308",
+ "source_id": "oeil-omnibus-epr-reps",
+ "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0396(COD)",
+ "source_trust": "official",
+ "title": "Procedure File: 2025/0396(COD) | Legislative Observatory | European Parliament",
+ "triage": {
+  "relevance": 0.85,
+  "dossier_id": "eu-supd",
+  "new_dossier_suggestion": "EU Omnibus VIII on environmental legislation (2025/0396(COD)) — directive suspending EPR application rules under the Waste Framework Directive, WEEE Directive and Single-Use Plastics Directive; cross-cutting, so could warrant its own dossier",
+  "category": "legislative-step",
+  "reason": "The Legislative Observatory file shows fresh committee action in the last two months (ENVI vote 05/10/2026, committee report A10-0267/2026 tabled 09/10/2026) on the proposed directive suspending EPR rules for waste, WEEE and single-use plastic waste, with plenary debate and vote scheduled for 19–20/10/2026."
+ },
+ "draft": null,
+ "status": "discarded",
+ "review_id": null,
+ "issue": null
+}

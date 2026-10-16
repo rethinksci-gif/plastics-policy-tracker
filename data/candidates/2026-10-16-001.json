@@ -1,0 +1,38 @@
+{
+ "id": "2026-10-16-001",
+ "created": "2026-10-16",
+ "snapshot_id": "2026-10-16/eu-have-your-say-ed06746062",
+ "source_id": "eu-have-your-say",
+ "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15492_en",
+ "source_trust": "official",
+ "title": "Revision of EU rules on public procurement",
+ "triage": {
+  "relevance": 0.7,
+  "dossier_id": "eu-public-procurement",
+  "new_dossier_suggestion": null,
+  "category": "consultation",
+  "reason": "The Commission's Have Your Say page shows an active feedback/consultation window (15 Sep – 11 Dec 2026) on the revision of the EU public procurement rules under adoption workflow, a concrete new procedural step for this instrument."
+ },
+ "draft": {
+  "dossier_id": "eu-public-procurement",
+  "date": "2026-09-15",
+  "summary": "The European Commission's public feedback period on the revision of EU rules on public procurement opened on 15 September 2026 and is scheduled to run until 11 December 2026. The initiative is listed with the status active and the receiving-feedback status open.",
+  "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15492_en",
+  "source_quote": "frontEndStage: ADOPTION_WORKFLOW; receivingFeedbackStatus: OPEN; feedbackStartDate: 2026/09/15 00:40:14; feedbackEndDate: 2026/12/11 23:59:59",
+  "source_quote_en": null,
+  "source_lang": "en",
+  "stage_change": null,
+  "next_steps": [],
+  "key_dates": [
+   {
+    "date": "2026-12-11",
+    "text": "Scheduled end of the public feedback period on the revision of EU rules on public procurement (feedbackEndDate: 2026/12/11 23:59:59).",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15492_en"
+   }
+  ],
+  "interpretation": "Analysis: while the feedback window stays open, suppliers of recycled and refurbished content, converters and brand owners bidding for public contracts retain a documented channel to comment on how the revised procurement rules would treat them."
+ },
+ "status": "passed",
+ "review_id": "2026-10-16-001",
+ "issue": null
+}
