@@ -1,0 +1,113 @@
+{
+ "date": "2026-10-17",
+ "fetch": {
+  "new": [
+   "2026-10-17/eu-have-your-say-182913ad8f",
+   "2026-10-17/eu-have-your-say-e8f38aabf8",
+   "2026-10-17/oeil-omnibus-epr-reps-ppwr-09c7a68da8",
+   "2026-10-17/dg-env-news-879076414c",
+   "2026-10-17/efsa-079e3e8199",
+   "2026-10-17/es-boe-c3f8a8bcda"
+  ],
+  "unchanged": 102,
+  "errors": {}
+ },
+ "triage": {
+  "candidates": [
+   "2026-10-17-001"
+  ],
+  "discarded": [
+   {
+    "snapshot": "2026-10-17/eu-have-your-say-e8f38aabf8",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15492_en",
+    "relevance": 0.2,
+    "dossier_id": "eu-public-procurement",
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "The page announces an active feedback window (15 Sep \u2013 12 Dec 2026) on the revision of EU public procurement rules, a genuine legislative development but with no plastics, packaging, recycling or chemicals content, so it is only marginally relevant to the tracker."
+   },
+   {
+    "snapshot": "2026-10-17/oeil-omnibus-epr-reps-ppwr-09c7a68da8",
+    "url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0397(COD)",
+    "relevance": 0.3,
+    "dossier_id": "eu-ppwr",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "Procedure file shows only an older proposal (Dec 2025) and committee referral (Feb 2026) with status 'Awaiting committee decision'; no concrete development within the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-17/dg-env-news-879076414c",
+    "url": "https://environment.ec.europa.eu/news_en",
+    "relevance": 0.05,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a general DG Environment news index page listing unrelated items (biodiversity COP17, bioeconomy R&I, water resilience, e-waste statistics, poultry/pig emissions, Ecolabel survey) with no new concrete plastics law, regulation, tax, EPR or treaty development."
+   },
+   {
+    "snapshot": "2026-10-17/efsa-079e3e8199",
+    "url": "https://efsa.onlinelibrary.wiley.com/doi/10.2903/j.efsa.2026.10368",
+    "relevance": 0.7,
+    "dossier_id": null,
+    "new_dossier_suggestion": "EU \u2014 Bisphenols other than BPA in food contact materials: EFSA guidance on data requirements for safety assessment",
+    "category": "guidance",
+    "reason": "EFSA published new guidance setting data requirements for the safety assessment of bisphenols in food contact materials, a concrete regulatory-science development affecting plastics-related chemicals."
+   },
+   {
+    "snapshot": "2026-10-17/es-boe-c3f8a8bcda",
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21645",
+    "relevance": 0.1,
+    "dossier_id": "es-packaging-plastic-tax",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is merely the publication of an administrative collaboration agreement between the Presidency's Secretariat of State for Communication and Ecoembes to install separate-collection bins in government offices; it does not change any law, regulation, tax or EPR obligation under RD 1055/2022."
+   }
+  ],
+  "new_dossier_suggestions": [
+   {
+    "snapshot": "2026-10-17/efsa-079e3e8199",
+    "url": "https://efsa.onlinelibrary.wiley.com/doi/10.2903/j.efsa.2026.10368",
+    "relevance": 0.7,
+    "dossier_id": null,
+    "new_dossier_suggestion": "EU \u2014 Bisphenols other than BPA in food contact materials: EFSA guidance on data requirements for safety assessment",
+    "category": "guidance",
+    "reason": "EFSA published new guidance setting data requirements for the safety assessment of bisphenols in food contact materials, a concrete regulatory-science development affecting plastics-related chemicals."
+   }
+  ],
+  "leads": []
+ },
+ "draft": {
+  "drafted": [
+   "2026-10-17-001"
+  ],
+  "skipped": []
+ },
+ "review": {
+  "passed": [],
+  "quarantined": [
+   {
+    "candidate": "2026-10-17-001",
+    "dossier": "eu-wsr",
+    "impact": "high",
+    "reasons": [
+     "L3 high-impact confirmation: partially_supported (confidence 0.80); Interpretation adds a new obligation not present in the source: 'Exporters of non-hazardous waste will need to confirm that their destination appears on the delegated list before shipping after 21 May 2027.' The source states the ban and the existence of a list but does not impose any explicit confirmation requirement on exporters."
+    ]
+   }
+  ],
+  "human_review": [],
+  "issues": [
+   "https://github.com/rethinksci-gif/plastics-policy-tracker/issues/5"
+  ]
+ },
+ "summary_review": {
+  "reviewed": 0,
+  "passed": [],
+  "failed": {},
+  "llm_calls": 9
+ },
+ "llm_calls": 9,
+ "llm_usage": {
+  "prompt_tokens": 17835,
+  "completion_tokens": 10011
+ }
+}
