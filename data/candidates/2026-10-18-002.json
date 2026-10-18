@@ -1,0 +1,38 @@
+{
+ "id": "2026-10-18-002",
+ "created": "2026-10-18",
+ "snapshot_id": "2026-10-18/oeil-procurement-b3fc762f85",
+ "source_id": "oeil-procurement",
+ "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)",
+ "source_trust": "official",
+ "title": "Procedure File: 2026/0265(COD) | Legislative Observatory | European Parliament",
+ "triage": {
+  "relevance": 0.7,
+  "dossier_id": "eu-public-procurement",
+  "new_dossier_suggestion": null,
+  "category": "proposal",
+  "reason": "The Commission published legislative proposal COM(2026)0590 for a Public Procurement Regulation on 9 September 2026, a concrete new legislative step within the 60-day window, though the excerpt gives no plastics-specific detail."
+ },
+ "draft": {
+  "dossier_id": "eu-public-procurement",
+  "date": "2026-10-14",
+  "summary": "The European Parliament's Legislative Observatory procedure file for 2026/0265(COD) lists meetings with interest representatives published in line with the Rules of Procedure, including a meeting on 14 October 2026 with Fairtrade Labelling Organizations International e.V. It also lists meetings on 13 October 2026 with Upphandlingsmyndigheten and on 9 October 2026 with LO Sverige.",
+  "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)",
+  "source_quote": "Transparency\nMeetings with interest representatives published in line with the Rules of Procedure\n- \n        \n        Name Date Interest representatives KUHNKE Alice 14/10/2026 Fairtrade Labelling Organizations International e.V. DIBRANI Adnan 13/10/2026 Upphandlingsmyndigheten DIBRANI Adnan 09/10/2026 LO Sverige",
+  "source_quote_en": null,
+  "source_lang": "en",
+  "stage_change": null,
+  "next_steps": [],
+  "key_dates": [
+   {
+    "date": "2026-09-09",
+    "text": "Legislative proposal published, COM(2026)0590.",
+    "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)"
+   }
+  ],
+  "interpretation": "The listed meetings indicate early engagement from labour, fair-trade and public-buyer organisations; recyclers and brand owners may wish to check whether the proposal's circularity and recycled-content criteria are raised as Parliament takes up the file."
+ },
+ "status": "passed",
+ "review_id": "2026-10-18-002",
+ "issue": null
+}
