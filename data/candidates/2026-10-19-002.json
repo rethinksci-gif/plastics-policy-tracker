@@ -1,0 +1,20 @@
+{
+ "id": "2026-10-19-002",
+ "created": "2026-10-19",
+ "snapshot_id": "2026-10-19/oeil-omnibus-epr-reps-14feda4d53",
+ "source_id": "oeil-omnibus-epr-reps",
+ "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0396(COD)",
+ "source_trust": "official",
+ "title": "Procedure File: 2025/0396(COD) | Legislative Observatory | European Parliament",
+ "triage": {
+  "relevance": 0.9,
+  "dossier_id": "eu-supd",
+  "new_dossier_suggestion": null,
+  "category": "legislative-step",
+  "reason": "The procedure file shows a concrete legislative step in October 2026 on the Omnibus VIII proposal to suspend EPR rules, including those for single-use plastic waste under the SUP Directive."
+ },
+ "draft": null,
+ "status": "discarded",
+ "review_id": null,
+ "issue": null
+}
