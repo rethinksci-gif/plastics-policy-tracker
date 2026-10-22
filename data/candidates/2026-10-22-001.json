@@ -1,0 +1,50 @@
+{
+ "id": "2026-10-22-001",
+ "created": "2026-10-22",
+ "snapshot_id": "2026-10-22/eu-have-your-say-769607ad26",
+ "source_id": "eu-have-your-say",
+ "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19498_en",
+ "source_trust": "official",
+ "title": "EU rules on biobased feedstock in plastic packaging",
+ "triage": {
+  "relevance": 0.85,
+  "dossier_id": "eu-ppwr",
+  "new_dossier_suggestion": null,
+  "category": "consultation",
+  "reason": "The Commission has launched a new public consultation (feedback open 21 October 2026 – 13 January 2027) on forthcoming rules for biobased feedstock in plastic packaging under the EU packaging and packaging waste framework, a concrete new procedural step."
+ },
+ "draft": {
+  "dossier_id": "eu-ppwr",
+  "date": "2026-10-21",
+  "summary": "The European Commission opened a public consultation on EU rules on biobased feedstock in plastic packaging (reference Ares(2026)9620334), with feedback open from 21 October 2026 to 13 January 2027. The initiative is listed as ACTIVE with front-end stage OPC_LAUNCHED and a foreseen act type of PROP_REG.",
+  "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19498_en",
+  "source_quote": "shortTitle: EU rules on biobased feedstock in plastic packaging\nreference: Ares(2026)9620334\nforeseenActType: PROP_REG\ninitiativeStatus: ACTIVE\nfrontEndStage: OPC_LAUNCHED; receivingFeedbackStatus: OPEN; feedbackStartDate: 2026/10/21 15:51:35; feedbackEndDate: 2027/01/13 23:59:59",
+  "source_quote_en": null,
+  "source_lang": "en",
+  "stage_change": null,
+  "next_steps": [
+   {
+    "date": "2027-01-13",
+    "text": "Feedback period on the initiative closes (feedbackEndDate: 2027/01/13 23:59:59).",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19498_en",
+    "status": "expected"
+   }
+  ],
+  "key_dates": [
+   {
+    "date": "2026-10-21",
+    "text": "Feedback period opens (feedbackStartDate: 2026/10/21 15:51:35).",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19498_en"
+   },
+   {
+    "date": "2027-01-13",
+    "text": "Feedback period closes (feedbackEndDate: 2027/01/13 23:59:59).",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19498_en"
+   }
+  ],
+  "interpretation": "Analysis: a future instrument on biobased feedstock requirements could add feedstock-related documentation and verification duties alongside existing recycled-content rules, so converters and brand owners may need to track biobased content claims in packaging. Recyclers could face additional competition or complementarity questions where biobased feedstock is counted towards packaging targets."
+ },
+ "status": "passed",
+ "review_id": "2026-10-22-001",
+ "issue": null
+}
