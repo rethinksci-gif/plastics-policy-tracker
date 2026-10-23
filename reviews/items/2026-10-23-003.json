@@ -1,0 +1,93 @@
+{
+ "review_id": "2026-10-23-003",
+ "candidate_id": "2026-10-23-003",
+ "dossier_id": "uk-pepr",
+ "created": "2026-10-23T10:01:59.696455Z",
+ "impact": "high",
+ "checks": [
+  {
+   "layer": 1,
+   "name": "schema",
+   "passed": true,
+   "severity": "info",
+   "detail": "valid"
+  },
+  {
+   "layer": 1,
+   "name": "trusted-domain",
+   "passed": true,
+   "severity": "info",
+   "detail": "domain trust: official"
+  },
+  {
+   "layer": 1,
+   "name": "url-200",
+   "passed": true,
+   "severity": "info",
+   "detail": "HTTP 200"
+  },
+  {
+   "layer": 1,
+   "name": "event-date",
+   "passed": true,
+   "severity": "info",
+   "detail": "2026-10-22 <= today 2026-10-23"
+  },
+  {
+   "layer": 1,
+   "name": "event-age",
+   "passed": true,
+   "severity": "info",
+   "detail": "event 2026-10-22 is 1 days before detection on 2026-10-23 (limit 60)"
+  },
+  {
+   "layer": 1,
+   "name": "stage-transition",
+   "passed": true,
+   "severity": "info",
+   "detail": "no stage change"
+  },
+  {
+   "layer": 1,
+   "name": "duplicate",
+   "passed": true,
+   "severity": "info",
+   "detail": "no duplicate"
+  },
+  {
+   "layer": 2,
+   "name": "quote-provenance",
+   "passed": true,
+   "severity": "info",
+   "detail": "verbatim quote found in snapshot"
+  }
+ ],
+ "llm_review": {
+  "verdict": "partially_supported",
+  "confidence": 0.92,
+  "checks": {
+   "quote_supports_summary": true,
+   "dates_match": false,
+   "numbers_match": true,
+   "bodies_match": true,
+   "references_match": true,
+   "no_exaggeration": true,
+   "stage_supported": true,
+   "next_steps_supported": false,
+   "translation_faithful": true
+  },
+  "issues": [
+   "The 2027 registration deadline is misstated: the source says small producers must submit their 2027 registration application by 1 October 2026. The 1 April 2027 date applies only if their sole packaging activity is selling filled packaging directly to an end user.",
+   "The key date claiming a 2026-04-01 deadline for the 2026 registration application is not supported; the source says the deadline for 2026 was 1 October 2025.",
+   "The 2027-04-01 key date conflates the correct reporting deadline for January to December 2026 packaging data with a general 2027 registration deadline, which is not 1 April 2027 for all small producers.",
+   "The next-step entry stating that 1 April 2027 is the deadline for small producers to submit their 2027 registration application is unsupported except for the narrow end-user sale exception."
+  ]
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "quarantined",
+ "reasons": [
+  "L3 reviewer: partially_supported (confidence 0.92); The 2027 registration deadline is misstated: the source says small producers must submit their 2027 registration application by 1 October 2026. The 1 April 2027 date applies only if their sole packaging activity is selling filled packaging directly to an end user.; The key date claiming a 2026-04-01 deadline for the 2026 registration application is not supported; the source says the deadline for 2026 was 1 October 2025.; The 2027-04-01 key date conflates the correct reporting deadline for January to December 2026 packaging data with a general 2027 registration deadline, which is not 1 April 2027 for all small producers.; The next-step entry stating that 1 April 2027 is the deadline for small producers to submit their 2027 registration application is unsupported except for the narrow end-user sale exception."
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "id": "2026-10-23-003",
+ "created": "2026-10-23",
+ "snapshot_id": "2026-10-23/govuk-search-b336ea2993",
+ "source_id": "govuk-search",
+ "source_url": "https://www.gov.uk/guidance/epr-for-packaging-what-you-must-do-as-a-small-producer",
+ "source_trust": "official",
+ "title": "EPR for packaging: what you must do as a ‘small producer’ - GOV.UK",
+ "triage": {
+  "relevance": 0.62,
+  "dossier_id": "uk-pepr",
+  "new_dossier_suggestion": null,
+  "category": "guidance",
+  "reason": "Updated GOV.UK guidance for small producers under UK packaging EPR sets out concrete registration fees for the 2027 reporting year (£1,303 direct / £696 via a compliance scheme), the £386 late fee, 1 April 2027 registration deadline and a new Environment Agency regulatory position statement on reporting plastic and paper bags."
+ },
+ "draft": {
+  "dossier_id": "uk-pepr",
+  "date": "2026-10-22",
+  "summary": "Small producers registering for the 2027 reporting year must pay a registration fee of £1,303 if they register directly with their environmental regulator, or £696 if they register through a compliance scheme. Those using a compliance scheme must also pay fees to the scheme for its services.",
+  "source_url": "https://www.gov.uk/guidance/epr-for-packaging-what-you-must-do-as-a-small-producer",
+  "source_quote": "You must register and pay a registration fee each year. For small producers to register for the 2027 reporting year, the fee is:\n- £1,303 if you register directly with your environmental regulator\n- £696 if you register through a compliance scheme\nYou’ll also need to pay fees to the compliance scheme if you choose to use one.",
+  "source_quote_en": null,
+  "source_lang": "en",
+  "stage_change": null,
+  "next_steps": [
+   {
+    "date": "2027-04-01",
+    "text": "Deadline for small producers to submit their registration application for 2027, with all mandatory information provided and the registration fee paid.",
+    "source_url": "https://www.gov.uk/guidance/epr-for-packaging-what-you-must-do-as-a-small-producer",
+    "status": "expected"
+   },
+   {
+    "date": "2027-04-01",
+    "text": "Deadline for small producers to report packaging data for January to December 2026.",
+    "source_url": "https://www.gov.uk/guidance/epr-for-packaging-what-you-must-do-as-a-small-producer",
+    "status": "expected"
+   }
+  ],
+  "key_dates": [
+   {
+    "date": "2026-04-01",
+    "text": "Deadline for small producers to have submitted their registration application for 2026.",
+    "source_url": "https://www.gov.uk/guidance/epr-for-packaging-what-you-must-do-as-a-small-producer"
+   },
+   {
+    "date": "2027-04-01",
+    "text": "Deadline for small producers to have submitted their registration application for 2027, and to report packaging data for January to December 2026.",
+    "source_url": "https://www.gov.uk/guidance/epr-for-packaging-what-you-must-do-as-a-small-producer"
+   }
+  ],
+  "interpretation": "For brand owners and converters that fall under the small producer thresholds, registration cost is limited to the annual fee plus any compliance scheme charge, since the guidance states they do not pay waste disposal fees or buy packaging waste recycling notes. The main practical burden is therefore data collection ahead of the 1 April deadlines rather than a per-tonne waste fee."
+ },
+ "status": "quarantined",
+ "review_id": "2026-10-23-003",
+ "issue": null
+}
