@@ -1,0 +1,50 @@
+{
+ "date": "2026-10-18",
+ "fetch": {
+  "new": [
+   "2026-10-18/eu-have-your-say-6bfc17f0ba",
+   "2026-10-18/oeil-procurement-b3fc762f85"
+  ],
+  "unchanged": 106,
+  "errors": {}
+ },
+ "triage": {
+  "candidates": [
+   "2026-10-18-001",
+   "2026-10-18-002"
+  ],
+  "discarded": [],
+  "new_dossier_suggestions": [],
+  "leads": []
+ },
+ "draft": {
+  "drafted": [
+   "2026-10-18-002"
+  ],
+  "skipped": [
+   {
+    "candidate": "2026-10-18-001",
+    "reason": "The source is the Commission's 'Have your say' initiative page for the revision of EU public procurement rules; it only restates metadata already recorded (initiative ACTIVE, feedback period open from 2026/09/15 to 2026/12/13) and reports no new development or legislative stage change for the dossier."
+   }
+  ]
+ },
+ "review": {
+  "passed": [
+   "2026-10-18-002"
+  ],
+  "quarantined": [],
+  "human_review": [],
+  "issues": []
+ },
+ "summary_review": {
+  "reviewed": 0,
+  "passed": [],
+  "failed": {},
+  "llm_calls": 5
+ },
+ "llm_calls": 5,
+ "llm_usage": {
+  "prompt_tokens": 8151,
+  "completion_tokens": 4570
+ }
+}

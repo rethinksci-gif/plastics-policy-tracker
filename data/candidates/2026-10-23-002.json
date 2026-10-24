@@ -1,0 +1,20 @@
+{
+ "id": "2026-10-23-002",
+ "created": "2026-10-23",
+ "snapshot_id": "2026-10-23/dg-env-news-91ff36e28e",
+ "source_id": "dg-env-news",
+ "source_url": "https://environment.ec.europa.eu/news_en",
+ "source_trust": "official",
+ "title": "News - European Commission",
+ "triage": {
+  "relevance": 0.75,
+  "dossier_id": "eu-ppwr",
+  "new_dossier_suggestion": null,
+  "category": "consultation",
+  "reason": "The Commission opened a consultation on bio-based plastic packaging, a concrete EU plastics/packaging policy development within the last 60 days."
+ },
+ "draft": null,
+ "status": "discarded",
+ "review_id": null,
+ "issue": null
+}

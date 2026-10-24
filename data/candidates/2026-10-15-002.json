@@ -1,0 +1,20 @@
+{
+ "id": "2026-10-15-002",
+ "created": "2026-10-15",
+ "snapshot_id": "2026-10-15/oeil-procurement-d7c48e0e73",
+ "source_id": "oeil-procurement",
+ "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)",
+ "source_trust": "official",
+ "title": "Procedure File: 2026/0265(COD) | Legislative Observatory | European Parliament",
+ "triage": {
+  "relevance": 0.85,
+  "dossier_id": "eu-public-procurement",
+  "new_dossier_suggestion": null,
+  "category": "proposal",
+  "reason": "The European Commission published the legislative proposal COM(2026)0590 for a Public Procurement Regulation on 09/09/2026, a new legislative step within the last 60 days."
+ },
+ "draft": null,
+ "status": "discarded",
+ "review_id": null,
+ "issue": null
+}

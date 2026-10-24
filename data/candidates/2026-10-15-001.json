@@ -1,0 +1,20 @@
+{
+ "id": "2026-10-15-001",
+ "created": "2026-10-15",
+ "snapshot_id": "2026-10-15/eu-have-your-say-747d86ffc9",
+ "source_id": "eu-have-your-say",
+ "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15492_en",
+ "source_trust": "official",
+ "title": "Revision of EU rules on public procurement",
+ "triage": {
+  "relevance": 0.8,
+  "dossier_id": "eu-public-procurement",
+  "new_dossier_suggestion": null,
+  "category": "consultation",
+  "reason": "The Commission opened a feedback period on its proposal to revise EU public procurement rules, a development that can introduce sustainability criteria relevant to plastics procurement."
+ },
+ "draft": null,
+ "status": "discarded",
+ "review_id": null,
+ "issue": null
+}

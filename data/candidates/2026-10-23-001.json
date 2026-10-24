@@ -1,0 +1,20 @@
+{
+ "id": "2026-10-23-001",
+ "created": "2026-10-23",
+ "snapshot_id": "2026-10-23/eu-have-your-say-317529c2a1",
+ "source_id": "eu-have-your-say",
+ "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15492_en",
+ "source_trust": "official",
+ "title": "Revision of EU rules on public procurement",
+ "triage": {
+  "relevance": 0.6,
+  "dossier_id": "eu-public-procurement",
+  "new_dossier_suggestion": null,
+  "category": "consultation",
+  "reason": "The Commission's roadmap/feedback consultation on the revision of EU public procurement rules opened on 15 September 2026 (running to 18 December 2026), a live procedural step in an instrument tracked for its plastics/procurement provisions."
+ },
+ "draft": null,
+ "status": "discarded",
+ "review_id": null,
+ "issue": null
+}
