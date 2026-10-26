@@ -1,0 +1,45 @@
+{
+ "id": "2026-10-26-001",
+ "created": "2026-10-26",
+ "snapshot_id": "2026-10-26/oeil-iaa-847f7998c2",
+ "source_id": "oeil-iaa",
+ "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0068(COD)",
+ "source_trust": "official",
+ "title": "Procedure File: 2026/0068(COD) | Legislative Observatory | European Parliament",
+ "triage": {
+  "relevance": 0.7,
+  "dossier_id": "eu-iaa",
+  "new_dossier_suggestion": null,
+  "category": "legislative-step",
+  "reason": "The procedure file shows recent parliamentary activity on the Industrial Accelerator Act (committee amendments tabled 13 and 19 October 2026 and an ENVI committee opinion of 22 October 2026), a concrete legislative step within the last 60 days."
+ },
+ "draft": {
+  "dossier_id": "eu-iaa",
+  "date": "2026-10-22",
+  "summary": "Amendments to the committee draft report on the Industrial Accelerator Act proposal (2026/0068(COD)) were tabled in committee on 19 October 2026 (PE796.455). A committee opinion from ENVI (PE789.106) on the proposal is recorded with the date 22 October 2026.",
+  "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0068(COD)",
+  "source_quote": "Amendments tabled in committee PE796.455 19/10/2026 Committee opinion ENVI PE789.106 22/10/2026",
+  "source_quote_en": null,
+  "source_lang": "en",
+  "stage_change": null,
+  "next_steps": [
+   {
+    "date": "2026-12-14",
+    "text": "Indicative plenary sitting date, 1st reading",
+    "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0068(COD)",
+    "status": "expected"
+   }
+  ],
+  "key_dates": [
+   {
+    "date": "2026-12-14",
+    "text": "Indicative plenary sitting date, 1st reading",
+    "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0068(COD)"
+   }
+  ],
+  "interpretation": "The file is still at committee stage, with amendments being tabled and an indicative first-reading plenary date set for 14 December 2026. Plastics appears among the subject classifications, but these committee documents give no detail on provisions affecting converters or recyclers."
+ },
+ "status": "passed",
+ "review_id": "2026-10-26-001",
+ "issue": null
+}
