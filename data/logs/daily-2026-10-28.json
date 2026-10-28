@@ -1,0 +1,107 @@
+{
+ "date": "2026-10-28",
+ "fetch": {
+  "new": [
+   "2026-10-28/eu-have-your-say-0e2f246c64",
+   "2026-10-28/eu-have-your-say-1fbf0b9c07",
+   "2026-10-28/oeil-procurement-36a7f67299",
+   "2026-10-28/dg-env-news-7bb6c100c7",
+   "2026-10-28/efsa-e8576a4526",
+   "2026-10-28/efsa-8e0f0e0ee2",
+   "2026-10-28/cn-ndrc-notices-e4596a2244",
+   "2026-10-28/cn-mee-d5c6fee3df"
+  ],
+  "unchanged": 102,
+  "errors": {}
+ },
+ "triage": {
+  "candidates": [
+   "2026-10-28-001",
+   "2026-10-28-002",
+   "2026-10-28-003"
+  ],
+  "discarded": [
+   {
+    "snapshot": "2026-10-28/eu-have-your-say-0e2f246c64",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/1891_en",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "This is a closed 2019 feedback window on the RoHS Directive evaluation, an old and unchanged item that predates the 60-day window and concerns hazardous substances in electrical/electronic equipment rather than plastics."
+   },
+   {
+    "snapshot": "2026-10-28/efsa-e8576a4526",
+    "url": "https://efsa.onlinelibrary.wiley.com/doi/10.2903/j.efsa.2026.10387",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is an EFSA peer review of the pesticide active substance calcium carbide under Regulation (EC) No 396/2005, which is unrelated to plastics, packaging, waste, recycling, microplastics or chemicals in plastics."
+   },
+   {
+    "snapshot": "2026-10-28/efsa-8e0f0e0ee2",
+    "url": "https://www.efsa.europa.eu/en/call/call-expressions-interest-join-efsas-stakeholder-community-applications-food-and-feed-products",
+    "relevance": 0.2,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "EFSA call for expressions of interest to join a stakeholder community on IUCLID transition for plastic food contact material applications; it is an administrative stakeholder engagement notice, not a new plastics law or regulatory development."
+   },
+   {
+    "snapshot": "2026-10-28/cn-ndrc-notices-e4596a2244",
+    "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The document is a general index of NDRC notices covering energy, pricing, elderly care, and regional development, with no plastics, packaging, waste, recycling, microplastics, or plastics-related chemicals development."
+   },
+   {
+    "snapshot": "2026-10-28/cn-mee-d5c6fee3df",
+    "url": "https://www.mee.gov.cn/zcwj/",
+    "relevance": 0.05,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a general index page of Chinese Ministry of Ecology and Environment policy documents with no item addressing plastics, packaging, recycling or microplastics developments within the last 60 days."
+   }
+  ],
+  "new_dossier_suggestions": [],
+  "leads": []
+ },
+ "draft": {
+  "drafted": [
+   "2026-10-28-003"
+  ],
+  "skipped": [
+   {
+    "candidate": "2026-10-28-001",
+    "reason": "The source is the Commission's 'Have Your Say' initiative page for the revision of EU public procurement rules (reference Ares(2025)9170767, foreseenActType PROP_REG, initiativeStatus ACTIVE, frontEndStage ADOPTION_WORKFLOW). It does not report a new development for this dossier: it restates the public feedback period already recorded on 2026-09-15 (feedbackStartDate 2026/09/15), with only the closing date differing (feedbackEndDate 2026/12/23 rather than 9 December 2026) and no date given in the source for any such change; the page carries no publication date and shows no new legislative step for the instrument as a whole, the proposal (COM(2026) 590) stage already being recorded."
+   },
+   {
+    "candidate": "2026-10-28-002",
+    "reason": "The procedure file (2026/0265(COD)) contains no development beyond what is already recorded: it lists the legislative proposal COM(2026)0590 of 09/09/2026 and the status 'Preparatory phase in Parliament', with the committee referral still pending \u2014 both already captured in the 2026-09-09 and 2026-10 updates. The only other dated items are transparency entries for meetings with interest representatives (latest 27/10/2026), which are not legislative developments of this dossier and would not support a stage change."
+   }
+  ]
+ },
+ "review": {
+  "passed": [
+   "2026-10-28-003"
+  ],
+  "quarantined": [],
+  "human_review": [],
+  "issues": []
+ },
+ "summary_review": {
+  "reviewed": 0,
+  "passed": [],
+  "failed": {},
+  "llm_calls": 13
+ },
+ "llm_calls": 13,
+ "llm_usage": {
+  "prompt_tokens": 27814,
+  "completion_tokens": 10499
+ }
+}
