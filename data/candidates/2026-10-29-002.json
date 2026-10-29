@@ -1,0 +1,38 @@
+{
+ "id": "2026-10-29-002",
+ "created": "2026-10-29",
+ "snapshot_id": "2026-10-29/govuk-search-c3f056f22b",
+ "source_id": "govuk-search",
+ "source_url": "https://www.gov.uk/guidance/waste-disposal-fees-for-large-producers-under-epr-for-packaging",
+ "source_trust": "official",
+ "title": "Waste disposal fees for large producers under EPR for packaging - GOV.UK",
+ "triage": {
+  "relevance": 0.85,
+  "dossier_id": "uk-pepr",
+  "new_dossier_suggestion": null,
+  "category": "guidance",
+  "reason": "Newly published GOV.UK guidance (28 Oct 2026) detailing how packaging waste disposal fees, including recyclability-modulated fees from 2026 data, are calculated, invoiced and paid by large producers under UK packaging EPR."
+ },
+ "draft": {
+  "dossier_id": "uk-pepr",
+  "date": "2026-10-28",
+  "summary": "GOV.UK published guidance on waste disposal fees for large producers under extended producer responsibility for packaging. It states that from 2026 data onwards the fee for each packaging material is adjusted, or modulated, according to how recyclable it is under the recyclability assessment methodology (RAM).",
+  "source_url": "https://www.gov.uk/guidance/waste-disposal-fees-for-large-producers-under-epr-for-packaging",
+  "source_quote": "For 2026 data onwards, the fee for each packaging material is adjusted (referred to as ‘modulated’) based on how recyclable it is, in line with the recyclability assessment methodology (RAM):",
+  "source_quote_en": null,
+  "source_lang": "en",
+  "stage_change": null,
+  "next_steps": [],
+  "key_dates": [
+   {
+    "date": "2026-04-01",
+    "text": "Start of the assessment year that runs from 1 April 2026 to 31 March 2027, for which PackUK published illustrative fees in December 2025.",
+    "source_url": "https://www.gov.uk/guidance/waste-disposal-fees-for-large-producers-under-epr-for-packaging"
+   }
+  ],
+  "interpretation": "Because fee modulation applies to 2026 packaging data, brand owners and converters face different per-tonne disposal costs depending on how their materials are rated under the recyclability assessment methodology, so packaging design choices now feed directly into EPR fee levels."
+ },
+ "status": "quarantined",
+ "review_id": "2026-10-29-002",
+ "issue": null
+}
