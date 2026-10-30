@@ -1,0 +1,118 @@
+{
+ "date": "2026-10-19",
+ "fetch": {
+  "new": [
+   "2026-10-19/eu-have-your-say-16e8349980",
+   "2026-10-19/eu-have-your-say-96b50ee757",
+   "2026-10-19/oeil-omnibus-epr-reps-14feda4d53",
+   "2026-10-19/oeil-iaa-463f8feee8",
+   "2026-10-19/dg-env-news-8b4fe6d552",
+   "2026-10-19/dg-env-circular-036c8cd953",
+   "2026-10-19/nl-verpact-f173446182",
+   "2026-10-19/cn-mee-f955950c38"
+  ],
+  "unchanged": 117,
+  "errors": {
+   "us-me-dep": "HTTPStatusError: HTTP 403 (empty=False)"
+  }
+ },
+ "triage": {
+  "candidates": [
+   "2026-10-19-001",
+   "2026-10-19-002",
+   "2026-10-19-003"
+  ],
+  "discarded": [
+   {
+    "snapshot": "2026-10-19/eu-have-your-say-96b50ee757",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15492_en",
+    "relevance": 0.45,
+    "dossier_id": "eu-public-procurement",
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "The Commission's 'Have Your Say' page shows a newly opened public feedback window (15 Sep \u2013 14 Dec 2026) on the revision of the EU public procurement rules, a concrete consultation step on an instrument the tracker already follows, though the text itself makes no plastics-specific commitments."
+   },
+   {
+    "snapshot": "2026-10-19/oeil-iaa-463f8feee8",
+    "url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0068(COD)",
+    "relevance": 0.2,
+    "dossier_id": "eu-iaa",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "Procedure file shows proposal published 04/03/2026 and committee referral 30/04/2026, with no new legislative step or change within the last 60 days; status remains 'Awaiting committee decision'."
+   },
+   {
+    "snapshot": "2026-10-19/dg-env-news-8b4fe6d552",
+    "url": "https://environment.ec.europa.eu/news_en",
+    "relevance": 0.05,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a generic DG Environment news index page whose listed items concern fertilisers, water, biodiversity, bioeconomy research, e-waste and Ecolabel, with no new concrete plastics law, regulation or tax development."
+   },
+   {
+    "snapshot": "2026-10-19/dg-env-circular-036c8cd953",
+    "url": "https://environment.ec.europa.eu/strategy/circular-economy_en",
+    "relevance": 0.2,
+    "dossier_id": "eu-cea",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is an unchanged overview page restating the Circular Economy Act's 2026 adoption timetable and the August 2025 consultation; it reports no new concrete development in the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-19/cn-mee-f955950c38",
+    "url": "https://www.mee.gov.cn/zcwj/",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The document is a general index of Chinese Ministry of Ecology and Environment policy documents and contains no new plastics-specific law, regulation, standard, tax, EPR scheme or treaty development in the last 60 days."
+   }
+  ],
+  "new_dossier_suggestions": [],
+  "leads": []
+ },
+ "draft": {
+  "drafted": [
+   "2026-10-19-001"
+  ],
+  "skipped": [
+   {
+    "candidate": "2026-10-19-002",
+    "reason": "The source is the procedure file for 2025/0396(COD), a separate proposed directive suspending extended producer responsibility rules for waste, WEEE and single-use plastic waste. It does not report a development of Directive (EU) 2019/904 itself or of its implementing-acts stage."
+   },
+   {
+    "candidate": "2026-10-19-003",
+    "reason": "The homepage mentions 2027 tariffs and Fee Modulation Plastic 2.0, but it gives no event date (only the year 2027) and no dated development for this dossier can be sourced."
+   }
+  ]
+ },
+ "review": {
+  "passed": [],
+  "quarantined": [
+   {
+    "candidate": "2026-10-19-001",
+    "dossier": "eu-ppwr",
+    "impact": "high",
+    "reasons": [
+     "L3 reviewer: partially_supported (confidence 0.88); The interpretation introduces 'recycled-content rules' as a related compliance layer, but the source does not mention recycled-content rules or any relationship to them.; The interpretation asserts that the initiative 'would add a further compliance layer' and affect brand owners/converters; this is speculative and goes beyond what the source states."
+    ]
+   }
+  ],
+  "human_review": [],
+  "issues": [
+   "https://github.com/rethinksci-gif/plastics-policy-tracker/issues/6"
+  ]
+ },
+ "summary_review": {
+  "reviewed": 0,
+  "passed": [],
+  "failed": {},
+  "llm_calls": 12
+ },
+ "llm_calls": 12,
+ "llm_usage": {
+  "prompt_tokens": 27563,
+  "completion_tokens": 10782
+ }
+}

@@ -1,0 +1,101 @@
+{
+ "date": "2026-10-21",
+ "fetch": {
+  "new": [
+   "2026-10-21/eu-have-your-say-e0f6fa6541",
+   "2026-10-21/oeil-omnibus-epr-reps-28b80c7a04",
+   "2026-10-21/oeil-procurement-80d2715c47",
+   "2026-10-21/efsa-99f0775a50",
+   "2026-10-21/unep-inc-f52fda9bd0",
+   "2026-10-21/cn-mee-202b99674e"
+  ],
+  "unchanged": 101,
+  "errors": {}
+ },
+ "triage": {
+  "candidates": [
+   "2026-10-21-001",
+   "2026-10-21-002"
+  ],
+  "discarded": [
+   {
+    "snapshot": "2026-10-21/oeil-omnibus-epr-reps-28b80c7a04",
+    "url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0396(COD)",
+    "relevance": 0.85,
+    "dossier_id": null,
+    "new_dossier_suggestion": "EU \u2014 Omnibus VIII on environmental legislation: Directive suspending the application of extended producer responsibility rules on authorised representatives for waste, WEEE and single-use plastic waste (procedure 2025/0396(COD), COM(2025)0983)",
+    "category": "legislative-step",
+    "reason": "The procedure file shows the committee report was tabled on 09/10/2026 and Parliament voted on its first-reading position on 20/10/2026 on a directive suspending EPR authorised-representative rules for waste, WEEE and SUP waste, a concrete legislative step within the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-21/efsa-99f0775a50",
+    "url": "https://efsa.onlinelibrary.wiley.com/doi/10.2903/j.efsa.2026.10384",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "EFSA opinion on a spinach-extract satiety health claim under Regulation (EC) 1924/2006, unrelated to plastics, packaging, waste or plastics chemicals."
+   },
+   {
+    "snapshot": "2026-10-21/unep-inc-f52fda9bd0",
+    "url": "https://www.unep.org/inc-plastic-pollution",
+    "relevance": 0.2,
+    "dossier_id": "global-plastics-treaty",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a background/status page for the global plastics treaty with no concrete development in the last 60 days; the most recent listed item is the INC Chair's fourth letter of 29 July 2026, outside the window."
+   },
+   {
+    "snapshot": "2026-10-21/cn-mee-202b99674e",
+    "url": "https://www.mee.gov.cn/zcwj/",
+    "relevance": 0.05,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a generic index page of Chinese Ministry of Ecology and Environment policy documents with no plastics, packaging, recycling or microplastics item and no concrete new development in the 60-day window."
+   }
+  ],
+  "new_dossier_suggestions": [
+   {
+    "snapshot": "2026-10-21/oeil-omnibus-epr-reps-28b80c7a04",
+    "url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0396(COD)",
+    "relevance": 0.85,
+    "dossier_id": null,
+    "new_dossier_suggestion": "EU \u2014 Omnibus VIII on environmental legislation: Directive suspending the application of extended producer responsibility rules on authorised representatives for waste, WEEE and single-use plastic waste (procedure 2025/0396(COD), COM(2025)0983)",
+    "category": "legislative-step",
+    "reason": "The procedure file shows the committee report was tabled on 09/10/2026 and Parliament voted on its first-reading position on 20/10/2026 on a directive suspending EPR authorised-representative rules for waste, WEEE and SUP waste, a concrete legislative step within the last 60 days."
+   }
+  ],
+  "leads": []
+ },
+ "draft": {
+  "drafted": [],
+  "skipped": [
+   {
+    "candidate": "2026-10-21-001",
+    "reason": "The source is the Commission's 'Have your say' landing page for the revision of EU public procurement rules (reference Ares(2025)9170767, initiativeStatus ACTIVE, frontEndStage ADOPTION_WORKFLOW). It shows only that the feedback window is open (feedbackStartDate 2026/09/15, feedbackEndDate 2026/12/16) and gives background on the announced revision of the procurement directives; it reports no new event, date or legislative step beyond those already recorded (proposal COM(2026) 590 on 2026-09-09; feedback period opened 2026-09-15; Parliament preparatory phase in October 2026). Note the page's stated closing date of 2026-12-16 differs from the previously recorded 9 December 2026, but the document announces nothing new for the dossier, so no entry is drafted."
+   },
+   {
+    "candidate": "2026-10-21-002",
+    "reason": "The procedure file restates material already recorded: the legislative proposal COM(2026)0590 published on 09/09/2026 and the status 'Preparatory phase in Parliament' with the committee referral still pending. The only additional content is a transparency list of meetings held by MEPs with interest representatives (most recent 14/10/2026), which is not a legislative development of the dossier and reports no new stage, date or decision."
+   }
+  ]
+ },
+ "review": {
+  "passed": [],
+  "quarantined": [],
+  "human_review": [],
+  "issues": []
+ },
+ "summary_review": {
+  "reviewed": 0,
+  "passed": [],
+  "failed": {},
+  "llm_calls": 8
+ },
+ "llm_calls": 8,
+ "llm_usage": {
+  "prompt_tokens": 17005,
+  "completion_tokens": 4608
+ }
+}

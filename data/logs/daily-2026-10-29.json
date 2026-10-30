@@ -1,0 +1,138 @@
+{
+ "date": "2026-10-29",
+ "fetch": {
+  "new": [
+   "2026-10-29/eu-cellar-deafbd81f3",
+   "2026-10-29/eu-have-your-say-7373fc0a55",
+   "2026-10-29/efsa-626d138b69",
+   "2026-10-29/govuk-search-65009cd2e1",
+   "2026-10-29/govuk-search-def32ddf56",
+   "2026-10-29/govuk-search-8b1e95ba35",
+   "2026-10-29/govuk-search-56bc88ef43",
+   "2026-10-29/govuk-search-c3f056f22b",
+   "2026-10-29/cn-mee-30b6d8f0b4"
+  ],
+  "unchanged": 107,
+  "errors": {}
+ },
+ "triage": {
+  "candidates": [
+   "2026-10-29-001",
+   "2026-10-29-002"
+  ],
+  "discarded": [
+   {
+    "snapshot": "2026-10-29/eu-cellar-deafbd81f3",
+    "url": "https://publications.europa.eu/resource/celex/32026R2412",
+    "relevance": 0.9,
+    "dossier_id": null,
+    "new_dossier_suggestion": "EU \u2014 Plastic Food Contact Materials Regulation (EU) No 10/2011: Union list of authorised substances (Annex I), amended by Commission Regulation (EU) 2026/2412",
+    "category": "publication",
+    "reason": "Commission Regulation (EU) 2026/2412, published in the Official Journal on 29 October 2026, amends Annex I to Regulation (EU) No 10/2011 to authorise four new substances (FCM Nos 1086, 1087, 1088, 1090) with use restrictions and enters into force 20 days after publication."
+   },
+   {
+    "snapshot": "2026-10-29/eu-have-your-say-7373fc0a55",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15492_en",
+    "relevance": 0.3,
+    "dossier_id": "eu-public-procurement",
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "The Commission has opened feedback (15 Sep \u2013 24 Dec 2026) on the planned revision of the EU public procurement directives, a new consultation step, but the document makes no reference to plastics, packaging or waste and only touches the tracker's procurement dossier generically."
+   },
+   {
+    "snapshot": "2026-10-29/efsa-626d138b69",
+    "url": "https://efsa.onlinelibrary.wiley.com/doi/10.2903/j.efsa.2026.10394",
+    "relevance": 0.5,
+    "dossier_id": "eu-food-contact-recycled-plastics",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "EFSA published a new safety assessment of the EREMA_VACUREMA MPR PET recycling process (RECYC342), a concrete step in the EU authorisation procedure for recycling processes under Regulation (EU) 2022/1616, though it is a scientific opinion rather than a legal act."
+   },
+   {
+    "snapshot": "2026-10-29/govuk-search-65009cd2e1",
+    "url": "https://www.gov.uk/government/publications/plastic-packaging-tax-evaluation",
+    "relevance": 0.3,
+    "dossier_id": "uk-plastic-packaging-tax",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is HMRC's retrospective evaluation report on the Plastic Packaging Tax, which restates the existing tax design rather than announcing any new proposal, adoption, rate change or legal amendment."
+   },
+   {
+    "snapshot": "2026-10-29/govuk-search-8b1e95ba35",
+    "url": "https://www.gov.uk/government/publications/plastic-packaging-tax-research",
+    "relevance": 0.15,
+    "dossier_id": "uk-plastic-packaging-tax",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "Publication of HMRC-commissioned research reports on businesses' experiences of the Plastic Packaging Tax is evaluation evidence only, not a new legal, tax-rate or administrative change."
+   },
+   {
+    "snapshot": "2026-10-29/govuk-search-56bc88ef43",
+    "url": "https://www.gov.uk/guidance/how-to-comply-with-packaging-recycling-obligations-as-a-large-producer",
+    "relevance": 0.25,
+    "dossier_id": "uk-pepr",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a routine GOV.UK guidance page restating the existing UK packaging EPR recycling obligations, PRN/PERN rules and unchanged 2025-2027 targets and 31 January deadlines, without reporting any new proposal, adoption, fee change or other concrete development."
+   },
+   {
+    "snapshot": "2026-10-29/cn-mee-30b6d8f0b4",
+    "url": "https://www.mee.gov.cn/zcwj/",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The page is a general index of Chinese environmental policy documents with no new concrete plastics, packaging, waste, recycling, microplastics or chemicals-in-plastics development in the last 60 days."
+   }
+  ],
+  "new_dossier_suggestions": [
+   {
+    "snapshot": "2026-10-29/eu-cellar-deafbd81f3",
+    "url": "https://publications.europa.eu/resource/celex/32026R2412",
+    "relevance": 0.9,
+    "dossier_id": null,
+    "new_dossier_suggestion": "EU \u2014 Plastic Food Contact Materials Regulation (EU) No 10/2011: Union list of authorised substances (Annex I), amended by Commission Regulation (EU) 2026/2412",
+    "category": "publication",
+    "reason": "Commission Regulation (EU) 2026/2412, published in the Official Journal on 29 October 2026, amends Annex I to Regulation (EU) No 10/2011 to authorise four new substances (FCM Nos 1086, 1087, 1088, 1090) with use restrictions and enters into force 20 days after publication."
+   }
+  ],
+  "leads": []
+ },
+ "draft": {
+  "drafted": [
+   "2026-10-29-001",
+   "2026-10-29-002"
+  ],
+  "skipped": []
+ },
+ "review": {
+  "passed": [
+   "2026-10-29-001"
+  ],
+  "quarantined": [
+   {
+    "candidate": "2026-10-29-002",
+    "dossier": "uk-pepr",
+    "impact": "high",
+    "reasons": [
+     "L3 high-impact confirmation: partially_supported (confidence 0.85); The interpretation states that 'brand owners and converters' face different per-tonne disposal costs, but the source only refers to 'large producers' generally and does not specify brand owners or converters. This adds an unsupported factual detail about affected parties."
+    ]
+   }
+  ],
+  "human_review": [],
+  "issues": [
+   "https://github.com/rethinksci-gif/plastics-policy-tracker/issues/9"
+  ]
+ },
+ "summary_review": {
+  "reviewed": 0,
+  "passed": [],
+  "failed": {},
+  "llm_calls": 15
+ },
+ "llm_calls": 15,
+ "llm_usage": {
+  "prompt_tokens": 38740,
+  "completion_tokens": 15532
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "date": "2026-10-25",
+ "fetch": {
+  "new": [
+   "2026-10-25/eu-have-your-say-8284ad52cf",
+   "2026-10-25/oeil-procurement-5eb061f19d"
+  ],
+  "unchanged": 106,
+  "errors": {}
+ },
+ "triage": {
+  "candidates": [
+   "2026-10-25-001"
+  ],
+  "discarded": [
+   {
+    "snapshot": "2026-10-25/eu-have-your-say-8284ad52cf",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15492_en",
+    "relevance": 0.5,
+    "dossier_id": "eu-public-procurement",
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "The Commission's Have Your Say page shows an active feedback window (15 Sep \u2013 20 Dec 2026) on the revision of EU public procurement rules, a concrete consultation step within the last 60 days, though the excerpt does not itself mention plastics or recycled-content criteria."
+   }
+  ],
+  "new_dossier_suggestions": [],
+  "leads": []
+ },
+ "draft": {
+  "drafted": [],
+  "skipped": [
+   {
+    "candidate": "2026-10-25-001",
+    "reason": "The procedure file shows no new legislative development beyond the already recorded 2026-09-09 proposal publication and the pending committee referral; the transparency meetings listed are not a development of the dossier."
+   }
+  ]
+ },
+ "review": {
+  "passed": [],
+  "quarantined": [],
+  "human_review": [],
+  "issues": []
+ },
+ "summary_review": {
+  "reviewed": 0,
+  "passed": [],
+  "failed": {},
+  "llm_calls": 3
+ },
+ "llm_calls": 3,
+ "llm_usage": {
+  "prompt_tokens": 5291,
+  "completion_tokens": 1292
+ }
+}

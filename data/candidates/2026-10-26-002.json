@@ -1,0 +1,20 @@
+{
+ "id": "2026-10-26-002",
+ "created": "2026-10-26",
+ "snapshot_id": "2026-10-26/council-press-19d8e13fbb",
+ "source_id": "council-press",
+ "source_url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/21/simplification-council-agrees-negotiating-stance-to-cut-red-tape-for-small-packaging-producers/",
+ "source_trust": "official",
+ "title": "Simplification: Council agrees negotiating stance to cut red tape for small packaging producers",
+ "triage": {
+  "relevance": 0.85,
+  "dossier_id": "eu-ppwr",
+  "new_dossier_suggestion": null,
+  "category": "legislative-step",
+  "reason": "The Council on 21 October 2026 adopted its negotiating position on a proposal for a regulation suspending extended producer responsibility obligations for small packaging producers, a concrete legislative step amending the EU packaging EPR framework under the PPWR."
+ },
+ "draft": null,
+ "status": "discarded",
+ "review_id": null,
+ "issue": null
+}

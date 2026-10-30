@@ -1,0 +1,141 @@
+{
+ "date": "2026-10-22",
+ "fetch": {
+  "new": [
+   "2026-10-22/eu-have-your-say-769607ad26",
+   "2026-10-22/eu-have-your-say-60c030d505",
+   "2026-10-22/oeil-omnibus-epr-reps-f80066d9be",
+   "2026-10-22/council-press-2e2f816f62",
+   "2026-10-22/dg-env-news-1997452d2f",
+   "2026-10-22/dg-env-ppwr-implementation-1e4d6ff234",
+   "2026-10-22/unep-inc-77674319a1",
+   "2026-10-22/govuk-search-1d6cb4e173",
+   "2026-10-22/govuk-search-7deac6e42d",
+   "2026-10-22/cn-mee-a59ab00515"
+  ],
+  "unchanged": 99,
+  "errors": {}
+ },
+ "triage": {
+  "candidates": [
+   "2026-10-22-001",
+   "2026-10-22-002",
+   "2026-10-22-003",
+   "2026-10-22-004"
+  ],
+  "discarded": [
+   {
+    "snapshot": "2026-10-22/oeil-omnibus-epr-reps-f80066d9be",
+    "url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0396(COD)",
+    "relevance": 0.85,
+    "dossier_id": null,
+    "new_dossier_suggestion": "EU Omnibus VIII on environmental legislation \u2014 Directive suspending extended producer responsibility authorised-representative rules for waste, WEEE and single-use plastics (procedure 2025/0396(COD))",
+    "category": "legislative-step",
+    "reason": "The European Parliament adopted its first-reading position on 20 October 2026 on the Commission's proposal to suspend EPR authorised-representative rules for waste, WEEE and single-use plastics, and referred the matter back to committee for interinstitutional negotiations \u2014 a concrete legislative step within the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-22/dg-env-ppwr-implementation-1e4d6ff234",
+    "url": "https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en",
+    "relevance": 0.3,
+    "dossier_id": "eu-ppwr",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The page is a general PPWR implementation resources and timeline page, mostly summarising older or ongoing measures rather than reporting a new concrete development within the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-22/unep-inc-77674319a1",
+    "url": "https://www.unep.org/inc-plastic-pollution",
+    "relevance": 0.2,
+    "dossier_id": "global-plastics-treaty",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is an unchanged UNEP INC landing page listing background documents and chair letters, the most recent dated 29 July 2026, with no new proposal, negotiation outcome or timetable change reported."
+   },
+   {
+    "snapshot": "2026-10-22/govuk-search-1d6cb4e173",
+    "url": "https://www.gov.uk/guidance/epr-for-packaging-what-you-must-do-as-a-small-producer",
+    "relevance": 0.4,
+    "dossier_id": "uk-pepr",
+    "new_dossier_suggestion": null,
+    "category": "guidance",
+    "reason": "Updated GOV.UK guidance page restating how 'small producers' register and report under UK packaging EPR, listing the 2027 registration fees (\u00a31,303 direct / \u00a3696 via a scheme) and the 1 October 2026 registration deadline, but it presents these as consolidated existing requirements rather than announcing a new legal change."
+   },
+   {
+    "snapshot": "2026-10-22/govuk-search-7deac6e42d",
+    "url": "https://www.gov.uk/government/publications/packaging-waste-data-reported-by-reprocessors-and-exporters",
+    "relevance": 0.2,
+    "dossier_id": "uk-pepr",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a routine monthly release of aggregated packaging waste data reported by accredited reprocessors and exporters under UK packaging EPR, providing statistics and market transparency rather than any new legal, regulatory or fee change."
+   },
+   {
+    "snapshot": "2026-10-22/cn-mee-a59ab00515",
+    "url": "https://www.mee.gov.cn/zcwj/",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The document is a generic index of Chinese Ministry of Ecology and Environment policy documents with no new plastics-specific law, regulation, or standard published within the last 60 days."
+   }
+  ],
+  "new_dossier_suggestions": [
+   {
+    "snapshot": "2026-10-22/oeil-omnibus-epr-reps-f80066d9be",
+    "url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0396(COD)",
+    "relevance": 0.85,
+    "dossier_id": null,
+    "new_dossier_suggestion": "EU Omnibus VIII on environmental legislation \u2014 Directive suspending extended producer responsibility authorised-representative rules for waste, WEEE and single-use plastics (procedure 2025/0396(COD))",
+    "category": "legislative-step",
+    "reason": "The European Parliament adopted its first-reading position on 20 October 2026 on the Commission's proposal to suspend EPR authorised-representative rules for waste, WEEE and single-use plastics, and referred the matter back to committee for interinstitutional negotiations \u2014 a concrete legislative step within the last 60 days."
+   }
+  ],
+  "leads": []
+ },
+ "draft": {
+  "drafted": [
+   "2026-10-22-001",
+   "2026-10-22-003"
+  ],
+  "skipped": [
+   {
+    "candidate": "2026-10-22-002",
+    "reason": "The source is the standing Commission 'have your say' initiative page for the revision of EU public procurement rules (reference Ares(2025)9170767). It only sets out the background rationale from the 2024\u20132029 Political Guidelines and repeats the feedback window already recorded (open 15 September 2026, with an end date of 17 December 2026 in the page metadata). It reports no new event, decision or legislative step for the dossier beyond what is already recorded, so there is no dated development to enter and no basis for a stage change from 'proposal'."
+   },
+   {
+    "candidate": "2026-10-22-004",
+    "reason": "The source reports a consultation on bio-based plastic packaging but does not mention the Packaging and Packaging Waste Regulation (PPWR), Regulation (EU) 2025/40, or otherwise identify this as a development of the eu-ppwr dossier."
+   }
+  ]
+ },
+ "review": {
+  "passed": [
+   "2026-10-22-001"
+  ],
+  "quarantined": [
+   {
+    "candidate": "2026-10-22-003",
+    "dossier": "eu-ppwr",
+    "impact": "high",
+    "reasons": [
+     "L1 url-200: HTTP 403"
+    ]
+   }
+  ],
+  "human_review": [],
+  "issues": [
+   "https://github.com/rethinksci-gif/plastics-policy-tracker/issues/7"
+  ]
+ },
+ "summary_review": {
+  "reviewed": 0,
+  "passed": [],
+  "failed": {},
+  "llm_calls": 16
+ },
+ "llm_calls": 16,
+ "llm_usage": {
+  "prompt_tokens": 34035,
+  "completion_tokens": 12881
+ }
+}

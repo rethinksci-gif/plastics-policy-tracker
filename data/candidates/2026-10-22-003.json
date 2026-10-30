@@ -1,0 +1,32 @@
+{
+ "id": "2026-10-22-003",
+ "created": "2026-10-22",
+ "snapshot_id": "2026-10-22/council-press-2e2f816f62",
+ "source_id": "council-press",
+ "source_url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/21/simplification-council-agrees-negotiating-stance-to-cut-red-tape-for-small-packaging-producers/",
+ "source_trust": "official",
+ "title": "Simplification: Council agrees negotiating stance to cut red tape for small packaging producers",
+ "triage": {
+  "relevance": 0.85,
+  "dossier_id": "eu-ppwr",
+  "new_dossier_suggestion": null,
+  "category": "legislative-step",
+  "reason": "The Council adopted its negotiating position on a proposal for a regulation suspending extended producer responsibility obligations for small packaging producers, a concrete legislative step amending the EU packaging EPR framework."
+ },
+ "draft": {
+  "dossier_id": "eu-ppwr",
+  "date": "2026-10-21",
+  "summary": "The Council agreed a negotiating position on a proposal for a regulation suspending extended producer responsibility. The stated aim is to cut red tape for small packaging producers.",
+  "source_url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/21/simplification-council-agrees-negotiating-stance-to-cut-red-tape-for-small-packaging-producers/",
+  "source_quote": "Simplification: Council agrees negotiating stance to cut red tape for small packaging producers\nCouncil agrees negotiating position on proposal for a regulation suspending extended producer responsibility.",
+  "source_quote_en": null,
+  "source_lang": "en",
+  "stage_change": null,
+  "next_steps": [],
+  "key_dates": [],
+  "interpretation": "If a suspension of extended producer responsibility for small producers is carried into law, smaller converters and brand owners could face lighter registration and fee obligations, while the financing burden for packaging collection and recycling may shift towards larger obligated companies; the source gives no detail on scope or duration."
+ },
+ "status": "quarantined",
+ "review_id": "2026-10-22-003",
+ "issue": null
+}

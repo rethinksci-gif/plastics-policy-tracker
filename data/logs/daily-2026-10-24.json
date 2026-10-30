@@ -1,0 +1,84 @@
+{
+ "date": "2026-10-24",
+ "fetch": {
+  "new": [
+   "2026-10-24/eu-have-your-say-3090904c4c",
+   "2026-10-24/dg-env-news-175aa050c4",
+   "2026-10-24/dg-env-ppwr-implementation-371347aed2",
+   "2026-10-24/govuk-search-856d85cf0f",
+   "2026-10-24/cn-mee-ec685b68ac"
+  ],
+  "unchanged": 103,
+  "errors": {}
+ },
+ "triage": {
+  "candidates": [
+   "2026-10-24-001"
+  ],
+  "discarded": [
+   {
+    "snapshot": "2026-10-24/eu-have-your-say-3090904c4c",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15492_en",
+    "relevance": 0.2,
+    "dossier_id": "eu-public-procurement",
+    "new_dossier_suggestion": null,
+    "category": "consultation",
+    "reason": "The Commission's public procurement revision has an open feedback window (15 Sep\u201319 Dec 2026), a genuine consultation step, but the document contains no plastics, packaging, recycling or recycled-content elements, so it is only tangentially relevant to the tracker."
+   },
+   {
+    "snapshot": "2026-10-24/dg-env-ppwr-implementation-371347aed2",
+    "url": "https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en",
+    "relevance": 0.3,
+    "dossier_id": "eu-ppwr",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a PPWR implementation background/timeline page listing past and planned measures, not a new concrete legal development within the last 60 days."
+   },
+   {
+    "snapshot": "2026-10-24/govuk-search-856d85cf0f",
+    "url": "https://www.gov.uk/government/publications/public-register-of-reprocessors-and-exporters-of-uk-packaging-waste",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a routine weekly administrative update to the public register of accredited packaging waste reprocessors and exporters, with no new legal measure, fee change or obligation reported."
+   },
+   {
+    "snapshot": "2026-10-24/cn-mee-ec685b68ac",
+    "url": "https://www.mee.gov.cn/zcwj/",
+    "relevance": 0.05,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a generic index page of Chinese Ministry of Ecology and Environment policy documents listing unrelated items (nuclear safety, ozone-depleting substances, carbon trading, noise standards) with no new plastics, packaging, recycling or microplastics development."
+   }
+  ],
+  "new_dossier_suggestions": [],
+  "leads": []
+ },
+ "draft": {
+  "drafted": [
+   "2026-10-24-001"
+  ],
+  "skipped": []
+ },
+ "review": {
+  "passed": [
+   "2026-10-24-001"
+  ],
+  "quarantined": [],
+  "human_review": [],
+  "issues": []
+ },
+ "summary_review": {
+  "reviewed": 0,
+  "passed": [],
+  "failed": {},
+  "llm_calls": 8
+ },
+ "llm_calls": 8,
+ "llm_usage": {
+  "prompt_tokens": 21615,
+  "completion_tokens": 6993
+ }
+}

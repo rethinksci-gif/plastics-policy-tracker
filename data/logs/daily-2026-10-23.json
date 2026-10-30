@@ -1,0 +1,76 @@
+{
+ "date": "2026-10-23",
+ "fetch": {
+  "new": [
+   "2026-10-23/eu-have-your-say-317529c2a1",
+   "2026-10-23/dg-env-news-91ff36e28e",
+   "2026-10-23/govuk-search-b336ea2993",
+   "2026-10-23/cn-mee-e9c4ef6da9"
+  ],
+  "unchanged": 104,
+  "errors": {}
+ },
+ "triage": {
+  "candidates": [
+   "2026-10-23-001",
+   "2026-10-23-002",
+   "2026-10-23-003"
+  ],
+  "discarded": [
+   {
+    "snapshot": "2026-10-23/cn-mee-e9c4ef6da9",
+    "url": "https://www.mee.gov.cn/zcwj/",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a general index page of Chinese Ministry of Ecology and Environment policy documents, with no specific new plastics, packaging, waste, recycling, microplastics or chemicals-in-plastics legal development identified."
+   }
+  ],
+  "new_dossier_suggestions": [],
+  "leads": []
+ },
+ "draft": {
+  "drafted": [
+   "2026-10-23-003"
+  ],
+  "skipped": [
+   {
+    "candidate": "2026-10-23-001",
+    "reason": "The source is the standing 'have your say' initiative page for the revision of EU public procurement rules. It contains no development beyond what is already recorded: the open public feedback period (opening 15 September 2026), the Commission proposal, and the initiative's active status. The page reports no new legislative step, date or event for the dossier, so there is nothing new to enter."
+   },
+   {
+    "candidate": "2026-10-23-002",
+    "reason": "The source document is a general DG Environment news listing page. None of its items report a development of the Packaging and Packaging Waste Regulation (EU) 2025/40 as the dossier instrument: they cover a bio-based alliance launch, packaging-waste statistics (35.9 kg per capita), a consultation on bio-based plastic packaging, digestates, water policy, COP17 biodiversity, Horizon Europe calls and e-waste statistics. No item references the PPWR, Regulation (EU) 2025/40, or any of its instruments, so no summary could be supported verbatim from the source for this dossier."
+   }
+  ]
+ },
+ "review": {
+  "passed": [],
+  "quarantined": [
+   {
+    "candidate": "2026-10-23-003",
+    "dossier": "uk-pepr",
+    "impact": "high",
+    "reasons": [
+     "L3 reviewer: partially_supported (confidence 0.92); The 2027 registration deadline is misstated: the source says small producers must submit their 2027 registration application by 1 October 2026. The 1 April 2027 date applies only if their sole packaging activity is selling filled packaging directly to an end user.; The key date claiming a 2026-04-01 deadline for the 2026 registration application is not supported; the source says the deadline for 2026 was 1 October 2025.; The 2027-04-01 key date conflates the correct reporting deadline for January to December 2026 packaging data with a general 2027 registration deadline, which is not 1 April 2027 for all small producers.; The next-step entry stating that 1 April 2027 is the deadline for small producers to submit their 2027 registration application is unsupported except for the narrow end-user sale exception."
+    ]
+   }
+  ],
+  "human_review": [],
+  "issues": [
+   "https://github.com/rethinksci-gif/plastics-policy-tracker/issues/8"
+  ]
+ },
+ "summary_review": {
+  "reviewed": 0,
+  "passed": [],
+  "failed": {},
+  "llm_calls": 8
+ },
+ "llm_calls": 8,
+ "llm_usage": {
+  "prompt_tokens": 20823,
+  "completion_tokens": 10042
+ }
+}

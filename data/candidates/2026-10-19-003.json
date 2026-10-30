@@ -1,0 +1,20 @@
+{
+ "id": "2026-10-19-003",
+ "created": "2026-10-19",
+ "snapshot_id": "2026-10-19/nl-verpact-f173446182",
+ "source_id": "nl-verpact",
+ "source_url": "https://www.verpact.nl/en",
+ "source_trust": "official",
+ "title": "Home | Verpact",
+ "triage": {
+  "relevance": 0.9,
+  "dossier_id": "nl-verpact-fees",
+  "new_dossier_suggestion": null,
+  "category": "fee-or-tax",
+  "reason": "Verpact announces Fee Modulation Plastic 2.0 and 2027 tariff differentiation for plastic packaging, a concrete fee change under the Dutch EPR scheme."
+ },
+ "draft": null,
+ "status": "discarded",
+ "review_id": null,
+ "issue": null
+}

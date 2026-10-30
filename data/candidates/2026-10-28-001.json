@@ -1,0 +1,20 @@
+{
+ "id": "2026-10-28-001",
+ "created": "2026-10-28",
+ "snapshot_id": "2026-10-28/eu-have-your-say-1fbf0b9c07",
+ "source_id": "eu-have-your-say",
+ "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15492_en",
+ "source_trust": "official",
+ "title": "Revision of EU rules on public procurement",
+ "triage": {
+  "relevance": 0.8,
+  "dossier_id": "eu-public-procurement",
+  "new_dossier_suggestion": null,
+  "category": "consultation",
+  "reason": "The Commission's revision of the EU public procurement rules is in active adoption workflow with a public feedback window open from 15 September to 23 December 2026, a concrete consultation step that could embed recycled-content and plastics preferences in procurement."
+ },
+ "draft": null,
+ "status": "discarded",
+ "review_id": null,
+ "issue": null
+}

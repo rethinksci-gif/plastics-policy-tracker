@@ -1,0 +1,38 @@
+{
+ "id": "2026-10-19-001",
+ "created": "2026-10-19",
+ "snapshot_id": "2026-10-19/eu-have-your-say-16e8349980",
+ "source_id": "eu-have-your-say",
+ "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19498_en",
+ "source_trust": "official",
+ "title": "EU rules on biobased feedstock in plastic packaging",
+ "triage": {
+  "relevance": 0.78,
+  "dossier_id": "eu-ppwr",
+  "new_dossier_suggestion": null,
+  "category": "proposal",
+  "reason": "The Commission has launched a new active initiative (Ares(2026)9620334) for a regulation on biobased feedstock targets and requirements in plastic packaging, the follow-up foreseen under the PPWR's biobased feedstock review, with feedback opening 19 October 2026."
+ },
+ "draft": {
+  "dossier_id": "eu-ppwr",
+  "date": "2026-10-19",
+  "summary": "A planned regulation on EU rules on biobased feedstock in plastic packaging, reference Ares(2026)9620334, is listed with an active initiative status and a front-end stage of 'INIT_PLANNED'. Receiving feedback is disabled, and the listed feedback start date is 19 October 2026.",
+  "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19498_en",
+  "source_quote": "reference: Ares(2026)9620334\nforeseenActType: PROP_REG\ninitiativeStatus: ACTIVE\nfrontEndStage: INIT_PLANNED; receivingFeedbackStatus: DISABLED; feedbackStartDate: 2026/10/19 10:48:00; feedbackEndDate: None",
+  "source_quote_en": null,
+  "source_lang": "en",
+  "stage_change": null,
+  "next_steps": [],
+  "key_dates": [
+   {
+    "date": "2026-10-19",
+    "text": "Listed feedback start date for the initiative; receiving feedback is disabled.",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19498_en"
+   }
+  ],
+  "interpretation": "A separate proposal on biobased feedstock requirements would add a further compliance layer for packaging producers alongside recycled-content rules, so brand owners and converters considering bio-based plastic packaging may want to track its scope as it develops."
+ },
+ "status": "quarantined",
+ "review_id": "2026-10-19-001",
+ "issue": null
+}
