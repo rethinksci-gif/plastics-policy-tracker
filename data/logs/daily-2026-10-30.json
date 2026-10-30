@@ -1,0 +1,117 @@
+{
+ "date": "2026-10-30",
+ "fetch": {
+  "new": [
+   "2026-10-30/eu-have-your-say-814d8ae99e",
+   "2026-10-30/dg-env-ppwr-implementation-f4c367f553",
+   "2026-10-30/efsa-47f413b1e1",
+   "2026-10-30/govuk-search-e1f75fd281",
+   "2026-10-30/govuk-search-512c693584",
+   "2026-10-30/govuk-search-79675bb9f0",
+   "2026-10-30/cn-ndrc-notices-7dda655e8a",
+   "2026-10-30/cn-mee-f4ffe0b37c"
+  ],
+  "unchanged": 109,
+  "errors": {}
+ },
+ "triage": {
+  "candidates": [],
+  "discarded": [
+   {
+    "snapshot": "2026-10-30/eu-have-your-say-814d8ae99e",
+    "url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19684_en",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a plant-health implementing act on import equivalence for citrus fruit from Israel, with no connection to plastics, packaging, waste or related regulation."
+   },
+   {
+    "snapshot": "2026-10-30/dg-env-ppwr-implementation-f4c367f553",
+    "url": "https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_en",
+    "relevance": 0.5,
+    "dossier_id": "eu-ppwr",
+    "new_dossier_suggestion": null,
+    "category": "adoption",
+    "reason": "Standing Commission implementation page for PPWR that also notes a delegated decision on crystal glass packaging adopted in August 2026 and newly published small-business guides, i.e. recent but secondary implementing steps alongside largely unchanged timeline/competent-authority reference content."
+   },
+   {
+    "snapshot": "2026-10-30/efsa-47f413b1e1",
+    "url": "https://efsa.onlinelibrary.wiley.com/doi/10.2903/j.efsa.2026.10370",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is an EFSA pesticide risk assessment peer review for Trichoderma atroviride I-1237, unrelated to plastics, packaging, waste, recycling, microplastics or plastics chemicals."
+   },
+   {
+    "snapshot": "2026-10-30/govuk-search-e1f75fd281",
+    "url": "https://www.gov.uk/government/collections/extended-producer-responsibility-for-packaging",
+    "relevance": 0.2,
+    "dossier_id": "uk-pepr",
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "The page is only a republished standing collection of existing guidance on the UK packaging EPR scheme (Producer Responsibility Obligations (Packaging and Packaging Waste) Regulations 2024), with no new proposal, fee change, deadline change or other concrete development reported."
+   },
+   {
+    "snapshot": "2026-10-30/govuk-search-512c693584",
+    "url": "https://www.gov.uk/government/publications/public-register-of-reprocessors-and-exporters-of-uk-packaging-waste",
+    "relevance": 0.15,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a routine weekly update of the public register of accredited packaging waste reprocessors and exporters, with no change to any law, regulation, fee or deadline."
+   },
+   {
+    "snapshot": "2026-10-30/govuk-search-79675bb9f0",
+    "url": "https://www.gov.uk/guidance/how-to-comply-with-packaging-recycling-obligations-as-a-large-producer",
+    "relevance": 0.2,
+    "dossier_id": "uk-pepr",
+    "new_dossier_suggestion": null,
+    "category": "guidance",
+    "reason": "This GOV.UK page restates existing pEPR recycling obligations, PRN/PERN rules and 2025-2027 targets without announcing any new legal change, deadline change or fee change."
+   },
+   {
+    "snapshot": "2026-10-30/cn-ndrc-notices-7dda655e8a",
+    "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/",
+    "relevance": 0.0,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a general index page of NDRC notices covering energy, prices, logistics and social policy topics, none of which concern plastics, packaging, waste, recycling, microplastics or chemicals in plastics."
+   },
+   {
+    "snapshot": "2026-10-30/cn-mee-f4ffe0b37c",
+    "url": "https://www.mee.gov.cn/zcwj/",
+    "relevance": 0.1,
+    "dossier_id": null,
+    "new_dossier_suggestion": null,
+    "category": "other",
+    "reason": "This is a general index listing page of Chinese Ministry of Ecology and Environment policy documents; none of the entries in the last 60 days concern plastics, packaging, recycling, microplastics or related chemicals, and the page itself reports no new plastics-specific development."
+   }
+  ],
+  "new_dossier_suggestions": [],
+  "leads": []
+ },
+ "draft": {
+  "drafted": [],
+  "skipped": []
+ },
+ "review": {
+  "passed": [],
+  "quarantined": [],
+  "human_review": [],
+  "issues": []
+ },
+ "summary_review": {
+  "reviewed": 0,
+  "passed": [],
+  "failed": {},
+  "llm_calls": 8
+ },
+ "llm_calls": 8,
+ "llm_usage": {
+  "prompt_tokens": 21619,
+  "completion_tokens": 2453
+ }
+}
