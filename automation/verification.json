@@ -139,5 +139,21 @@
     "source_url": "https://environment.ec.europa.eu/news_en",
     "reasons": [],
     "review": "reviews/items/2026-10-31-005.json"
+  },
+  {
+    "id": "2026-10-31-006",
+    "status": "VERIFIED",
+    "source_url": "https://www.gov.uk/government/consultations/plastic-packaging-tax-mechanically-recycled-plastic-packaging",
+    "reasons": [],
+    "review": "reviews/items/2026-10-31-006.json"
+  },
+  {
+    "id": "2026-10-31-007",
+    "status": "QUARANTINED",
+    "source_url": "https://www.gov.uk/government/organisations/packuk",
+    "reasons": [
+      "L3 reviewer: partially_supported (confidence 0.95); The `date` field is 2026-10-30, but the source gives the relevant news story date as 17 July 2026 and the deadline as 1 September 2026; 2026-10-30 does not appear as the event date in the source."
+    ],
+    "review": "reviews/items/2026-10-31-007.json"
   }
 ]

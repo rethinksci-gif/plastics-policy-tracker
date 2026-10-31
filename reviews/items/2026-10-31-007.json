@@ -1,0 +1,104 @@
+{
+ "review_id": "2026-10-31-007",
+ "candidate_id": "2026-10-31-007",
+ "dossier_id": "uk-pepr",
+ "created": "2026-10-31T20:10:40.992262Z",
+ "impact": "high",
+ "checks": [
+  {
+   "layer": 1,
+   "name": "schema",
+   "passed": true,
+   "severity": "info",
+   "detail": "valid"
+  },
+  {
+   "layer": 1,
+   "name": "trusted-domain",
+   "passed": true,
+   "severity": "info",
+   "detail": "domain trust: official"
+  },
+  {
+   "layer": 1,
+   "name": "safe-markdown",
+   "passed": true,
+   "severity": "info",
+   "detail": "plain prose"
+  },
+  {
+   "layer": 1,
+   "name": "url-200",
+   "passed": true,
+   "severity": "info",
+   "detail": "HTTP 200"
+  },
+  {
+   "layer": 1,
+   "name": "event-date",
+   "passed": true,
+   "severity": "info",
+   "detail": "2026-10-30 <= today 2026-10-31"
+  },
+  {
+   "layer": 1,
+   "name": "event-age",
+   "passed": true,
+   "severity": "info",
+   "detail": "event 2026-10-30 is 1 days before detection on 2026-10-31 (limit 60)"
+  },
+  {
+   "layer": 1,
+   "name": "stage-transition",
+   "passed": true,
+   "severity": "info",
+   "detail": "no stage change"
+  },
+  {
+   "layer": 1,
+   "name": "duplicate",
+   "passed": true,
+   "severity": "info",
+   "detail": "no duplicate"
+  },
+  {
+   "layer": 2,
+   "name": "quote-provenance",
+   "passed": true,
+   "severity": "info",
+   "detail": "verbatim quote found in snapshot"
+  },
+  {
+   "layer": 1,
+   "name": "next-step-date",
+   "passed": false,
+   "severity": "flag",
+   "detail": "next step dated 2026-09-01 is already past; marked to-be-confirmed"
+  }
+ ],
+ "llm_review": {
+  "verdict": "partially_supported",
+  "confidence": 0.95,
+  "checks": {
+   "quote_supports_summary": true,
+   "dates_match": false,
+   "numbers_match": true,
+   "bodies_match": true,
+   "references_match": true,
+   "no_exaggeration": true,
+   "stage_supported": true,
+   "next_steps_supported": true,
+   "translation_faithful": true
+  },
+  "issues": [
+   "The `date` field is 2026-10-30, but the source gives the relevant news story date as 17 July 2026 and the deadline as 1 September 2026; 2026-10-30 does not appear as the event date in the source."
+  ]
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "quarantined",
+ "reasons": [
+  "L3 reviewer: partially_supported (confidence 0.95); The `date` field is 2026-10-30, but the source gives the relevant news story date as 17 July 2026 and the deadline as 1 September 2026; 2026-10-30 does not appear as the event date in the source."
+ ]
+}

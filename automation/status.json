@@ -1,34 +1,22 @@
 {
-  "checked_at": "2026-10-31T19:53:18.223361+00:00",
-  "status": "publish",
+  "checked_at": "2026-10-31T20:09:19.421069+00:00",
+  "status": "skip",
   "last_publication": "2026-10-26-issue-002",
-  "last_successful_check": "2026-10-31T19:56:34Z",
-  "reasons": [],
+  "last_successful_check": "2026-10-31T20:10:47.874298+00:00",
+  "reasons": [
+    "edition already published in this window"
+  ],
   "collection": {
     "new": [],
     "unchanged": 118,
     "errors": {}
   },
   "pending_snapshots": [
-    "2026-10-31/efsa-99f0775a50",
-    "2026-10-31/efsa-079e3e8199",
-    "2026-10-31/unep-inc-77674319a1",
-    "2026-10-31/govuk-search-65009cd2e1",
-    "2026-10-31/govuk-search-def32ddf56",
-    "2026-10-31/govuk-search-8b1e95ba35",
-    "2026-10-31/govuk-search-46ed4b2373",
-    "2026-10-31/govuk-search-70a289f254",
-    "2026-10-31/govuk-search-e1f75fd281",
-    "2026-10-31/govuk-search-512c693584",
     "2026-10-31/govuk-search-79675bb9f0",
     "2026-10-31/govuk-search-b336ea2993",
     "2026-10-31/govuk-search-7deac6e42d",
     "2026-10-31/govuk-search-c3f056f22b",
     "2026-10-31/cn-ndrc-notices-7dda655e8a",
     "2026-10-31/cn-mee-f4ffe0b37c"
-  ],
-  "deployment_status": "confirmed",
-  "confirmed_revision": "eafbf6b566b03af8356a5d50bd2e8e76a44c5ad4",
-  "deployment_run_url": "https://github.com/rethinksci-gif/plastics-policy-tracker/actions/runs/41236470622",
-  "last_confirmed_publication": "2026-10-26-issue-002"
+  ]
 }
