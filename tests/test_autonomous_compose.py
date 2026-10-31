@@ -78,3 +78,13 @@ def test_delayed_publication_uses_actual_date_and_fixed_coverage(setup,monkeypat
     text=next(issues.glob('*.md')).read_text()
     assert "coverage_end_exclusive: '2026-10-26'" in text
     assert "date: '2026-10-31'" in text
+
+
+def test_update_does_not_reassert_inherited_legal_status_or_sector_claims(setup,monkeypatch):
+    issues,dossier,llm=setup
+    monkeypatch.setattr(compose,'load_candidates',lambda:[candidate(dossier)])
+    compose.run(llm,issue_date=date(2026,10,26),publication_date=date(2026,10,31))
+    text=next(issues.glob('*.md')).read_text()
+    assert 'This update does not assert a legal-status change.' in text
+    assert f'`{dossier.stage}`' not in text
+    assert '**Affects:**' not in text

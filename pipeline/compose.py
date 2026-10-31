@@ -145,8 +145,8 @@ def _base() -> str:
 
 def render_item(i: dict) -> str:
     base = _base()
-    stage = (f"`{i['stage_before']}` → `{i['stage_after']}`" if i["stage_after"] != i["stage_before"]
-             else f"no change (`{i['stage_after']}`)")
+    stage = (f"Verified new stage: `{i['stage_after']}`" if i["stage_after"] != i["stage_before"]
+             else "This update does not assert a legal-status change.")
     nxt = "; ".join(f"{n['text']} ({n['date']})" for n in i["next_steps"]) or "None stated in the source."
     lines = [
         f"### [{i['title']}]({base}/dossiers/{i['dossier']}/)",
@@ -154,7 +154,6 @@ def render_item(i: dict) -> str:
         f"**What happened ({i['date']}):** {i['summary']}",
         "",
         f"- **Stage:** {stage}",
-        f"- **Affects:** {', '.join(i['affected'])}",
         f"- **Next:** {nxt}",
         f"- **Source:** [{i['source_url']}]({i['source_url']}) · review [`{i['review_id']}`]({base}/reviews/{i['review_id']}/)",
         "",
