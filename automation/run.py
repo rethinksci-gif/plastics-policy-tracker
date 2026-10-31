@@ -34,7 +34,7 @@ def run():
         anchor = date(2026, 10, 12)
         today = date.today()
         end = anchor + timedelta(days=((today-anchor).days//14)*14)
-        result = compose.run(llm, issue_date=end)
+        result = compose.run(llm, issue_date=end, publication_date=today)
         status.update(status=result['decision'], reasons=result.get('hold_reasons', []))
         if result['decision'] == 'publish':
             status['last_publication'] = result['issue']

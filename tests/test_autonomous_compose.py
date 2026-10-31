@@ -68,3 +68,13 @@ def test_global_conflict_holds_edition(setup,monkeypatch):
 def test_no_force_override(setup):
     with pytest.raises(ValueError,match='cannot be overridden'):
         compose.run(setup[2],override_gate=True)
+
+
+def test_delayed_publication_uses_actual_date_and_fixed_coverage(setup,monkeypatch):
+    issues,dossier,llm=setup
+    monkeypatch.setattr(compose,'load_candidates',lambda:[candidate(dossier)])
+    result=compose.run(llm,issue_date=date(2026,10,26),publication_date=date(2026,10,31))
+    assert result['issue'].startswith('2026-10-31-')
+    text=next(issues.glob('*.md')).read_text()
+    assert "coverage_end_exclusive: '2026-10-26'" in text
+    assert "date: '2026-10-31'" in text

@@ -1,7 +1,7 @@
 {
   "id": "PPT-2026-10-26",
   "file": "issues/2026-10-26-issue-002.md",
-  "sha256": "493cfb77fc72da8957e9f4fbda08aa8a4690fcad3f3cf02c6f36b6d2ac4b342b",
+  "sha256": "a79ed15c70033345e21b8f70fca9a07e53a8c17e04ef7b493627291e65d725bd",
   "items": [
     {
       "id": "2026-10-31-005",
@@ -10,5 +10,11 @@
       "source_url": "https://environment.ec.europa.eu/news_en",
       "review": "reviews/items/2026-10-31-005.json"
     }
-  ]
+  ],
+  "metadata_correction": {
+    "date": "2026-10-31",
+    "previous_sha256": "493cfb77fc72da8957e9f4fbda08aa8a4690fcad3f3cf02c6f36b6d2ac4b342b",
+    "reason": "Actual publication date and verified-deadline scope; policy update unchanged",
+    "original_run": "https://github.com/rethinksci-gif/plastics-policy-tracker/actions/runs/41236241890"
+  }
 }

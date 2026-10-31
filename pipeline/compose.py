@@ -174,7 +174,7 @@ def render_issue(meta: dict, items: list[dict], deadlines: list[dict], unchanged
                  quarantined: list[dict]) -> str:
     base = _base()
     front = dump_yaml({k: meta[k] for k in ("title", "number", "date", "status", "highlights", "review_report",
-                                             "items_count", "quarantined_count", "description")})
+                                             "items_count", "quarantined_count", "description", "coverage_start", "coverage_end_exclusive")})
     out = ["---", front.rstrip(), "---", ""]
     out += ["## In this issue", ""]
     out += [f"- {h}" for h in meta["highlights"]] or ["- No verified changes in this period."]
@@ -194,10 +194,10 @@ def render_issue(meta: dict, items: list[dict], deadlines: list[dict], unchanged
         for dl in deadlines:
             out.append(f"| {dl['date']} | [{dl['title']}]({base}/dossiers/{dl['dossier']}/) | {dl['text']} | {dl['kind']} |")
     else:
-        out.append("No recorded deadlines in the next 60 days.")
+        out.append("No upcoming deadlines were verified by the updates in this edition.")
     out += ["", f"Subscribe to all dates: [calendar.ics]({base}/calendar.ics)", ""]
-    out += ["## Dossiers with no change", "", f"<details><summary>{len(unchanged)} dossiers unchanged</summary>", ""]
-    out += [f"- [{u['title']}]({base}/dossiers/{u['id']}/) — `{u['stage']}`" for u in unchanged]
+    out += ["## Dossiers without published updates in this edition", "", f"<details><summary>{len(unchanged)} dossiers without updates</summary>", ""]
+    out += [f"- [{u['title']}]({base}/dossiers/{u['id']}/)" for u in unchanged]
     out += ["", "</details>", ""]
     out += ["## Resources", "",
             f"- [All dossiers]({base}/dossiers/) — filter by jurisdiction, topic, stage and impact",
@@ -220,11 +220,12 @@ def render_issue(meta: dict, items: list[dict], deadlines: list[dict], unchanged
 
 
 def run(llm: LLM, dry_run: bool = False, issue_date: date | None = None, status_fn=None,
-        override_gate: bool = False) -> dict:
+        override_gate: bool = False, publication_date: date | None = None) -> dict:
     """Publish only evidence-gated items; no human or API override can bypass the gate."""
     if override_gate:
         raise ValueError("Evidence gates cannot be overridden")
     issue_date = issue_date or today()
+    publication_date = publication_date or issue_date
     # One immutable edition per anchored fourteen-day window, including reruns on other days.
     anchor = date(2026, 10, 12)
     window_start = anchor + timedelta(days=((issue_date - anchor).days // 14) * 14)
@@ -235,7 +236,7 @@ def run(llm: LLM, dry_run: bool = False, issue_date: date | None = None, status_
                     "hold_reasons": ["edition already published in this window"]}
     dossiers = load_dossiers()
     number = issue_number()
-    slug = f"{issue_date.isoformat()}-issue-{number:03d}"
+    slug = f"{publication_date.isoformat()}-issue-{number:03d}"
 
     pool = [c for c in load_candidates() if c.issue is None and c.status in ("passed", "quarantined")]
     coverage_start = issue_date - timedelta(days=14)
@@ -314,7 +315,10 @@ def run(llm: LLM, dry_run: bool = False, issue_date: date | None = None, status_
     after = dict(dossiers)
     for c in passed:
         after[c.triage.dossier_id] = apply_candidate(after[c.triage.dossier_id], c)
-    deadlines = upcoming_dates(after, issue_date, config()["schedule"]["lookahead_days"])
+    verified_deadlines = {(c.triage.dossier_id, str(x.date), x.text, str(x.source_url))
+                          for c in passed for x in [*c.draft.next_steps, *c.draft.key_dates] if x.source_url}
+    deadlines = [d for d in upcoming_dates(after, publication_date, config()["schedule"]["lookahead_days"])
+                 if (d['dossier'], str(d['date']), d['text'], d['source_url']) in verified_deadlines]
     changed_ids = {i["dossier"] for i in items}
     unchanged = [{"id": d.id, "title": d.short_title or d.title, "stage": d.stage}
                  for d in sorted(after.values(), key=lambda d: (jurisdiction_sort_key(d.jurisdiction), d.id))
@@ -322,9 +326,11 @@ def run(llm: LLM, dry_run: bool = False, issue_date: date | None = None, status_
 
     review_slug = f"issue-{number:03d}"
     meta = {
-        "title": f"Issue {number} — {issue_date:%d %B %Y}",
+        "title": f"Issue {number} — {publication_date:%d %B %Y}",
         "number": number,
-        "date": issue_date.isoformat(),
+        "date": publication_date.isoformat(),
+        "coverage_start": coverage_start.isoformat(),
+        "coverage_end_exclusive": issue_date.isoformat(),
         "status": "published" if decision == "publish" else "draft",
         "highlights": highlights,
         "review_report": review_slug,
