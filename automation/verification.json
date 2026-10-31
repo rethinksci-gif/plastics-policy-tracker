@@ -155,5 +155,14 @@
       "L3 reviewer: partially_supported (confidence 0.95); The `date` field is 2026-10-30, but the source gives the relevant news story date as 17 July 2026 and the deadline as 1 September 2026; 2026-10-30 does not appear as the event date in the source."
     ],
     "review": "reviews/items/2026-10-31-007.json"
+  },
+  {
+    "id": "2026-10-31-008",
+    "status": "QUARANTINED",
+    "source_url": "https://www.gov.uk/guidance/waste-disposal-fees-for-large-producers-under-epr-for-packaging",
+    "reasons": [
+      "L3 reviewer: partially_supported (confidence 0.87); Summary says GOV.UK 'published' the guidance on 28 October 2026, but the source shows it was originally published on 23 March 2026 and last updated on 28 October 2026, when additional information was added and the title was changed."
+    ],
+    "review": "reviews/items/2026-10-31-008.json"
   }
 ]

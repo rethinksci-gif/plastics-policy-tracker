@@ -1,0 +1,97 @@
+{
+ "review_id": "2026-10-31-008",
+ "candidate_id": "2026-10-31-008",
+ "dossier_id": "uk-pepr",
+ "created": "2026-10-31T20:15:32.846983Z",
+ "impact": "high",
+ "checks": [
+  {
+   "layer": 1,
+   "name": "schema",
+   "passed": true,
+   "severity": "info",
+   "detail": "valid"
+  },
+  {
+   "layer": 1,
+   "name": "trusted-domain",
+   "passed": true,
+   "severity": "info",
+   "detail": "domain trust: official"
+  },
+  {
+   "layer": 1,
+   "name": "safe-markdown",
+   "passed": true,
+   "severity": "info",
+   "detail": "plain prose"
+  },
+  {
+   "layer": 1,
+   "name": "url-200",
+   "passed": true,
+   "severity": "info",
+   "detail": "HTTP 200"
+  },
+  {
+   "layer": 1,
+   "name": "event-date",
+   "passed": true,
+   "severity": "info",
+   "detail": "2026-10-28 <= today 2026-10-31"
+  },
+  {
+   "layer": 1,
+   "name": "event-age",
+   "passed": true,
+   "severity": "info",
+   "detail": "event 2026-10-28 is 3 days before detection on 2026-10-31 (limit 60)"
+  },
+  {
+   "layer": 1,
+   "name": "stage-transition",
+   "passed": true,
+   "severity": "info",
+   "detail": "no stage change"
+  },
+  {
+   "layer": 1,
+   "name": "duplicate",
+   "passed": true,
+   "severity": "info",
+   "detail": "no duplicate"
+  },
+  {
+   "layer": 2,
+   "name": "quote-provenance",
+   "passed": true,
+   "severity": "info",
+   "detail": "verbatim quote found in snapshot"
+  }
+ ],
+ "llm_review": {
+  "verdict": "partially_supported",
+  "confidence": 0.87,
+  "checks": {
+   "quote_supports_summary": true,
+   "dates_match": false,
+   "numbers_match": true,
+   "bodies_match": true,
+   "references_match": true,
+   "no_exaggeration": true,
+   "stage_supported": true,
+   "next_steps_supported": true,
+   "translation_faithful": true
+  },
+  "issues": [
+   "Summary says GOV.UK 'published' the guidance on 28 October 2026, but the source shows it was originally published on 23 March 2026 and last updated on 28 October 2026, when additional information was added and the title was changed."
+  ]
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "quarantined",
+ "reasons": [
+  "L3 reviewer: partially_supported (confidence 0.87); Summary says GOV.UK 'published' the guidance on 28 October 2026, but the source shows it was originally published on 23 March 2026 and last updated on 28 October 2026, when additional information was added and the title was changed."
+ ]
+}
