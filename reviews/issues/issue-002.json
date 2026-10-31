@@ -1,0 +1,44 @@
+{
+ "review_id": "issue-002",
+ "issue": "2026-10-26-issue-002",
+ "created": "2026-10-31T07:22:35.834378+00:00",
+ "decision": "hold",
+ "would_publish": false,
+ "hold_reasons": [
+  "no verified items; no empty or filler edition"
+ ],
+ "gate_overridden_by_maintainer": false,
+ "quarantine_ratio": 1.0,
+ "published_items": [],
+ "quarantined_items": [
+  {
+   "id": "2026-10-31-001",
+   "dossier": "eu-ppwr",
+   "title": "PPWR",
+   "impact": "high",
+   "summary": "A public consultation on EU rules on biobased feedstock in plastic packaging, reference Ares(2026)9620334, is open for feedback from 21 October 2026 to 13 January 2027. The initiative is listed with an active status and a foreseen act type of PROP_REG, covering targets for biobased feedstock and relevant requirements.",
+   "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19498_en",
+   "reasons": [
+    "quoted evidence absent from current original source",
+    "L3 reviewer: partially_supported (confidence 0.90); The interpretation adds facts not present in the source: it says biobased feedstock rules would sit alongside 'recycled-content requirements already being elaborated' and that packaging producers 'may need to document both fossil-based recycled content and bio-based content'. The source only discusses biobased feedstock, targets for biobased feedstock and relevant requirements; it does not mention recycled-content requirements or documentation obligations."
+   ]
+  }
+ ],
+ "editorial_review": {
+  "passed": true,
+  "contradictions": [],
+  "history_conflicts": [],
+  "missing_high_impact": [],
+  "terminology_issues": [],
+  "translation_issues": [],
+  "fact_vs_interpretation_issues": [],
+  "item_flags": {},
+  "style_notes": {},
+  "notes": ""
+ },
+ "llm_calls": 14,
+ "llm_usage": {
+  "prompt_tokens": 22992,
+  "completion_tokens": 11292
+ }
+}

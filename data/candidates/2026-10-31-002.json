@@ -1,0 +1,20 @@
+{
+ "id": "2026-10-31-002",
+ "created": "2026-10-31",
+ "snapshot_id": "2026-10-31/eu-have-your-say-182913ad8f",
+ "source_id": "eu-have-your-say",
+ "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14861_en",
+ "source_trust": "official",
+ "title": "List of non-OECD countries that are authorized to import certain non-hazardous waste from the EU",
+ "triage": {
+  "relevance": 0.82,
+  "dossier_id": "eu-wsr",
+  "new_dossier_suggestion": null,
+  "category": "legislative-step",
+  "reason": "The Commission has published a draft delegated regulation under the Waste Shipment Regulation listing non-OECD countries authorised to import certain non-hazardous EU waste, with the public feedback window running 18 September to 16 October 2026."
+ },
+ "draft": null,
+ "status": "discarded",
+ "review_id": null,
+ "issue": null
+}

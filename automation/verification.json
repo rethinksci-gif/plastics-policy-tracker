@@ -1,0 +1,129 @@
+[
+  {
+    "id": "2026-10-14-001",
+    "status": "QUARANTINED",
+    "source_url": "https://www.europarl.europa.eu/doceo/document/A-10-2026-0267_EN.html",
+    "reasons": [
+      "L1 url-200: HTTP 202",
+      "L2 quote-provenance: not found in snapshot: 'published: fri, 09 oct 2026 11:32:25 gmt report on the proposal for a directive '"
+    ],
+    "review": "reviews/items/2026-10-14-001.json"
+  },
+  {
+    "id": "2026-10-14-002",
+    "status": "QUARANTINED",
+    "source_url": "https://www.europarl.europa.eu/doceo/document/A-10-2026-0266_EN.html",
+    "reasons": [
+      "L1 url-200: HTTP 202"
+    ],
+    "review": "reviews/items/2026-10-14-002.json"
+  },
+  {
+    "id": "2026-10-14-003",
+    "status": "VERIFIED",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/18752_en",
+    "reasons": [],
+    "review": "reviews/items/2026-10-14-003.json"
+  },
+  {
+    "id": "2026-10-14-004",
+    "status": "VERIFIED",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14861_en",
+    "reasons": [],
+    "review": "reviews/items/2026-10-14-004.json"
+  },
+  {
+    "id": "2026-10-14-005",
+    "status": "VERIFIED",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15352_en",
+    "reasons": [],
+    "review": "reviews/items/2026-10-14-005.json"
+  },
+  {
+    "id": "2026-10-14-006",
+    "status": "REJECTED",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14856_en",
+    "reasons": [],
+    "review": "reviews/items/2026-10-14-006.json"
+  },
+  {
+    "id": "2026-10-14-007",
+    "status": "VERIFIED",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/17712_en",
+    "reasons": [],
+    "review": "reviews/items/2026-10-14-007.json"
+  },
+  {
+    "id": "2026-10-14-008",
+    "status": "VERIFIED",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14712_en",
+    "reasons": [],
+    "review": "reviews/items/2026-10-14-008.json"
+  },
+  {
+    "id": "2026-10-14-009",
+    "status": "VERIFIED",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/18753_en",
+    "reasons": [],
+    "review": "reviews/items/2026-10-14-009.json"
+  },
+  {
+    "id": "2026-10-14-010",
+    "status": "VERIFIED",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19243_en",
+    "reasons": [],
+    "review": "reviews/items/2026-10-14-010.json"
+  },
+  {
+    "id": "2026-10-14-011",
+    "status": "VERIFIED",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19033_en",
+    "reasons": [],
+    "review": "reviews/items/2026-10-14-011.json"
+  },
+  {
+    "id": "2026-10-14-012",
+    "status": "VERIFIED",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15492_en",
+    "reasons": [],
+    "review": "reviews/items/2026-10-14-012.json"
+  },
+  {
+    "id": "2026-10-14-013",
+    "status": "VERIFIED",
+    "source_url": "https://www.gov.uk/government/consultations/draft-legislation-plastic-packaging-tax-chemical-recycling-and-adoption-of-a-mass-balance-approach",
+    "reasons": [],
+    "review": "reviews/items/2026-10-14-013.json"
+  },
+  {
+    "id": "2026-10-14-014",
+    "status": "REJECTED",
+    "source_url": "https://www.gov.uk/guidance/issuing-prns-and-perns-as-a-reprocessor-or-exporter",
+    "reasons": [],
+    "review": null
+  },
+  {
+    "id": "2026-10-31-001",
+    "status": "QUARANTINED",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19498_en",
+    "reasons": [
+      "quoted evidence absent from current original source",
+      "L3 reviewer: partially_supported (confidence 0.90); The interpretation adds facts not present in the source: it says biobased feedstock rules would sit alongside 'recycled-content requirements already being elaborated' and that packaging producers 'may need to document both fossil-based recycled content and bio-based content'. The source only discusses biobased feedstock, targets for biobased feedstock and relevant requirements; it does not mention recycled-content requirements or documentation obligations."
+    ],
+    "review": "reviews/items/2026-10-31-001.json"
+  },
+  {
+    "id": "2026-10-31-002",
+    "status": "REJECTED",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14861_en",
+    "reasons": [],
+    "review": null
+  },
+  {
+    "id": "2026-10-31-003",
+    "status": "REJECTED",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15492_en",
+    "reasons": [],
+    "review": null
+  }
+]

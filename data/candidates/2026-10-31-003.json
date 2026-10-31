@@ -1,0 +1,20 @@
+{
+ "id": "2026-10-31-003",
+ "created": "2026-10-31",
+ "snapshot_id": "2026-10-31/eu-have-your-say-7373fc0a55",
+ "source_id": "eu-have-your-say",
+ "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/15492_en",
+ "source_trust": "official",
+ "title": "Revision of EU rules on public procurement",
+ "triage": {
+  "relevance": 0.7,
+  "dossier_id": "eu-public-procurement",
+  "new_dossier_suggestion": null,
+  "category": "consultation",
+  "reason": "The Commission's 'Have Your Say' portal shows the revision of the EU public procurement rules is active in the adoption workflow with a feedback window open from 15 September to 24 December 2026, a concrete consultation step on the instrument covered by the EU public procurement dossier."
+ },
+ "draft": null,
+ "status": "discarded",
+ "review_id": null,
+ "issue": null
+}
