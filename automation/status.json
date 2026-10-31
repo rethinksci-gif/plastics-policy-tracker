@@ -2,7 +2,7 @@
   "checked_at": "2026-10-31T20:09:19.421069+00:00",
   "status": "skip",
   "last_publication": "2026-10-26-issue-002",
-  "last_successful_check": "2026-10-31T20:10:47.874298+00:00",
+  "last_successful_check": "2026-10-31T20:11:32Z",
   "reasons": [
     "edition already published in this window"
   ],
@@ -18,5 +18,9 @@
     "2026-10-31/govuk-search-c3f056f22b",
     "2026-10-31/cn-ndrc-notices-7dda655e8a",
     "2026-10-31/cn-mee-f4ffe0b37c"
-  ]
+  ],
+  "deployment_status": "confirmed",
+  "confirmed_revision": "23684a889b4ac67acf683babba7a32621dad5a44",
+  "deployment_run_url": "https://github.com/rethinksci-gif/plastics-policy-tracker/actions/runs/41237688926",
+  "last_confirmed_publication": "2026-10-26-issue-002"
 }
