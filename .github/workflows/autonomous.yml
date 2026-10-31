@@ -53,6 +53,8 @@ jobs:
           OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
           CCU_CONTACT_EMAIL: ${{ secrets.CCU_CONTACT_EMAIL }}
         run: uv run python automation/run.py
+      - name: Validate dossier schemas and provenance after generation
+        run: uv run python -m pipeline validate
       - name: Validate automatic publication records
         run: python automation/validate.py
       - name: Build before committing publication

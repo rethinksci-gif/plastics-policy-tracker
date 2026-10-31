@@ -172,3 +172,13 @@ def test_age_measured_from_detection_not_issue_date(dossier):
     res = deterministic_checks(draft(date="2026-08-01"), dossier, status_fn=lambda u: 200, trusted=TRUSTED,
                                now=date(2026, 10, 14), check_urls=True, detected=date(2026, 9, 20))
     assert not any(r.name == "event-age" for r in blocking(res))
+
+
+def test_generated_script_markup_is_quarantined(dossier):
+    d = draft(summary="The Commission adopted the act. <script>alert('bad')</script>")
+    assert any(r.name == "safe-markdown" for r in blocking(run(d, dossier)))
+
+
+def test_model_supplied_markdown_citation_is_quarantined(dossier):
+    d = draft(summary="The Commission adopted the act [citation](https://unverified.example/).")
+    assert any(r.name == "safe-markdown" for r in blocking(run(d, dossier)))

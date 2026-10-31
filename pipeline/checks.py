@@ -239,6 +239,15 @@ def deterministic_checks(draft: DraftUpdate, dossier: Dossier, snapshot_texts: l
     if check_urls is None:
         check_urls = config()["review"]["check_source_urls"]
     results = [check_schema(draft), check_domain(draft.source_url, trusted)]
+    prose = [draft.summary, draft.source_quote, draft.source_quote_en or "",
+             getattr(draft, "interpretation", None) or ""]
+    prose += [x.text for x in getattr(draft, "next_steps", [])]
+    prose += [x.text for x in getattr(draft, "key_dates", [])]
+    unsafe = any(re.search(r"<\s*/?\s*[A-Za-z][^>]*>|javascript:|data:text/|\]\(", text, re.I)
+                 for text in prose)
+    results.append(CheckResult(layer=1, name="safe-markdown", passed=not unsafe,
+                               severity="reject" if unsafe else "info",
+                               detail="active markup or embedded model-supplied links" if unsafe else "plain prose"))
     if check_urls:
         results.append(check_url_live(draft.source_url, status_fn))
     results += [
