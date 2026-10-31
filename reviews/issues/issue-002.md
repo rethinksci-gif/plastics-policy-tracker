@@ -1,16 +1,12 @@
 # Review report — 2026-10-26-issue-002
 
-- **Decision:** hold (gate closed)
-- **Quarantine ratio:** 100%
-- **LLM calls this run:** 14
-
-## Why the gate is closed
-
-- no verified items; no empty or filler edition
+- **Decision:** publish (gate open)
+- **Quarantine ratio:** 50%
+- **LLM calls this run:** 17
 
 ## Published items
 
-- none
+- `2026-10-31-005` eu-ppwr: The Commission opened a consultation on bio-based plastic packaging. The results will inform an assessment of the technological development and environmental performance of bio-based plastic packaging.
 
 ## Quarantined items (not published)
 
@@ -23,7 +19,7 @@
 
 Passed: **True**
 
-
+No blocking issues found. The published item is consistent with the recorded history and its source quote. The quarantined PPWR item is high-impact and absent from the issue; readers may benefit from knowing the consultation deadline (13 January 2027), reference Ares(2026)9620334, and that it concerns EU rules with targets, but this is informational only.
 
 ### Blocking (factual) findings
 
@@ -32,4 +28,8 @@ None.
 ### Style and terminology notes (reported only, not blocking)
 
 None.
+
+### High-impact dossiers with held or missing items
+
+- eu-ppwr
 

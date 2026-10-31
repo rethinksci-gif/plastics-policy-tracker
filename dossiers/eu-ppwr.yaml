@@ -27,6 +27,16 @@ summary: Regulation (EU) 2025/40 on packaging and packaging waste replaces Direc
   into force on 11 February 2025 and applies from 12 August 2026. Detailed rules follow in implementing
   and delegated acts, with deadlines set out in the Commission's implementation timeline.
 updates:
+- date: '2026-10-21'
+  summary: The Commission opened a consultation on bio-based plastic packaging. The results will inform
+    an assessment of the technological development and environmental performance of bio-based plastic
+    packaging.
+  source_url: https://environment.ec.europa.eu/news_en
+  source_quote: |-
+    Commission opens consultation on bio-based plastic packaging
+    The results will inform an assessment of the technological development and environmental performance of bio-based plastic packaging.
+  source_lang: en
+  review_id: 2026-10-31-005
 - date: '2026-09-16'
   summary: A public feedback period on the delegated act establishing sustainability criteria for plastic
     recycling technologies ran from 14 August 2026 to 16 September 2026; feedback is closed.

@@ -1,0 +1,14 @@
+{
+  "id": "PPT-2026-10-26",
+  "file": "issues/2026-10-26-issue-002.md",
+  "sha256": "493cfb77fc72da8957e9f4fbda08aa8a4690fcad3f3cf02c6f36b6d2ac4b342b",
+  "items": [
+    {
+      "id": "2026-10-31-005",
+      "status": "VERIFIED",
+      "reasons": [],
+      "source_url": "https://environment.ec.europa.eu/news_en",
+      "review": "reviews/items/2026-10-31-005.json"
+    }
+  ]
+}

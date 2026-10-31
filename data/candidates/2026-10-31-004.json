@@ -1,0 +1,20 @@
+{
+ "id": "2026-10-31-004",
+ "created": "2026-10-31",
+ "snapshot_id": "2026-10-31/oeil-procurement-890b9b382f",
+ "source_id": "oeil-procurement",
+ "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)",
+ "source_trust": "official",
+ "title": "Procedure File: 2026/0265(COD) | Legislative Observatory | European Parliament",
+ "triage": {
+  "relevance": 0.8,
+  "dossier_id": "eu-public-procurement",
+  "new_dossier_suggestion": null,
+  "category": "proposal",
+  "reason": "Procedure file shows the Commission's Public Procurement Act legislative proposal COM(2026)0590 was published on 09/09/2026 and entered Parliament's preparatory phase, a concrete new legislative step within the 60-day window."
+ },
+ "draft": null,
+ "status": "discarded",
+ "review_id": null,
+ "issue": null
+}

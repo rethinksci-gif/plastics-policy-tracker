@@ -1,15 +1,20 @@
 {
  "review_id": "issue-002",
  "issue": "2026-10-26-issue-002",
- "created": "2026-10-31T07:22:35.834378+00:00",
- "decision": "hold",
- "would_publish": false,
- "hold_reasons": [
-  "no verified items; no empty or filler edition"
- ],
+ "created": "2026-10-31T19:55:25.900314+00:00",
+ "decision": "publish",
+ "would_publish": true,
+ "hold_reasons": [],
  "gate_overridden_by_maintainer": false,
- "quarantine_ratio": 1.0,
- "published_items": [],
+ "quarantine_ratio": 0.5,
+ "published_items": [
+  {
+   "id": "2026-10-31-005",
+   "dossier": "eu-ppwr",
+   "review_id": "2026-10-31-005",
+   "summary": "The Commission opened a consultation on bio-based plastic packaging. The results will inform an assessment of the technological development and environmental performance of bio-based plastic packaging."
+  }
+ ],
  "quarantined_items": [
   {
    "id": "2026-10-31-001",
@@ -28,17 +33,19 @@
   "passed": true,
   "contradictions": [],
   "history_conflicts": [],
-  "missing_high_impact": [],
+  "missing_high_impact": [
+   "eu-ppwr"
+  ],
   "terminology_issues": [],
   "translation_issues": [],
   "fact_vs_interpretation_issues": [],
   "item_flags": {},
   "style_notes": {},
-  "notes": ""
+  "notes": "No blocking issues found. The published item is consistent with the recorded history and its source quote. The quarantined PPWR item is high-impact and absent from the issue; readers may benefit from knowing the consultation deadline (13 January 2027), reference Ares(2026)9620334, and that it concerns EU rules with targets, but this is informational only."
  },
- "llm_calls": 14,
+ "llm_calls": 17,
  "llm_usage": {
-  "prompt_tokens": 22992,
-  "completion_tokens": 11292
+  "prompt_tokens": 36865,
+  "completion_tokens": 12534
  }
 }
