@@ -5,14 +5,15 @@ import { url } from '../../lib/data';
 
 export async function getStaticPaths() {
   const items = (await getCollection('reviews')).map((r) => ({ params: { id: r.data.review_id }, props: { kind: 'item' as const, item: r.data, issue: null } }));
-  const issues = (await getCollection('issueReviews')).map((r) => ({ params: { id: r.data.review_id }, props: { kind: 'issue' as const, item: null, issue: r.data } }));
+  const published = new Set((await getCollection('issues')).map((i) => i.id));
+  const issues = (await getCollection('issueReviews')).filter((r) => r.data.decision === 'publish' && published.has(r.data.issue)).map((r) => ({ params: { id: r.data.review_id }, props: { kind: 'issue' as const, item: null, issue: r.data } }));
   const summaries = (await getCollection('summaryReviews')).map((r) => ({ params: { id: r.data.review_id }, props: { kind: 'summary' as const, item: null, issue: null, summary: r.data } }));
   return [...items, ...issues, ...summaries];
 }
 const { kind, item, issue } = Astro.props;
 const summary = (Astro.props as any).summary as import('astro:content').CollectionEntry<'summaryReviews'>['data'] | undefined;
 const summaryReviews = summary
-  ? [{ title: 'Reviewer', r: summary.llm_review, model: summary.model }, { title: 'High-impact confirmation (second, independent reviewer)', r: summary.confirm_review, model: summary.confirm_model }].filter((x) => x.r)
+  ? [{ title: 'Reviewer', r: summary.llm_review, model: summary.model }, { title: 'High-impact second review (same evidence, not independent confirmation)', r: summary.confirm_review, model: summary.confirm_model }].filter((x) => x.r)
   : [];
 const mark = (passed: boolean, sev: string) => (passed ? ['pass', 'pass'] : sev === 'flag' ? ['flag', 'flag'] : ['fail', 'FAIL']);
 const ed = issue?.editorial_review ?? {};
@@ -24,11 +25,11 @@ const styleNotes: string[] = [
 const l3 = item
   ? [
       { title: 'Reviewer', r: item.llm_review, model: item.model },
-      { title: 'High-impact confirmation (second, independent reviewer)', r: item.confirm_review, model: item.confirm_model },
+      { title: 'High-impact second review (same evidence, not independent confirmation)', r: item.confirm_review, model: item.confirm_model },
     ].filter((x) => x.r)
   : [];
 ---
-{kind === 'item' && item && (
+{kind === 'item' && item && item.outcome === 'passed' && (
   <Base title={`Review ${item.review_id}`} description={`Review record ${item.review_id} for ${item.dossier_id}`}>
     <p class="small muted"><a href={url('verification/')}>How we verify</a> / review record</p>
     <h1>Review <code>{item.review_id}</code></h1>
@@ -39,7 +40,7 @@ const l3 = item
       <thead><tr><th>Layer</th><th>Check</th><th>Result</th><th>Detail</th></tr></thead>
       <tbody>{item.checks.map((c) => { const [cls, txt] = mark(c.passed, c.severity); return <tr><td>{c.layer}</td><td>{c.name}</td><td class={cls}>{txt}</td><td class="small">{c.detail}</td></tr>; })}</tbody>
     </table></div>
-    <h2>Layer 3: independent reviewer</h2>
+    <h2>Layer 3: evidence-grounded reviewer</h2>
     {l3.length > 0 ? l3.map(({ title, r, model }) => (
       <>
         <h3>{title}</h3>
@@ -51,7 +52,7 @@ const l3 = item
     {item.reasons.length > 0 && <><h2>Why it was not passed</h2><ul>{item.reasons.map((r) => <li>{r}</li>)}</ul></>}
   </Base>
 )}
-{kind === 'summary' && summary && (
+{kind === 'summary' && summary && summary.outcome === 'passed' && (
   <Base title={`Review ${summary.review_id}`} description={`Review of the overview text for ${summary.dossier_id}`}>
     <p class="small muted"><a href={url('verification/')}>How we verify</a> / overview review</p>
     <h1>Overview review: <a href={url(`dossiers/${summary.dossier_id}/`)}>{summary.dossier_id}</a></h1>
@@ -78,18 +79,13 @@ const l3 = item
     <p class="small muted"><a href={url('verification/')}>How we verify</a> / issue review report</p>
     <h1>Review report: {issue.issue}</h1>
     <p>Decision <strong>{issue.decision}</strong> · publish gate <strong class={issue.would_publish ? 'pass' : 'fail'}>{issue.would_publish ? 'open' : 'closed'}</strong> ·
-      quarantine ratio {(issue.quarantine_ratio * 100).toFixed(0)}% (limit 30%)</p>
+      quarantine ratio {(issue.quarantine_ratio * 100).toFixed(0)}% (item-level quarantine)</p>
     {issue.hold_reasons.length > 0 && <><h2>Why the gate closed</h2><ul>{issue.hold_reasons.map((h) => <li>{h}</li>)}</ul></>}
     <h2>Published items ({issue.published_items.length})</h2>
     <ul>{issue.published_items.map((p) => <li><a href={url(`reviews/${p.review_id}/`)}><code>{p.review_id}</code></a> <a href={url(`dossiers/${p.dossier}/`)}>{p.dossier}</a>: {p.summary}</li>)}</ul>
     <h2>Quarantined items ({issue.quarantined_items.length}) — not published</h2>
     {issue.quarantined_items.length === 0 && <p class="muted">None.</p>}
-    <ul>{issue.quarantined_items.map((q) => (
-      <li><strong>{q.title}</strong> <span class={`badge ${q.impact}`}>{q.impact}</span> <a href={url(`reviews/${q.id}/`)}><code>{q.id}</code></a>
-        {q.summary && <div class="small">{q.summary}</div>}
-        <div class="small"><a href={q.source_url} rel="noopener">source</a></div>
-        <ul class="small">{q.reasons.map((r) => <li>{r}</li>)}</ul></li>
-    ))}</ul>
+    <p class="muted">Quarantined claims and their source excerpts are excluded from the public website. The machine-readable audit retains their reasons.</p>
     <h2>Layer 4: editorial review</h2>
     <p>Passed: <strong class={ed.passed ? 'pass' : 'fail'}>{String(ed.passed)}</strong></p>
     {ed.notes && <p class="small">{ed.notes}</p>}
@@ -100,5 +96,13 @@ const l3 = item
     <p class="small muted">Reported to the editor only; these never hold an item back.</p>
     {styleNotes.length ? <ul class="small">{styleNotes.map((x) => <li>{x}</li>)}</ul> : <p class="small muted">None.</p>}
     {(ed.missing_high_impact ?? []).length > 0 && <><h3>High-impact dossiers with held or missing items</h3><ul class="small">{ed.missing_high_impact.map((x: string) => <li>{x}</li>)}</ul></>}
+  </Base>
+)}
+
+{((kind === 'item' && item?.outcome !== 'passed') || (kind === 'summary' && summary?.outcome !== 'passed')) && (
+  <Base title="Evidence quarantined" description="This evidence did not pass publication checks.">
+    <h1>Evidence quarantined</h1>
+    <p>This item is excluded from publication because verification is incomplete or failed. Its claims and source excerpts are not displayed.</p>
+    <p><a href={url('verification/')}>How we verify</a></p>
   </Base>
 )}

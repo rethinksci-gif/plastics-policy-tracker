@@ -32,7 +32,9 @@ class FakeLLM:
     def json_call(self, model, system, user, schema, max_tokens=0):
         self.called.append(model)
         verdict, conf = self.verdicts[model]
-        return LLMReview(verdict=verdict, confidence=conf, checks={}, issues=[] if verdict == "supported" else ["x"])
+        return LLMReview(verdict=verdict, confidence=conf, checks={key: True for key in (
+            "quote_supports_summary", "dates_match", "numbers_match", "bodies_match", "references_match",
+            "no_exaggeration", "stage_supported", "next_steps_supported", "translation_faithful")}, issues=[] if verdict == "supported" else ["x"])
 
 
 def run(llm, impact):
@@ -51,7 +53,7 @@ def test_high_impact_needs_both_reviewers():
     out = run(llm, "high")
     assert llm.called == ["fast-model", "pro-model"]
     assert out["confirm_model"] == "pro-model"
-    assert any("high-impact confirmation" in r for r in out["reasons"])
+    assert any("high-impact second review" in r for r in out["reasons"])
 
 
 def test_high_impact_rejected_by_fast_never_reaches_pro():
@@ -78,3 +80,12 @@ def test_factual_flags_block():
     assert editorial_blocking(ed) == {"2026-10-14-006": ["stage conflicts with history"]}
     unattached = EditorialReview(passed=False, contradictions=["items 1 and 2 disagree on the date"])
     assert editorial_unattached_blocking(unattached) == ["items 1 and 2 disagree on the date"]
+
+
+def test_supported_verdict_with_missing_checks_is_quarantined():
+    assert not review._verdict_ok(LLMReview(verdict="supported", confidence=1, checks={}))
+
+
+def test_unattached_conflict_not_hidden_by_other_item_flag():
+    ed = EditorialReview(passed=False, contradictions=["global conflict"], item_flags={"one": ["item error"]})
+    assert editorial_unattached_blocking(ed) == ["global conflict"]

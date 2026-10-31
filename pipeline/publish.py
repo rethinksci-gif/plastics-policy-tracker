@@ -32,13 +32,12 @@ def write_outputs(**values) -> None:
 
 
 def pr_body(report: dict) -> str:
-    maint = config()["github"]["maintainer"]
-    lines = [f"@{maint} the publish gate is **closed** for `{report['issue']}`. Nothing has been published.", "",
+    lines = [f"The publish gate is **closed** for `{report['issue']}`. Nothing has been published.", "",
              "**Why:**", *[f"- {h}" for h in report["hold_reasons"]], "",
              f"Draft issue: `{report['issue_file']}`",
              f"Review report: `reviews/issues/{report['review_id']}.md`", "",
              "**Quarantined items:**"]
     for q in report["quarantined_items"]:
         lines.append(f"- `{q['id']}` {q['dossier']} ({q['impact']}): {'; '.join(q['reasons'])[:300]}")
-    lines += ["", "To publish anyway after checking: run the *Biweekly issue* workflow with `force_publish: true`."]
+    lines += ["", "No override is available. New source evidence must pass the automatic gates before publication."]
     return "\n".join(lines)

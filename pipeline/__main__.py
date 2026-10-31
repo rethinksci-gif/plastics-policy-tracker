@@ -64,7 +64,7 @@ def cmd_biweekly(a):
         return
     llm = LLM()
     try:
-        r = compose.run(llm, dry_run=a.dry_run, override_gate=a.force_publish)
+        r = compose.run(llm, dry_run=a.dry_run, override_gate=False)
     except BudgetExceeded as e:
         write_outputs(decision="hold")
         print(f"LLM budget exceeded: {e}")
@@ -149,7 +149,6 @@ def main(argv=None):
     s = sub.add_parser("biweekly", help="compose (and decide whether to publish) an issue")
     s.add_argument("--force", action="store_true", help="ignore the ISO-week parity check")
     s.add_argument("--dry-run", action="store_true")
-    s.add_argument("--force-publish", action="store_true")
     s.set_defaults(fn=cmd_biweekly)
 
     s = sub.add_parser("validate", help="layer 1+2 checks over all dossiers")

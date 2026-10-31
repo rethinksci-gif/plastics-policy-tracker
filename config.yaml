@@ -61,5 +61,4 @@ schedule:
   issue_window_days: 14
 
 gate:
-  max_quarantine_ratio: 0.30
-  hold_on_high_impact_quarantine: true
+  minimum_verified_items: 1  # unrelated quarantined items do not block this threshold

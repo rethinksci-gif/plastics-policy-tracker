@@ -6,3 +6,9 @@ __pycache__/
 site/node_modules/
 site/dist/
 site/.astro/
+
+# Autonomous runtime artifacts
+automation/expected-receipt.json
+automation/confirmation.json
+automation/runtime/
+automation/run-result.json

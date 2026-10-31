@@ -38,13 +38,20 @@ def run(llm: LLM, snapshot_ids: list[str]) -> dict:
     dossier_list = "\n".join(f"- {d.id} — {d.title} — {d.jurisdiction}" for d in dossiers.values())
     names = {s.id: s.name for s in load_sources()}
     threshold = config()["triage"]["relevance_threshold"]
-    report = {"candidates": [], "discarded": [], "new_dossier_suggestions": [], "leads": []}
+    report = {"candidates": [], "discarded": [], "new_dossier_suggestions": [], "leads": [], "pending": []}
     LOGS.mkdir(parents=True, exist_ok=True)
     discard_log = LOGS / f"triage-{today().isoformat()}.jsonl"
     snaps = [load_snapshot(sid) for sid in snapshot_ids]
-    results = parallel_map(
-        lambda sn: triage_snapshot(llm, sn, dossier_list, names.get(sn.source_id, sn.source_id)), snaps)
+    def guarded(sn):
+        try:
+            return triage_snapshot(llm, sn, dossier_list, names.get(sn.source_id, sn.source_id))
+        except Exception:
+            return None
+    results = parallel_map(guarded, snaps)
     for sid, snap, result in zip(snapshot_ids, snaps, results):
+        if result is None:
+            report["pending"].append(sid)
+            continue
         if result.dossier_id and result.dossier_id not in dossiers:
             result.new_dossier_suggestion = result.new_dossier_suggestion or result.dossier_id
             result.dossier_id = None

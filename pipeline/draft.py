@@ -30,7 +30,7 @@ class _DraftOrSkip(BaseModel):
 def run(llm: LLM) -> dict:
     dossiers = load_dossiers()
     limit = config()["llm"]["max_snapshot_chars"]
-    report = {"drafted": [], "skipped": []}
+    report = {"drafted": [], "skipped": [], "pending": []}
     def one(cand):
         d = dossiers[cand.triage.dossier_id]
         snap = load_snapshot(cand.snapshot_id)
@@ -43,7 +43,15 @@ def run(llm: LLM) -> dict:
         return llm.json_call(model_for("draft"), system, user, _DraftOrSkip, max_tokens=2500)
 
     cands = load_candidates("triaged")
-    for cand, out in zip(cands, parallel_map(one, cands)):
+    def guarded(cand):
+        try:
+            return one(cand)
+        except Exception:
+            return None
+    for cand, out in zip(cands, parallel_map(guarded, cands)):
+        if out is None:
+            report["pending"].append(cand.id)
+            continue
         if out.skip or out.draft is None:
             cand.status = "discarded"
             report["skipped"].append({"candidate": cand.id, "reason": out.reason})

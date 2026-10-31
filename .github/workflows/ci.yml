@@ -18,7 +18,7 @@ jobs:
           python-version: "3.12"
       - run: uv sync --frozen
       - name: Unit tests (review layers 1 and 2)
-        run: uv run pytest -q
+        run: uv run pytest -q tests automation/tests
       - name: Layer 1+2 check of all dossiers
         run: uv run python -m pipeline validate
       - uses: actions/setup-node@v4

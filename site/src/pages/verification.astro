@@ -6,8 +6,8 @@ import { url } from '../lib/data';
   <div class="prose">
     <h1>How we verify</h1>
     <p class="lede">Drafting is done with the help of a language model. Language models can invent things, so nothing reaches this site
-      on the model's word. Every update must pass four independent layers of checks. Anything that fails is held back,
-      logged publicly and sent to a human.</p>
+      on the model's word. Every update must pass four complementary layers of checks. Anything that fails is held back,
+      recorded in the audit and excluded from publication.</p>
 
     <h2>Where facts come from</h2>
     <p>We monitor official sources daily: EUR-Lex and the EU Publications Office, the Commission's <em>Have Your Say</em> portal,
@@ -23,7 +23,7 @@ import { url } from '../lib/data';
       <li>Every source link must return HTTP 200 and be on our whitelist of official domains.</li>
       <li>Dates must make sense: an event that has happened cannot be dated after today; next steps whose date has passed are marked <em>to be confirmed</em>.</li>
       <li>Only news counts: an event that was already more than 60 days old when we first detected it is rejected.</li>
-      <li>Stage changes must be legal: stages only move forward. A backwards move, a jump of more than two stages, or a move to <em>withdrawn</em>/<em>stalled</em> is sent to a human.</li>
+      <li>Stage changes must be legal: stages only move forward. A backwards move, a jump of more than two stages, or a move to <em>withdrawn</em>/<em>stalled</em> is quarantined.</li>
       <li>The same event cannot be recorded twice in a dossier.</li>
     </ul>
 
@@ -32,13 +32,13 @@ import { url } from '../lib/data';
       the quote must be found in the saved snapshot of the cited page. If it is not there, the update is rejected outright.
       This is the main defence against invented content. For sources in other languages we keep the original quote and show an English translation next to it.</p>
 
-    <h2>Layer 3 — an independent reviewer (separate model call)</h2>
+    <h2>Layer 3 — an evidence-grounded reviewer (separate model call)</h2>
     <p>A separate reviewer call sees <em>only</em> the source text and the claim, never the drafter's reasoning. It is told to look for
       errors and to assume the claim is wrong until the source proves it. It checks dates, numbers, institutions, legal references,
       stage changes and next steps, and looks for overstatement or inference that the source does not contain. Only a verdict of
       <code>supported</code> with confidence ≥ 0.80 passes. Items about high-impact instruments that pass then go to a
-      second, independent reviewer running on a stronger model, and must pass both. The model used for each review is
-      shown in its review record.</p>
+      second reviewer running on a stronger model, and must pass both. The model used for each review is
+      shown in its review record. Every required check must also pass; model agreement on the same source is not independent confirmation.</p>
 
     <h2>Layer 4 — editorial review of the whole issue</h2>
     <p>Before an issue goes out, the full set of items is checked together: contradictions between items or with a dossier's history,
@@ -53,21 +53,20 @@ import { url } from '../lib/data';
       the second opinion on high-impact items and for the editorial review of each issue.</p>
 
     <h2>Overviews of each law</h2>
-    <p>The short overview at the top of each law's page is checked too. An independent reviewer compares it with the saved
+    <p>The short overview at the top of each law's page is checked too. A separate reviewer compares it with the saved
       official sources for that instrument (a second reviewer as well for high-impact instruments). An overview is shown only
       while that exact text has a passing review; any edit hides it until it is reviewed again. Where no official source can
       be saved, no overview is shown.</p>
 
     <h2>What happens when something fails</h2>
     <ul>
-      <li>It goes into <strong>quarantine</strong>: not published, recorded in the review report, and opened as a GitHub issue for a human to check.</li>
-      <li><strong>Publish gate:</strong> if more than 30% of an issue's items are quarantined, or any high-impact item is quarantined,
-        the issue is not published automatically. It waits for the editor to approve it by hand.</li>
+      <li>It goes into <strong>quarantine</strong>: not published, with machine-readable reasons retained in the audit.</li>
+      <li><strong>Publish gate:</strong> unrelated verified items can publish even when other items are quarantined. Empty editions and unresolved edition-wide contradictions cannot publish. There is no manual override.</li>
     </ul>
 
     <h2>Review records</h2>
     <p>Every published update shows its source link, the quote (expandable) and a review ID linking to its full review record.
-      Every issue links to its issue-level review report, including the quarantined items and the reasons. All records are
+      Every issue links to its issue-level review report, with quarantine counts. Unsupported claims are omitted from the website. Detailed audit records are
       also kept in the <a href="https://github.com/rethinksci-gif/plastics-policy-tracker/tree/main/reviews">repository</a>.</p>
 
     <h2>Limits</h2>

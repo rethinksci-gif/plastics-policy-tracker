@@ -124,18 +124,14 @@ def editorial_blocking(ed: EditorialReview) -> dict[str, list[str]]:
 def editorial_unattached_blocking(ed: EditorialReview) -> list[str]:
     """Blocking findings the editor could not pin to an item; these hold the whole issue. The editor's
     `passed` flag is not used on its own, so a model that fails an issue for style alone cannot hold it."""
-    if ed.item_flags:
-        return []
     return [x for key in BLOCKING_KEYS for x in getattr(ed, key)]
 
 
 def write_highlights(llm: LLM, items: list[dict]) -> list[str]:
     if not items:
         return []
-    slim = [{k: i[k] for k in ("title", "jurisdiction", "impact", "date", "summary", "stage_before", "stage_after")}
-            for i in items]
-    system, user = prompt_parts("highlights", items=json.dumps(slim, indent=1, ensure_ascii=False))
-    return llm.json_call(model_for("highlights"), system, user, Highlights, max_tokens=800).highlights[:5]
+    # Reuse reviewed summaries; a post-review model must not introduce new claims.
+    return [i["summary"] for i in items[:5]]
 
 
 # ---------------------------------------------------------------------------
@@ -214,7 +210,7 @@ def render_issue(meta: dict, items: list[dict], deadlines: list[dict], unchanged
     out += ["---", "",
             f"**Verification.** Every item above passed four layers of checks. "
             f"[Read this issue's review report]({base}/reviews/{meta['review_report']}/). "
-            f"{len(quarantined)} item(s) were held back for human review and are not included.", ""]
+            f"{len(quarantined)} item(s) were quarantined for insufficient evidence and are not included.", ""]
     return "\n".join(out)
 
 
@@ -225,26 +221,44 @@ def render_issue(meta: dict, items: list[dict], deadlines: list[dict], unchanged
 
 def run(llm: LLM, dry_run: bool = False, issue_date: date | None = None, status_fn=None,
         override_gate: bool = False) -> dict:
-    """override_gate: the maintainer has checked a held issue and approved it (force_publish)."""
+    """Publish only evidence-gated items; no human or API override can bypass the gate."""
+    if override_gate:
+        raise ValueError("Evidence gates cannot be overridden")
     issue_date = issue_date or today()
+    # One immutable edition per anchored fourteen-day window, including reruns on other days.
+    anchor = date(2026, 10, 12)
+    window_start = anchor + timedelta(days=((issue_date - anchor).days // 14) * 14)
+    for existing in ISSUES.glob("*.md"):
+        published_day = date.fromisoformat(existing.name[:10])
+        if window_start <= published_day < window_start + timedelta(days=14):
+            return {"decision": "skip", "issue": existing.stem, "issue_file": str(existing),
+                    "hold_reasons": ["edition already published in this window"]}
     dossiers = load_dossiers()
     number = issue_number()
     slug = f"{issue_date.isoformat()}-issue-{number:03d}"
 
     pool = [c for c in load_candidates() if c.issue is None and c.status in ("passed", "quarantined")]
-    passed = [c for c in pool if c.status == "passed"]
+    coverage_start = issue_date - timedelta(days=14)
+    passed = [c for c in pool if c.status == "passed" and c.draft
+              and coverage_start <= fuzzy_date_bounds(c.draft.date)[0] < issue_date]
     quarantined_c = [c for c in pool if c.status == "quarantined"]
 
-    # Global re-check of layers 1+2 (dates, duplicates and provenance may have changed since the daily run).
+    # Recheck semantics and availability against source evidence at publication time.
+    from .review import review_candidate, save_record
     recheck_failures = {}
+    checked_dossiers = dict(dossiers)
     for c in list(passed):
-        res = deterministic_checks(c.draft, dossiers[c.triage.dossier_id], status_fn=status_fn,
-                                   detected=c.created)
-        bad = blocking(res)
-        if bad:
-            recheck_failures[c.id] = [f"L{r.layer} {r.name}: {r.detail}" for r in bad]
+        d = checked_dossiers[c.triage.dossier_id]
+        rec = review_candidate(llm, c, d, status_fn=status_fn, check_urls=True)
+        save_record(rec, c)
+        if rec.outcome != "passed":
+            recheck_failures[c.id] = rec.reasons
             passed.remove(c)
             quarantined_c.append(c)
+            c.status = "quarantined"
+            save_candidate(c)
+        else:
+            checked_dossiers[d.id] = apply_candidate(d, c)
 
     items = [item_view(c, dossiers[c.triage.dossier_id]) for c in passed]
     q_items = []
@@ -267,26 +281,30 @@ def run(llm: LLM, dry_run: bool = False, issue_date: date | None = None, status_
             c = next(c for c in passed if c.id == cid)
             passed.remove(c)
             quarantined_c.append(c)
+            c.status = "quarantined"
+            save_candidate(c)
             q_items.append({"id": cid, "dossier": match["dossier"], "title": match["title"],
                             "impact": match["impact"], "summary": match["summary"],
                             "source_url": match["source_url"], "reasons": [f"L4 editor: {p}" for p in problems]})
 
+    if items and editorial.item_flags:
+        editorial = editorial_review(llm, items, q_items, dossiers, issue_date)
+        # New item findings on the second pass cannot be ignored; fail closed for this edition.
+        if editorial_blocking(editorial):
+            editorial.contradictions.append("remaining items still have unresolved factual flags")
+
     # Publish gate.
     total = len(items) + len(q_items)
     ratio = len(q_items) / total if total else 0.0
-    gate_cfg = config()["gate"]
     hold_reasons = []
-    if ratio > gate_cfg["max_quarantine_ratio"]:
-        hold_reasons.append(f"{ratio:.0%} of items quarantined (limit {gate_cfg['max_quarantine_ratio']:.0%})")
-    high_q = [q for q in q_items if q["impact"] == "high"]
-    if gate_cfg["hold_on_high_impact_quarantine"] and high_q:
-        hold_reasons.append("high-impact item(s) quarantined: " + ", ".join(sorted({q["dossier"] for q in high_q})))
+    if not items:
+        hold_reasons.append("no verified items; no empty or filler edition")
     unattached = editorial_unattached_blocking(editorial)
     if unattached:
         hold_reasons.append("editorial review found blocking problems not tied to one item: " + "; ".join(unattached)[:400])
     if dry_run:
         decision = "dry-run"
-    elif hold_reasons and not override_gate:
+    elif hold_reasons:
         decision = "hold"
     else:
         decision = "publish"

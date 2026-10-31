@@ -1,3 +1,5 @@
+> **Scheduled publishing:** [Autonomous evidence publishing](AUTOMATION.md) now owns routine publication; legacy manual instructions below apply only to optional editorial diagnostics.
+
 # Plastics Policy Tracker
 
 A tracker for plastics laws and regulations worldwide, published as a newsletter every other Monday. Every published fact is
@@ -48,23 +50,21 @@ biweekly: L1+L2 re-check → L4 editorial review → publish gate ──▶ issu
 | review (layer 3) | fast | Every drafted item |
 | review_high_confirm | pro | Second opinion, only for `impact: high` items that passed the fast review |
 | editor (layer 4) | pro | Once per issue |
-| highlights | fast | Rewrites already verified items |
+| highlights | deterministic | Reuses verified summaries without adding claims |
 
 `fast` = `DEEPSEEK_MODEL_FAST` (default `deepseek-flash`), `pro` = `DEEPSEEK_MODEL_PRO` (default `deepseek-v4-pro`).
 
 Dossier overviews (`summary`) are reviewed the same way against the snapshots of each dossier's official sources
-(`python -m pipeline review-summaries`, also run by the daily workflow for new or edited summaries; records in
+(`python -m pipeline review-summaries`; records in
 `reviews/summaries/`). The site shows an overview only while that exact text has a passing review.
 
-Anything that fails is quarantined: it is not published, it is written to `reviews/`, and it is opened as a GitHub issue
-labelled `needs-human-review`. If more than 30% of an issue's items are quarantined, or any high-impact item is, the issue
-waits for manual approval.
+Anything that fails is quarantined and recorded in `reviews/`. Unrelated verified items may publish automatically. Empty editions and unresolved global contradictions remain blocked. No manual override exists, and normal scheduled runs do not open approval PRs or issues. Model agreement is not independent source confirmation.
 
 ## Commands
 
 ```bash
 uv run python -m pipeline daily [--dry-run]           # fetch → triage → draft → review
-uv run python -m pipeline biweekly [--force] [--dry-run] [--force-publish]
+uv run python -m pipeline biweekly [--force] [--dry-run]
 uv run python -m pipeline validate [--urls]           # layer 1+2 over all dossiers
 uv run python -m pipeline capture URL... --source-id X --jurisdiction EU [--mode full] [--lang fr]
 uv run python -m pipeline review-seeds                # layers 1–3 for hand-seeded dossier updates

@@ -8,8 +8,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -17,11 +15,14 @@ concurrency:
 
 jobs:
   build:
+    permissions:
+      contents: read
+      pages: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -33,11 +34,23 @@ jobs:
           npm ci
           npm run build
       - uses: actions/configure-pages@v5
+      - run: python3 automation/validate.py
+      - name: Record exact build for live confirmation
+        run: python3 automation/confirm.py prepare --root site/dist
+      - uses: actions/upload-artifact@v7
+        with:
+          name: publication-receipt
+          path: automation/expected-receipt.json
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site/dist
 
   deploy:
+    permissions:
+      contents: read
+      actions: read
+      pages: write
+      id-token: write
     needs: build
     runs-on: ubuntu-latest
     environment:
@@ -46,3 +59,21 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v7
+        with:
+          name: publication-receipt
+          path: automation
+      - name: Confirm live receipt and every published page
+        env:
+          LIVE_BASE: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+        run: python3 automation/confirm.py confirm --base "$LIVE_BASE"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: live-confirmation
+          path: automation/confirmation.json
+          if-no-files-found: ignore

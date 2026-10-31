@@ -39,7 +39,12 @@ def claim_text(c: Candidate) -> str:
 
 
 def _verdict_ok(r: LLMReview) -> bool:
-    return r.verdict == "supported" and r.confidence >= config()["review"]["min_confidence"]
+    required = {"quote_supports_summary", "dates_match", "numbers_match", "bodies_match",
+                "references_match", "no_exaggeration", "stage_supported",
+                "next_steps_supported", "translation_faithful"}
+    return (r.verdict == "supported" and not r.issues
+            and required <= r.checks.keys() and all(r.checks[k] is True for k in required)
+            and r.confidence >= config()["review"]["min_confidence"])
 
 
 def _reason(label: str, r: LLMReview) -> str:
@@ -63,7 +68,7 @@ def layer3(llm: LLM, claim: str, url: str, source_text: str, quote: str, impact:
         out["confirm_model"] = model_for("review_high_confirm")
         out["confirm"] = llm.json_call(out["confirm_model"], system, user, LLMReview, max_tokens=1500)
         if not _verdict_ok(out["confirm"]):
-            out["reasons"].append(_reason("high-impact confirmation", out["confirm"]))
+            out["reasons"].append(_reason("high-impact second review (same evidence, not independent confirmation)", out["confirm"]))
     return out
 
 
@@ -79,13 +84,26 @@ def review_candidate(llm: LLM | None, c: Candidate, dossier: Dossier, status_fn=
         snaps = snapshots_for_url(c.draft.source_url) or [load_snapshot(c.snapshot_id)]
         matching = [s for s in snaps if quote_in_text(c.draft.source_quote, s.text)[0]] or [snaps[-1]]
         src = max(matching, key=lambda s: len(s.text))  # fullest snapshot gives the reviewer most context
-        l3 = layer3(llm, claim_text(c), c.draft.source_url, src.text, c.draft.source_quote, dossier.impact)
-        reasons += l3["reasons"]
+        if status_fn is None and check_urls is not False:
+            try:
+                from .fetch import capture
+                fresh = capture(c.draft.source_url, c.source_id, c.source_trust, dossier.jurisdiction, "full", c.draft.source_lang)
+                if not quote_in_text(c.draft.source_quote, fresh.text)[0]:
+                    reasons.append("quoted evidence absent from current original source")
+                else:
+                    src = fresh
+            except Exception as exc:
+                reasons.append("current original source unavailable: " + type(exc).__name__)
+        try:
+            l3 = layer3(llm, claim_text(c), c.draft.source_url, src.text, c.draft.source_quote, dossier.impact)
+            reasons += l3["reasons"]
+        except Exception as exc:
+            reasons.append("semantic verification unavailable: " + type(exc).__name__)
     flag_reasons = [f"L{r.layer} {r.name}: {r.detail}" for r in flags(checks) if r.name == "stage-transition"]
     if reasons:
         outcome = "quarantined"
     elif flag_reasons:
-        outcome, reasons = "human-review", flag_reasons
+        outcome, reasons = "quarantined", flag_reasons
     else:
         outcome = "passed"
     return ReviewRecord(
@@ -184,7 +202,8 @@ def run(llm: LLM, dry_run: bool = False, status_fn=None) -> dict:
         dossier = dossiers[c.triage.dossier_id]
         save_record(rec, c)
         c.review_id = rec.review_id
-        c.status = "passed" if rec.outcome == "passed" else "quarantined"
+        duplicate = any(r.name == "duplicate" and not r.passed for r in rec.checks)
+        c.status = "discarded" if duplicate else "passed" if rec.outcome == "passed" else "quarantined"
         save_candidate(c)
         if rec.outcome == "passed":
             report["passed"].append(c.id)
