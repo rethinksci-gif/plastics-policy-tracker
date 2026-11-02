@@ -1,0 +1,43 @@
+{
+ "id": "2026-11-02-003",
+ "created": "2026-11-02",
+ "snapshot_id": "2026-11-02/cn-samr-recycled-plastics-9e12bfdf96",
+ "source_id": "cn-samr-recycled-plastics",
+ "source_url": "https://std.samr.gov.cn/gb/search/gbQueryPage?searchText=%E5%86%8D%E7%94%9F%E5%A1%91%E6%96%99&sortOrder=desc&pageSize=20&pageNumber=1",
+ "source_trust": "official",
+ "title": null,
+ "triage": {
+  "relevance": 0.75,
+  "dossier_id": "cn-recycled-plastic-standards",
+  "new_dossier_suggestion": null,
+  "category": "entry-into-force",
+  "reason": "The official SAMR standards platform shows the new national standard GB/T 47982-2026 on recycled plastics production and marketing management entering into force on 1 November 2026."
+ },
+ "draft": {
+  "dossier_id": "cn-recycled-plastic-standards",
+  "date": "2025-12-02",
+  "summary": "GB/T 40006.12-2025, Plastics — Recycled plastics — Part 12: Poly(methyl methacrylate) (PMMA) materials, was issued on 2 December 2025 and took effect on 1 July 2026.",
+  "source_url": "https://std.samr.gov.cn/gb/search/gbQueryPage?searchText=%E5%86%8D%E7%94%9F%E5%A1%91%E6%96%99&sortOrder=desc&pageSize=20&pageNumber=1",
+  "source_quote": "{\"id\":\"4507EFE13D23CB6AE06397BE0A0A601F\",\"C_C_NAME\":\"塑料 再生塑料 第12部分：聚甲基丙烯酸甲酯（PMMA）材料\",\"C_STD_CODE\":\"GB/T 40006.12-2025\",\"STD_NATURE\":\"推荐性\",\"ACT_DATE\":\"2026-07-01\",\"STATE\":\"现行\",\"ISSUE_DATE\":\"2025-12-02\",\"PROJECT_ID\":1018891}",
+  "source_quote_en": "{\"id\":\"4507EFE13D23CB6AE06397BE0A0A601F\",\"C_C_NAME\":\"Plastics — Recycled plastics — Part 12: Poly(methyl methacrylate) (PMMA) materials\",\"C_STD_CODE\":\"GB/T 40006.12-2025\",\"STD_NATURE\":\"Recommended\",\"ACT_DATE\":\"2026-07-01\",\"STATE\":\"Current\",\"ISSUE_DATE\":\"2025-12-02\",\"PROJECT_ID\":1018891}",
+  "source_lang": "zh",
+  "stage_change": null,
+  "next_steps": [],
+  "key_dates": [
+   {
+    "date": "2025-12-02",
+    "text": "GB/T 40006.12-2025 was issued.",
+    "source_url": "https://std.samr.gov.cn/gb/search/gbQueryPage?searchText=%E5%86%8D%E7%94%9F%E5%A1%91%E6%96%99&sortOrder=desc&pageSize=20&pageNumber=1"
+   },
+   {
+    "date": "2026-07-01",
+    "text": "GB/T 40006.12-2025 took effect; the standard is listed as current.",
+    "source_url": "https://std.samr.gov.cn/gb/search/gbQueryPage?searchText=%E5%86%8D%E7%94%9F%E5%A1%91%E6%96%99&sortOrder=desc&pageSize=20&pageNumber=1"
+   }
+  ],
+  "interpretation": "A material-specific standard for recycled PMMA gives recyclers and converters a published reference for this polymer stream, which may support clearer specification in PMMA applications."
+ },
+ "status": "quarantined",
+ "review_id": "2026-11-02-003",
+ "issue": null
+}

@@ -1,0 +1,97 @@
+{
+ "review_id": "2026-11-02-001",
+ "candidate_id": "2026-11-02-001",
+ "dossier_id": "eu-iaa",
+ "created": "2026-11-02T13:32:29.114062Z",
+ "impact": "medium",
+ "checks": [
+  {
+   "layer": 1,
+   "name": "schema",
+   "passed": true,
+   "severity": "info",
+   "detail": "valid"
+  },
+  {
+   "layer": 1,
+   "name": "trusted-domain",
+   "passed": true,
+   "severity": "info",
+   "detail": "domain trust: official"
+  },
+  {
+   "layer": 1,
+   "name": "safe-markdown",
+   "passed": true,
+   "severity": "info",
+   "detail": "plain prose"
+  },
+  {
+   "layer": 1,
+   "name": "url-200",
+   "passed": true,
+   "severity": "info",
+   "detail": "HTTP 200"
+  },
+  {
+   "layer": 1,
+   "name": "event-date",
+   "passed": true,
+   "severity": "info",
+   "detail": "2026-10-19 <= today 2026-11-02"
+  },
+  {
+   "layer": 1,
+   "name": "event-age",
+   "passed": true,
+   "severity": "info",
+   "detail": "event 2026-10-19 is 14 days before detection on 2026-11-02 (limit 60)"
+  },
+  {
+   "layer": 1,
+   "name": "stage-transition",
+   "passed": true,
+   "severity": "info",
+   "detail": "no stage change"
+  },
+  {
+   "layer": 1,
+   "name": "duplicate",
+   "passed": true,
+   "severity": "info",
+   "detail": "no duplicate"
+  },
+  {
+   "layer": 2,
+   "name": "quote-provenance",
+   "passed": true,
+   "severity": "info",
+   "detail": "verbatim quote found in snapshot"
+  }
+ ],
+ "llm_review": {
+  "verdict": "partially_supported",
+  "confidence": 0.86,
+  "checks": {
+   "quote_supports_summary": true,
+   "dates_match": true,
+   "numbers_match": false,
+   "bodies_match": true,
+   "references_match": false,
+   "no_exaggeration": true,
+   "stage_supported": true,
+   "next_steps_supported": true,
+   "translation_faithful": true
+  },
+  "issues": [
+   "The 19 October key date describes amendments as 'PE796.435 to PE796.455'. In the source, PE796.449, PE796.450 and PE796.452 are dated 13/10/2026, not 19/10/2026. The 19 October set is PE796.435–PE796.448, PE796.451 and PE796.453–PE796.455."
+  ]
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "quarantined",
+ "reasons": [
+  "L3 reviewer: partially_supported (confidence 0.86); The 19 October key date describes amendments as 'PE796.435 to PE796.455'. In the source, PE796.449, PE796.450 and PE796.452 are dated 13/10/2026, not 19/10/2026. The 19 October set is PE796.435–PE796.448, PE796.451 and PE796.453–PE796.455."
+ ]
+}

@@ -1,0 +1,80 @@
+{
+ "review_id": "2026-11-02-003",
+ "candidate_id": "2026-11-02-003",
+ "dossier_id": "cn-recycled-plastic-standards",
+ "created": "2026-11-02T13:32:06.141788Z",
+ "impact": "medium",
+ "checks": [
+  {
+   "layer": 1,
+   "name": "schema",
+   "passed": true,
+   "severity": "info",
+   "detail": "valid"
+  },
+  {
+   "layer": 1,
+   "name": "trusted-domain",
+   "passed": true,
+   "severity": "info",
+   "detail": "domain trust: official"
+  },
+  {
+   "layer": 1,
+   "name": "safe-markdown",
+   "passed": true,
+   "severity": "info",
+   "detail": "plain prose"
+  },
+  {
+   "layer": 1,
+   "name": "url-200",
+   "passed": true,
+   "severity": "info",
+   "detail": "HTTP 200"
+  },
+  {
+   "layer": 1,
+   "name": "event-date",
+   "passed": true,
+   "severity": "info",
+   "detail": "2025-12-02 <= today 2026-11-02"
+  },
+  {
+   "layer": 1,
+   "name": "event-age",
+   "passed": false,
+   "severity": "reject",
+   "detail": "event 2025-12-02 is 335 days before detection on 2026-11-02 (limit 60)"
+  },
+  {
+   "layer": 1,
+   "name": "stage-transition",
+   "passed": true,
+   "severity": "info",
+   "detail": "no stage change"
+  },
+  {
+   "layer": 1,
+   "name": "duplicate",
+   "passed": true,
+   "severity": "info",
+   "detail": "no duplicate"
+  },
+  {
+   "layer": 2,
+   "name": "quote-provenance",
+   "passed": true,
+   "severity": "info",
+   "detail": "verbatim quote found in snapshot"
+  }
+ ],
+ "llm_review": null,
+ "model": null,
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "quarantined",
+ "reasons": [
+  "L1 event-age: event 2025-12-02 is 335 days before detection on 2026-11-02 (limit 60)"
+ ]
+}

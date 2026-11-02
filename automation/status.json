@@ -1,19 +1,24 @@
 {
-  "checked_at": "2026-11-01T11:51:04.506527+00:00",
+  "checked_at": "2026-11-02T13:29:47.749222+00:00",
   "status": "skip",
   "last_publication": "2026-10-26-issue-002",
-  "last_successful_check": "2026-11-01T11:53:03Z",
+  "last_successful_check": "2026-11-02T13:32:31.982646+00:00",
   "reasons": [
     "edition already published in this window"
   ],
   "collection": {
-    "new": [],
-    "unchanged": 118,
+    "new": [
+      "2026-11-02/oeil-iaa-d83837bcb2",
+      "2026-11-02/dg-env-circular-0b8dcef5b0",
+      "2026-11-02/basel-plastic-748bfd1f46",
+      "2026-11-02/govuk-search-cfe3874bc7",
+      "2026-11-02/govuk-pepr-collection-b1d0fe1274",
+      "2026-11-02/us-me-dep-3992787c18",
+      "2026-11-02/nl-verpact-3e8bd5538f",
+      "2026-11-02/cn-samr-recycled-plastics-9e12bfdf96"
+    ],
+    "unchanged": 132,
     "errors": {}
   },
-  "pending_snapshots": [],
-  "deployment_status": "confirmed",
-  "confirmed_revision": "4c9af5bc4c580c481c98a8ea0537490a93f9dd44",
-  "deployment_run_url": "https://github.com/rethinksci-gif/plastics-policy-tracker/actions/runs/41303786742",
-  "last_confirmed_publication": "2026-10-26-issue-002"
+  "pending_snapshots": []
 }

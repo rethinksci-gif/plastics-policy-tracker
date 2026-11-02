@@ -1,0 +1,32 @@
+{
+ "id": "2026-11-02-002",
+ "created": "2026-11-02",
+ "snapshot_id": "2026-11-02/govuk-search-cfe3874bc7",
+ "source_id": "govuk-search",
+ "source_url": "https://www.gov.uk/guidance/check-what-to-report-for-epr-for-packaging-as-a-large-producer",
+ "source_trust": "official",
+ "title": "Check what to report for EPR for packaging as a large producer - GOV.UK",
+ "triage": {
+  "relevance": 0.65,
+  "dossier_id": "uk-pepr",
+  "new_dossier_suggestion": null,
+  "category": "guidance",
+  "reason": "Official GOV.UK guidance published today sets out detailed reporting obligations for large producers under UK packaging EPR."
+ },
+ "draft": {
+  "dossier_id": "uk-pepr",
+  "date": "2026-11-02",
+  "summary": "GOV.UK published guidance on what large producers must report under extended producer responsibility for packaging. A large producer is defined as an organisation with an annual turnover of more than £2 million that is responsible for supplying more than 50 tonnes of packaging in the UK.",
+  "source_url": "https://www.gov.uk/guidance/check-what-to-report-for-epr-for-packaging-as-a-large-producer",
+  "source_quote": "Understand your reporting responsibilities as a large producer under extended producer responsibility (EPR) for packaging, including how to identify what data you must report and which obligations do not apply to you.",
+  "source_quote_en": null,
+  "source_lang": "en",
+  "stage_change": null,
+  "next_steps": [],
+  "key_dates": [],
+  "interpretation": "The guidance requires component-level reporting of material and weight, plus packaging class, packaging type and nation data, so producers' data systems need to capture these splits rather than aggregate tonnages. Recyclability ratings under the recyclability assessment methodology feed into disposal fees, which may influence packaging design decisions by brand owners and converters."
+ },
+ "status": "quarantined",
+ "review_id": "2026-11-02-002",
+ "issue": null
+}

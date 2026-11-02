@@ -1,0 +1,97 @@
+{
+ "review_id": "2026-11-02-002",
+ "candidate_id": "2026-11-02-002",
+ "dossier_id": "uk-pepr",
+ "created": "2026-11-02T13:32:31.979872Z",
+ "impact": "high",
+ "checks": [
+  {
+   "layer": 1,
+   "name": "schema",
+   "passed": true,
+   "severity": "info",
+   "detail": "valid"
+  },
+  {
+   "layer": 1,
+   "name": "trusted-domain",
+   "passed": true,
+   "severity": "info",
+   "detail": "domain trust: official"
+  },
+  {
+   "layer": 1,
+   "name": "safe-markdown",
+   "passed": true,
+   "severity": "info",
+   "detail": "plain prose"
+  },
+  {
+   "layer": 1,
+   "name": "url-200",
+   "passed": true,
+   "severity": "info",
+   "detail": "HTTP 200"
+  },
+  {
+   "layer": 1,
+   "name": "event-date",
+   "passed": true,
+   "severity": "info",
+   "detail": "2026-11-02 <= today 2026-11-02"
+  },
+  {
+   "layer": 1,
+   "name": "event-age",
+   "passed": true,
+   "severity": "info",
+   "detail": "event 2026-11-02 is 0 days before detection on 2026-11-02 (limit 60)"
+  },
+  {
+   "layer": 1,
+   "name": "stage-transition",
+   "passed": true,
+   "severity": "info",
+   "detail": "no stage change"
+  },
+  {
+   "layer": 1,
+   "name": "duplicate",
+   "passed": true,
+   "severity": "info",
+   "detail": "no duplicate"
+  },
+  {
+   "layer": 2,
+   "name": "quote-provenance",
+   "passed": true,
+   "severity": "info",
+   "detail": "verbatim quote found in snapshot"
+  }
+ ],
+ "llm_review": {
+  "verdict": "partially_supported",
+  "confidence": 0.82,
+  "checks": {
+   "quote_supports_summary": true,
+   "dates_match": false,
+   "numbers_match": true,
+   "bodies_match": true,
+   "references_match": true,
+   "no_exaggeration": true,
+   "stage_supported": true,
+   "next_steps_supported": true,
+   "translation_faithful": true
+  },
+  "issues": [
+   "The date field 2026-11-02 matches the source's 'Last updated' date, when the update was that a Welsh translation was added; the source shows the guidance was originally 'Published: 24 November 2022'. If the claimed event is GOV.UK publishing the guidance, the date is wrong."
+  ]
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "quarantined",
+ "reasons": [
+  "L3 reviewer: partially_supported (confidence 0.82); The date field 2026-11-02 matches the source's 'Last updated' date, when the update was that a Welsh translation was added; the source shows the guidance was originally 'Published: 24 November 2022'. If the claimed event is GOV.UK publishing the guidance, the date is wrong."
+ ]
+}

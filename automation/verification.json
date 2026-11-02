@@ -164,5 +164,32 @@
       "L3 reviewer: partially_supported (confidence 0.87); Summary says GOV.UK 'published' the guidance on 28 October 2026, but the source shows it was originally published on 23 March 2026 and last updated on 28 October 2026, when additional information was added and the title was changed."
     ],
     "review": "reviews/items/2026-10-31-008.json"
+  },
+  {
+    "id": "2026-11-02-001",
+    "status": "QUARANTINED",
+    "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0068(COD)",
+    "reasons": [
+      "L3 reviewer: partially_supported (confidence 0.86); The 19 October key date describes amendments as 'PE796.435 to PE796.455'. In the source, PE796.449, PE796.450 and PE796.452 are dated 13/10/2026, not 19/10/2026. The 19 October set is PE796.435–PE796.448, PE796.451 and PE796.453–PE796.455."
+    ],
+    "review": "reviews/items/2026-11-02-001.json"
+  },
+  {
+    "id": "2026-11-02-002",
+    "status": "QUARANTINED",
+    "source_url": "https://www.gov.uk/guidance/check-what-to-report-for-epr-for-packaging-as-a-large-producer",
+    "reasons": [
+      "L3 reviewer: partially_supported (confidence 0.82); The date field 2026-11-02 matches the source's 'Last updated' date, when the update was that a Welsh translation was added; the source shows the guidance was originally 'Published: 24 November 2022'. If the claimed event is GOV.UK publishing the guidance, the date is wrong."
+    ],
+    "review": "reviews/items/2026-11-02-002.json"
+  },
+  {
+    "id": "2026-11-02-003",
+    "status": "QUARANTINED",
+    "source_url": "https://std.samr.gov.cn/gb/search/gbQueryPage?searchText=%E5%86%8D%E7%94%9F%E5%A1%91%E6%96%99&sortOrder=desc&pageSize=20&pageNumber=1",
+    "reasons": [
+      "L1 event-age: event 2025-12-02 is 335 days before detection on 2026-11-02 (limit 60)"
+    ],
+    "review": "reviews/items/2026-11-02-003.json"
   }
 ]
