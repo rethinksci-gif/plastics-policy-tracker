@@ -1,28 +1,26 @@
 {
-  "checked_at": "2026-11-02T13:29:47.749222+00:00",
+  "checked_at": "2026-11-03T12:48:13.954908+00:00",
   "status": "skip",
   "last_publication": "2026-10-26-issue-002",
-  "last_successful_check": "2026-11-02T13:34:28Z",
+  "last_successful_check": "2026-11-03T12:50:32.541715+00:00",
   "reasons": [
     "edition already published in this window"
   ],
   "collection": {
     "new": [
-      "2026-11-02/oeil-iaa-d83837bcb2",
-      "2026-11-02/dg-env-circular-0b8dcef5b0",
-      "2026-11-02/basel-plastic-748bfd1f46",
-      "2026-11-02/govuk-search-cfe3874bc7",
-      "2026-11-02/govuk-pepr-collection-b1d0fe1274",
-      "2026-11-02/us-me-dep-3992787c18",
-      "2026-11-02/nl-verpact-3e8bd5538f",
-      "2026-11-02/cn-samr-recycled-plastics-9e12bfdf96"
+      "2026-11-03/oeil-procurement-c90d1e5d82",
+      "2026-11-03/efsa-f65f9cba84",
+      "2026-11-03/efsa-4e322018c0",
+      "2026-11-03/efsa-941ac8e863",
+      "2026-11-03/efsa-244685517e",
+      "2026-11-03/efsa-8b8232b178",
+      "2026-11-03/efsa-2a026cfd02",
+      "2026-11-03/govuk-search-7fb2cd4966",
+      "2026-11-03/govuk-search-3d1e7513ee",
+      "2026-11-03/cn-mee-da192811a2"
     ],
-    "unchanged": 132,
+    "unchanged": 114,
     "errors": {}
   },
-  "pending_snapshots": [],
-  "deployment_status": "confirmed",
-  "confirmed_revision": "4f0a1be80fef179c81e31cf4135992982e83250b",
-  "deployment_run_url": "https://github.com/rethinksci-gif/plastics-policy-tracker/actions/runs/41453888510",
-  "last_confirmed_publication": "2026-10-26-issue-002"
+  "pending_snapshots": []
 }

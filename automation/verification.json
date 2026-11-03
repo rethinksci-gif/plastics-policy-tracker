@@ -191,5 +191,19 @@
       "L1 event-age: event 2025-12-02 is 335 days before detection on 2026-11-02 (limit 60)"
     ],
     "review": "reviews/items/2026-11-02-003.json"
+  },
+  {
+    "id": "2026-11-03-001",
+    "status": "REJECTED",
+    "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)",
+    "reasons": [],
+    "review": null
+  },
+  {
+    "id": "2026-11-03-002",
+    "status": "VERIFIED",
+    "source_url": "https://www.gov.uk/guidance/waste-disposal-fees-for-large-producers-under-epr-for-packaging",
+    "reasons": [],
+    "review": "reviews/items/2026-11-03-002.json"
   }
 ]
