@@ -1,0 +1,20 @@
+{
+ "id": "2026-11-04-001",
+ "created": "2026-11-04",
+ "snapshot_id": "2026-11-04/oeil-procurement-4d1c29d53f",
+ "source_id": "oeil-procurement",
+ "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)",
+ "source_trust": "official",
+ "title": "Procedure File: 2026/0265(COD) | Legislative Observatory | European Parliament",
+ "triage": {
+  "relevance": 0.7,
+  "dossier_id": "eu-public-procurement",
+  "new_dossier_suggestion": null,
+  "category": "proposal",
+  "reason": "Procedure file records the Commission's legislative proposal COM(2026)0590 for a Public Procurement Act published on 9 September 2026, a concrete legislative step within the last 60 days that corresponds to the tracked public procurement instrument, though the excerpt itself shows no plastics-specific content."
+ },
+ "draft": null,
+ "status": "discarded",
+ "review_id": null,
+ "issue": null
+}
