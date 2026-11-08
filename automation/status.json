@@ -1,23 +1,15 @@
 {
-  "checked_at": "2026-11-07T11:44:05.230441+00:00",
+  "checked_at": "2026-11-08T11:56:26.318670+00:00",
   "status": "skip",
   "last_publication": "2026-10-26-issue-002",
-  "last_successful_check": "2026-11-07T11:45:51Z",
+  "last_successful_check": "2026-11-08T11:57:11.660588+00:00",
   "reasons": [
     "edition already published in this window"
   ],
   "collection": {
-    "new": [
-      "2026-11-07/oeil-procurement-5724ccacd3",
-      "2026-11-07/efsa-f949257d40",
-      "2026-11-07/efsa-436f0a74b6"
-    ],
-    "unchanged": 122,
+    "new": [],
+    "unchanged": 125,
     "errors": {}
   },
-  "pending_snapshots": [],
-  "deployment_status": "confirmed",
-  "confirmed_revision": "175f521f9f59cc062801238f9124b2c622372414",
-  "deployment_run_url": "https://github.com/rethinksci-gif/plastics-policy-tracker/actions/runs/42369502701",
-  "last_confirmed_publication": "2026-10-26-issue-002"
+  "pending_snapshots": []
 }
