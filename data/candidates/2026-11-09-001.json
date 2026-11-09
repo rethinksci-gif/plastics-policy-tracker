@@ -1,0 +1,55 @@
+{
+ "id": "2026-11-09-001",
+ "created": "2026-11-09",
+ "snapshot_id": "2026-11-09/oeil-iaa-0620f4d346",
+ "source_id": "oeil-iaa",
+ "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0068(COD)",
+ "source_trust": "official",
+ "title": "Procedure File: 2026/0068(COD) | Legislative Observatory | European Parliament",
+ "triage": {
+  "relevance": 0.62,
+  "dossier_id": "eu-iaa",
+  "new_dossier_suggestion": null,
+  "category": "legislative-step",
+  "reason": "The procedure file shows fresh parliamentary activity within the last 60 days on the Industrial Accelerator Act (committee draft report of 11/09/2026, amendments tabled in committee 13 and 19/10/2026, ENVI opinion of 22/10/2026, and an indicative plenary date of 14/12/2026), constituting a concrete legislative step in the ongoing COD procedure."
+ },
+ "draft": {
+  "dossier_id": "eu-iaa",
+  "date": "2026-09-11",
+  "summary": "A committee draft report (PE792.067) on the procedure is dated 11 September 2026, and amendments were tabled in committee on 13 October 2026. The procedure is listed as awaiting committee decision.",
+  "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0068(COD)",
+  "source_quote": "Committee draft report PE792.067 11/09/2026 Amendments tabled in committee PE796.449 13/10/2026",
+  "source_quote_en": null,
+  "source_lang": "en",
+  "stage_change": null,
+  "next_steps": [
+   {
+    "date": "2026-12-14",
+    "text": "Indicative plenary sitting date, 1st reading",
+    "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0068(COD)",
+    "status": "expected"
+   }
+  ],
+  "key_dates": [
+   {
+    "date": "2026-09-11",
+    "text": "Committee draft report PE792.067",
+    "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0068(COD)"
+   },
+   {
+    "date": "2026-10-19",
+    "text": "Amendments tabled in committee (PE796.435 to PE796.455 series)",
+    "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0068(COD)"
+   },
+   {
+    "date": "2026-10-22",
+    "text": "Committee opinion ENVI PE789.106",
+    "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0068(COD)"
+   }
+  ],
+  "interpretation": "Committee-stage amendments are the point at which provisions affecting plastics and rubber manufacturing are most likely to be reshaped, so recyclers and converters have a narrow window to engage before the indicative December 2026 first-reading plenary."
+ },
+ "status": "passed",
+ "review_id": "2026-11-09-001",
+ "issue": null
+}

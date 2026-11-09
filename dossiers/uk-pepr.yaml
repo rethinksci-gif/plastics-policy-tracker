@@ -25,6 +25,19 @@ summary: The Producer Responsibility Obligations (Packaging and Packaging Waste)
   meet recycling obligations with PRNs or PERNs, and pay a waste disposal fee for household packaging
   to PackUK, the scheme administrator; small producers have fewer obligations.
 updates:
+- date: '2026-10-28'
+  summary: Guidance on waste disposal fees for large producers under EPR for packaging states that the
+    fees are based on local authorities’ waste management costs and depend on the weight and type of household
+    packaging reported. It states that for 2026 data onwards the fee for each packaging material is adjusted
+    (‘modulated’) on the basis of how recyclable it is, in line with the recyclability assessment methodology
+    (RAM).
+  source_url: https://www.gov.uk/guidance/waste-disposal-fees-for-large-producers-under-epr-for-packaging
+  source_quote: 'Packaging waste disposal fees are based on local authorities’ waste management costs.
+    Your fee depends on the weight and type of household packaging you report. For 2026 data onwards,
+    the fee for each packaging material is adjusted (referred to as ‘modulated’) based on how recyclable
+    it is, in line with the recyclability assessment methodology (RAM):'
+  source_lang: en
+  review_id: 2026-11-03-002
 - date: '2024-12-11'
   summary: The Producer Responsibility Obligations (Packaging and Packaging Waste) Regulations 2024 (SI
     2024/1332) were made on 11 December 2024.
@@ -35,4 +48,8 @@ updates:
   stage_change: adopted
   review_id: seed-uk-pepr-001
 next_steps: []
-key_dates: []
+key_dates:
+- date: '2026-04-01'
+  text: Start of the assessment year that runs from 1 April 2026 to 31 March 2027, for which PackUK published
+    illustrative waste disposal fees in December 2025.
+  source_url: https://www.gov.uk/guidance/waste-disposal-fees-for-large-producers-under-epr-for-packaging

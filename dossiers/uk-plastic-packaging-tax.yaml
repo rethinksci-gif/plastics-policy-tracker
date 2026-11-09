@@ -22,6 +22,18 @@ official_links:
 summary: A tax on plastic packaging components manufactured in or imported into the UK that contain less
   than 30% recycled plastic, in force since 1 April 2022.
 updates:
+- date: '2026-10-28'
+  summary: The government responded to its consultation on potential certification for mechanically recycled
+    plastic packaging, which received 116 responses. It intends to introduce mandatory certification for
+    mechanically recycled plastic packaging from 1 April 2030, and will review certification and market
+    readiness closer to implementation.
+  source_url: https://www.gov.uk/government/consultations/plastic-packaging-tax-mechanically-recycled-plastic-packaging
+  source_quote: The consultation received 116 responses from businesses, trade bodies and other stakeholders.
+    A full summary of responses and the government response is available here. Having considered the consultation
+    responses, the government intends to introduce mandatory certification for mechanically recycled plastic
+    packaging from 1 April 2030.
+  source_lang: en
+  review_id: 2026-10-31-006
 - date: '2026-10-06'
   summary: On 6 October 2026, draft Regulations and a draft reference document on chemical recycling and
     adoption of a mass balance approach for Plastic Packaging Tax were published for technical consultation.
@@ -57,3 +69,6 @@ key_dates:
   text: The draft Regulations set out conditions for businesses to use a mass balance approach to account
     for chemically recycled plastic for Plastic Packaging Tax purposes from 1 April 2027.
   source_url: https://www.gov.uk/government/consultations/draft-legislation-plastic-packaging-tax-chemical-recycling-and-adoption-of-a-mass-balance-approach
+- date: '2030-04-01'
+  text: Intended start date for mandatory certification for mechanically recycled plastic packaging.
+  source_url: https://www.gov.uk/government/consultations/plastic-packaging-tax-mechanically-recycled-plastic-packaging

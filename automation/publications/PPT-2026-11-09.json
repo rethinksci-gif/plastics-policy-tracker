@@ -1,0 +1,21 @@
+{
+  "id": "PPT-2026-11-09",
+  "file": "issues/2026-11-09-issue-003.md",
+  "sha256": "1ea7906b76c970199d70503dceeadd73c590299a170743d4a0e995e8a8f4a7aa",
+  "items": [
+    {
+      "id": "2026-10-31-006",
+      "status": "VERIFIED",
+      "reasons": [],
+      "source_url": "https://www.gov.uk/government/consultations/plastic-packaging-tax-mechanically-recycled-plastic-packaging",
+      "review": "reviews/items/2026-10-31-006.json"
+    },
+    {
+      "id": "2026-11-03-002",
+      "status": "VERIFIED",
+      "reasons": [],
+      "source_url": "https://www.gov.uk/guidance/waste-disposal-fees-for-large-producers-under-epr-for-packaging",
+      "review": "reviews/items/2026-11-03-002.json"
+    }
+  ]
+}

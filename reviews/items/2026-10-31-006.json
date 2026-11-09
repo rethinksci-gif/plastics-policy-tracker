@@ -2,7 +2,7 @@
  "review_id": "2026-10-31-006",
  "candidate_id": "2026-10-31-006",
  "dossier_id": "uk-plastic-packaging-tax",
- "created": "2026-10-31T20:10:47.872029Z",
+ "created": "2026-11-09T13:56:23.321175Z",
  "impact": "high",
  "checks": [
   {
@@ -38,7 +38,7 @@
    "name": "event-date",
    "passed": true,
    "severity": "info",
-   "detail": "2026-10-28 <= today 2026-10-31"
+   "detail": "2026-10-28 <= today 2026-11-09"
   },
   {
    "layer": 1,
@@ -71,7 +71,7 @@
  ],
  "llm_review": {
   "verdict": "supported",
-  "confidence": 0.9,
+  "confidence": 0.98,
   "checks": {
    "quote_supports_summary": true,
    "dates_match": true,

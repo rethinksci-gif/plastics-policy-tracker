@@ -2,7 +2,7 @@
  "review_id": "2026-11-03-002",
  "candidate_id": "2026-11-03-002",
  "dossier_id": "uk-pepr",
- "created": "2026-11-03T12:50:32.540445Z",
+ "created": "2026-11-09T13:56:54.887396Z",
  "impact": "high",
  "checks": [
   {
@@ -38,7 +38,7 @@
    "name": "event-date",
    "passed": true,
    "severity": "info",
-   "detail": "2026-10-28 <= today 2026-11-03"
+   "detail": "2026-10-28 <= today 2026-11-09"
   },
   {
    "layer": 1,
@@ -71,7 +71,7 @@
  ],
  "llm_review": {
   "verdict": "supported",
-  "confidence": 0.87,
+  "confidence": 0.9,
   "checks": {
    "quote_supports_summary": true,
    "dates_match": true,
@@ -88,7 +88,7 @@
  "model": "deepseek-flash",
  "confirm_review": {
   "verdict": "supported",
-  "confidence": 0.95,
+  "confidence": 0.96,
   "checks": {
    "quote_supports_summary": true,
    "dates_match": true,
