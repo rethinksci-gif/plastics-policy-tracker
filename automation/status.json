@@ -1,23 +1,22 @@
 {
-  "checked_at": "2026-11-11T12:43:24.590657+00:00",
+  "checked_at": "2026-11-12T13:45:58.334434+00:00",
   "status": "skip",
   "last_publication": "2026-11-09-issue-003",
-  "last_successful_check": "2026-11-11T12:45:04Z",
+  "last_successful_check": "2026-11-12T13:46:57.943988+00:00",
   "reasons": [
     "edition already published in this window"
   ],
   "collection": {
     "new": [
-      "2026-11-11/eu-have-your-say-162beb590a",
-      "2026-11-11/efsa-373cbb285b",
-      "2026-11-11/cn-mee-1dd53c3bd8"
+      "2026-11-12/oeil-procurement-27f9ee29e0",
+      "2026-11-12/dg-env-news-4cbdaa00ef",
+      "2026-11-12/efsa-166aaf227a",
+      "2026-11-12/unep-inc-476674fb6d",
+      "2026-11-12/govuk-search-9b79c4e46c",
+      "2026-11-12/es-boe-748796c6dc"
     ],
-    "unchanged": 121,
+    "unchanged": 119,
     "errors": {}
   },
-  "pending_snapshots": [],
-  "deployment_status": "confirmed",
-  "confirmed_revision": "1a6abcdd928e0aedac2d52562dba56b04e0a31fd",
-  "deployment_run_url": "https://github.com/rethinksci-gif/plastics-policy-tracker/actions/runs/43022938091",
-  "last_confirmed_publication": "2026-11-09-issue-003"
+  "pending_snapshots": []
 }
