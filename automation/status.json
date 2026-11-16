@@ -2,7 +2,7 @@
   "checked_at": "2026-11-16T13:38:57.879396+00:00",
   "status": "skip",
   "last_publication": "2026-11-09-issue-003",
-  "last_successful_check": "2026-11-16T13:40:39.682264+00:00",
+  "last_successful_check": "2026-11-16T13:41:48Z",
   "reasons": [
     "edition already published in this window"
   ],
@@ -31,5 +31,9 @@
     "2026-11-16/us-md-sb901-77117978d3",
     "2026-11-16/es-boe-590f758f28",
     "2026-11-16/it-normattiva-plastic-tax-ab3629c38f"
-  ]
+  ],
+  "deployment_status": "confirmed",
+  "confirmed_revision": "5f8bd73bf693e270e0101eaeb0f0cae1380cc453",
+  "deployment_run_url": "https://github.com/rethinksci-gif/plastics-policy-tracker/actions/runs/43878097502",
+  "last_confirmed_publication": "2026-11-09-issue-003"
 }
