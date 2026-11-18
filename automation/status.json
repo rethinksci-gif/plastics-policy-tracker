@@ -1,23 +1,22 @@
 {
-  "checked_at": "2026-11-17T14:23:41.018992+00:00",
+  "checked_at": "2026-11-18T13:57:52.187555+00:00",
   "status": "skip",
   "last_publication": "2026-11-09-issue-003",
-  "last_successful_check": "2026-11-17T14:25:39Z",
+  "last_successful_check": "2026-11-18T13:59:04.966255+00:00",
   "reasons": [
     "edition already published in this window"
   ],
   "collection": {
     "new": [
-      "2026-11-17/cn-mee-0969e54809"
+      "2026-11-18/oeil-procurement-6e5075ef8f",
+      "2026-11-18/ep-envi-2ecc1244d2",
+      "2026-11-18/dg-env-news-21f3cefa7b",
+      "2026-11-18/cn-mee-f38bba9cc8"
     ],
-    "unchanged": 117,
+    "unchanged": 122,
     "errors": {
-      "eu-cellar": "HTTPStatusError: Client error '403 Forbidden' for url 'https://publications.europa.eu/webapi/rdf/sparql?query=PREFIX+cdm%3A+%3Chttp%3A%2F%2Fpublications.europa.eu%2Fontology%2Fcdm%23%3E%0ASELECT+DISTINCT+%3Fcelex+%3Fdate+%3Ftitle+WHERE+%7B%0A++%3Fwork+cdm%3Aresource_legal_id_celex+%3Fcelex+%3B+cdm%3"
+      "unep-inc": "HTTPStatusError: HTTP 403 (empty=False)"
     }
   },
-  "pending_snapshots": [],
-  "deployment_status": "confirmed",
-  "confirmed_revision": "6af24e39a3b2186e99e704f529ef3a3e97093abb",
-  "deployment_run_url": "https://github.com/rethinksci-gif/plastics-policy-tracker/actions/runs/44102797471",
-  "last_confirmed_publication": "2026-11-09-issue-003"
+  "pending_snapshots": []
 }

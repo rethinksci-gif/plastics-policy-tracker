@@ -274,5 +274,14 @@
       "L1 event-age: event 2026-09-11 is 66 days before detection on 2026-11-16 (limit 60)"
     ],
     "review": "reviews/items/2026-11-16-001.json"
+  },
+  {
+    "id": "2026-11-18-001",
+    "status": "QUARANTINED",
+    "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)",
+    "reasons": [
+      "quoted evidence absent from current original source"
+    ],
+    "review": "reviews/items/2026-11-18-001.json"
   }
 ]
