@@ -1,26 +1,18 @@
 {
-  "checked_at": "2026-11-18T13:57:52.187555+00:00",
+  "checked_at": "2026-11-19T14:26:32.977146+00:00",
   "status": "skip",
   "last_publication": "2026-11-09-issue-003",
-  "last_successful_check": "2026-11-18T14:00:11Z",
+  "last_successful_check": "2026-11-19T14:27:46.482392+00:00",
   "reasons": [
     "edition already published in this window"
   ],
   "collection": {
     "new": [
-      "2026-11-18/oeil-procurement-6e5075ef8f",
-      "2026-11-18/ep-envi-2ecc1244d2",
-      "2026-11-18/dg-env-news-21f3cefa7b",
-      "2026-11-18/cn-mee-f38bba9cc8"
+      "2026-11-19/oeil-procurement-94c2d456b4",
+      "2026-11-19/dg-env-news-2893c397e2"
     ],
-    "unchanged": 122,
-    "errors": {
-      "unep-inc": "HTTPStatusError: HTTP 403 (empty=False)"
-    }
+    "unchanged": 117,
+    "errors": {}
   },
-  "pending_snapshots": [],
-  "deployment_status": "confirmed",
-  "confirmed_revision": "62e55e68d20fa64dd680b536a6e0dcacd37d8dc5",
-  "deployment_run_url": "https://github.com/rethinksci-gif/plastics-policy-tracker/actions/runs/44319344392",
-  "last_confirmed_publication": "2026-11-09-issue-003"
+  "pending_snapshots": []
 }
