@@ -2,7 +2,7 @@
   "checked_at": "2026-11-19T14:26:32.977146+00:00",
   "status": "skip",
   "last_publication": "2026-11-09-issue-003",
-  "last_successful_check": "2026-11-19T14:27:46.482392+00:00",
+  "last_successful_check": "2026-11-19T14:28:52Z",
   "reasons": [
     "edition already published in this window"
   ],
@@ -14,5 +14,9 @@
     "unchanged": 117,
     "errors": {}
   },
-  "pending_snapshots": []
+  "pending_snapshots": [],
+  "deployment_status": "confirmed",
+  "confirmed_revision": "c0068d52f65c1797f1d45357747f981b24ec3d89",
+  "deployment_run_url": "https://github.com/rethinksci-gif/plastics-policy-tracker/actions/runs/44544023625",
+  "last_confirmed_publication": "2026-11-09-issue-003"
 }
