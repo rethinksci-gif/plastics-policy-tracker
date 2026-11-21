@@ -1,23 +1,19 @@
 {
-  "checked_at": "2026-11-20T14:00:20.227906+00:00",
+  "checked_at": "2026-11-21T13:28:11.577599+00:00",
   "status": "skip",
   "last_publication": "2026-11-09-issue-003",
-  "last_successful_check": "2026-11-20T14:03:11Z",
+  "last_successful_check": "2026-11-21T13:30:13.227271+00:00",
   "reasons": [
     "edition already published in this window"
   ],
   "collection": {
     "new": [
-      "2026-11-20/oeil-procurement-a01ecb0936",
-      "2026-11-20/dg-env-news-b51a13a656",
-      "2026-11-20/cn-mee-8c7ba728a7"
+      "2026-11-21/oeil-procurement-5d593cd898",
+      "2026-11-21/council-press-ca028af967",
+      "2026-11-21/govuk-search-6efbb0cdb7"
     ],
     "unchanged": 108,
     "errors": {}
   },
-  "pending_snapshots": [],
-  "deployment_status": "confirmed",
-  "confirmed_revision": "616ddb51920ac30196e7413227f0cca901d8e167",
-  "deployment_run_url": "https://github.com/rethinksci-gif/plastics-policy-tracker/actions/runs/44749638636",
-  "last_confirmed_publication": "2026-11-09-issue-003"
+  "pending_snapshots": []
 }

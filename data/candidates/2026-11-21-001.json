@@ -1,0 +1,43 @@
+{
+ "id": "2026-11-21-001",
+ "created": "2026-11-21",
+ "snapshot_id": "2026-11-21/oeil-procurement-5d593cd898",
+ "source_id": "oeil-procurement",
+ "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)",
+ "source_trust": "official",
+ "title": "Procedure File: 2026/0265(COD) | Legislative Observatory | European Parliament",
+ "triage": {
+  "relevance": 0.8,
+  "dossier_id": "eu-public-procurement",
+  "new_dossier_suggestion": null,
+  "category": "legislative-step",
+  "reason": "The procedure file shows the Public Procurement Act proposal was referred to committee on 11 November 2026 and rapporteurs appointed, a recent legislative step for the tracked EU public procurement instrument."
+ },
+ "draft": {
+  "dossier_id": "eu-public-procurement",
+  "date": "2026-11-11",
+  "summary": "On 11 November 2026, the committee referral for the Public Procurement Act, procedure 2026/0265(COD), was announced in Parliament at first reading. The procedure file records the stage reached as awaiting committee decision.",
+  "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)",
+  "source_quote": "| 11/11/2026 | Committee referral announced in Parliament, 1st reading |  |  |",
+  "source_quote_en": null,
+  "source_lang": "en",
+  "stage_change": "parliament-council",
+  "next_steps": [],
+  "key_dates": [
+   {
+    "date": "2026-09-09",
+    "text": "Legislative proposal published, COM(2026)0590.",
+    "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)"
+   },
+   {
+    "date": "2026-11-11",
+    "text": "Committee referral announced in Parliament, 1st reading.",
+    "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)"
+   }
+  ],
+  "interpretation": null
+ },
+ "status": "quarantined",
+ "review_id": "2026-11-21-001",
+ "issue": null
+}
