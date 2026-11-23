@@ -1,21 +1,26 @@
 {
-  "checked_at": "2026-11-22T13:21:13.269345+00:00",
-  "status": "skip",
+  "checked_at": "2026-11-23T15:58:04.871356+00:00",
+  "status": "hold",
   "last_publication": "2026-11-09-issue-003",
-  "last_successful_check": "2026-11-22T13:22:59Z",
+  "last_successful_check": "2026-11-23T16:00:28.543140+00:00",
   "reasons": [
-    "edition already published in this window"
+    "no verified items; no empty or filler edition"
   ],
   "collection": {
-    "new": [],
-    "unchanged": 116,
+    "new": [
+      "2026-11-23/oeil-iaa-6b16782e39",
+      "2026-11-23/dg-env-circular-da818d5f7e",
+      "2026-11-23/govuk-search-2530efed7b",
+      "2026-11-23/de-zsvr-e2536bfb45",
+      "2026-11-23/se-naturvardsverket-53ff53093b",
+      "2026-11-23/it-normattiva-plastic-tax-4acf5b1980",
+      "2026-11-23/cn-ndrc-notices-a11c2f9b31",
+      "2026-11-23/cn-mee-cad478909e"
+    ],
+    "unchanged": 126,
     "errors": {
       "unep-inc": "HTTPStatusError: HTTP 403 (empty=False)"
     }
   },
-  "pending_snapshots": [],
-  "deployment_status": "confirmed",
-  "confirmed_revision": "39f1ba3cb495197d5852a96b4cb8b55dec9d3b2c",
-  "deployment_run_url": "https://github.com/rethinksci-gif/plastics-policy-tracker/actions/runs/45027110445",
-  "last_confirmed_publication": "2026-11-09-issue-003"
+  "pending_snapshots": []
 }

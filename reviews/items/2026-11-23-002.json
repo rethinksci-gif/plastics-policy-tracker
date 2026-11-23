@@ -1,0 +1,112 @@
+{
+ "review_id": "2026-11-23-002",
+ "candidate_id": "2026-11-23-002",
+ "dossier_id": "eu-wsr",
+ "created": "2026-11-23T16:00:28.540611Z",
+ "impact": "high",
+ "checks": [
+  {
+   "layer": 1,
+   "name": "schema",
+   "passed": true,
+   "severity": "info",
+   "detail": "valid"
+  },
+  {
+   "layer": 1,
+   "name": "trusted-domain",
+   "passed": true,
+   "severity": "info",
+   "detail": "domain trust: official"
+  },
+  {
+   "layer": 1,
+   "name": "safe-markdown",
+   "passed": true,
+   "severity": "info",
+   "detail": "plain prose"
+  },
+  {
+   "layer": 1,
+   "name": "url-200",
+   "passed": true,
+   "severity": "info",
+   "detail": "HTTP 200"
+  },
+  {
+   "layer": 1,
+   "name": "event-date",
+   "passed": true,
+   "severity": "info",
+   "detail": "2026-11-20 <= today 2026-11-23"
+  },
+  {
+   "layer": 1,
+   "name": "event-age",
+   "passed": true,
+   "severity": "info",
+   "detail": "event 2026-11-20 is 3 days before detection on 2026-11-23 (limit 60)"
+  },
+  {
+   "layer": 1,
+   "name": "stage-transition",
+   "passed": true,
+   "severity": "info",
+   "detail": "no stage change"
+  },
+  {
+   "layer": 1,
+   "name": "duplicate",
+   "passed": true,
+   "severity": "info",
+   "detail": "no duplicate"
+  },
+  {
+   "layer": 2,
+   "name": "quote-provenance",
+   "passed": true,
+   "severity": "info",
+   "detail": "verbatim quote found in snapshot"
+  }
+ ],
+ "llm_review": {
+  "verdict": "supported",
+  "confidence": 0.99,
+  "checks": {
+   "quote_supports_summary": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "bodies_match": true,
+   "references_match": true,
+   "no_exaggeration": true,
+   "stage_supported": true,
+   "next_steps_supported": true,
+   "translation_faithful": true
+  },
+  "issues": []
+ },
+ "model": "deepseek-flash",
+ "confirm_review": {
+  "verdict": "partially_supported",
+  "confidence": 0.7,
+  "checks": {
+   "quote_supports_summary": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "bodies_match": true,
+   "references_match": true,
+   "no_exaggeration": false,
+   "stage_supported": true,
+   "next_steps_supported": true,
+   "translation_faithful": true
+  },
+  "issues": [
+   "The interpretation introduces new factual claims not present in the source: that the ban may shift plastic waste volumes towards EU recyclers and converters, and that brand owners may need to review export routes for plastic packaging waste."
+  ]
+ },
+ "confirm_model": "deepseek-v4-pro",
+ "outcome": "quarantined",
+ "reasons": [
+  "L3 high-impact second review (same evidence, not independent confirmation): partially_supported (confidence 0.70); The interpretation introduces new factual claims not present in the source: that the ban may shift plastic waste volumes towards EU recyclers and converters, and that brand owners may need to review export routes for plastic packaging waste."
+ ]
+}

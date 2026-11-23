@@ -311,5 +311,23 @@
       "quoted evidence absent from current original source"
     ],
     "review": "reviews/items/2026-11-21-001.json"
+  },
+  {
+    "id": "2026-11-23-001",
+    "status": "QUARANTINED",
+    "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0068(COD)",
+    "reasons": [
+      "L1 event-age: event 2026-09-11 is 73 days before detection on 2026-11-23 (limit 60)"
+    ],
+    "review": "reviews/items/2026-11-23-001.json"
+  },
+  {
+    "id": "2026-11-23-002",
+    "status": "QUARANTINED",
+    "source_url": "https://environment.ec.europa.eu/strategy/circular-economy_en",
+    "reasons": [
+      "L3 high-impact second review (same evidence, not independent confirmation): partially_supported (confidence 0.70); The interpretation introduces new factual claims not present in the source: that the ban may shift plastic waste volumes towards EU recyclers and converters, and that brand owners may need to review export routes for plastic packaging waste."
+    ],
+    "review": "reviews/items/2026-11-23-002.json"
   }
 ]
