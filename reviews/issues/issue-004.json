@@ -1,7 +1,7 @@
 {
  "review_id": "issue-004",
- "issue": "2026-11-23-issue-004",
- "created": "2026-11-23T16:00:28.542308+00:00",
+ "issue": "2026-11-24-issue-004",
+ "created": "2026-11-24T15:54:20.652326+00:00",
  "decision": "hold",
  "would_publish": false,
  "hold_reasons": [
@@ -124,9 +124,9 @@
   "style_notes": {},
   "notes": ""
  },
- "llm_calls": 14,
+ "llm_calls": 3,
  "llm_usage": {
-  "prompt_tokens": 48701,
-  "completion_tokens": 16454
+  "prompt_tokens": 8613,
+  "completion_tokens": 1991
  }
 }
