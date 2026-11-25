@@ -1,7 +1,7 @@
 {
  "review_id": "issue-004",
- "issue": "2026-11-24-issue-004",
- "created": "2026-11-24T15:54:20.652326+00:00",
+ "issue": "2026-11-25-issue-004",
+ "created": "2026-11-25T15:38:33.011863+00:00",
  "decision": "hold",
  "would_publish": false,
  "hold_reasons": [
@@ -110,6 +110,17 @@
    "reasons": [
     "L3 high-impact second review (same evidence, not independent confirmation): partially_supported (confidence 0.70); The interpretation introduces new factual claims not present in the source: that the ban may shift plastic waste volumes towards EU recyclers and converters, and that brand owners may need to review export routes for plastic packaging waste."
    ]
+  },
+  {
+   "id": "2026-11-25-001",
+   "dossier": "eu-public-procurement",
+   "title": "Public Procurement Regulation",
+   "impact": "medium",
+   "summary": "On 11 November 2026, a committee referral was announced in Parliament for the first reading.",
+   "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)",
+   "reasons": [
+    "quoted evidence absent from current original source"
+   ]
   }
  ],
  "editorial_review": {
@@ -124,9 +135,9 @@
   "style_notes": {},
   "notes": ""
  },
- "llm_calls": 3,
+ "llm_calls": 11,
  "llm_usage": {
-  "prompt_tokens": 8613,
-  "completion_tokens": 1991
+  "prompt_tokens": 24087,
+  "completion_tokens": 13489
  }
 }

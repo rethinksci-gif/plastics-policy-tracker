@@ -1,0 +1,20 @@
+{
+ "id": "2026-11-25-002",
+ "created": "2026-11-25",
+ "snapshot_id": "2026-11-25/dg-env-news-460131cfed",
+ "source_id": "dg-env-news",
+ "source_url": "https://environment.ec.europa.eu/news_en",
+ "source_trust": "official",
+ "title": "News - European Commission",
+ "triage": {
+  "relevance": 0.7,
+  "dossier_id": "eu-wsr",
+  "new_dossier_suggestion": null,
+  "category": "timetable",
+  "reason": "The DG Environment news page reports an eight-month extension to 1 September 2027 for mandatory green-listed waste reporting under the Waste Shipment Regulation, a concrete deadline change relevant to plastic waste shipments."
+ },
+ "draft": null,
+ "status": "discarded",
+ "review_id": null,
+ "issue": null
+}

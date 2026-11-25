@@ -329,5 +329,28 @@
       "L3 high-impact second review (same evidence, not independent confirmation): partially_supported (confidence 0.70); The interpretation introduces new factual claims not present in the source: that the ban may shift plastic waste volumes towards EU recyclers and converters, and that brand owners may need to review export routes for plastic packaging waste."
     ],
     "review": "reviews/items/2026-11-23-002.json"
+  },
+  {
+    "id": "2026-11-25-001",
+    "status": "QUARANTINED",
+    "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)",
+    "reasons": [
+      "quoted evidence absent from current original source"
+    ],
+    "review": "reviews/items/2026-11-25-001.json"
+  },
+  {
+    "id": "2026-11-25-002",
+    "status": "REJECTED",
+    "source_url": "https://environment.ec.europa.eu/news_en",
+    "reasons": [],
+    "review": null
+  },
+  {
+    "id": "2026-11-25-003",
+    "status": "VERIFIED",
+    "source_url": "https://www.gov.uk/government/publications/confirmed-fees-2026-to-2027-extended-producer-responsibility-for-packaging",
+    "reasons": [],
+    "review": "reviews/items/2026-11-25-003.json"
   }
 ]

@@ -1,8 +1,8 @@
-# Review report — 2026-11-24-issue-004
+# Review report — 2026-11-25-issue-004
 
 - **Decision:** hold (gate closed)
 - **Quarantine ratio:** 100%
-- **LLM calls this run:** 3
+- **LLM calls this run:** 11
 
 ## Why the gate is closed
 
@@ -42,6 +42,9 @@
 - `2026-11-23-002` **eu-wsr** (impact high) — The EU bans plastic waste exports to non-OECD countries. The restrictions will apply until at least 21 May 2029, after which those nations may apply to receive plastic waste from the EU.
   - source: https://environment.ec.europa.eu/strategy/circular-economy_en
   - L3 high-impact second review (same evidence, not independent confirmation): partially_supported (confidence 0.70); The interpretation introduces new factual claims not present in the source: that the ban may shift plastic waste volumes towards EU recyclers and converters, and that brand owners may need to review export routes for plastic packaging waste.
+- `2026-11-25-001` **eu-public-procurement** (impact medium) — On 11 November 2026, a committee referral was announced in Parliament for the first reading.
+  - source: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)
+  - quoted evidence absent from current original source
 
 ## Layer 4: editorial review
 
