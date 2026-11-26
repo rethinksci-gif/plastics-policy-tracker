@@ -1,8 +1,8 @@
-# Review report — 2026-11-25-issue-004
+# Review report — 2026-11-26-issue-004
 
 - **Decision:** hold (gate closed)
 - **Quarantine ratio:** 100%
-- **LLM calls this run:** 11
+- **LLM calls this run:** 12
 
 ## Why the gate is closed
 
@@ -43,6 +43,9 @@
   - source: https://environment.ec.europa.eu/strategy/circular-economy_en
   - L3 high-impact second review (same evidence, not independent confirmation): partially_supported (confidence 0.70); The interpretation introduces new factual claims not present in the source: that the ban may shift plastic waste volumes towards EU recyclers and converters, and that brand owners may need to review export routes for plastic packaging waste.
 - `2026-11-25-001` **eu-public-procurement** (impact medium) — On 11 November 2026, a committee referral was announced in Parliament for the first reading.
+  - source: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)
+  - quoted evidence absent from current original source
+- `2026-11-26-001` **eu-public-procurement** (impact medium) — On 11 November 2026, the committee referral was announced in the European Parliament at first reading for the Public Procurement Act (2026/0265(COD)).
   - source: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)
   - quoted evidence absent from current original source
 

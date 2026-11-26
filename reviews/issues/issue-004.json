@@ -1,7 +1,7 @@
 {
  "review_id": "issue-004",
- "issue": "2026-11-25-issue-004",
- "created": "2026-11-25T15:38:33.011863+00:00",
+ "issue": "2026-11-26-issue-004",
+ "created": "2026-11-26T15:16:24.772948+00:00",
  "decision": "hold",
  "would_publish": false,
  "hold_reasons": [
@@ -121,6 +121,17 @@
    "reasons": [
     "quoted evidence absent from current original source"
    ]
+  },
+  {
+   "id": "2026-11-26-001",
+   "dossier": "eu-public-procurement",
+   "title": "Public Procurement Regulation",
+   "impact": "medium",
+   "summary": "On 11 November 2026, the committee referral was announced in the European Parliament at first reading for the Public Procurement Act (2026/0265(COD)).",
+   "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)",
+   "reasons": [
+    "quoted evidence absent from current original source"
+   ]
   }
  ],
  "editorial_review": {
@@ -135,9 +146,9 @@
   "style_notes": {},
   "notes": ""
  },
- "llm_calls": 11,
+ "llm_calls": 12,
  "llm_usage": {
-  "prompt_tokens": 24087,
-  "completion_tokens": 13489
+  "prompt_tokens": 26895,
+  "completion_tokens": 13185
  }
 }
