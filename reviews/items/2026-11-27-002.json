@@ -1,0 +1,98 @@
+{
+ "review_id": "2026-11-27-002",
+ "candidate_id": "2026-11-27-002",
+ "dossier_id": "eu-public-procurement",
+ "created": "2026-11-27T15:06:14.595276Z",
+ "impact": "medium",
+ "checks": [
+  {
+   "layer": 1,
+   "name": "schema",
+   "passed": true,
+   "severity": "info",
+   "detail": "valid"
+  },
+  {
+   "layer": 1,
+   "name": "trusted-domain",
+   "passed": true,
+   "severity": "info",
+   "detail": "domain trust: official"
+  },
+  {
+   "layer": 1,
+   "name": "safe-markdown",
+   "passed": true,
+   "severity": "info",
+   "detail": "plain prose"
+  },
+  {
+   "layer": 1,
+   "name": "url-200",
+   "passed": true,
+   "severity": "info",
+   "detail": "HTTP 200"
+  },
+  {
+   "layer": 1,
+   "name": "event-date",
+   "passed": true,
+   "severity": "info",
+   "detail": "2026-11-11 <= today 2026-11-27"
+  },
+  {
+   "layer": 1,
+   "name": "event-age",
+   "passed": true,
+   "severity": "info",
+   "detail": "event 2026-11-11 is 16 days before detection on 2026-11-27 (limit 60)"
+  },
+  {
+   "layer": 1,
+   "name": "stage-transition",
+   "passed": true,
+   "severity": "info",
+   "detail": "proposal -> parliament-council"
+  },
+  {
+   "layer": 1,
+   "name": "duplicate",
+   "passed": true,
+   "severity": "info",
+   "detail": "no duplicate"
+  },
+  {
+   "layer": 2,
+   "name": "quote-provenance",
+   "passed": true,
+   "severity": "info",
+   "detail": "verbatim quote found in snapshot"
+  }
+ ],
+ "llm_review": {
+  "verdict": "partially_supported",
+  "confidence": 0.82,
+  "checks": {
+   "quote_supports_summary": true,
+   "dates_match": true,
+   "numbers_match": true,
+   "bodies_match": true,
+   "references_match": true,
+   "no_exaggeration": true,
+   "stage_supported": false,
+   "next_steps_supported": true,
+   "translation_faithful": true
+  },
+  "issues": [
+   "The source lists the procedure stage as 'Awaiting committee decision' and only shows the 11/11/2026 committee referral event; it does not explicitly support a stage change to 'parliament-council'."
+  ]
+ },
+ "model": "deepseek-flash",
+ "confirm_review": null,
+ "confirm_model": null,
+ "outcome": "quarantined",
+ "reasons": [
+  "quoted evidence absent from current original source",
+  "L3 reviewer: partially_supported (confidence 0.82); The source lists the procedure stage as 'Awaiting committee decision' and only shows the 11/11/2026 committee referral event; it does not explicitly support a stage change to 'parliament-council'."
+ ]
+}

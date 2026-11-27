@@ -375,5 +375,22 @@
     "source_url": "https://www.gov.uk/government/news/confirmed-202627-epr-for-packaging-fees-now-available",
     "reasons": [],
     "review": "reviews/items/2026-11-26-003.json"
+  },
+  {
+    "id": "2026-11-27-001",
+    "status": "REJECTED",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/19498_en",
+    "reasons": [],
+    "review": null
+  },
+  {
+    "id": "2026-11-27-002",
+    "status": "QUARANTINED",
+    "source_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)",
+    "reasons": [
+      "quoted evidence absent from current original source",
+      "L3 reviewer: partially_supported (confidence 0.82); The source lists the procedure stage as 'Awaiting committee decision' and only shows the 11/11/2026 committee referral event; it does not explicitly support a stage change to 'parliament-council'."
+    ],
+    "review": "reviews/items/2026-11-27-002.json"
   }
 ]

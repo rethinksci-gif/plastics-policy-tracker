@@ -1,8 +1,8 @@
-# Review report — 2026-11-26-issue-004
+# Review report — 2026-11-27-issue-004
 
 - **Decision:** hold (gate closed)
 - **Quarantine ratio:** 100%
-- **LLM calls this run:** 12
+- **LLM calls this run:** 8
 
 ## Why the gate is closed
 
@@ -48,6 +48,10 @@
 - `2026-11-26-001` **eu-public-procurement** (impact medium) — On 11 November 2026, the committee referral was announced in the European Parliament at first reading for the Public Procurement Act (2026/0265(COD)).
   - source: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)
   - quoted evidence absent from current original source
+- `2026-11-27-002` **eu-public-procurement** (impact medium) — On 11 November 2026, the committee referral was announced in Parliament at first reading.
+  - source: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0265(COD)
+  - quoted evidence absent from current original source
+  - L3 reviewer: partially_supported (confidence 0.82); The source lists the procedure stage as 'Awaiting committee decision' and only shows the 11/11/2026 committee referral event; it does not explicitly support a stage change to 'parliament-council'.
 
 ## Layer 4: editorial review
 
