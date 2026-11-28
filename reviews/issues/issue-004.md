@@ -1,8 +1,8 @@
-# Review report — 2026-11-27-issue-004
+# Review report — 2026-11-28-issue-004
 
 - **Decision:** hold (gate closed)
 - **Quarantine ratio:** 100%
-- **LLM calls this run:** 8
+- **LLM calls this run:** 1
 
 ## Why the gate is closed
 
